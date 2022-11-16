@@ -1,4 +1,4 @@
-# grupo_2_concesionaria
+
 grupo_2_concesionaria 
 
 Nombre de la pagina web: *En proceso*
@@ -11,7 +11,8 @@ Descripcion de los integrantes:
 
 Thomás Manzone: Mi objetivo en el proyecto es aportar
 
-Sebastian Velazquez: 
+Sebastian Velazquez: edad 28 años, dueño de negocio de vinos, almacen y quiosco. Mi objetivo es 
+dedicarme a la programación. Me gusta mas el Back-End.
 
 Franco Sanchez:
 
