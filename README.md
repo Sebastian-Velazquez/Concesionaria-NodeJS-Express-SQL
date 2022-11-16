@@ -13,7 +13,7 @@ Descripcion de los integrantes:
 
     Sebastian Velazquez: edad 28 años, dueño de negocio de vinos, almacen y quiosco. Mi objetivo es dedicarme a la programación. Me gusta mas el Back-End.
 
-    Franco Sanchez:
+    Franco Sanchez: tengo 26 años, mi objetivo es aprender y ejercer sobre el mundo de la programacion, tengo un negocio familiar "almacen".
 
     Marco Mamani:
 
