@@ -17,7 +17,7 @@ Descripcion de los integrantes:
 
     Marco Mamani:
 
-    Mauro Sanchez: 
+    Mauro Sanchez: mi edad es 28. Vengo con ganas de unirme, solucionar problemas y aprender lo maximo en el mundo de la programacion. 
 
 Listado de 5 referentes:
     https://www.rosariogarage.com/
