@@ -9,7 +9,7 @@ Descripcion a que publico apunta la pagina: Entusiastas de automotor Argentino.
 
 Descripcion de los integrantes: 
 
-    Thomás Manzone: Mi objetivo en el proyecto es aportar
+    Thomás Manzone: Tengo 19 años, soy un entusiasta de la informatica y la computacion, y tengo pasion tanto por el back como por el front end.
 
     Sebastian Velazquez: edad 28 años, dueño de negocio de vinos, almacen y quiosco. Mi objetivo es dedicarme a la programación. Me gusta mas el Back-End.
 
