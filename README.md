@@ -15,7 +15,7 @@ Descripcion de los integrantes:
 
     Franco Sanchez: tengo 26 años, mi objetivo es aprender y ejercer sobre el mundo de la programacion, tengo un negocio familiar "almacen".
 
-    Marco Mamani:
+    Marco Mamani: tengo 31 años, mi objetivo es comenzar en el mundo digital, no solo para subirme al tren del cambio en lo que a trabajo futuro refiere sino a un cambio integral en mi estilo de vida. Actualmente tengo formación en Contador Publico Nacional, carrera que aun no finalizo y trabajo de Analista Contable a tiempo completo en una Agroaceitunera.
 
     Mauro Sanchez: mi edad es 28. Vengo con ganas de unirme, solucionar problemas y aprender lo maximo en el mundo de la programacion. 
 
@@ -25,3 +25,18 @@ Listado de 5 referentes:
     https://www.giorgiford.com/home.html
     https://www.toyota.com.ar/
     https://www.lamborghini.com/es-en
+
+Colores: celeste, blanco y amarillo.
+
+Plataformas que utilizadas para organizar el trabajo:
+    https://github.com/Sebastian-Velazquez/grupo_2_concesionaria
+
+    https://trello.com/invite/espaciodetrabajo81835235/ATTIe9bc5cfe0e113e41ef305441279bf31e804319F2
+
+Metodología:
+    La retrospectiva:
+    1. Comenzar a hacer.
+    2. Hacer más.
+    3. Continuar haciendo.
+    4. Hacer menos.
+    5. Dejar de hacer.
