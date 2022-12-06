@@ -1,0 +1,19 @@
+.content-main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.content-main__div-h1{
+    border: solid 2px blue;
+   /*  width: 90vw; */
+    text-align: center;
+}
+.content-main__form{
+    border: solid 2px rgb(9, 255, 0);
+   /*  width: 90vw; */
+    text-align: center;
+}
+.content-main__form-div{
+    border: solid 2px red;
+}

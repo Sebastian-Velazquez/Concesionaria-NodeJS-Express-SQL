@@ -1,0 +1,16 @@
+content-header{
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+
+.caja{
+    width: 45vw;
+    height: 100px;
+    border: solid 2px black;
+    display: inline-flex;
+    
+}
