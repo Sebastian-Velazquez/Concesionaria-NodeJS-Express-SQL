@@ -2,8 +2,6 @@ footer{
     display: flex;
     flex-wrap: nowrap;
     background-color: grey;
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
     border: solid 2px #000;
 }
 /* -------------footer-secion-Redes sociales---------------------------------- */
@@ -12,44 +10,46 @@ footer{
     flex-direction: column;
     flex-wrap: wrap;
     font-size: 20px;
-    /* border: solid 1px red; */
-    /* height: 100px; */
     width: 50%;
-    /* margin: 10px; */
     padding-left: 30px;
     justify-content: space-around;
 }
-/* -------------footer-secion---------------------------------- */
+/* -------------footer-secion del mapa---------------------------------- */
 .footer-section--mapa {
     display: flex;
     flex-direction: row;
     font-size: 20px;
-   /*  border: solid 1px red; */
-    /* height: 100px; */
     width: 50%;
-    /* margin: 10px; */
-    /* padding-left: 30px; */
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end;
-    
+    justify-content: flex-end
 }
-/* .footer-section__contenido{
-
-} */
+/* -------------footerSeccionFooter---------------------------------- */
 .footer-section__texto{
     display:inline-flex;
     padding-left: 5px;
 }
-.iconsfooter{
-    font-size: 30px;
-}
 
+/* -------------CajaDelMapa---------------------------------- */
 .content-mapa{
     height: 100%;
     width: 100%;
 }
+/* -------------Mapa---------------------------------- */
 .mapa{
     height: 100%;
     width: 100%;
 } 
+/* -------------iconsRedesSociales---------------------------------- */
+.iconsfooter{
+    font-size: 30px;
+}
+/* -------------iconsRedesSocialesFacebook---------------------------------- */
+.iconsfooter-facebook, .footer-section__texto-facebook{
+    color: #3b5998;
+    font-size: 30px;
+}
+.iconsfooter-whatsapp, .footer-section__texto-whatsapp{
+    color:#25D366;
+    font-size: 30px;
+}
