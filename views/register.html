@@ -4,44 +4,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/estiloRegister/estiloHeader.css">
-    <link rel="stylesheet" href="/css/estiloRegister/estiloMain.css">
-    <link rel="stylesheet" href="/css/estiloRegister/estiloFooter.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <title>Registro</title>
+    <link href="css/register.css" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/header.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/aef00d3210.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <title>Document</title>
 </head>
 <body>
-    <header class="content-header">
-        <div class="caja">Logo</div>
-        <div class="caja">Menu</div>
-    </header>
-    <main class="content-main">
+<header>
+    <section id="headerTop">
+        <figure id ="logo">
+            <a href="/">
+                <img src="/img/logo.svg"  alt="logo">
+            </a>
+        </figure>
+    </section>
+    <section class="searchBar">
+        <form action="/search" method="POST">
+            <div class="searchBox">
+                <input type="text" placeholder="Busca tu torino" required="">
+            </div>
+            <div class="lupa">
+                <button type="submit"></button>
+            </div>
+        </form>
+        <ul class="navBar">
+            <li><a href="register">Registrate<i class="far fa-id-card"></i></a></li>
+            <li><a href="login">Ingresá<i class="fas fa-sign-in-alt"></i></a></li>
+            <li><a href="productCart">Mis compras<i class="fas fa-shopping-basket"></i></a></li>
+        </ul>
+    </section>
+    <div class="burger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+</header>
+
+    <main>
         
         <h1 class="content-main__div-h1">Registro de usuario</h1>
         
-        <form action="/register" method="post" class="content-main__form">
+        <form action="#" method="#" class="content-main__form">
                     <h5>NOMBRE USUARIO</h5>
-                    <input type="text" name="nombreUsuario">
+                    <input type="text" name="nombreUsuario" class="form-input">
                     <h5>CONTRASEÑA</h5>
-                    <input type="password" name="password">
+                    <input type="password" name="password" class="form-input">
                     <h5>CONFIRMAR CONTRASEÑA</h5>
-                    <input type="password" name="passwordConfirmar">
+                    <input type="password" name="passwordConfirmar" class="form-input">
             <h2>Datos personales</h2>    
                     <h5>NOMBRE / RAZON SOCIAL</h5>
-                    <input type="text" name="nombre-razonSocial">
+                    <input type="text" name="nombre-razonSocial" class="form-input">
                     <h5>E-MAIL</h5>
-                    <input type="email" name="email">
+                    <input type="email" name="email" class="form-input">
                     <h5>CONFIRMAR E-MAIL</h5>
-                    <input type="email" name="emailConfirmar"> 
+                    <input type="email" name="emailConfirmar" class="form-input"> 
                     <h5>DIRECCION</h5>
-                    <input type="text" name="direccion">
+                    <input type="text" name="direccion" class="form-input">
                     <h5>TELEFONO MOVIL</h5>
-                    <input type="number" neme="telefono">
-            <div>
-                <button type="submit">REGISTRARSE</button>
+                    <input type="number" neme="telefono" class="form-input">
+            <div class="form-button">
+                <button type="submit" class="form-button">REGISTRARSE</button>
             </div>
         </form>
     </main>
-    <a href="/">Voler Menu</a>
+    <footer>
+        <section class="footer-section">
+            <div clas="conten-contactos">
+                <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook iconsfooter-facebook" ></i><p class="footer-section__texto-facebook">Facebook</p> </a>
+            </div>
+            <div clas="conten-contactos">
+                <a href="https://web.whatsapp.com/"><i class="fa-brands fa-square-whatsapp iconsfooter-whatsapp"></i><p class="footer-section__texto-whatsapp">Whatsapp</p> </a>
+            </div>
+            <div clas="conten-contactos">
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram iconsfooter-instagram"></i><p class="footer-section__texto-instagram">Instagram: @ikatorino</p> </a>
+            </div>
+            <div clas="conten-contactos">
+                <i class="fa-solid fa-square-phone iconsfooter-tel"></i><p class="footer-section__texto-tel"> 011 - 444 555 222</p>
+            </div>
+            </section>
+        <section class="footer-section--mapa">
+            <div class="content-mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2631.7359640511695!2d-58.38243769150408!3d-34.60386940382987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses!2sar!4v1671469564757!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe>
+            </div>
+        </section>
+        </footer>
 </body>
 </html>

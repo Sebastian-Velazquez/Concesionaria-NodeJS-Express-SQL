@@ -1,3 +1,52 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
+
+main{
+    display: flex;
+    background-color: rgb(176, 193, 215);
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+    /* border: solid 1px red; */
+}
+.form-input{
+    padding: 15px 0;
+    margin-bottom: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 70%;
+   /*  border: solid 1px blue; */
+}
+h5{
+    font-size: 15px;
+    padding-top: 5px;
+}
+h2{
+    padding: 20px;
+    font-size: 30px;
+}
+h1{
+    padding: 20px 0;
+    font-size: 50px;
+}
+.form-button{
+    margin: 30px 0;
+    padding: 32px;
+    border-radius: 5%;
+    align-items: center;
+}
+.content-main__form{
+    width: 80%;
+}
+.form-button{
+    display: flex;
+    justify-content: center;
+}
+.content-main__form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
