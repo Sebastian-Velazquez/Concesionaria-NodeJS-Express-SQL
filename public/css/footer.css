@@ -1,33 +1,38 @@
 footer{
     display: flex;
     flex-wrap: nowrap;
+    background-color: grey;
     /* flex-direction: column; */
     /* justify-content: space-between; */
+    border: solid 2px #000;
 }
+/* -------------footer-secion-Redes sociales---------------------------------- */
 .footer-section{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     font-size: 20px;
-    border: solid 1px red;
+    /* border: solid 1px red; */
     /* height: 100px; */
     width: 50%;
-    margin: 10px;
+    /* margin: 10px; */
     padding-left: 30px;
-    
+    justify-content: space-around;
 }
+/* -------------footer-secion---------------------------------- */
 .footer-section--mapa {
     display: flex;
     flex-direction: row;
     font-size: 20px;
-    border: solid 1px red;
+   /*  border: solid 1px red; */
     /* height: 100px; */
     width: 50%;
-    margin: 10px;
-    padding-left: 30px;
+    /* margin: 10px; */
+    /* padding-left: 30px; */
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
+    
 }
 /* .footer-section__contenido{
 
@@ -39,8 +44,12 @@ footer{
 .iconsfooter{
     font-size: 30px;
 }
+
 .content-mapa{
-    border: solid 1px blue;
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
 }
+.mapa{
+    height: 100%;
+    width: 100%;
+} 
