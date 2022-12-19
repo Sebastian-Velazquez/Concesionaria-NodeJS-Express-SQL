@@ -5,16 +5,18 @@ footer{
     flex-wrap: nowrap;
     background-color: grey;
     border: solid 2px #000;
+    padding: 5px 0;
 }
 /* -------------footer-secion-Redes sociales---------------------------------- */
-.footer-section{
+.footer-section {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     font-size: 20px;
     width: 50%;
     padding-left: 30px;
-    justify-content: space-around;
+    align-content: flex-start;
+    justify-content: space-evenly;
 }
 /* -------------footer-secion del mapa---------------------------------- */
 .footer-section--mapa {
@@ -24,18 +26,15 @@ footer{
     width: 50%;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-end
-}
-/* -------------footerSeccionFooter---------------------------------- */
-.footer-section__texto{
-    display:inline-flex;
-    padding-left: 5px;
+    justify-content: flex-end;
+    padding-right: 5px;
 }
 
 /* -------------CajaDelMapa---------------------------------- */
 .content-mapa{
     height: 100%;
     width: 100%;
+    padding: 22px;
 }
 /* -------------Mapa---------------------------------- */
 .mapa{
@@ -46,12 +45,30 @@ footer{
 .iconsfooter{
     font-size: 30px;
 }
+/* -------------para poner el nombre al lado del logo-----------*/
+.footer-section__texto-facebook,
+.footer-section__texto-whatsapp,
+.footer-section__texto-instagram,
+.footer-section__texto-tel{
+    display:inline-flex;
+    padding: 25px 15px; /*horizontal y vertica*/
+}
 /* -------------iconsRedesSocialesFacebook---------------------------------- */
-.iconsfooter-facebook, .footer-section__texto-facebook{
+.iconsfooter-facebook{
     color: #3b5998;
     font-size: 30px;
 }
-.iconsfooter-whatsapp, .footer-section__texto-whatsapp{
+/* -------------iconsRedesSocialesWhatsapp---------------------------------- */
+.iconsfooter-whatsapp{
     color:#25D366;
+    font-size: 30px;
+}
+/* -------------iconsRedesSocialesInstagram---------------------------------- */
+.iconsfooter-instagram{
+    color:#000;
+    font-size: 30px;
+}
+.iconsfooter-tel{
+    color: #006699;
     font-size: 30px;
 }
