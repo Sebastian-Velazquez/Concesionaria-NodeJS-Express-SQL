@@ -1,3 +1,7 @@
+@import url(normalize.css);
+@import url(header.css);
+@import url(footer.css);
+
 .content-main{
     display: flex;
     flex-direction: column;
