@@ -1,1 +1,13 @@
 @import url(normalize.css);
+
+#logo{
+    width: 50%;
+}
+
+.headerTop{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    padding: 2rem 0 0; 
+}
