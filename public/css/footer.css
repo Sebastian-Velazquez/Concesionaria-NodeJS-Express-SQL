@@ -42,8 +42,8 @@ footer{
 }
 /* -------------Mapa---------------------------------- */
 .mapa{
-    /* height: 100%; */
-    width: 100%;
+    height: 300px;
+    width: 300px;
 } 
 /* -------------iconsRedesSociales---------------------------------- */
 .iconsfooter{
