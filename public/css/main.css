@@ -17,3 +17,22 @@
 .content-main__form-div{
     border: solid 2px red;
 }
+.sec_1{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+}
+.art{
+    max-width: 90%;
+    padding: 20px;
+    border: solid 3px black;
+
+   
+
+}
+.img_carrito{
+    width: 150px;
+    height: 150px;
+ 
+}
