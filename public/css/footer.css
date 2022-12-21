@@ -6,7 +6,7 @@ footer{
     flex-wrap:wrap;
     background-color: #4584AF;
    /*  border: solid 2px #000; */
-    padding: 5px 0;
+    /* padding: 5px 0; */
     justify-content: space-between;
 }
 
@@ -42,8 +42,9 @@ footer{
 }
 /* -------------Mapa---------------------------------- */
 .mapa{
-    height: 300px;
-    width: 300px;
+    height: 100%;
+    width: 100%;
+
 } 
 /* -------------iconsRedesSociales---------------------------------- */
 .iconsfooter{
@@ -76,4 +77,12 @@ footer{
 .iconsfooter-tel{
     color: #006699;
     font-size: 30px;
+}
+
+@media screen and (min-width:700px){
+    .mapa{
+        height: 250px;
+        width: 250px;
+
+    } 
 }
