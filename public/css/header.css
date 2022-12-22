@@ -18,6 +18,9 @@ header{
     padding: 1rem 0 1rem 0; 
 }
 
+.navBar{
+    font-size: 12px;
+}
 
 .searchBar{
     background-color: white;
@@ -56,9 +59,10 @@ header{
     .navBar{
         width: 40%;
         display: flex;
-        justify-content: space-around;
+        flex-direction: column;
         text-align: center;
-        font-size: 12px;
+        font-size: 24px;
+        justify-content: flex-end;
     }
     nav{
         display: flex;
