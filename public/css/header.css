@@ -1,13 +1,75 @@
 @import url(normalize.css);
 
 #logo{
-    width: 50%;
+    width: 15%;
+    display: flex;
+    align-content: flex-start;
 }
 
-.headerTop{
+header{
+    background-color: white;
+}
+
+#headerTop{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-around;
-    padding: 2rem 0 0; 
+    padding: 1rem 0 1rem 0; 
+}
+
+.navBar{
+    font-size: 12px;
+}
+
+.searchBar{
+    background-color: white;
+    align-self: center;
+    display: flex;
+    border-radius: 4px;
+}
+
+.searchBar form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+.searchBar input{
+    width: 100%
+}
+
+.lupa{
+    background-color: white;
+    justify-self: flex-end;
+    display: inline;
+}
+
+
+
+
+/* Media Tablet */
+@media screen and (min-width:700px){
+    .burger-menu{
+        display: none;
+    }
+    
+
+    .navBar{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 24px;
+        justify-content: flex-end;
+    }
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 1.5rem;
+        width: 100vw;
+    }
+    
 }

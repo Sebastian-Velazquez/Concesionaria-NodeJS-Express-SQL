@@ -8,13 +8,16 @@
     flex-direction: column;
     align-items: center;
     /* border: solid 1px green; */
-    align-items: stretch;
+    
+    align-content: space-around;
 }
 
 .content-section-article{
     margin: 15px;   
-    width: 100%;
+    width: 90%;
     text-align: center;
+    background-color: rgb(255, 255, 255, 0.5);
+    /* padding: 30px; */
     /* border: solid 1px blue; */
 
 }
