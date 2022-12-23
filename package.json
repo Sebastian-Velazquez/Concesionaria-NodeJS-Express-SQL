@@ -4,7 +4,7 @@
   "description": "grupo_2_concesionaria",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js" 
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Sebastian-Velazquez/grupo_2_concesionaria#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
   }
 }
