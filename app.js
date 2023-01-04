@@ -1,6 +1,6 @@
 
 const express = require('express');
-/* app.use(morgan('dev')); */
+app.use(morgan('dev'));
 const app = express();
 const path = require('path');// para accder a las paginas
 
