@@ -1,0 +1,88 @@
+@import url(normalize.css);
+
+
+footer{
+    display: flex;
+    flex-wrap:wrap;
+    background-color: #4584AF;
+   /*  border: solid 2px #000; */
+    /* padding: 5px 0; */
+    justify-content: space-between;
+}
+
+/* -------------footer-secion-Redes sociales---------------------------------- */
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 20px;
+    width: 45%;
+    padding-left: 30px;
+    align-content: flex-start;
+    justify-content: space-evenly;
+}
+/* -------------footer-secion del mapa---------------------------------- */
+.footer-section--mapa {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    width: 45%;
+    height: 45%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5px;
+}
+
+/* -------------CajaDelMapa---------------------------------- */
+.content-mapa{
+    height: 95%;
+    width: 95%;
+    padding: 22px;
+}
+/* -------------Mapa---------------------------------- */
+.mapa{
+    height: 100%;
+    width: 100%;
+
+} 
+/* -------------iconsRedesSociales---------------------------------- */
+.iconsfooter{
+    font-size: 30px;
+}
+/* -------------para poner el nombre al lado del logo-----------*/
+.footer-section__texto-facebook,
+.footer-section__texto-whatsapp,
+.footer-section__texto-instagram,
+.footer-section__texto-tel{
+    display:inline-flex;
+    padding: 25px 15px; /*horizontal y vertica*/
+    color: rgb(255, 255, 255);
+}
+/* -------------iconsRedesSocialesFacebook---------------------------------- */
+.iconsfooter-facebook{
+    color: #3b5998;
+    font-size: 30px;
+}
+/* -------------iconsRedesSocialesWhatsapp---------------------------------- */
+.iconsfooter-whatsapp{
+    color:#25D366;
+    font-size: 30px;
+}
+/* -------------iconsRedesSocialesInstagram---------------------------------- */
+.iconsfooter-instagram{
+    color: #E1306C;
+    font-size: 30px;
+}
+.iconsfooter-tel{
+    color: #006699;
+    font-size: 30px;
+}
+
+@media screen and (min-width:700px){
+    .mapa{
+        height: 250px;
+        width: 250px;
+
+    } 
+}

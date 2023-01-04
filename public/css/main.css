@@ -1,4 +1,85 @@
-.content-main{
+@import url(normalize.css);
+@import url(header.css);
+@import url(footer.css);
+
+.content-section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    /* border: solid 1px green; */
+    
+    align-content: space-around;
+}
+
+.content-section-article{
+    margin: 15px;   
+    width: 90%;
+    text-align: center;
+    background-color: rgb(255, 255, 255, 0.5);
+    /* padding: 30px; */
+    /* border: solid 1px blue; */
+
+}
+.content-section-article:hover{
+-webkit-box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
+-moz-box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
+box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
+}
+
+.content-detalle{
+    /* background-color: rgb(255, 255, 255); */
+    margin-top: 15px;
+    text-align: center;
+    /* display: none; */
+}
+/* .div__img-producto{ */
+    /* border: solid 1px red; */
+/*     display:block;
+    max-width:100%;
+    
+    height:auto;
+    width: 80%;
+    height: 80%;
+    overflow:hidden; */
+/* } */
+.img-producto{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* object-position: left; */
+}
+
+@media screen and (min-width:700px){
+    .content-section{
+        display: flex;
+        padding: 5px;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: stretch;
+    }
+    .content-section-article{
+        width: 250px;
+        border: solid 2px #999;
+        background-color: rgb(255, 255, 255, 0.5);
+       /*  border: solid 1px red; */
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .content-main{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -6,12 +87,12 @@
 }
 .content-main__div-h1{
     border: solid 2px blue;
-   /*  width: 90vw; */
+    width: 90vw;
     text-align: center;
 }
 .content-main__form{
     border: solid 2px rgb(9, 255, 0);
-   /*  width: 90vw; */
+    width: 90vw;
     text-align: center;
 }
 .content-main__form-div{
@@ -53,3 +134,4 @@
 .art:hover{
     border: solid 3px red;
 }
+} */
