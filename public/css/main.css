@@ -97,4 +97,41 @@ box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
 }
 .content-main__form-div{
     border: solid 2px red;
+}
+.sec_1{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.art{
+    max-width: 90%;
+    padding: 20px;
+    border: solid 5px black;
+    border-radius: 10%;
+    background-color: blue;
+
+   
+
+}
+.img_carrito{
+    width: 150px;
+    height: 150px;
+ 
+}
+.boton{
+    
+    background-color: red;
+    border-radius: 15%;
+    border: solid 2px black;
+    text-align: center;
+}
+.boton:hover{
+    background-color: blue;
+    border: solid 3px  red;
+    box-shadow: inset 3px rgb(9, 255, 0);
+}
+.art:hover{
+    border: solid 3px red;
+}
 } */
