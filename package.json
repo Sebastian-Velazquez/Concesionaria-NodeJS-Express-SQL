@@ -4,7 +4,7 @@
   "description": "grupo_2_concesionaria",
   "main": "app.js",
   "scripts": {
-    "start": "node src/routes/app.js"
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
