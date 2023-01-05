@@ -12,7 +12,16 @@ const controlador ={ //IMPORTANTE
         return res.render('./products/productDetail');
     },
     register:(req, res)=>{
-        return res.render('register');
+        return res.render('./users/register');
+    },
+    creationPrduct:(req, res)=>{
+        return res.render('./products/creationPrduct');
+    },
+    editProduct:(req, res)=>{
+        return res.render('./products/editProduct');
+    },
+    listProduct:(req, res)=>{
+        return res.render('./products/listProduct');
     }
     //para poner datos en una pagina
     /* oferta:(req, res)=>{
