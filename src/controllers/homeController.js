@@ -3,7 +3,7 @@ const controlador ={ //IMPORTANTE
         return res.render('index'); //no es necesario la estencion, lo hago para recordar. es para mostrar un archivo en la pagina
     }, 
     login:(req, res)=>{
-        return res.render('login');
+        return res.render('./users/login');
     },
     productCart:(req, res)=>{
         return res.render('productCart');
