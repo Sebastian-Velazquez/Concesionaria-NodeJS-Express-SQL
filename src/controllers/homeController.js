@@ -8,7 +8,7 @@ const controlador ={ //IMPORTANTE
                 'lavadora',
                 'licuadora',
                 'destornillador',
-            ];
+            ];                      //listaOferta de la izquierda es el que va en la pagina
             res.render('ofertas',{'listaOferta':listaOferta})
     }, */
 }

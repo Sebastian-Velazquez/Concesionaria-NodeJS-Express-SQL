@@ -1,7 +1,4 @@
 const controlador ={ //IMPORTANTE
-    index: (req, res)=>{ //renderisar o mustrar una vista(pagina como antes)
-        return res.render('index'); //no es necesario la estencion, lo hago para recordar. es para mostrar un archivo en la pagina
-    },
     productCart:(req, res)=>{
         return res.render('./products/productCart');
     },
