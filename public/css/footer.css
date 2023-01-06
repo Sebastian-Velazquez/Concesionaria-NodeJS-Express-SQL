@@ -13,21 +13,19 @@ footer{
 /* -------------footer-secion-Redes sociales---------------------------------- */
 .footer-section {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
     font-size: 20px;
     width: 45%;
     padding-left: 30px;
-    align-content: flex-start;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
 }
 /* -------------footer-secion del mapa---------------------------------- */
 .footer-section--mapa {
     display: flex;
     flex-direction: row;
     font-size: 20px;
-    width: 45%;
-    height: 45%;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
