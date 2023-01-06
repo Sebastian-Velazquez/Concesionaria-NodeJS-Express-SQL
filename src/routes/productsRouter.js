@@ -11,18 +11,15 @@ const homeController = require("../controllers/homeController.js")
 /* router.get("/list", mainController.list); */ //EJEMPLO DE PRAMETRO COMPARTIDO
 
 // procesa pedido de get. Ahora usamos router en MVC. son tutas 
-router.get("/", homeController.index);
-
+//router.get("/", homeController.index);
+//router.get("/login", homeController.login);
+router.get("/productCart", homeController.productCart);
+router.get("/productDetail", homeController.productDetail);
+//router.get("/register", homeController.register);
+router.get("/creationPrduct", homeController.creationPrduct);
+router.get("/editProduct", homeController.editProduct);
+router.get("/listProduct", homeController.listProduct);
 
 /* router.get("/ofertas", homeController.oferta); */
 
 module.exports = router;
-
-/*
-router.get("/login", homeController.login);
-router.get("/productCart", homeController.productCart);
-router.get("/productDetail", homeController.productDetail);
-router.get("/register", homeController.register);
-router.get("/creationPrduct", homeController.creationPrduct);
-router.get("/editProduct", homeController.editProduct);
-router.get("/listProduct", homeController.listProduct);*/

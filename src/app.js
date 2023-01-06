@@ -7,6 +7,8 @@ const app = express();
 
 // Importamos routers//const path = require('path');// para accder a las paginas
 const homeRouter = require('./routes/homeRouter.js')
+const usersRouter = require('./routes/usersRouter.js')
+const productsRouter = require('./routes/productsRouter.js')
 
 //muestra infomacion adicional en la consela si se esta enviando informacion 
 app.use(morgan('dev'));
@@ -19,6 +21,8 @@ app.set('view engine', 'ejs');
 
 // Usando los enrutadores importados linea 5
 app.use("/", homeRouter);
+app.use("/", usersRouter);
+app.use("/", productsRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port,()=> console.log('Servidor corriendo en http://localhost:3000'));
