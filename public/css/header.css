@@ -13,15 +13,22 @@ header{
 #headerTop{
     display: flex;
     flex-wrap: wrap;
-    align-content: center;
+    padding: 1rem 0 1rem 0;
     justify-content: space-around;
-    padding: 1rem 0 1rem 0; 
+    align-items: center;
 }
-
+.content-navBar{
+    display: none;
+}
 .navBar{
-    font-size: 12px;
+    font-size: 11px;
 }
-
+.icono{
+    font-size: 8px;
+}
+.lista-hambuerguesa{
+    font-size: 25px;
+}
 .searchBar{
     background-color: white;
     align-self: center;
@@ -54,14 +61,27 @@ header{
     .burger-menu{
         display: none;
     }
-    
-
-    .navBar{
-        width: 40%;
+    .lista-hambuerguesa{
+        display: none;
+    }
+    .navBar-lista{
+    padding: 0 7px;
+    /* border-bottom: solid red 1px; */
+    }
+    .content-navBar{
+        width: 95%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+    }
+    .navBar{
+        /* width: 45%; */
+        display: flex;
+        flex-direction: row;
         text-align: center;
-        font-size: 24px;
+        font-size: 11px;
         justify-content: flex-end;
     }
     nav{
