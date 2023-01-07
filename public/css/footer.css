@@ -76,7 +76,9 @@ footer{
     color: #006699;
     font-size: 30px;
 }
-
+h5{
+    width: 95%;
+}
 @media screen and (min-width:700px){
     .mapa{
         height: 250px;
