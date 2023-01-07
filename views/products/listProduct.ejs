@@ -8,11 +8,11 @@
     <!-- ----------------------HEADER------------------------------->
     <%- include('../parcial/header.ejs') %>
     <!-- ----------------------MAIN------------------------------->
-    <main>Lista de Productos</main>
-    <h1>Productos</h1>
+    <main><h1>Lista de Productos</h1>
+    <h2>Productos</h2>
     <section class="interacciones-main">
         <div>
-            <input type="submit" value="Buscar">
+            <input type="submit" value="Buscar"><input type="text">
         </div>
         <div>
             <input type="submit" value="Editar" >
@@ -25,13 +25,42 @@
         </div>
         
     </section>
-    <section>
-        <article>
-
+    <section class="content-section">
+        <article class="content-section-article">
+            <div class="div__img-producto">
+                <img src="/img/Torino Autos/fotos_torino_1.jpg" alt="imagenCafetera" class="img-producto">
+            </div>
+            <div >
+                <h4>Lorem ipsum, st aut sint.</h4>
+            </div>
+        </article>
+        <article class="content-section-article">
+            <div class="div__img-producto">
+                <img src="/img/Torino Autos/fotos_torino_3.jpg" alt="imagenCafetera" class="img">
+            </div>
+            <div >
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit!</h4>
+            </div>
+        </article>
+        <article class="content-section-article">
+            <div class="div__img-producto">
+                <img src="/img/Torino Autos/fotos_torino_4.jpg" alt="imagenCafetera" class="img">
+            </div>
+            <div >
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit!</h4>
+            </div>
+        </article>
+        <article class="content-section-article">
+            <div class="div__img-producto">
+                <img src="/img/Torino Autos/fotos_torino_6.jpg" alt="imagenCafetera" class="img">
+            </div>
+            <div >
+                <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit!</h4>
+            </div>
         </article>
     </section>
      
-
+</main>
     <!-- ----------------------FOOTER----------------------------- -->
     <%- include('../parcial/footer.ejs') %>
 </body>
