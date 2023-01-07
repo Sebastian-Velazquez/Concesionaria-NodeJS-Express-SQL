@@ -1,3 +1,30 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
+
+.titulo_creacion_producto{
+    text-align: center;
+}
+.creacion_producto_main_1{
+                      }
+.nombre_producto{}
+.modelo_producto{}
+.color_producto{}
+.detalle_producto{}
+.creacion_producto_main_2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly
+}
+.cargar_imagen{
+    border: solid 1px black;
+    padding: 0.5px;
+    margin: 90px;
+    background-color: gray
+}
+.img_x_cargar{
+    border: solid 1px black;
+    padding: 40px 80px;
+    margin: 10px;
+    background-color: white;
+}
