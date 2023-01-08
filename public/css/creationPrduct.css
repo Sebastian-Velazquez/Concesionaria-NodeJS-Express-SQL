@@ -4,13 +4,27 @@
 
 .titulo_creacion_producto{
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .creacion_producto_main_1{
+    text-align: center;
                       }
-.nombre_producto{}
-.modelo_producto{}
-.color_producto{}
-.detalle_producto{}
+.name_product{
+    margin-top: 15px;
+    margin-bottom: 5px;}
+.model{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.color{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.detalle_producto{
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
 .creacion_producto_main_2{
     display: flex;
     flex-wrap: wrap;
