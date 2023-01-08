@@ -1,12 +1,38 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
+*{
+    box-sizing: border-box;
+    
+}
 
 /*------------------------ Interacciones de usuario ----------------------------- */
+
+.interacciones-main{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+}
+.interacciones-input{
+    display: flex;
+    width: 110px;
+
+
+}
 /*------------------------ Articulos ----------------------------- */
+img{
+    width: 100%;
+}
+.content-section{
+    display: flex;
+    justify-content: column;
+}
+
 .img{
     display: flex;
-    width: 300px;
-    align-content: center;
+    align-content: space-around;
+    width: 380px;
+    margin: 15px;
+
 }
 /*------------------------  ----------------------------- */
