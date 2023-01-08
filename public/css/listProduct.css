@@ -22,10 +22,12 @@
 /*------------------------ Articulos ----------------------------- */
 img{
     width: 100%;
+    max-width: 100%;
 }
 .content-section{
     display: flex;
     justify-content: column;
+    flex-wrap: wrap;
 }
 
 .img{
@@ -33,6 +35,13 @@ img{
     align-content: space-around;
     width: 380px;
     margin: 15px;
+    border: solid 3px grey;
 
+}
+.description-article{
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    
 }
 /*------------------------  ----------------------------- */
