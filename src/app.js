@@ -4,9 +4,12 @@ const express = require('express');
 //muestra infomacion adicional en la consela si se esta enviando informacion 
 const morgan = require('morgan');
 const app = express();
-const path = require('path');
+
+//Es necesario para que la carpeta views pueda estar adentro de la carpeta src
+const path = require('path'); 
 
 // ************ Middlewares - (don't touch) ************
+//Es necesario para que la carpeta views pueda estar adentro de la carpeta src
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
 
 
@@ -24,12 +27,13 @@ app.use(express.static('public'));
 //para usar ejs
 app.set('view engine', 'ejs'); 
 
+//Es necesario para que la carpeta views pueda estar adentro de la carpeta src
 app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 
 // Usando los enrutadores importados linea 5
 app.use("/", homeRouter);
-app.use("/", usersRouter);
-app.use("/", productsRouter);
+app.use("/user", usersRouter);
+app.use("/product", productsRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port,()=> console.log('Servidor corriendo en http://localhost:3000'));
