@@ -32,8 +32,8 @@ app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la 
 
 // Usando los enrutadores importados linea 5
 app.use("/", homeRouter);
-app.use("/user", usersRouter);
-app.use("/product", productsRouter);
+app.use("/", usersRouter);
+app.use("/", productsRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port,()=> console.log('Servidor corriendo en http://localhost:3000'));
