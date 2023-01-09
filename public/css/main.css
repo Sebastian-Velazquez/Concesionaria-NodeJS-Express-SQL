@@ -53,11 +53,11 @@ box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
 @media screen and (min-width:700px){
     .content-section{
         display: flex;
-/*         padding: 5px;
+        padding: 5px;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: space-around;
-        align-items: stretch; */
+        align-items: stretch;
     }
     .content-section-article{
         width: 250px;
@@ -73,7 +73,11 @@ box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
 
 
 
-
+/* display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-between;
+} */
 
 
 
