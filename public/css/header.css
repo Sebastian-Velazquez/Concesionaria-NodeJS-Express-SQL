@@ -3,7 +3,9 @@
 #logo{
     width: 15%;
     display: flex;
-    align-content: flex-start;
+    flex-direction: row;
+    flex-wrap:wrap;
+    
 }
 
 header{
@@ -14,7 +16,7 @@ header{
     display: flex;
     flex-wrap: wrap;
     padding: 1rem 0 1rem 0;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .content-navBar{
