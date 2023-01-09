@@ -4,6 +4,11 @@ const express = require('express');
 //muestra infomacion adicional en la consela si se esta enviando informacion 
 const morgan = require('morgan');
 const app = express();
+const path = require('path');
+
+// ************ Middlewares - (don't touch) ************
+app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
+
 
 // Importamos routers//const path = require('path');// para accder a las paginas
 const homeRouter = require('./routes/homeRouter.js')
@@ -18,6 +23,8 @@ app.use(express.static('public'));
 
 //para usar ejs
 app.set('view engine', 'ejs'); 
+
+app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas
 
 // Usando los enrutadores importados linea 5
 app.use("/", homeRouter);
