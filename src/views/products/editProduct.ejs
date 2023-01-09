@@ -9,20 +9,21 @@
     <%- include('../parcial/header.ejs') %>
     <!-- ----------------------MAIN------------------------------->
     <main>
-    <h1>Edición de Productos</h1>
+    <h1>Editar Producto</h1>
     <form action="#" method="post" class="form-edit">
-        <input type="text" name="nombreAuto" placeholder="Indique nombre de vehiculo" required>
-        <input type="text" name="fechAauto" placeholder="Indique su nombre" required>
+        <input type="text" name="nombreAuto" placeholder="Indique nombre de vehiculo" required class="form-input">
+        <input type="text" name="fechAauto" placeholder="Indique su nombre" required class="form-input">
         <p>Indique el modelo</p>
-        <select> 
+        <select class="form-input"> 
             <option value="1">torino 1</option> 
             <option value="2">torino 2</option> 
             <option value="3">torino 3</option> 
             <option value="4">torino 4</option> 
             <option value="5">torino 5</option> 
         </select>
-        <input type="text" name="precioAuto" placeholder="Precio" required>
-        <select> 
+        <input type="text" name="precioAuto" placeholder="Precio" required class="form-input">
+        <p>Tipo de vehiculo</p>
+        <select class="form-input"> 
             <option value="1">Camioneta</option> 
             <option value="2">Auto</option> 
             <option value="3">Furgon</option>  
@@ -30,7 +31,6 @@
         <textarea name="decripcionAuto" placeholder="Breve descripción"></textarea>
         <div class="form-button-content">
             <button type="submit" class="form-button">Guardar</button>
-        
             <button type="submit" class="form-button">Cancelar</button>
         </div>
     </form>
