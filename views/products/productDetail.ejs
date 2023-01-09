@@ -6,9 +6,26 @@
 </head>
 <body>
     <%- include('../parcial/header.ejs') %>
-    <h1>Detalle del producto</h1>
-    <a href="/">Voler Menu</a>
-
+    <div class="content">
+        <h1>Auto modelo 0000</h1>
+        <div class="content-img-list">
+            <div class="conten-img">
+                <img src="/img/Torino Autos/fotos_torino_3.jpg" alt="imagenCafetera" class="img">
+            </div>
+            <ul class="listaDeDetalle">
+                <li class="listaDeDetalle-li">$999.999</li>
+                <li class="listaDeDetalle-li">Rojo</li>
+                <li class="listaDeDetalle-li">Modelo</li>
+                <li class="listaDeDetalle-li">Marca</li>
+                <li class="listaDeDetalle-li">Tipo: camioneta</li>
+                <li class="listaDeDetalle-li">Fabricante</li>
+                <li class="listaDeDetalle-li">Condición: Nuevo</li>
+            </ul>
+        </div>
+        <div class="form-button-content">
+            <button type="submit" class="form-button">COMPRAR</button>
+        </div>
+    </div>
 
     <!-- ----------------------FOOTER----------------------------- -->
     <%- include('../parcial/footer.ejs') %>
