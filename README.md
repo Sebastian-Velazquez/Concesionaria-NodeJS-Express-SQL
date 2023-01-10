@@ -31,9 +31,9 @@ Entusiastas de automotor Argentino.
  celeste, blanco y amarillo.
 
 ### Plataformas que utilizadas para organizar el trabajo:
-  + [GitHub] https://github.com/Sebastian-Velazquez/grupo_2_concesionaria
+  + [GitHub](https://github.com/Sebastian-Velazquez/grupo_2_concesionaria)
 
-  + [Trello] https://trello.com/invite/espaciodetrabajo81835235/ATTIe9bc5cfe0e113e41ef305441279bf31e804319F2
+  + [Trello](https://trello.com/invite/espaciodetrabajo81835235/ATTIe9bc5cfe0e113e41ef305441279bf31e804319F2)
 
 ### Metodología:
    La retrospectiva:
