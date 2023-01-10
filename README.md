@@ -21,11 +21,11 @@ Entusiastas de automotor Argentino.
 ###Mauro Sanchez: mi edad es 28. Vengo con ganas de unirme, solucionar problemas y aprender lo maximo en el mundo de la programacion. 
 
 ##  Listado de  referentes:
-   + [Rosario_Garage] (https://www.rosariogarage.com/)
-   + [Chevrolet] (https://www.chevrolet.com.ar/)
-   + [Ford] (https://www.giorgiford.com/home.html)
-   + [Toyota] (https://www.toyota.com.ar/)
-   + [Lamborghini] (https://www.lamborghini.com/es-en)
+   + [Rosario_Garage](https://www.rosariogarage.com/)
+   + [Chevrolet](https://www.chevrolet.com.ar/)
+   + [Ford](https://www.giorgiford.com/home.html)
+   + [Toyota](https://www.toyota.com.ar/)
+   + [Lamborghini](https://www.lamborghini.com/es-en)
 
 ### Colores
  celeste, blanco y amarillo.
