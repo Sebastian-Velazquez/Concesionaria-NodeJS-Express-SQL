@@ -28,7 +28,7 @@ Amantes de la nostalgia y el automovilismo nacional argentino.
    + [Lamborghini](https://www.lamborghini.com/es-en)
 
 ### Colores
-celeste, blanco y amarillo.
+### Celeste, Blanco y Amarillo.
 
 ### Plataformas que utilizadas para organizar el trabajo:
   + [GitHub](https://github.com/Sebastian-Velazquez/grupo_2_concesionaria)
