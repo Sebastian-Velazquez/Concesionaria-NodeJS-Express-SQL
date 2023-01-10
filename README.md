@@ -1,7 +1,4 @@
-# grupo_2_concesionaria 
-
-Nombre de la pagina web: ikatorino
-
+# Grupo 2 Consesionaria Industrias Kaiser Argentina
 Link onRender: https://consesionaria-ika-torino.onrender.com/
 
 ## Descripcion 
