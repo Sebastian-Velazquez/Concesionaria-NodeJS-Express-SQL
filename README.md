@@ -1,4 +1,4 @@
-# Grupo 2 Consesionaria Industrias Kaiser Argentina
+# Grupo 2 Consesionaria Industrias Kaiser Argentina  ![Tux, the Linux mascot](public/img/LogoIKA.png)
 Link onRender: https://consesionaria-ika-torino.onrender.com/
 
 ## Descripcion 
