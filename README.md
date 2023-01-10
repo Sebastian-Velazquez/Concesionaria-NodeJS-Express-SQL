@@ -1,4 +1,4 @@
-#Consesionaria Industrias Kaiser Argentina  ![IKA](public/img/LogoIKA.png)
+# Grupo 2 Consesionaria Industrias Kaiser Argentina  ![IKA](public/img/LogoIKA.png)
 
 
 
