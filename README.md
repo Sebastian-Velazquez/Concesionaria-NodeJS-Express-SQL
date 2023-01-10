@@ -36,7 +36,7 @@ Entusiastas de automotor Argentino.
   + [Trello](https://trello.com/invite/espaciodetrabajo81835235/ATTIe9bc5cfe0e113e41ef305441279bf31e804319F2)
 
 ### Metodología:
-   La retrospectiva:
+ 
    1. Comenzar a hacer.
    2. Hacer más.
    3. Continuar haciendo.
