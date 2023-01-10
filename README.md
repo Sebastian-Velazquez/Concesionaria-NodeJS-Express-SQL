@@ -6,8 +6,7 @@
 La pagina ikatorino.com se dedicara a la venta de vehiculos de la marca I.K.A Torino.
 
 ## A que publico apunta la pagina 
-
-Entusiastas de automotor Argentino.
+Amantes de la nostalgia y el automovilismo nacional argentino. 
 
 ## Descripcion de los integrantes: 
 
