@@ -24,24 +24,24 @@ Entusiastas de automotor Argentino.
     Mauro Sanchez: mi edad es 28. Vengo con ganas de unirme, solucionar problemas y aprender lo maximo en el mundo de la programacion. 
 
 ##  Listado de  referentes:
-    + [Rosario Garage] https://www.rosariogarage.com/
-    + [Chevrolet] https://www.chevrolet.com.ar/
-    + [Ford] https://www.giorgiford.com/home.html
-    + [Toyota] https://www.toyota.com.ar/
-    + [Lamborghini] https://www.lamborghini.com/es-en
+   + [Rosario Garage] https://www.rosariogarage.com/
+   + [Chevrolet] https://www.chevrolet.com.ar/
+   + [Ford] https://www.giorgiford.com/home.html
+   + [Toyota] https://www.toyota.com.ar/
+   + [Lamborghini] https://www.lamborghini.com/es-en
 
 ### Colores
  celeste, blanco y amarillo.
 
 ### Plataformas que utilizadas para organizar el trabajo:
-    https://github.com/Sebastian-Velazquez/grupo_2_concesionaria
+  + [GitHub] https://github.com/Sebastian-Velazquez/grupo_2_concesionaria
 
-    https://trello.com/invite/espaciodetrabajo81835235/ATTIe9bc5cfe0e113e41ef305441279bf31e804319F2
+  + [Trello] https://trello.com/invite/espaciodetrabajo81835235/ATTIe9bc5cfe0e113e41ef305441279bf31e804319F2
 
 ### Metodología:
-    La retrospectiva:
-    1. Comenzar a hacer.
-    2. Hacer más.
-    3. Continuar haciendo.
-    4. Hacer menos.
-    5. Dejar de hacer.
+   La retrospectiva:
+   1. Comenzar a hacer.
+   2. Hacer más.
+   3. Continuar haciendo.
+   4. Hacer menos.
+   5. Dejar de hacer.
