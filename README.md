@@ -1,6 +1,6 @@
 # Grupo 2 Consesionaria Industrias Kaiser Argentina  ![IKA](public/img/LogoIKA.png)
 
-+ [Link onRender](https://consesionaria-ika-torino.onrender.com/)
+
 
 ## Descripcion 
 La pagina ikatorino.com se dedicara a la venta de vehiculos de la marca I.K.A Torino.
@@ -35,6 +35,8 @@ Entusiastas de automotor Argentino.
   + [GitHub](https://github.com/Sebastian-Velazquez/grupo_2_concesionaria)
 
   + [Trello](https://trello.com/invite/espaciodetrabajo81835235/ATTIe9bc5cfe0e113e41ef305441279bf31e804319F2)
+  
+  + [Link onRender](https://consesionaria-ika-torino.onrender.com/)
 
 ### Metodología:
  
