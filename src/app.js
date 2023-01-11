@@ -13,7 +13,7 @@ const morgan = require('morgan');
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
 app.use(express.urlencoded({ extended: false })); // Para capturar el body
 app.use(express.json()); // Para capturar el body
-app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));//Para crar, eliminar y modificar.. se puede poner cualquier nombre en '_method'
 
 //para usar ejs
 app.set('view engine', 'ejs'); 
