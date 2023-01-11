@@ -26,8 +26,8 @@ const productsRouter = require('./routes/productsRouter.js')
 
 // Usando los enrutadores importados linea 5
 app.use("/", homeRouter);
-app.use("/", usersRouter);
-app.use("/", productsRouter);
+app.use("/user", usersRouter);
+app.use("/products", productsRouter);
 
 
 
