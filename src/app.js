@@ -8,6 +8,7 @@ const app = express();
 
 //muestra infomacion adicional en la consela si se esta enviando informacion 
 const morgan = require('morgan');
+app.use(morgan('dev'));//muestra infomacion adicional en la consela si se esta enviando informacion 
 
 // Middlewares
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
@@ -34,8 +35,7 @@ app.use("/products", productsRouter);
 const port = process.env.PORT || 3000;
 app.listen(port,()=> console.log('Servidor corriendo en http://localhost:3000'));
 
-//muestra infomacion adicional en la consela si se esta enviando informacion 
-app.use(morgan('dev'));
+
 
 //es para que la carpeta del proyecto public sea publicom, van html ejs css
 app.use(express.static('public'));
