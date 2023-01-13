@@ -1,4 +1,4 @@
-# Grupo 2 Consesionaria Industrias Kaiser Argentina  ![IKA](public/img/LogoIKA.png) [RENAULT](public/img/LogoRenault.png)
+# Grupo 2 Consesionaria Industrias Kaiser Argentina  ![IKA](public/img/LogoIKA.png) ![RENAULT](public/img/LogoRenault.png)
 
 
 
