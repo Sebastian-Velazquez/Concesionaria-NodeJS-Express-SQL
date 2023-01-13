@@ -3,7 +3,7 @@
 //llama expres y guarda la ejecucion de router
 const express = require("express");
 const router = express.Router();
-const multer = require("multer")
+
 // llamamos a la ruta de controlador
 const usersController = require("../controllers/usersControllers.js")
 
