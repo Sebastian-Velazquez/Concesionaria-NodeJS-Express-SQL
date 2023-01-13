@@ -1,12 +1,17 @@
 @import url(normalize.css);
 
-#logo{
+.logo{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logoMain{
     width: 15%;
     height: 20%;
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-    
+    margin-left: 1rem;
 }
 
 header{
