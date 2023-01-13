@@ -3,7 +3,7 @@
 
 
 ## Descripcion 
-La pagina industriasKaiserArgentina se dedicara a la venta de autos de la misma empresa. 
+La pagina industriasKaiserArgentina y Renault (desde 1956 hasta el 1995) se dedicara a la venta de autos de la misma empresa. 
 
 ## A que publico apunta la pagina 
 Amantes de la nostalgia y el automovilismo nacional argentino. 
