@@ -15,7 +15,7 @@ router.get("/productCart", productsControllers.productCart);
 router.get("/productDetail", productsControllers.productDetail);
 //router.get("/register", homeController.register);
 router.get("/creationPrduct", productsControllers.creationPrduct);
-router.get("/editProduct", productsControllers.editProduct);
+router.get("/productEdit", productsControllers.productEdit);
 router.get("/listProduct", productsControllers.listProduct);
 
 /* router.get("/ofertas", homeController.oferta); */

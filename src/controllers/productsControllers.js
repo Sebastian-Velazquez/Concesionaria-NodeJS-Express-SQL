@@ -8,8 +8,8 @@ const controlador ={ //IMPORTANTE
     creationPrduct:(req, res)=>{
         return res.render('./products/creationPrduct');
     },
-    editProduct:(req, res)=>{
-        return res.render('./products/editProduct');
+    productEdit:(req, res)=>{
+        return res.render('./products/productEdit');
     },
     listProduct:(req, res)=>{
         return res.render('./products/listProduct');
