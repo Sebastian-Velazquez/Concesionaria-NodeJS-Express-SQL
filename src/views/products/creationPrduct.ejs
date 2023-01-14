@@ -22,10 +22,14 @@
             <input class="detalle_producto" type="text">
         </form>
     </article>
-    <article class="creacion_producto_main_2">
-        <div class="cargar_imagen">Cargar imagen</div>
-        <div class="img_x_cargar"></div>
-    </article>
+    <div class="SubirImagen">
+        <label for="productImage" class="form-label">Imagen del producto:</label>
+        <input type="file" id="productImage" name="editedProductImage">
+    </div>
+    <div class="form-button-content">
+        <button type="submit" class="form-button">Guardar</button>
+        <button type="submit" class="form-button">Cancelar</button>
+    </div>
     </main>
     <!-- ----------------------FOOTER----------------------------- -->
     <%- include('../parcial/footer.ejs') %>
