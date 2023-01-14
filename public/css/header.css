@@ -5,14 +5,28 @@
     flex-wrap: wrap;
 }
 
-.logoMain{
+.logoIKA{
+    display: flex;
+    justify-content: flex-start;
+    width: 15%;
+    height: 20%;
+}
+
+.logoRenault{
+    display: flex;
+    justify-content: flex-end;
+    width: 15%;
+    height: 20%;
+}
+
+/* .logoMain{
     width: 15%;
     height: 20%;
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
     margin-left: 1rem;
-}
+} */
 
 header{
     background-color: white;
