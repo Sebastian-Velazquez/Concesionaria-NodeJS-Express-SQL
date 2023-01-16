@@ -1,49 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('./parcial/head.ejs') %>
-    <link href="css/main.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
 </head>
+
 <body>
     <%- include('./parcial/header.ejs') %>
 
-    <main class="main">
-        <h2>Ofertas de la semana</h2>
-        <section class="content-section">
-            <% productosEnOferta.forEach(producto => { %>                
-            <a href="/products/detail/<%= producto.id %>">
-                <article class="content-section-article">
-                    <div class="div__img-producto">
-                        <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto" >
-                    </div>
-                    <div class="content-detalle">
-                        <h4>$<%= producto.price %></h4>
-                        <h4><%= producto.colors %></h4>
-                        <h4><b><%= producto.name %></b></h4>
-                    </div>
-                </article>
-            </a>
-            <% }) %> 
-        </section>  
-        
-        <h2>Productos destacados</h2>
-        <section class="content-section">
-            <% productosVisitados.forEach(producto => { %>                
-                <a href="/products/detail/<%= producto.id %>">
-                    <article class="content-section-article">
-                        <div class="div__img-producto">
-                            <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto" >
-                        </div>
-                        <div class="content-detalle">
-                            <h4>$<%= producto.price %></h4>
-                            <h4><%= producto.colors %></h4>
-                            <h4><b><%= producto.name %></b></h4>
-                        </div>
-                    </article>
-                </a>
-                <% }) %>
-        </section>        
-    </main>        
-    <%- include('./parcial/footer.ejs') %>
+        <main class="main">
+            <h2>Ofertas de la semana</h2>
+            <section class="content-section">
+                <% productosEnOferta.forEach(producto=> { %>
+                    <a href="/products/detail/<%= producto.id %>">
+                        <article class="content-section-article">
+                            <div class="div__img-producto">
+                                <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                            </div>
+                            <div class="content-detalle">
+                                <h4>$<%= producto.price %>
+                                </h4>
+                                <h4>
+                                    <%= producto.colors %>
+                                </h4>
+                                <h4><b>
+                                        <%= producto.name %>
+                                    </b></h4>
+                            </div>
+                        </article>
+                    </a>
+                    <% }) %>
+            </section>
+
+            <h2>Productos destacados</h2>
+            <section class="content-section">
+                <% productosVisitados.forEach(producto=> { %>
+                    <a href="/products/detail/<%= producto.id %>">
+                        <article class="content-section-article">
+                            <div class="div__img-producto">
+                                <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                            </div>
+                            <div class="content-detalle">
+                                <h4>$<%= producto.price %>
+                                </h4>
+                                <h4>
+                                    <%= producto.colors %>
+                                </h4>
+                                <h4><b>
+                                        <%= producto.name %>
+                                    </b></h4>
+                            </div>
+                        </article>
+                    </a>
+                    <% }) %>
+            </section>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+            </div>
+        </main>
+        <%- include('./parcial/footer.ejs') %>
 </body>
+
 </html>
