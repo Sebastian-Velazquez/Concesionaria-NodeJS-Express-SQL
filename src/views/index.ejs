@@ -10,43 +10,38 @@
     <main class="main">
         <h2>Ofertas de la semana</h2>
         <section class="content-section">
+            <% productosEnOferta.forEach(producto => { %>                
             <a href="/products/productDetail">
                 <article class="content-section-article">
                     <div class="div__img-producto">
                         <img src="/img/products/Torino380.jpg" alt="Imagen" class="img-producto" >
                     </div>
                     <div class="content-detalle">
-                        <h4>Lorem ipsum, st aut sint.</h4>
+                        <h4>$<%= producto.price %></h4>
+                        <h4><%= producto.colors %></h4>
+                        <h4><b><%= producto.name %></b></h4>
                     </div>
                 </article>
             </a>
-            <article class="content-section-article">
-                <div class="div__img-producto">
-                    <img src="/img/products/JeepWillys.jpg" alt="imagen" class="img" >
-                </div>
-                <div class="content-detalle">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit!</h4>
-                </div>
-            </article>
-            <article class="content-section-article">
-                <div class="div__img-producto">
-                    <img src="/img/products/Estanciera.jpg" alt="imagenCafetera" class="img">
-                </div>
-                <div class="content-detalle">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit!</h4>
-                </div>
-            </article>
-            <article class="content-section-article">
-                <div class="div__img-producto">
-                    <img src="/img/products/Dauphine.jpg" alt="imagenCafetera" class="img" >
-                </div>
-                <div class="content-detalle">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit!</h4>
-                </div>
-            </article>
+            <% }) %> 
         </section>  
+        
         <h2>Productos destacados</h2>
         <section class="content-section">
+            <% productosVisitados.forEach(producto => { %>                
+                <a href="/products/productDetail">
+                    <article class="content-section-article">
+                        <div class="div__img-producto">
+                            <img src="/img/products/Torino380.jpg" alt="Imagen" class="img-producto" >
+                        </div>
+                        <div class="content-detalle">
+                            <h4>$<%= producto.price %></h4>
+                            <h4><%= producto.colors %></h4>
+                            <h4><b><%= producto.name %></b></h4>
+                        </div>
+                    </article>
+                </a>
+                <% }) %> <!-- 
                 <a href="/products/productDetail">
                     <article class="content-section-article">
                         <div class="div__img-producto">
@@ -80,7 +75,7 @@
                 <div class="content-detalle">
                     <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit!</h4>
                 </div>
-            </article>
+            </article> -->
         </section>        
     </main>        
     <%- include('./parcial/footer.ejs') %>
