@@ -7,6 +7,7 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 /* const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 
 const controlador ={ //IMPORTANTE
+    //-----------------IDEX DINAMICO-----------------------
     index: (req, res)=>{ //renderisar o mustrar una vista(pagina como antes)
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         /* console.log(products) */

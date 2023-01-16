@@ -10,9 +10,13 @@ const productsControllers = require("../controllers/productsControllers.js")
 // procesa pedido de get. Ahora usamos router en MVC. son tutas 
 /* router.get("/list", mainController.list); */ //EJEMPLO DE PRAMETRO COMPARTIDO
 
+//devolver o mandar un producto a detalle de producto
+router.get("/detail/:id", productsControllers.productDetail);
+
 // procesa pedido de get. Ahora usamos router en MVC. son tutas 
 router.get("/productCart", productsControllers.productCart);
-router.get("/productDetail", productsControllers.productDetail);
+
+
 //router.get("/register", homeController.register);
 router.get("/creationPrduct", productsControllers.creationPrduct);
 router.get("/editProduct", productsControllers.editProduct);
