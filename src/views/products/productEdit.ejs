@@ -11,24 +11,19 @@
     <main>
     <h1>Editar Producto</h1>
     <form action="#" method="post" class="form-edit">
-        <input type="text" name="nombreAuto" placeholder="Indique nombre de vehiculo" required class="form-input">
-        <input type="text" name="fechAauto" placeholder="Indique su nombre" required class="form-input">
-        <p>Indique el modelo</p>
+        <label>Nombre de vehiculo</label>
+        <input type="text" name="NombreAuto" value="<%= producto.name %>" required class="form-input">
+        <label>Precio del vehiculo</label>
+        <input type="text" name="precioAuto" value="<%= producto.price %>" required class="form-input">
+        <label>Color del vehiculo</label>
+        <input type="text" name="precioAuto" value="<%= producto.colors %>" required class="form-input">
+        <label>Categoria</label>
         <select class="form-input"> 
-            <option value="1">torino 1</option> 
-            <option value="2">torino 2</option> 
-            <option value="3">torino 3</option> 
-            <option value="4">torino 4</option> 
-            <option value="5">torino 5</option> 
+            <option value="visited">Vistos</option> 
+            <option value="in-sale" >Oferta</option> 
         </select>
-        <input type="text" name="precioAuto" placeholder="Precio" required class="form-input">
-        <p>Tipo de vehiculo</p>
-        <select class="form-input"> 
-            <option value="1">Camioneta</option> 
-            <option value="2">Auto</option> 
-            <option value="3">Furgon</option>  
-        </select>
-        <textarea name="decripcionAuto" placeholder="Breve descripción"></textarea>
+        <label>descripción</label>
+        <textarea name="decripcionAuto"><%= producto.description %></textarea>
         
         <div class="SubirImagen">
             <label for="productImage" class="form-label">Imagen del producto:</label>

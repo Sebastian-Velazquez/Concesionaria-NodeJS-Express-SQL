@@ -23,8 +23,8 @@
             </ul>
         </div>
         <a href="/products/list" class="action-button edit">LISTA DE TODOS LOS PRODUCTOS</a>
-        <a href="/product/edit/<%= producto.id %>" class="action-button edit">COMPRAR</a>
-        <a href="/product/edit/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+        <a href="/products/edit/<%= producto.id %>" class="action-button edit">COMPRAR</a>
+        <a href="/products/edit/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
         <form action="/product/delete/<%= producto.id %>?_method=DELETE" method="POST" >
             <button type="submit" class="form-button">ELIMINAR</button>
         </form>
