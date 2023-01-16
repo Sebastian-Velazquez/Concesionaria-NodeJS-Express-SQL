@@ -18,7 +18,7 @@ router.get("/list", productsControllers.list);
 //CREAR
 //EDITAR
 router.get("/edit/:id/", productsControllers.edit);
-/* router.put("/edit/:id/", productsControllers.processEdit); */
+router.put("/edit/:id/", productsControllers.processEdit);
 //EMILINAR
 
 

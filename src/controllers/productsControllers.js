@@ -51,6 +51,35 @@ const controlador ={ //IMPORTANTE
         //Listo para mandar a .ejs//se pone el nombre del ejs entre ''.
         res.render('./products/productEdit',{producto:productFiltrado,});
     },   
+    processEdit:(req, res)=>{
+        //llamamos a todos lo datos
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        let id = req.params.id; 
+        let productoIdBody = products.find(producto=>{
+            return producto.id == id;
+        })
+    
+        let productoEditado ={
+        id: productoIdBody.id,
+        name: req.body.name,
+        price: req.body.price,
+        category: req.body.category,
+        description: req.body.description,
+        image: "JeepWillys.jpg",
+        colors: req.body.colors
+        }
+        // MOdificar el array en el Id que esta posicionado - 
+        let indice = products.findIndex(producto =>{
+            return producto.id == id;
+        })
+        //en products donde se encontro el indice se va a reemplazar por el producto editado en la pagina ejs req.body
+        products[indice] = productoEditado
+        //Grabamos en la BD
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null," "));//
+        // la barra es porque vamos a una direccion que es la de lista de productos -- controller list
+        res.redirect("/products/list")
+    },
 }
 
         //exportamos el objeto literal con sus metodos

@@ -10,20 +10,21 @@
     <!-- ----------------------MAIN------------------------------->
     <main>
     <h1>Editar Producto</h1>
-    <form action="#" method="post" class="form-edit">
+    <!-- <form action="#" method="post" > -->
+    <form action="/products/edit/<%= producto.id %>?_method=PUT" method="POST"  class="form-edit">
         <label>Nombre de vehiculo</label>
-        <input type="text" name="NombreAuto" value="<%= producto.name %>" required class="form-input">
+        <input type="text" id="name" name="name" value="<%= producto.name %>"  class="form-input">
         <label>Precio del vehiculo</label>
-        <input type="text" name="precioAuto" value="<%= producto.price %>" required class="form-input">
+        <input type="text" id="price" name="price" value="<%= producto.price %>"  class="form-input">
         <label>Color del vehiculo</label>
-        <input type="text" name="precioAuto" value="<%= producto.colors %>" required class="form-input">
+        <input type="text" id="colors" name="colors" value="<%= producto.colors %>"  class="form-input">
         <label>Categoria</label>
-        <select class="form-input"> 
+        <select class="form-input" id="category" name="category"> 
             <option value="visited">Vistos</option> 
             <option value="in-sale" >Oferta</option> 
         </select>
         <label>descripción</label>
-        <textarea name="decripcionAuto"><%= producto.description %></textarea>
+        <textarea id="description" name="description"><%= producto.description %></textarea>
         
         <div class="SubirImagen">
             <label for="productImage" class="form-label">Imagen del producto:</label>
@@ -32,11 +33,9 @@
         
         <div class="form-button-content">
             <button type="submit" class="form-button">Guardar</button>
-            <button type="submit" class="form-button">Cancelar</button>
         </div>
-        </div>
-
     </form>
+    <button type="submit" class="form-button">Cancelar</button>
 </main>
     <!-- ----------------------FOOTER----------------------------- -->
     <%- include('../parcial/footer.ejs') %>
