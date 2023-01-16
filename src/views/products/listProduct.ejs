@@ -8,9 +8,25 @@
     <!-- ----------------------HEADER------------------------------->
     <%- include('../parcial/header.ejs') %>
     <!-- ----------------------MAIN------------------------------->
-    <main><h1>Lista de Productos</h1>
-    <h2>Productos</h2>
-    <section class="interacciones-main">
+    <main class="main">
+    <h1>Lista de Productos</h1>
+    <section class="content-section">
+        <% listaProductos.forEach(producto => { %>                
+            <a href="/products/detail/<%= producto.id %>">
+                <article class="content-section-article">
+                    <div class="div__img-producto">
+                        <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto" >
+                    </div>
+                    <div class="content-detalle">
+                        <h4>$<%= producto.price %></h4>
+                        <h4><%= producto.colors %></h4>
+                        <h4><b><%= producto.name %></b></h4>
+                    </div>
+                </article>
+            </a>
+            <% }) %>
+    </section>
+    <!-- <section class="interacciones-main">
         <div class="interacciones-input">
             <input type="submit" value="Buscar"><input type="text">
         </div>
@@ -72,7 +88,7 @@
 
     </section> <br> <br> <br> <br> <br>
     
-     
+      -->
 </main>
     <!-- ----------------------FOOTER----------------------------- -->
     <%- include('../parcial/footer.ejs') %>

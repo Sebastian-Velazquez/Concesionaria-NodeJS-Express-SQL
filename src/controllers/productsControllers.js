@@ -11,8 +11,8 @@ const controlador ={ //IMPORTANTE
         return res.render('./products/productCart');
     },
 
-    //-----------------------------OFERTA---------------------------------------
-    // /products/detail
+    //-----------------------------DETALLE DE PRODUCTO---------------------------------------
+    //Ruta: /products/detail
     productDetail:(req, res)=>{
         let id = req.params.id //esto es lo que nos llega por parametro
         
@@ -23,15 +23,20 @@ const controlador ={ //IMPORTANTE
         })
         res.render('./products/productDetail',{producto:productFiltrado});
     },
+    //-------------------------LISTA DE TODOS LOS PRODUCTOS------------
+    //Ruta: /products/list
+    list:(req, res)=>{
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        res.render('./products/listProduct',{'listaProductos':products})//es 'prodct' porque acordate que es el archivo .ejs el que.. antes coincidia.. se cambio para ser mas claros.
+    },
+
     creationPrduct:(req, res)=>{
         return res.render('./products/creationPrduct');
     },
     editProduct:(req, res)=>{
         return res.render('./products/editProduct');
     },
-    listProduct:(req, res)=>{
-        return res.render('./products/listProduct');
-    }
+    
     //para poner datos en una pagina
     /* oferta:(req, res)=>{
             let listaOferta = [
