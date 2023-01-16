@@ -67,5 +67,21 @@
   "description": "El Jeep IKA es un vehículo todoterreno producido por el fabricante argentino Industrias Kaiser Argentina. Lanzado oficialmente en el año 1956 siendo el primer coche motor fabricado oficialmente por IKA.",
   "image": "Bergantin.jpg",
   "colors": "blue"
+ },
+ {
+  "id": 9,
+  "name": "Prueba Carga de Imagen",
+  "price": "12",
+  "category": "visited",
+  "description": "Prueba",
+  "image": "default-image.png"
+ },
+ {
+  "id": 10,
+  "name": "s",
+  "price": "s",
+  "category": "visited",
+  "description": "s",
+  "image": "productImage-1673913438330.jpeg"
  }
 ]

@@ -48,7 +48,7 @@ const controlador ={ //IMPORTANTE
             description: req.body.description,
             image: req.file ? req.file.filename : "default-image.png" //if ternario
         }
-        // Push - 
+        
         products.push(productoNuevo);
         
         //Grabamos en la BD

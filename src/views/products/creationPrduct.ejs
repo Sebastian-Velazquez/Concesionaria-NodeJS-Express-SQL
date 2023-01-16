@@ -11,7 +11,7 @@
     <main>
         <h1 class= "titulo_creacion_producto">Creación de Producto</h1>
         <article class="creacion_producto_main_1">
-            <form action="/products/create" method="POST"  class="form-edit">
+            <form action="/products/create" method="POST" enctype="multipart/form-data" class="form-edit">
                 <label>Nombre de vehiculo</label>
                 <input type="text" id="name" name="name"   class="form-input">
                 <label>Precio del vehiculo</label>
@@ -28,7 +28,7 @@
                 
                 <div class="SubirImagen">
                     <label for="productImage" class="form-label">Imagen del producto:</label>
-                    <input type="file" id="productImage" name="editedProductImage">
+                    <input type="file" id="productImage" name="productImage">
                 </div>
                 <div class="form-button-content">
                     <button type="submit" class="form-button">Guardar</button>
