@@ -22,14 +22,12 @@ router.post("/create", productsControllers.processCreate);
 router.get("/edit/:id/", productsControllers.edit);
 router.put("/edit/:id/", productsControllers.processEdit);
 //EMILINAR
+router.delete("/delete/:id/", productsControllers.delete);
 
 
-// procesa pedido de get. Ahora usamos router en MVC. son tutas 
+
 router.get("/productCart", productsControllers.productCart);
-//router.get("/register", homeController.register);
-//router.get("/creationPrduct", productsControllers.creationPrduct);
-/* router.get("/editProduct", productsControllers.editProduct); */
-//router.get("/listProduct", productsControllers.listProduct);
+
 
 /* router.get("/ofertas", homeController.oferta); */
 

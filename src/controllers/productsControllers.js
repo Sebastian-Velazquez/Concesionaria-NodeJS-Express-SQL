@@ -7,7 +7,7 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 /* const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 
 const controlador ={ //IMPORTANTE
-    productCart:(req, res)=>{
+    productCart:(req, res)=>{//Carrito
         return res.render('./products/productCart');
     },
 
@@ -101,6 +101,18 @@ const controlador ={ //IMPORTANTE
         // la barra es porque vamos a una direccion que es la de lista de productos -- controller list
         res.redirect("/products/list")
     },
+    //*****************ELIMINAR PRODUCTO************
+    delete:(req, res)=>{
+        let id = req.params.id //esto es lo que nos llega por parametro
+        
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        //Retorna todos los id menos el que esta en la condicion
+        let productFiltrado = products.filter(producto=>{
+            return producto.id != id;
+        });
+        fs.writeFileSync(productsFilePath, JSON.stringify(productFiltrado, null," "));
+        res.redirect("/products/list")
+    }
 }
 
         //exportamos el objeto literal con sus metodos

@@ -23,7 +23,7 @@
         <a href="/products/edit/<%= producto.id %>" class="action-button edit">COMPRAR</a>
         <a href="/products/edit/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
         <a href="/products/create" class="action-button edit">CREAR NUEVA PUBLICACION</a>
-        <form action="/product/create/<%= producto.id %>?_method=DELETE" method="POST" >
+        <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" >
             <button type="submit" class="form-button">ELIMINAR</button>
         </form>
         
