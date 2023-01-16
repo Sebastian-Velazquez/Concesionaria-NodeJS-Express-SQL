@@ -16,6 +16,8 @@ router.get("/list", productsControllers.list);
 
 //********************GRUD*********************/
 //CREAR
+router.get("/create", productsControllers.create);
+router.post("/create", productsControllers.processCreate);
 //EDITAR
 router.get("/edit/:id/", productsControllers.edit);
 router.put("/edit/:id/", productsControllers.processEdit);
@@ -25,7 +27,7 @@ router.put("/edit/:id/", productsControllers.processEdit);
 // procesa pedido de get. Ahora usamos router en MVC. son tutas 
 router.get("/productCart", productsControllers.productCart);
 //router.get("/register", homeController.register);
-router.get("/creationPrduct", productsControllers.creationPrduct);
+//router.get("/creationPrduct", productsControllers.creationPrduct);
 /* router.get("/editProduct", productsControllers.editProduct); */
 //router.get("/listProduct", productsControllers.listProduct);
 

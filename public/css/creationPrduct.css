@@ -1,48 +1,17 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
-
-.titulo_creacion_producto{
+h1{
     text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    padding: 15px 0;
 }
-.creacion_producto_main_1{
-    text-align: center;
-                      }
-.name_product{
-    margin-top: 15px;
-    margin-bottom: 5px;}
-.model{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-.color{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-.detalle_producto{
-    margin-top: 5px;
-    margin-bottom: 30px;
-}
-.creacion_producto_main_2{
+/* ----------------form------------------------------ */
+.form-edit{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly
+    flex-direction: column;
+    align-content: center;
 }
-.cargar_imagen{
-    border: solid 1px black;
-    padding: 0.5px;
-    margin: 90px;
-    background-color: gray
-}
-.img_x_cargar{
-    border: solid 1px black;
-    padding: 40px 80px;
-    margin: 10px;
-    background-color: white;
-}
-
 /* ----------------boton------------------------------ */
 .form-button{
     /* display: flex;
@@ -57,4 +26,16 @@
 .form-button:hover{
     border: solid 2px rgb(255, 255, 255);
     border-radius: 5px;
+}
+.form-input{
+    padding: 8px 0;
+    margin-bottom: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 95%;
+}
+@media screen and (min-width:700px){
+    .form-input{
+        width: 70%;
+    }
 }

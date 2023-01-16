@@ -13,19 +13,17 @@
                 <img src="/img/products/<%= producto.image %>" alt="imagenAuto" class="img">
             </div>
             <ul class="listaDeDetalle">
+                <li class="listaDeDetalle-li"><%= producto.name %></li>
                 <li class="listaDeDetalle-li">$<%= producto.price %></li>
                 <li class="listaDeDetalle-li"><%= producto.colors %></li>
-                <li class="listaDeDetalle-li">Modelo</li>
-                <li class="listaDeDetalle-li">Marca</li>
-                <li class="listaDeDetalle-li">Tipo: camioneta</li>
-                <li class="listaDeDetalle-li">Fabricante</li>
-                <li class="listaDeDetalle-li">Condición: Nuevo</li>
+                <li class="listaDeDetalle-li"><%= producto.description %> </li>
             </ul>
         </div>
         <a href="/products/list" class="action-button edit">LISTA DE TODOS LOS PRODUCTOS</a>
         <a href="/products/edit/<%= producto.id %>" class="action-button edit">COMPRAR</a>
         <a href="/products/edit/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
-        <form action="/product/delete/<%= producto.id %>?_method=DELETE" method="POST" >
+        <a href="/products/create" class="action-button edit">CREAR NUEVA PUBLICACION</a>
+        <form action="/product/create/<%= producto.id %>?_method=DELETE" method="POST" >
             <button type="submit" class="form-button">ELIMINAR</button>
         </form>
         

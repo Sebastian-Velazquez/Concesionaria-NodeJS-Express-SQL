@@ -11,25 +11,30 @@
     <main>
         <h1 class= "titulo_creacion_producto">Creación de Producto</h1>
         <article class="creacion_producto_main_1">
-        <form>
-            <label>Nombre del Producto </label>
-            <input class="name_product" type="text">
-            <label>Modelo</label>
-            <input class="model" type="text">
-            <label>Color</label>
-            <input class="color" type="text">
-            <label>Detalle del producto</label>
-            <input class="detalle_producto" type="text">
-        </form>
-    </article>
-    <div class="SubirImagen">
-        <label for="productImage" class="form-label">Imagen del producto:</label>
-        <input type="file" id="productImage" name="editedProductImage">
-    </div>
-    <div class="form-button-content">
-        <button type="submit" class="form-button">Guardar</button>
-        <button type="submit" class="form-button">Cancelar</button>
-    </div>
+            <form action="/products/create" method="POST"  class="form-edit">
+                <label>Nombre de vehiculo</label>
+                <input type="text" id="name" name="name"   class="form-input">
+                <label>Precio del vehiculo</label>
+                <input type="text" id="price" name="price"   class="form-input">
+                <label>Color del vehiculo</label>
+                <input type="text" id="colors" name="colors" class="form-input">
+                <label>Categoria</label>
+                <select class="form-input" id="category" name="category"> 
+                    <option value="visited">Vistos</option> 
+                    <option value="in-sale" >Oferta</option> 
+                </select>
+                <label>descripción</label>
+                <textarea id="description" name="description"></textarea>
+                
+                <div class="SubirImagen">
+                    <label for="productImage" class="form-label">Imagen del producto:</label>
+                    <input type="file" id="productImage" name="editedProductImage">
+                </div>
+                <div class="form-button-content">
+                    <button type="submit" class="form-button">Guardar</button>
+                    <button type="submit" class="form-button">Cancelar</button>
+                </div>
+            </form>
     </main>
     <!-- ----------------------FOOTER----------------------------- -->
     <%- include('../parcial/footer.ejs') %>

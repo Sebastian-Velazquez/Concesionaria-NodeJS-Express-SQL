@@ -32,8 +32,29 @@ const controlador ={ //IMPORTANTE
         res.render('./products/listProduct',{'listaProductos':products})//es 'prodct' porque acordate que es el archivo .ejs el que.. antes coincidia.. se cambio para ser mas claros.
     },
     //*****************CREAR PRDUCTO************
-    creationPrduct:(req, res)=>{
+    create:(req, res)=>{
         return res.render('./products/creationPrduct');
+    },
+    processCreate:(req, res)=>{
+        //llamamos a todos lo datos
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        let productoNuevo ={
+            id: products.length + 1, //revisa el ultimo en la BD y le suma 1. para no pisar los ID que son valores unicios y secuencial
+            name: req.body.name,
+            price: req.body.price,
+            discount: req.body.discount,
+            category: req.body.category,
+            description: req.body.description,
+            image: req.file ? req.file.filename : "default-image.png" //if ternario
+        }
+        // Push - 
+        products.push(productoNuevo);
+        
+        //Grabamos en la BD
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null," "));//??
+        // la barra es porque vamos a una direccion que es la de lista de productos -- controller list
+        res.redirect("/products/list")//se hace un nuevo pedido al servidor y se va o nos refresca en la patalla una vez guardado el lista de producto controlloer list
     },
 
 
