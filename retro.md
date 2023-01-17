@@ -13,3 +13,8 @@ Se termino todo el HTML, falta retocar el CSS, y mejorar la paleta de colores. L
 Se cumplio todo en tiempo y forma, mejorando día a día.
 
 Por anunciar.
+
+---Sprint 4
+    1. Definir los campos necesarios para los productos y generar archivo JSON
+    Terminado BD en JSON para los productos. Tiene como campoa id, name, price,
+    category, description, image, colors.
