@@ -87,7 +87,7 @@ const controlador ={ //IMPORTANTE
         price: req.body.price,
         category: req.body.category,
         description: req.body.description,
-        image: "JeepWillys.jpg",
+        image: req.file ? req.file.filename : productoIdBody.image,
         colors: req.body.colors
         }
         // MOdificar el array en el Id que esta posicionado - 
