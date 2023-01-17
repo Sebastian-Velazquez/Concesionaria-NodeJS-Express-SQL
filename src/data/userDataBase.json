@@ -4,7 +4,7 @@
   "lastName": "acowdry0@sina.com.cn",
   "email": "acowdry0@dailymail.co.uk",
   "password": "dCLCPY7pcE",
-  "category": "client",
+  "category": "customer",
   "image": "Alford Cowdry"
 }, {
   "id": 2,
@@ -28,7 +28,7 @@
   "lastName": "sernke3@geocities.jp",
   "email": "sernke3@netvibes.com",
   "password": "cjg41nJ",
-  "category": "client",
+  "category": "customer",
   "image": "Sayers Ernke"
 }, {
   "id": 5,
@@ -44,7 +44,7 @@
   "lastName": "dwooff5@1und1.de",
   "email": "dwooff5@wunderground.com",
   "password": "P9RBs1",
-  "category": "client",
+  "category": "customer",
   "image": "Duane Wooff"
 }, {
   "id": 7,
@@ -52,7 +52,7 @@
   "lastName": "sixor6@google.ca",
   "email": "sixor6@hhs.gov",
   "password": "AurNDHu0QqY8",
-  "category": "client",
+  "category": "customer",
   "image": "Shannan Ixor"
 }, {
   "id": 8,
@@ -68,7 +68,7 @@
   "lastName": "lbarok8@ucsd.edu",
   "email": "lbarok8@liveinternet.ru",
   "password": "h6msQ6",
-  "category": "client",
+  "category": "customer",
   "image": "Lucias Barok"
 }, {
   "id": 10,
@@ -76,7 +76,7 @@
   "lastName": "gvanini9@google.co.uk",
   "email": "gvanini9@hubpages.com",
   "password": "1yjbJ7VT8Z",
-  "category": "client",
+  "category": "customer",
   "image": "Gasparo Vanini"
 }, {
   "id": 11,
@@ -92,7 +92,7 @@
   "lastName": "rjackwaysb@1688.com",
   "email": "rjackwaysb@spiegel.de",
   "password": "WtTBE3",
-  "category": "client",
+  "category": "customer",
   "image": "Rabbi Jackways"
 }, {
   "id": 13,
@@ -108,7 +108,7 @@
   "lastName": "rfrancomd@wp.com",
   "email": "rfrancomd@reverbnation.com",
   "password": "lmFGCKLIC",
-  "category": "client",
+  "category": "customer",
   "image": "Rourke Francom"
 }, {
   "id": 15,
@@ -124,7 +124,7 @@
   "lastName": "smattesf@delicious.com",
   "email": "smattesf@opera.com",
   "password": "6KJxaz9",
-  "category": "client",
+  "category": "customer",
   "image": "Seamus Mattes"
 }, {
   "id": 17,
@@ -132,7 +132,7 @@
   "lastName": "mseemang@seattletimes.com",
   "email": "mseemang@about.me",
   "password": "QPGGO3x6",
-  "category": "client",
+  "category": "customer",
   "image": "Malvin Seeman"
 }, {
   "id": 18,

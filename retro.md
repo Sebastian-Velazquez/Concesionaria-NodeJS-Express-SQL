@@ -16,5 +16,8 @@ Por anunciar.
 
 ---Sprint 4
     1. Definir los campos necesarios para los productos y generar archivo JSON
-    Terminado BD en JSON para los productos. Tiene como campoa id, name, price,
-    category, description, image, colors.
+        Terminado DB en JSON para los productos. 
+
+    2. Definir los campos necesarios para los usuarios generar archivo JSON.
+        Termiando DB en JSON para los usuarios. 
+    3. CRUD de productos. Terminado
