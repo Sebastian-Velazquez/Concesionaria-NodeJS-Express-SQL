@@ -24,7 +24,7 @@ main{
     font-size: 15px;
 }
 .form-input:hover{
-    border: solid 1px rgb(255, 255, 255);
+    border: solid 2px rgb(255, 255, 255);
 }
 /* ---------------------------------------------- */
 h2{
