@@ -89,6 +89,9 @@ header{
     }
     .navBar-lista{
     padding: 0 7px;
+    border-bottom: solid white 1px;
+    border-left: solid white 1px;
+    border-right: solid white 1px;
     }
     .navBar-lista:hover{
     border-bottom: solid orange 1px;
