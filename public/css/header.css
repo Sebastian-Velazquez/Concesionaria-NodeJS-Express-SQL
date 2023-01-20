@@ -41,7 +41,7 @@ header{
 #headerTop{
     display: flex;
     flex-wrap: wrap;
-    padding: 1rem 0 1rem 0;
+    padding: 5px 0;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
