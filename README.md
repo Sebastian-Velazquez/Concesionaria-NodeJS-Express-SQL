@@ -16,6 +16,8 @@ Amantes de la nostalgia y el automovilismo nacional argentino.
 
 ### Franco Sanchez: tengo 26 años, mi objetivo es aprender y ejercer sobre el mundo de la programacion, tengo un negocio familiar "almacen".
 
+### Marco Mamani: tengo 31 años, mi objetivo es comenzar en el mundo digital, no solo para subirme al tren del cambio en lo que a trabajo futuro refiere sino a un cambio integral en mi estilo de vida. Actualmente tengo formación en Contador Publico Nacional, carrera que aun no finalizo y trabajo de Analista Contable a tiempo completo en una Agroaceitunera.
+
 ### Mauro Sanchez: mi edad es 28. Vengo con ganas de unirme, solucionar problemas y aprender lo maximo en el mundo de la programacion. 
 
 ##  Listado de  referentes:
