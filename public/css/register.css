@@ -20,7 +20,6 @@ main{
    /*  border: solid 1px blue; */
 }
 .form-input::placeholder{
-    color: rgb(136, 136, 5);
     font-size: 15px;
 }
 .form-input:hover{
