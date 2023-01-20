@@ -1,4 +1,14 @@
 @import url(normalize.css);
+.img-banner{
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    width: 100%;
+}
+.content-banner{
+    height: 233px;
+    width: 100%;
+}
 .figure-logo{
     display: flex;
     flex-direction: row;
