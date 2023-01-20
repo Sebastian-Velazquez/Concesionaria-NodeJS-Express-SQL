@@ -1,7 +1,20 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
-
+.image-decription__name{
+  font-size: 25px;
+  font-family: fangsong;
+}
+.image-decription__colors{
+  font-size: 10px;
+  font-size: 19px;
+  font-family: fangsong;
+}
+.image-decription__precio{
+  font-size: 30px;
+  color: green;
+  font-family: fangsong;
+}
 .waves {
     position:relative;
     width: 100%;
