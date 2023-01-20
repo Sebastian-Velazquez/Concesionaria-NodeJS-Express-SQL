@@ -1,23 +1,5 @@
 @import url(normalize.css);
 
-.logo{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.logoIKA{
-    display: flex;
-    justify-content: flex-start;
-    width: 15%;
-    height: 20%;
-}
-
-.logoRenault{
-    display: flex;
-    justify-content: flex-end;
-    width: 15%;
-    height: 20%;
-}
 
 /* .logoMain{
     width: 15%;
@@ -81,6 +63,21 @@ header{
 
 /* Media Tablet */
 @media screen and (min-width:700px){
+    
+    .logoIKA{
+        display: flex;
+        justify-content: flex-start;
+        width: 15%;
+        height: 20%;
+    }
+    
+    .logoRenault{
+        display: flex;
+        justify-content: flex-start;
+        width: 15%;
+        height: 20%;
+    }
+    
     .burger-menu{
         display: none;
     }
