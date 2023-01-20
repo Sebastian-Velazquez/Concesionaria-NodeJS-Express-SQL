@@ -4,7 +4,7 @@
 footer{
     display: flex;
     flex-wrap:wrap;
-    background-color: white;
+    background-color: rgb(28, 13, 117);
     /* background-color: #4584AF; */
    /*  border: solid 2px #000; */
     /* padding: 5px 0; */
@@ -82,10 +82,26 @@ h5{
     width: 95%;
 }
 @media screen and (min-width:700px){
+    .content-mapa{
+        width: 40%;
+        text-align: center;
+    }
+    .conten-contactos{
+        display: flex;
+    }
     .mapa{
-        height: 250px;
-        width: 250px;
+        height: 100%;
+        width: 100%;
 
     } 
+    
+    footer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    a{
+        text-align: center;
+    }
 }
-

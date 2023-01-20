@@ -4,6 +4,9 @@
 h1{
     text-align: center;
     padding: 15px 0;
+    color: maroon;
+    font-family: monospace;
+    font-size: -webkit-xxx-large;
 }
 /* ----------------form------------------------------ */
 .form-edit{

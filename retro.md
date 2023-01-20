@@ -21,3 +21,15 @@ Por anunciar.
     2. Definir los campos necesarios para los usuarios generar archivo JSON.
         Termiando DB en JSON para los usuarios. 
     3. CRUD de productos. Terminado
+
+    Rutas:
+    http://localhost:3000/ --> index.ejs
+
+    http://localhost:3000/user -->
+
+    http://localhost:3000/products/detail/:id 
+    http://localhost:3000/products/detail/list
+    http://localhost:3000/products/create
+    http://localhost:3000/products/edit/:id
+    http://localhost:3000/products/edit/productCart
+   
