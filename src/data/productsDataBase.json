@@ -3,7 +3,7 @@
   "id": 1,
   "name": "Bergantin",
   "price": "2.400.000.-",
-  "category": "visited",
+  "category": "in-sale",
   "description": "Motor: IKA Continental 6L 226\r\n\r\nCiclo: 4 tiempos, árbol de levas lateral, válvulas laterales\r\n\r\nCilindrada: 3.707cc\r\n\r\nNúmero de Cilindros: 6\r\n\r\nPotencia: 115 CV\r\n\r\nTracción: Trasera\r\n\r\nCombustible: Nafta especial\r\n\r\nCarburador: Carter WCD 2807 S\r\n\r\nTransmisión: 3 velocidades (palanca al volante)\r\n\r\nTanque de nafta: 45 litros\r\n\r\nGenerador Eléctrico: Dínamo 12V, 25A.\r\n\r\nVelocidad Máxima: 165 km/h",
   "image": "productImage-1674165455950.jpg",
   "colors": "Blue"
@@ -21,7 +21,7 @@
   "id": 3,
   "name": "Dauphine",
   "price": "100",
-  "category": "visited",
+  "category": "in-sale",
   "description": "El Jeep IKA es un vehículo todoterreno producido por el fabricante argentino Industrias Kaiser Argentina. Lanzado oficialmente en el año 1956 siendo el primer coche motor fabricado oficialmente por IKA.",
   "image": "productImage-1674165507843.jpg",
   "colors": "red"
