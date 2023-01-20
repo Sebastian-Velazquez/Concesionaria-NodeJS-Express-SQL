@@ -1,4 +1,7 @@
 @import url(normalize.css);
+<<<<<<< HEAD
+
+=======
 .img-banner{
     object-fit: cover;
     object-position: top;
@@ -34,6 +37,7 @@
     width: 15%;
     height: 20%;
 }
+>>>>>>> 3adb87ec6f33a98721dde82ae124c78192e85fab
 
 /* .logoMain{
     width: 15%;
@@ -98,6 +102,23 @@ header{
 
 /* Media Tablet */
 @media screen and (min-width:700px){
+<<<<<<< HEAD
+    
+    .logoIKA{
+        display: flex;
+        justify-content: flex-start;
+        width: 15%;
+        height: 20%;
+    }
+    
+    .logoRenault{
+        display: flex;
+        justify-content: flex-start;
+        width: 15%;
+        height: 20%;
+    }
+    
+=======
     #headerTop{
     display: flex;
     flex-wrap: wrap;
@@ -111,6 +132,7 @@ header{
         width: 300px;
         
     }
+>>>>>>> 3adb87ec6f33a98721dde82ae124c78192e85fab
     .burger-menu{
         display: none;
     }
