@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer")
 const path = require("path");//para multer
+const { productCart } = require("../controllers/productsControllers.js");
 
 //***********Multer****************
 const storage = multer.diskStorage({
@@ -24,6 +25,7 @@ const productsControllers = require("../controllers/productsControllers.js")
 router.get("/detail/:id", productsControllers.productDetail);
 //Lista de todos los productos
 router.get("/list", productsControllers.list);
+
 //********************GRUD*********************/
 //CREAR
 router.get("/create", productsControllers.create);

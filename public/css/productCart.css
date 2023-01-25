@@ -52,13 +52,15 @@
     margin: 10px 80px 8px 80px;;
     text-align: center;
     border: solid 1px black;
-    border-radius: 40%;
+    border-radius: 50%;
 }
 .COMPRAR:active{ 
     background-color: gold;
 }
+
 .ultimo_articulo{
-    border: solid 4px black;
+    border: solid 2px gray;
+    border-radius: 2%;
     background-color: rgb(255, 255, 255, 0.5);
     margin: 20px;
     padding-top: 5px;
