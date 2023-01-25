@@ -59,19 +59,18 @@
 }
 
 .ultimo_articulo{
-    border: solid 2px gray;
-    border-radius: 2%;
-    background-color: rgb(255, 255, 255, 0.5);
+    
     margin: 20px;
     padding-top: 5px;
     padding-left: 5px;
     }
 .DESCUENTO{
-    border: solid 4px black;
-    background-color: #4DA9E8;
+    border: solid 2px black;
+    border-radius: 1%;
+    background-color: rgb(28, 13, 117);
     text-align: end;
     margin: 15px 5px 10px 300px;
-    padding-top: 10px;  
+    padding: 40px;  
 }
 .X-V{
     display: flex;
