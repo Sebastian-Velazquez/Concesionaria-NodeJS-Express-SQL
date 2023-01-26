@@ -44,18 +44,20 @@
 }
 
 .precio{
-        padding: 10px 40px 0px 40px;
-        text-align: center;  
+    font-size: 30px;
+    color: green;
+    font-family: fangsong;
+    text-align: center;
 }
 
 .COMPRAR{
     margin: 10px 80px 8px 80px;;
     text-align: center;
     border: solid 1px black;
-    border-radius: 50%;
+    
 }
 .COMPRAR:active{ 
-    background-color: gold;
+    background-color: rgb(75, 18, 18);
 }
 
 .ultimo_articulo{
