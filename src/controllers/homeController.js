@@ -11,17 +11,17 @@ const controlador ={ //IMPORTANTE
     index: (req, res)=>{ //renderisar o mustrar una vista(pagina como antes)
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         /* console.log(products) */
-        let productosVisitados = products.filter( producto => { //filtro en el main
-            return producto.category == "visited"
+        let productosSedan = products.filter( producto => { //filtro en el main
+            return producto.category == "sedan"
         });
 
-        let productosEnOferta = products.filter( producto => { //filtro en el main
-            return producto.category == "in-sale"
+        let productosCoupe = products.filter( producto => { //filtro en el main
+            return producto.category == "coupe"
 
         });
         res.render("index",{
-            productosVisitados: productosVisitados, //No es necesario el mismo nombre.. Para ejs se usa la izquierda
-            productosEnOferta: productosEnOferta}); 
+            productosSedan: productosSedan, //No es necesario el mismo nombre.. Para ejs se usa la izquierda
+            productosCoupe: productosCoupe}); 
     }
 }
 

@@ -5,11 +5,13 @@ const router = express.Router();
 //const path = require("path");//para multer
 const { productCart } = require("../controllers/productsControllers.js");
 
-//Middleware
-const upload = require("../middlewares/multerMiddleware");
-
 // llamamos a la ruta de controlador
 const productsControllers = require("../controllers/productsControllers.js")
+
+//Middleware
+const upload = require("../middlewares/multerMiddleware");
+const validations = require("../middlewares/productsRouter/validationsMiddleware")
+
 
 
 //devolver o mandar un producto a detalle de producto
@@ -20,10 +22,10 @@ router.get("/list", productsControllers.list);
 //********************GRUD*********************/
 //CREAR
 router.get("/create", productsControllers.create);
-router.post("/create", upload.single("productImage"), productsControllers.processCreate);
+router.post("/create", upload.single("productImage"), validations, productsControllers.processCreate);
 //EDITAR
 router.get("/edit/:id/", productsControllers.edit);
-router.put("/edit/:id/", upload.single("productImage"), productsControllers.processEdit);
+router.put("/edit/:id/", upload.single("productImage"),validations, productsControllers.processEdit);
 //EMILINAR
 router.delete("/delete/:id/", productsControllers.delete);
 //********************GRUD*********************/

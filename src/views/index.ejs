@@ -10,9 +10,9 @@
     <%- include('./parcial/header.ejs') %>
 
         <main class="main">
-            <h2>Ofertas de la semana</h2>
+            <h2>Autos Sedan</h2>
             <section class="content-section">
-                <% productosEnOferta.forEach(producto=> { %>
+                <% productosSedan.forEach(producto=> { %>
                     <a href="/products/detail/<%= producto.id %>">
                         <article class="content-section-article">
                             <div class="div__img-producto">
@@ -28,9 +28,9 @@
                     <% }) %>
             </section>
 
-            <h2>Productos destacados</h2>
+            <h2>Autos Coupe</h2>
             <section class="content-section">
-                <% productosVisitados.forEach(producto=> { %>
+                <% productosCoupe.forEach(producto=> { %>
                     <a href="/products/detail/<%= producto.id %>">
                         <article class="content-section-article">
                             <div class="div__img-producto">
