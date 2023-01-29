@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path'); 
 
+
+//models
+const User = require('../models/productModels')
+
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');

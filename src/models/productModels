@@ -1,0 +1,16 @@
+const fs = require('fs');
+const path = require('path'); 
+
+//const { subscribe } = require('../routes/productsRouter');
+
+const productModels = {
+     //ubucacion de la base de datos-
+    fileName: path.join(__dirname, '../data/productsDataBase.json'),
+     //llamo a la DB y lo convierto en array para poder usarlo
+    getData: function(){
+        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+    },
+     findAll: function(){ //lo mismo que getData. Puede que se use para poder editar la DB sin tocar el getData
+        return this.getData();
+    }
+}

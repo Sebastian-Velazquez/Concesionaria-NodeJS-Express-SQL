@@ -60,5 +60,13 @@
   "category": "visited",
   "description": "",
   "image": "default-image.png"
+ },
+ {
+  "id": 8,
+  "name": "",
+  "price": "",
+  "category": "visited",
+  "description": "",
+  "image": "default-image.png"
  }
 ]
