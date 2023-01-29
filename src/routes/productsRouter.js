@@ -5,10 +5,6 @@ const router = express.Router();
 //const path = require("path");//para multer
 const { productCart } = require("../controllers/productsControllers.js");
 
-
-//Middleware
-const upload = require("../middlewares/multerMiddleware");
-
 // llamamos a la ruta de controlador
 const productsControllers = require("../controllers/productsControllers.js")
 
