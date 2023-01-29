@@ -22,6 +22,10 @@ Por anunciar.
         Termiando DB en JSON para los usuarios. 
     3. CRUD de productos. Terminado
 
+
+--Sprint 5
+
+ Ideas para mejoras, agregarle en el formulario de crear y editar producto, una seccion que pongas el %(porcentaje) de descuento y te haga el calculo sobre el precio.
     Rutas:
     http://localhost:3000/ --> index.ejs
 
