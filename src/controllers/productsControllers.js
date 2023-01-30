@@ -53,6 +53,7 @@ const controlador ={ //IMPORTANTE
         let productoNuevo ={
             name: req.body.name,
             price: req.body.price,
+            colors: req.body.colors,
             discount: req.body.discount,
             category: req.body.category,
             description: req.body.description,

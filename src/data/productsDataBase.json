@@ -36,11 +36,20 @@
   "colors": "blue"
  },
  {
-  "id": 7,
-  "name": "das",
-  "price": "123",
+  "id": 6,
+  "name": "eqwe",
+  "price": "1000000",
   "category": "visited",
   "description": "",
-  "image": "image-1675054461017.jpg"
+  "image": "image-1675089496568.jpg"
+ },
+ {
+  "id": 7,
+  "name": "Auto Viejo",
+  "price": "1000",
+  "category": "sedan",
+  "description": "cualquier cosa. Es solo prueba",
+  "image": "image-1675089645803.png",
+  "colors": "Rojo"
  }
 ]
