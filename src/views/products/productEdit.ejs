@@ -30,8 +30,8 @@
                 <% } %>
 
         <label>Color del vehiculo</label>
-        <input type="text" id="colors" name="colors" value="<%= producto.colors %>"  class="form-input"
-        value="<%= locals.oldData ? oldData.colors : null %>">
+        <input type="text" id="colors" name="colors" value="<%= producto.colors %>" class="form-input"
+                value="<%= locals.oldData ? oldData.colors : null %>">
                 <% if (locals.errors && errors.colors){ %>
                     <p class="alertError"><%= errors.colors.msg %> </p>
                 <% } %>

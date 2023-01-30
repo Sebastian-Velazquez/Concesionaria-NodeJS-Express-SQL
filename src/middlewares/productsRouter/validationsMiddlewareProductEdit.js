@@ -4,7 +4,7 @@ const path = require("path");
 const {body} = require("express-validator");//para validar solo lo que nos pasa el body//Tambien en vez de body podemos usar check()
 
 const validations =[
-    body('name').notEmpty().withMessage('Tienes que escribir el nombre del producto'),  //firstName sale del name de ejs. notEmty es una validacion, valida si el campo esta vacio
+    body('name').notEmpty().withMessage('No puedes dejar el campo vacio'),  //firstName sale del name de ejs. notEmty es una validacion, valida si el campo esta vacio
     body('price').notEmpty().withMessage('Tienes que escribir un precio').bail()
                 .isCurrency().withMessage('Tienes que escribir un numero correcto'),//withMessage: para cambiar el mesaje de error
     body('colors').notEmpty().withMessage('Tienes que escribir un color'),//bail para que cote la ejecicion, en este caso si hay un campo vacio
