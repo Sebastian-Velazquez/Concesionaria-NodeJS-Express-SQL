@@ -1,6 +1,9 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
+.alertError{
+    color:red;
+}
 h1{
     text-align: center;
     padding: 15px 0;

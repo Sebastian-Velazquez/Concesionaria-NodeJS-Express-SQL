@@ -12,12 +12,21 @@
         <h1 class= "titulo_creacion_producto">Creación de Producto</h1>
         <article class="creacion_producto_main_1">
             <form action="/products/create" method="POST" enctype="multipart/form-data" class="form-edit">
+                
                 <label>Nombre de vehiculo</label>
-                <input type="text" id="name" name="name"   class="form-input">
+                <input type="text" id="name" name="name"   class="form-input"
+                value="<%= locals.oldData ? oldData.name : null %>">
+                <% if (locals.errors && errors.name){ %>
+                    <p class="alertError"><%= errors.name.msg %> </p>
+                <% } %>
+
                 <label>Precio del vehiculo</label>
-                <input type="text" id="price" name="price"   class="form-input">
-                <label>Color del vehiculo</label>
-                <input type="text" id="colors" name="colors" class="form-input">
+                <input type="text" id="price" name="price"   class="form-input"
+                value="<%= locals.oldData ? oldData.price : null %>">
+                <% if (locals.errors && errors.price){ %>
+                    <p class="alertError"><%= errors.price.msg %> </p>
+                <% } %>
+
                 <label>Categoria</label>
                 <select class="form-input" id="category" name="category"> 
                     <option value="visited">Sedan</option> 
@@ -25,12 +34,24 @@
                     <option value="in-sale" >camioneta</option> 
                     <option value="in-sale" >4x4</option> 
                 </select>
+                
+                <label>Color del vehiculo</label>
+                <input type="text" id="colors" name="colors" class="form-input"
+                value="<%= locals.oldData ? oldData.colors : null %>">
+                <% if (locals.errors && errors.colors){ %>
+                    <p class="alertError"><%= errors.colors.msg %> </p>
+                <% } %>
+
+                
                 <label>descripción</label>
                 <textarea id="description" name="description"></textarea>
                 
                 <div class="SubirImagen">
                     <label for="productImage" class="form-label">Imagen del producto:</label>
-                    <input type="file" id="productImage" name="productImage">
+                    <input type="file" id="image" name="image">
+                    <% if (locals.errors && errors.image){ %>
+                        <p class="alertError"><%= errors.image.msg %> </p>
+                    <% } %>
                 </div>
                 <div class="form-button-content">
                     <button type="submit" class="form-button">Guardar</button>

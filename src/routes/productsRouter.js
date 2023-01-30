@@ -10,10 +10,8 @@ const productsControllers = require("../controllers/productsControllers.js")
 
 //Middleware
 const upload = require("../middlewares/multerMiddleware");
-const validations = require("../middlewares/productsRouter/validationsMiddleware")
-
-
-
+const validations = require("../middlewares/productsRouter/validationsMiddleware");
+const validationsEdit = require("../middlewares/productsRouter/validationsMiddlewareProductEdit");
 //devolver o mandar un producto a detalle de producto
 router.get("/detail/:id", productsControllers.productDetail);
 //Lista de todos los productos
@@ -22,10 +20,10 @@ router.get("/list", productsControllers.list);
 //********************GRUD*********************/
 //CREAR
 router.get("/create", productsControllers.create);
-router.post("/create", upload.single("productImage"), validations, productsControllers.processCreate);
+router.post("/create", upload.single("image"),validations,  productsControllers.processCreate);
 //EDITAR
 router.get("/edit/:id/", productsControllers.edit);
-router.put("/edit/:id/", upload.single("productImage"),validations, productsControllers.processEdit);
+router.put("/edit/:id/", upload.single("image"),validationsEdit, productsControllers.processEdit);
 //EMILINAR
 router.delete("/delete/:id/", productsControllers.delete);
 //********************GRUD*********************/
