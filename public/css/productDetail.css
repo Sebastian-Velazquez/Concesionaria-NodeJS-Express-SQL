@@ -8,6 +8,7 @@
     flex-wrap: wrap;
     align-content: space-around;
     height: auto;
+    margin-top: 1rem;
 }
 /* ----------------Imagen------------------------------ */
 .conten-img{
