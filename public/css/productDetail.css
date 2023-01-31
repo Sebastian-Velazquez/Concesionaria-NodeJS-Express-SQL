@@ -31,12 +31,17 @@
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
-    background-color: azure;
+    background-color: rgb(61, 81, 209);
 }
 .listaDeDetalle-li{
-    font-size: 15px;
-    padding: 2px 0;
+    font-size: 18px;
+    padding: 5px 0;
+    text-align: end;
+    color: aliceblue;
 }
+
+
+
 /* ----------------boton------------------------------ */
 .form-button{
     display: flex;

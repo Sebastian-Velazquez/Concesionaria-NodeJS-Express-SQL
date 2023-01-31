@@ -27,15 +27,6 @@
   "colors": "red"
  },
  {
-  "id": 5,
-  "name": "",
-  "price": "100",
-  "category": "sedan",
-  "description": "El Jeep IKA es un vehículo todoterreno producido por el fabricante argentino Industrias Kaiser Argentina. Lanzado oficialmente en el año 1956 siendo el primer coche motor fabricado oficialmente por IKA.",
-  "image": "productImage-1674165547221.jpg",
-  "colors": "blue"
- },
- {
   "id": 6,
   "name": "eqwe",
   "price": "1000000",
