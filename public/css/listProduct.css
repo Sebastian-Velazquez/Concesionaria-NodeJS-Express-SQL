@@ -1,6 +1,23 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
+.image-decription__name{
+  font-size: 25px;
+  font-family: fangsong;
+}
+.image-decription__colors{
+  font-size: 10px;
+  font-size: 19px;
+  font-family: fangsong;
+}
+.image-decription__precio{
+  font-size: 30px;
+  color: green;
+  font-family: fangsong;
+}
+
+
+
 
 .content-section{
     display: flex;
@@ -15,6 +32,7 @@
     margin: 15px;   
     width: 90%;
     text-align: center;
+    border: solid 2px #999;
     background-color: rgb(255, 255, 255, 0.5);
     /* padding: 30px; */
     /* border: solid 1px blue; */
@@ -28,16 +46,14 @@ box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
 
 .content-detalle{
     /* background-color: rgb(255, 255, 255); */
-    display: flex;
-    flex-wrap: row;
-    flex-direction: column;
-    width: 300px;
     margin-top: 15px;
     text-align: center;
-
     /* display: none; */
 }
-/* .div__img-producto{ */
+ .div__img-producto{ 
+  height: 150px;
+  width: 250px;
+}
     /* border: solid 1px red; */
 /*     display:block;
     max-width:100%;
@@ -65,61 +81,20 @@ box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
         align-items: stretch;
     }
     .content-section-article{
-        width: 250px;
+        width: 254px;
+        height: 250px;
         border: solid 2px #999;
         background-color: rgb(255, 255, 255, 0.5);
        /*  border: solid 1px red; */
     }
 
-}
 
-
-
-
-
-/* 
-*{
-    box-sizing: border-box;
-    
-} */
-
-/*------------------------ Interacciones de usuario ----------------------------- */
-/* 
-.interacciones-main{
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-}
-.interacciones-input{
-    display: flex;
-    width: 100px;
-    height: 30px;
-
-
-} */
-/*------------------------ Articulos ----------------------------- */
-/* img{
-    width: 400px;
-}
-.content-section{
-    display: flex;
-    justify-content: column;
-    flex-wrap: wrap;
-}
-
-.img{
-    display: flex;
-    align-content: space-around;
-    width: 380px;
-    margin: 15px;
-    border: solid 3px grey;
+    .content {
+      height:30vh;
+    }
+    h1 {
+      font-size:24px;
+    }
+  
 
 }
-.description-article{
-    display: flex;
-    align-content: center;
-    justify-content: space-around;
-    
-    
-} */
-/*------------------------  ----------------------------- */
