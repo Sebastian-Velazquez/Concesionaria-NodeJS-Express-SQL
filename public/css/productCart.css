@@ -81,7 +81,6 @@
 }
 .cruz i{
     border: solid 2px black;
-    border-radius: 45%;
     background-color: red;
     text-align: center;
     padding: 12px;
@@ -91,7 +90,6 @@
 }
 .V i{
     border: solid 2px black;
-    border-radius: 45%;
     background-color: green;
     text-align: center;
     padding: 12px;

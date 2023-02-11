@@ -33,14 +33,5 @@
   "category": "visited",
   "description": "",
   "image": "image-1675089496568.jpg"
- },
- {
-  "id": 7,
-  "name": "Auto Viejo",
-  "price": "1000",
-  "category": "sedan",
-  "description": "cualquier cosa. Es solo prueba",
-  "image": "image-1675089645803.png",
-  "colors": "Rojo"
  }
 ]
