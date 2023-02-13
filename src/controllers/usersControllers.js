@@ -25,23 +25,23 @@ const controlador ={ //IMPORTANTE
         if (userToLogin){
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkThePassword){
-               /*  delete userToLogin.password; 
+                delete userToLogin.password; 
                 req.session.userLogged =  userToLogin
 
-                if(req.body.remember) {
+               /*  if(req.body.remember) {
 					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
 				} */
                 return res.send('logueado') 
             }
-            return res.redirect('/user/login')
-            /* return res.render('login', {
+            //return res.redirect('/user/login')
+            return res.render('./users/login' , {
             errors: {
                 email: {msg:'Las credenciales no son validas'}
             }
-            }) */
+            } )
 
         }
-        return res.render('login', {
+        return res.render('./users/login', {
             errors: {
                 email: {msg:'No se encontro el email en DB'}
             }

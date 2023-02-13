@@ -11,12 +11,15 @@
     <main>
         <div class="container">
         
-                    <h1 class="h1-main">Ingresá a Ika Torino</h1>
+            <h1 class="h1-main">Ingresá a Ika Torino</h1>
+            <% if (locals.errors && errors.email){ %>
+                <p class="alertError"><%= errors.email.msg %> </p>
+            <% } %>
             <form action="/user/login" method="post">
                 <div class="nombre">
                     <label for="nombre" class="descripcion"> Ingrese su Email</label> <br>
                     <input type="email" name="email" class="form-input" placeholder="Indique su email" required > <br>
-
+                     <!-- Validacion de Email -->
                 </div>
                 <div class="clave">
                     <label for="clave" class="descripcion"> Ingrese su password</label> <br>
