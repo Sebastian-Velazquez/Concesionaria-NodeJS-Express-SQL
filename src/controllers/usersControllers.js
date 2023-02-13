@@ -1,6 +1,6 @@
 const bcryptjs = require("bcryptjs");//requiere bcrypt para las password
 const userModels = require('../models/userModels')
-//const {validationResult} = require('express-validator');
+const {validationResult} = require('express-validator');
 
 const controlador ={ //IMPORTANTE
     login:(req, res)=>{
@@ -10,10 +10,21 @@ const controlador ={ //IMPORTANTE
         return res.render('./users/register');
     },
     processRegister:(req,res)=>{
+        //Validacion de Middlewares
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0){//resultValidation.errors es un objeto literal
+        return res.render('./users/register', {
+            errors: resultValidation.mapped(), //mapped: pasa la variable resultValidation a literiario 
+            oldData: req.body //Para mostrar los datos bien ingresados
+            });
+        }
+
+
+
         let userToCreate = {//no me qedo entendido .. creo que es oara sacar el pash y no mostrar toda la infomacion del la ruta
             ...req.body,
             password: bcryptjs.hashSync(req.body.password, 10),//le doy el password del body y el dias es la encriptacion
-            image: req.file.filename 
+            image: req.file.filename //enctype="multipart/form-data"
         }
 
         let userCreated = userModels.create(userToCreate);//ejecuta los comandos de create de User.js

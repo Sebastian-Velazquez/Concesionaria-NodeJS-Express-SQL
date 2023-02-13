@@ -10,23 +10,22 @@
     <main>
         
         <h1 class="content-main__div-h1">Registro de usuario</h1>
-        
+                
+                    <% if (locals.errors){ %>
+                        <% for( let oneErros in errors) { %>
+                        <p class="alertError"><%= errors[oneErros].msg %> </p>
+                        <% } %>      
+                    <% } %> 
         <form action="/user/register" method="post" class="content-main__form" enctype="multipart/form-data">
-                    
-                    <input type="text" name="firstName" placeholder="NOMBRE USUARIO" class="form-input">
-                    <!-- <h5></h5> -->
+                    <input type="text" placeholder="INGRESAR NOMBRE" name="firstName" class="form-input">
                     <input type="password" placeholder="CONTRASEÑA" name="password" class="form-input">
-                    <!-- <h5>CONFIRMAR CONTRASEÑA</h5> -->
-            <h2>Datos personales</h2>    
-                    <!-- <h5></h5> -->
                     <input type="text" placeholder="E-MAIL" name="email" class="form-input">
-                    <!-- <h5></h5> -->
                     <div class="SubirImagen">
                         <label for="productImage" class="form-label">Subí tu foto aquí:</label>
                         <input type="file" id="productImage" name="image">
                     </div>
             <div class="form-button-content">
-                <button type="submit" class="form-button">REGISTRARSE</button>
+                <button type="submit"  class="form-button">REGISTRARSE</button>
             </div>
         </form>
     </main>
