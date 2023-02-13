@@ -188,5 +188,12 @@
   "password": "$2a$10$Uk/vGrYjmftFMsBEVNpBW.WPJgYSvLHSNGhz5EMo8nUjDNwcC3cVm",
   "email": "sebastian@sebastian.com",
   "image": ""
+ },
+ {
+  "id": 23,
+  "firstName": "Sergio",
+  "password": "$2a$10$DhKPCoHR6PDF6zSd9SL62..Ce3ojAUHSOiIpwo.lFAVZvnt7MCByG",
+  "email": "asd@asd.com",
+  "image": "image-1676314217217.jpg"
  }
 ]

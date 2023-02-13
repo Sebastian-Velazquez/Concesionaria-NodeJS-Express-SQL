@@ -13,7 +13,7 @@ const controlador ={ //IMPORTANTE
         let userToCreate = {//no me qedo entendido .. creo que es oara sacar el pash y no mostrar toda la infomacion del la ruta
             ...req.body,
             password: bcryptjs.hashSync(req.body.password, 10),//le doy el password del body y el dias es la encriptacion
-           /*  image: req.file.filename */
+            image: req.file.filename 
         }
 
         let userCreated = userModels.create(userToCreate);//ejecuta los comandos de create de User.js
