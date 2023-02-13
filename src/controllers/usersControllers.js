@@ -1,6 +1,6 @@
 const bcryptjs = require("bcryptjs");//requiere bcrypt para las password
 const userModels = require('../models/userModels')
-
+//const {validationResult} = require('express-validator');
 
 const controlador ={ //IMPORTANTE
     login:(req, res)=>{
@@ -23,30 +23,24 @@ const controlador ={ //IMPORTANTE
         let userToLogin = userModels.findByField('email', req.body.email);
 
         if (userToLogin){
-            
-  
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-
             if(isOkThePassword){
-                delete userToLogin.password; 
+               /*  delete userToLogin.password; 
                 req.session.userLogged =  userToLogin
 
                 if(req.body.remember) {
 					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
-				}
-
-                return res.redirect('/user/profile')
+				} */
+                return res.send('logueado') 
             }
-
-            return res.render('login', {
+            return res.redirect('/user/login')
+            /* return res.render('login', {
             errors: {
                 email: {msg:'Las credenciales no son validas'}
             }
-            })
+            }) */
 
         }
-
-
         return res.render('login', {
             errors: {
                 email: {msg:'No se encontro el email en DB'}
