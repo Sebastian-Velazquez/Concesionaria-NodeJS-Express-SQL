@@ -60,8 +60,8 @@ const controlador ={ //IMPORTANTE
             }
         })
     },
-    profile:(req, res)=>{
-        return res.render('./users/userProfile')
+    userProfile : (req, res)=>{
+       return res.render('./users/userProfile')
     }
 }
 
