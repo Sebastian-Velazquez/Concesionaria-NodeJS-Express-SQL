@@ -1,0 +1,13 @@
+@import url(normalize.css);
+@import url(header.css);
+@import url(footer.css);
+
+
+.profileImage{
+    width: 200px;
+    padding: 10px;
+}
+.fotoPerfil{
+    align-items: start;
+    background-color:darkred; 
+}
