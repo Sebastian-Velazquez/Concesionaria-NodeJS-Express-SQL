@@ -3,27 +3,31 @@
 <head>
     <%- include('../parcial/head.ejs') %>
     
-    <link href="/css/usersControllers.css" rel="stylesheet">
+    <link href="/css/userProfile.css" rel="stylesheet">
 </head>
 <body>
     
-    <%- include('../parcial/header.ejs') %>
-    <main class="profileMain">
-        
-        <h1> Perfil de usuario </h1>
-        <section>
-            <h2> Datos de Usuario </h2>
+    <%- include('../parcial/header.ejs') %> <br> <br>
+    <main >
+        <section class="fotoPerfil">
+            <div class="profileImage">
+            <img src="/img/avatar/avatar.jpg">
+            
+        </div>
+        <div class="SubirImagenPerfil">
+            <label for="productImage" class="form-label">Subí tu foto aquí:</label>
+            <input type="file" id="productImage" name="image">
+        </div>
+        </section> <br> <br>
+            <div>
+            <h1> Perfil de usuario </h1>
+        </div>
+        <section class="datosUsuario">
+            <h2> <b>Datos de Usuario</b> </h2>
             <h3> Nombre: Lionel Messi </h3>
             <h3> Correo Electrónico: lionelmessi10@gmail.com  </h3>
             <h3> Fecha De Nacimiento: 10/10/1010 </h3>
-            <div class="profileImage">
-                <img src="/img/avatar/avatar.jpg">
-                
-            </div>
-            <div class="SubirImagen">
-                <label for="productImage" class="form-label">Subí tu foto aquí:</label>
-                <input type="file" id="productImage" name="image">
-            </div>
+            
         </section>
     </main>
     <%- include('../parcial/footer.ejs') %>
