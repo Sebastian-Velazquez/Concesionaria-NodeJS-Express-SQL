@@ -11,12 +11,8 @@
     <main >
         <section class="fotoPerfil">
             <div class="profileImage">
-            <img src="/img/avatar/avatar.jpg">
+            <img src="/img/avatar/<%= user.image %>">
             
-        </div>
-        <div class="SubirImagenPerfil">
-            <label for="productImage" class="form-label">Subí tu foto aquí:</label>
-            <input type="file" id="productImage" name="image">
         </div>
         </section> <br> <br>
             <div>
@@ -24,8 +20,8 @@
         </div>
         <section class="datosUsuario">
             <h2> <b>Datos de Usuario</b> </h2>
-            <h3> Nombre: Lionel Messi </h3>
-            <h3> Correo Electrónico: lionelmessi10@gmail.com  </h3>
+            <h3> Nombre: <%= user.firstName %> </h3>
+            <h3> Correo Electrónico: <%= user.email %>  </h3>
             <h3> Fecha De Nacimiento: 10/10/1010 </h3>
             
         </section>

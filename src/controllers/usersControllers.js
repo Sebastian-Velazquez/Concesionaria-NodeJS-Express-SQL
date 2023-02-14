@@ -38,7 +38,7 @@ const controlador ={ //IMPORTANTE
         if (userToLogin){
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkThePassword){
-                delete userToLogin.password; 
+                delete userToLogin.password; //por seguridad
                 req.session.userLogged =  userToLogin
 
                /*  if(req.body.remember) {
@@ -61,7 +61,9 @@ const controlador ={ //IMPORTANTE
         })
     },
     userProfile : (req, res)=>{
-       return res.render('./users/userProfile')
+       return res.render('./users/userProfile',{
+        user: req.session.userLogged
+       })
     }
 }
 
