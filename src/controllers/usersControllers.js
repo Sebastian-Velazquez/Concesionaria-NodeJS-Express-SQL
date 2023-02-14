@@ -3,6 +3,11 @@ const userModels = require('../models/userModels')
 
 
 const controlador ={ //IMPORTANTE
+    //home-user prueba
+    userProfile:(req, res) =>{
+        return res.render('./users/userProfile')
+    },
+    //home-user
     login:(req, res)=>{
         return res.render('./users/login');
     },

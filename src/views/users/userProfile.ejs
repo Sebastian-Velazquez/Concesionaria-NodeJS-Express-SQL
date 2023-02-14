@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../parcial/head.ejs') %>
+    <link href="/css/home.users.css" rel="stylesheet">
+</head>
+<body>
+    
+    <%- include('../parcial/header.ejs') %>
+    <main>
+        
+        <h1>Perfil de usuario</h1>
+        <section>
+            <h2>Datos de Usuario</h2>
+            <h3>Nombre</h3>
+            <h3>Correo Electrónico</h3>
+            <h3>Fecha De Nacimiento</h3>
+            <div class="SubirImagen">
+                <label for="productImage" class="form-label">Elegí tu foto aquí:</label>
+                <input type="file" id="productImage" name="image">
+            </div>
+        </section>
+        
+            <div class="form-button-content">
+                <button type="submit" class="form-button">REGISTRARSE</button>
+            </div>
+        
+    </main>
+    <%- include('../parcial/footer.ejs') %>
+</body>
+</html>
