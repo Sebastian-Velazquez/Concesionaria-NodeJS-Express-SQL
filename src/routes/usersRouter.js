@@ -16,7 +16,6 @@ router.get("/register", usersController.register);
 router.post("/register", upload.single("image"), validationsRegister, usersController.processRegister);
 
 
-<<<<<<< HEAD
 
 
 
@@ -24,6 +23,4 @@ router.post("/register", upload.single("image"), validationsRegister, usersContr
 
 /* router.get("/ofertas", homeController.oferta); */
 
-=======
->>>>>>> 36416ddea631031edd89a3ec1dae00c54d39f865
 module.exports = router;
