@@ -1,0 +1,17 @@
+@import url(normalize.css);
+@import url(header.css);
+@import url(footer.css);
+
+.profileImage{
+    width: 150px;
+    height:  150px;
+    border: solid black 2px;
+}
+.profileMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: space-around;
+
+}

@@ -44,7 +44,7 @@ const controlador ={ //IMPORTANTE
                /*  if(req.body.remember) {
 					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
 				} */
-                return res.send('logueado') 
+                return res.render('./users/userProfile')
             }
             //return res.redirect('/user/login')
             return res.render('./users/login' , {
@@ -60,7 +60,9 @@ const controlador ={ //IMPORTANTE
             }
         })
     },
-   
+    profile:(req, res)=>{
+        return res.render('./users/userProfile')
+    }
 }
 
 
