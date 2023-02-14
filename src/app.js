@@ -1,5 +1,6 @@
 //VA SIEMPRE
 const express = require('express');
+const session = require('express-session');
 const path = require('path'); //Es necesario para que la carpeta views pueda estar adentro de la carpeta src
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
 
@@ -11,6 +12,11 @@ const morgan = require('morgan');
 app.use(morgan('dev'));//muestra infomacion adicional en la consela si se esta enviando informacion 
 
 // Middlewares
+app.use(session({ //npm i express-session. Para bloquear a alguno usuarios que no estan loguados // const session = require('express-session');
+    secret: "Shh, It's a secret",
+    resave: false,
+    saveUninitialized: false,
+}));
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
 app.use(express.urlencoded({ extended: false })); // Para capturar el body
 app.use(express.json()); // Para capturar el body

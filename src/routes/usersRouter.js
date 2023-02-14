@@ -1,24 +1,22 @@
-
-//va siempre
-//llama expres y guarda la ejecucion de router
 const express = require("express");
 const router = express.Router();
 
 // llamamos a la ruta de controlador
 const usersController = require("../controllers/usersControllers.js")
 
-// procesa pedido de get. Ahora usamos router en MVC. son tutas 
-/* router.get("/list", mainController.list); */ //EJEMPLO DE PRAMETRO COMPARTIDO
+//Middleware
+const upload = require("../middlewares/userRouter/multerMiddlewaresUser");
+const validationsRegister = require("../middlewares/userRouter/validationsRegisterMiddlewares");
 
 // procesa pedido de get. Ahora usamos router en MVC. son tutas 
-//router.get("/", homeController.index);
 router.get("/login", usersController.login);
 router.post("/login", usersController.processLogin)
 /* router.post("/login", user) */
 router.get("/register", usersController.register);
-router.post("/register", usersController.processRegister);
+router.post("/register", upload.single("image"), validationsRegister, usersController.processRegister);
 
 
+<<<<<<< HEAD
 
 
 
@@ -26,4 +24,6 @@ router.post("/register", usersController.processRegister);
 
 /* router.get("/ofertas", homeController.oferta); */
 
+=======
+>>>>>>> 36416ddea631031edd89a3ec1dae00c54d39f865
 module.exports = router;

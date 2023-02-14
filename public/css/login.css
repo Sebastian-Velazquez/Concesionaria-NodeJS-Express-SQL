@@ -1,7 +1,10 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
-
+.alertError{
+    color:red;
+    font-size: 20px;
+}
 .container{
     display: flex;
     flex-wrap: wrap;
