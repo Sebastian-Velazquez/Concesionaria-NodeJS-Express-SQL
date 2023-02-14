@@ -3,10 +3,7 @@ const userModels = require('../models/userModels')
 
 
 const controlador ={ //IMPORTANTE
-    //home-user prueba
-    userProfile:(req, res) =>{
-        return res.render('./users/userProfile')
-    },
+    
     //home-user
     login:(req, res)=>{
         return res.render('./users/login');
@@ -58,7 +55,9 @@ const controlador ={ //IMPORTANTE
             }
         })
     },
+   
 }
+
 
         //exportamos el objeto literal con sus metodos
         module.exports = controlador;
