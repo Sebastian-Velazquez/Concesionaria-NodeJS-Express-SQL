@@ -12,7 +12,7 @@ const morgan = require('morgan');
 app.use(morgan('dev'));//muestra infomacion adicional en la consela si se esta enviando informacion 
 
 
-//const userLoggedMiddleware = require("./middlewares/global/userLoggedMiddleware")//global - para ver caundo esta logueado
+const userLoggedMiddleware = require("./middlewares/global/userLoggedMiddleware")//global - para ver caundo esta logueado
 // Middlewares
 app.use(session({ //npm i express-session. Para bloquear a alguno usuarios que no estan loguados // const session = require('express-session');
     secret: "Shh, It's a secret",
@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, '../public')));  // Necesario para l
 app.use(express.urlencoded({ extended: false })); // Para capturar el body
 app.use(express.json()); // Para capturar el body
 app.use(methodOverride('_method'));//Para crar, eliminar y modificar.. se puede poner cualquier nombre en '_method'
-//app.use(userLoggedMiddleware);
+app.use(userLoggedMiddleware);
 
 //para usar ejs
 app.set('view engine', 'ejs'); 
