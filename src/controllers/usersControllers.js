@@ -64,6 +64,11 @@ const controlador ={ //IMPORTANTE
        return res.render('./users/userProfile',{
         user: req.session.userLogged
        })
+    },
+    logout:function(req,res){//cerrar  cuenta de usuario
+        res.clearCookie('userEmail');
+        req.session.destroy();//para destruir la session, osea salir del login del perfil
+        return res.redirect('/')
     }
 }
 

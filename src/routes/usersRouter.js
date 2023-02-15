@@ -20,6 +20,7 @@ router.post("/register", upload.single("image"), validationsRegister, usersContr
 /* ruta perfil de usuario */
 router.get("/profile",authMiddlewares, usersController.userProfile);
 //router.post("/profile", usersController.userProfile);
-
+//para salir del login.. crerrar ceunta
+router.get("/logout/", usersController.logout);
 
 module.exports = router;
