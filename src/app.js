@@ -3,7 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const path = require('path'); //Es necesario para que la carpeta views pueda estar adentro de la carpeta src
 const methodOverride = require('method-override'); // Para poder usar los métodos PUT y DELETE
-
+const cookie = require('cookie-parser');//modulo para guardar datos del lado del servidor. cache
 
 const app = express();
 
@@ -19,6 +19,7 @@ app.use(session({ //npm i express-session. Para bloquear a alguno usuarios que n
     resave: false,
     saveUninitialized: false,
 }));
+app.use(cookie());
 app.use(express.static(path.join(__dirname, '../public')));  // Necesario para los archivos estáticos en el folder /public
 app.use(express.urlencoded({ extended: false })); // Para capturar el body
 app.use(express.json()); // Para capturar el body

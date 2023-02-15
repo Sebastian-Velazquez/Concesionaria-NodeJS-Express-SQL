@@ -41,9 +41,9 @@ const controlador ={ //IMPORTANTE
                 delete userToLogin.password; //por seguridad
                 req.session.userLogged =  userToLogin
 
-               /*  if(req.body.remember) {
-					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
-				} */
+                if(req.body.remember) {//remember: es el name que le pusimos al checkbox en login.ejs
+					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })//res.cookie: setea una cookie
+				}
                 return res.redirect('/user/profile')
             }
             //return res.redirect('/user/login')
@@ -66,7 +66,7 @@ const controlador ={ //IMPORTANTE
        })
     },
     logout:function(req,res){//cerrar  cuenta de usuario
-        res.clearCookie('userEmail');
+        res.clearCookie('userEmail');//destruir la cookie
         req.session.destroy();//para destruir la session, osea salir del login del perfil
         return res.redirect('/')
     }
