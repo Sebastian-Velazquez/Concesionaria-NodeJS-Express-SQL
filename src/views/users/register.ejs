@@ -10,19 +10,31 @@
     <main>
         
         <h1 class="content-main__div-h1">Registro de usuario</h1>
-                
-                    <% if (locals.errors){ %>
-                        <% for( let oneErros in errors) { %>
-                        <p class="alertError"><%= errors[oneErros].msg %> </p>
-                        <% } %>      
-                    <% } %> 
+
         <form action="/user/register" method="post" class="content-main__form" enctype="multipart/form-data">
-                    <input type="text" placeholder="INGRESAR NOMBRE" name="firstName" class="form-input">
-                    <input type="password" placeholder="CONTRASEÑA" name="password" class="form-input">
-                    <input type="text" placeholder="E-MAIL" name="email" class="form-input">
+                    <input type="text" placeholder="INGRESAR NOMBRE" name="firstName" class="form-input"
+                value="<%= locals.oldData ? oldData.firstName : null %>"><!-- Para dejar el lo que pusiste bien en el input -->
+                <!-- Validacion de registro -->
+                <% if (locals.errors && errors.firstName){ %>
+                <p class="alertError"><%= errors.firstName.msg %> </p>
+                <% } %>
+                    <input type="text" placeholder="E-MAIL" name="email" class="form-input"
+                    value="<%= locals.oldData ? oldData.email : null %>">
+                        <!-- Validacion de Email -->
+                        <% if (locals.errors && errors.email){ %>
+                            <p class="alertError"><%= errors.email.msg %> </p>
+                        <% } %>
+                    <input type="password" placeholder="CONTRASEÑA" name="password" class="form-input"
+                    value="<%= locals.oldData ? oldData.password : null %>">
+                        <% if (locals.errors && errors.password){ %>
+                            <p class="alertError"><%= errors.password.msg %> </p>
+                        <% } %>
                     <div class="SubirImagen">
                         <label for="productImage" class="form-label">Subí tu foto aquí:</label>
                         <input type="file" id="productImage" name="image">
+                        <% if (locals.errors && errors.image){ %>
+                            <p class="alertError"><%= errors.image.msg %> </p>
+                        <% } %>
                     </div>
             <div class="form-button-content">
                 <button type="submit"  class="form-button">REGISTRARSE</button>
