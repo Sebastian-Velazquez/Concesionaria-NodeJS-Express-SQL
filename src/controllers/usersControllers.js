@@ -38,13 +38,13 @@ const controlador ={ //IMPORTANTE
         if (userToLogin){
             let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isOkThePassword){
-                delete userToLogin.password; 
+                delete userToLogin.password; //por seguridad
                 req.session.userLogged =  userToLogin
 
                /*  if(req.body.remember) {
 					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
 				} */
-                return res.render('./users/userProfile')
+                return res.redirect('/user/profile')
             }
             //return res.redirect('/user/login')
             return res.render('./users/login' , {
@@ -61,7 +61,14 @@ const controlador ={ //IMPORTANTE
         })
     },
     userProfile : (req, res)=>{
-       return res.render('./users/userProfile')
+       return res.render('./users/userProfile',{
+        user: req.session.userLogged
+       })
+    },
+    logout:function(req,res){//cerrar  cuenta de usuario
+        res.clearCookie('userEmail');
+        req.session.destroy();//para destruir la session, osea salir del login del perfil
+        return res.redirect('/')
     }
 }
 

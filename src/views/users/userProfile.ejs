@@ -11,7 +11,7 @@
     <main >
         <section class="fotoPerfil">
             <div class="profileImage">
-            <img src="/img/avatar/avatar.jpg">
+            <img src="/img/avatar/<%= user.image %>">
             
         </div>
         <div class="SubirImagenPerfil">
@@ -22,11 +22,14 @@
         <br> <br>
             <div class="titleUser">
             <h1> <b> Perfil de usuario <b> </h1>
+        </section> <br> <br>
+            <div>
+            <h1> Perfil de usuario </h1>
         </div>
         <section class="datosUsuario">
             <h2> <b>Datos de Usuario</b> </h2>
-            <h3> Nombre: Lionel Messi </h3>
-            <h3> Correo Electrónico: lionelmessi10@gmail.com  </h3>
+            <h3> Nombre: <%= user.firstName %> </h3>
+            <h3> Correo Electrónico: <%= user.email %>  </h3>
             <h3> Fecha De Nacimiento: 10/10/1010 </h3>
             
         </section>
