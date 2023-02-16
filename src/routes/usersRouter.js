@@ -18,7 +18,7 @@ router.post("/login", usersController.processLogin)
 router.get("/register",guestMiddlewares, usersController.register);
 router.post("/register", upload.single("image"), validationsRegister, usersController.processRegister);
 /* ruta perfil de usuario */
-router.get("/profile",authMiddlewares, usersController.userProfile);
+router.get("/userProfile",authMiddlewares, usersController.userProfile);
 //router.post("/profile", usersController.userProfile);
 //para salir del login.. crerrar ceunta
 router.get("/logout/", usersController.logout);
