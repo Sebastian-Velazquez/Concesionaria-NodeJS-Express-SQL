@@ -202,5 +202,12 @@
   "email": "francosanchezcamps.100@gmail.com",
   "password": "$2a$10$T2c9EUwqpLNcZZ8ngNcqUe8zTvSwtq8I7OdiJufSP/9rywh73i5TO",
   "image": "image-1676645162993.png"
+ },
+ {
+  "id": 25,
+  "firstName": "Franco Sanchez",
+  "email": "francosanchezcamps.100@gmail.com",
+  "password": "$2a$10$3/Skelfpd4aVqy6sVzfuGufrA.sRqF5bRIHDwlKWe3KfMpy9KR5Oi",
+  "image": "image-1676645626699.png"
  }
 ]
