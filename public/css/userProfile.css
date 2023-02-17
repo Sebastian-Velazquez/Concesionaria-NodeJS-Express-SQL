@@ -4,7 +4,7 @@
 
 
 .profileImage{
-    width: 200px;
+    width: 400px;
     padding: 10px;
 }
 .fotoPerfil{
@@ -31,4 +31,9 @@
     align-content: space-around; 
     
     
+}
+.imagenDePerfil{
+    display: flex;
+    width: 400px;
+    padding: 10px;
 }
