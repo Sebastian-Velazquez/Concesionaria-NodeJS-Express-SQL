@@ -44,7 +44,7 @@ const controlador ={ //IMPORTANTE
                 if(req.body.remember) {//remember: es el name que le pusimos al checkbox en login.ejs
 					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })//res.cookie: setea una cookie
 				}
-                return res.redirect('/user/profile')
+                return res.redirect('/user/userProfile')
             }
             //return res.redirect('/user/login')
             return res.render('./users/login' , {
