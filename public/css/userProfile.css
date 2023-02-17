@@ -8,6 +8,27 @@
     padding: 10px;
 }
 .fotoPerfil{
-    align-items: start;
-    background-color:darkred; 
+    justify-content: center;
+    background-color:rgb(170, 1, 1); 
+    width: fit-content;
+}
+.titleUser{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    background-color: firebrick;
+    align-content: space-around;
+
+}
+.datosUsuario{
+ 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    background-color: firebrick;
+    align-content: space-around; 
+    
+    
 }
