@@ -29,7 +29,7 @@
             --> 
             <ul class="navBar">
                 <% if (locals.isLogged) { %>    
-                    <li class="navBar-lista"><a href="/user/profile"><%= locals.userLogged.firstName %><img src="/img/avatar/<%= locals.userLogged.image %>" class="icons-profile"></a></li>
+                    <li class="navBar-lista"><a href="/user/userProfile"><%= locals.userLogged.firstName %><img src="/img/avatar/<%= locals.userLogged.image %>" class="icons-profile"></a></li>
                     <li class="navBar-lista"><a href="/user/logout">Salir</li>
                     <li class="navBar-lista"><a href="/products/productCart">Carrito<i class="fa-solid fa-cart-plus icono"></i></a></li>
                 <% }else { %> 
