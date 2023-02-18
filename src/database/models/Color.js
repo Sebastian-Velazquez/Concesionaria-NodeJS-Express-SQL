@@ -1,7 +1,14 @@
 module.exports = (sequelize, DataTypes) =>{
     let alias = "Colores";
     let cols ={
-
+        id_color: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        nombre:{
+            type: dataTypes.STRING
+        }
     };
     let config = {
         tableName: "colores",//esto se pone porque lo general el nombbre de la tabla el mismo nombre que el js

@@ -1,4 +1,4 @@
-const { FOREIGNKEYS } = require("sequelize/types/query-types");
+
 
 module.exports = (sequelize, DataTypes) =>{
     let alias = "Usuarios";
