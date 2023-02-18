@@ -216,5 +216,19 @@
   "email": "francosanchezcamps.100@gmail.com",
   "password": "$2a$10$4ANUagEa93GKr1VChzKN..4hkCZNCgXuLlvhM4pvo.jL7JoLxq34O",
   "image": "image-1676647446906.png"
+ },
+ {
+  "id": 28,
+  "firstName": "Thomás@gmail.com",
+  "email": "Thomás@gmail.com",
+  "password": "$2a$10$95rqhkJGItt6k2bxlRVtZOvLKu8q/xb.cBiRrkVcF4FMBd.bLAwAq",
+  "image": "image-1676662265178.png"
+ },
+ {
+  "id": 29,
+  "firstName": "tomasmanco",
+  "email": "tomasmanco@gmail.com",
+  "password": "$2a$10$a1gBt0UPpAlmwvyURUGrouCVkuptzciRtodhYBTuhX7ZLhXbsYGau",
+  "image": "image-1676662301377.png"
  }
 ]
