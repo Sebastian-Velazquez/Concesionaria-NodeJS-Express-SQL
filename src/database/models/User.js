@@ -1,34 +1,34 @@
 
 
-module.exports = (sequelize, DataTypes) =>{
+module.exports = (sequelize, dataTypes) =>{
     let alias = "Usuarios";
     let cols ={
         id_user:{
-            type: DataTypes.INTEGER, 
+            type: dataTypes.INTEGER, 
             primaryKey: true,
             autoIncrement: true
         },
         first_name:{
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         last_name:{
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         birth_date:{
-            type: DataTypes.DATE
+            type: dataTypes.DATE
         },
         email: {
-            type: DataTypes.STRING               
+            type: dataTypes.STRING               
         },
         password:{
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         },
         id_category:{
-            type: DataTypes.INTEGER,
+            type: dataTypes.INTENGER,
             foreingKey: true,
         },
         image:{
-            type: DataTypes.STRING
+            type: dataTypes.STRING
         }
 
     };

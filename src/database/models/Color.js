@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) =>{
+module.exports = (sequelize, dataTypes) =>{
     let alias = "Colores";
     let cols ={
         id_color: {
@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) =>{
             autoIncrement: true
         },
         nombre:{
-            type: dataTypes.STRING
+            type: dataTypes.INTEGER
         }
     };
     let config = {

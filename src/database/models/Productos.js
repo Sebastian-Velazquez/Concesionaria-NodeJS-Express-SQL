@@ -6,15 +6,15 @@ module.exports = (sequelize, dataTypes) => {
 
     let cols = {
         id_product:{
-            type: dataTypes.INTENGER,
+            type: dataTypes.INTEGER, 
             primaryKey: true,
             autoIncrement: true
         },
         name:{
-            tpye: dataTypes.STRING
+            type: dataTypes.STRING
         },
         price:{
-            tpye: dataTypes.INTENGER
+            type: dataTypes.INTEGER
         },
         año:{
             type: dataTypes.DATE
@@ -26,12 +26,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         },
         id_color:{
-            type: dataTypes.INTENGER,
-            foreingKey: true
+            type: dataTypes.INTEGER, 
         },
         id_modelo:{
-            type: dataTypes.INTENGER,
-            foreingKey: true
+            type: dataTypes.INTEGER, 
         }
 
     }
