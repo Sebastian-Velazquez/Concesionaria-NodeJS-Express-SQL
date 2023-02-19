@@ -24,8 +24,7 @@ module.exports = (sequelize, dataTypes) =>{
             type: dataTypes.STRING
         },
         id_category:{
-            type: dataTypes.INTENGER,
-            foreingKey: true,
+            type: dataTypes.INTEGER, 
         },
         image:{
             type: dataTypes.STRING
