@@ -8,9 +8,9 @@
 </head>
 <body>
     <% for (let i = 0; i < productos.length; i++){ %> 
-    <h1>
-        <%= productos[i].name %>
-    </h1>
+    <li>
+        <a href="/product/list/<%= productos[i].id_product %>"><%= productos[i].name %></a>
+    </li>
     <% } %>
 </body>
 </html>

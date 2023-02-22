@@ -10,6 +10,9 @@ const controlador ={
         .catch(function(error){
             res.send(error);
         }) 
+    },
+    detail:(req, res)=>{
+        res.send("Hola")
     }
 }
 

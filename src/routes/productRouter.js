@@ -6,5 +6,6 @@ const productControllers = require("../controllers/productControllers.js")
 
 /*****SQL */
 router.get("/list", productControllers.list);
+router.get("/list/:id", productControllers.detail);
 
 module.exports = router;
