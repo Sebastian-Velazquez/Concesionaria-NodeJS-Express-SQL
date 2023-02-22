@@ -3,7 +3,7 @@ const path = require('path');
 const {validationResult} = require('express-validator'); //validationResult es una funcion que tambien nos lo da express-validator 
 
 //models
-let db = require("../database/models")
+
 const productsModel = require('../models/productsModel')
 
 /* En la constante "products" ya tienen los productos que están 
@@ -137,18 +137,7 @@ const controlador ={ //IMPORTANTE
         });
         fs.writeFileSync(productsModel.fileName, JSON.stringify(productFiltrado, null," "));
         res.redirect("/products/list")
-    },
-    //SQL
-    productList:(req, res)=>{
-                db.Productos
-                    .findAll()
-                    .then(function(productos){
-                        res.render("productsList",{productos:productos})
-                    })
-                    .catch(function(error){
-                        res.send(error);
-                    }) 
-        }
+    }
 }
 
 

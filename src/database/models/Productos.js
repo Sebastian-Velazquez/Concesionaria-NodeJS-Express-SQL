@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         name:{
             type: dataTypes.STRING
-        },
+        }/* ,
         price:{
             type: dataTypes.INTEGER
         },
@@ -30,13 +30,13 @@ module.exports = (sequelize, dataTypes) => {
         },
         id_modelo:{
             type: dataTypes.INTEGER, 
-        }
+        } */
 
     }
 
     let config = {
         tableName: "productos",
-        timesamps: false
+        timestamps: false
     }
 
     const Productos = sequelize.define(alias, cols, config);
