@@ -27,9 +27,8 @@ router.put("/edit/:id/", upload.single("image"),validationsEdit, productsControl
 //EMILINAR
 router.delete("/delete/:id/", productsControllers.delete);
 //********************GRUD*********************/
-
-
 router.get("/productCart", productsControllers.productCart);
 /* router.get("/ofertas", homeController.oferta); */
-
+/*****SQL */
+router.get("/productsList", productsControllers.productList);
 module.exports = router;

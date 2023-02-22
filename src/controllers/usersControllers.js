@@ -71,6 +71,7 @@ const controlador ={ //IMPORTANTE
         req.session.destroy();//para destruir la session, osea salir del login del perfil
         return res.redirect('/')
     },
+    //SQL
     user:(req,res)=>{
         db.Usuarios.findAll()
         .then(function(usuarios){
