@@ -41,12 +41,12 @@ const controlador ={
         //res.render("./products/sql/productsCreate");
     },
     processCreate:(req,res)=>{
-        
         db.Productos
                 .create({
                     name: req.body.name,  
                     price: req.body.price,
                     anio: req.body.anio,
+                    image: req.file ? req.file.filename : "default-image.png",
                     description: req.body.description,
                     id_color: req.body.color, 
                     id_modelo: req.body.models 
