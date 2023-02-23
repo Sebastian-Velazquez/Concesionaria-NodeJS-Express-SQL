@@ -34,13 +34,13 @@ app.set('views', path.join(__dirname, '/views')); //Es necesario para que la car
 const homeRouter = require('./routes/homeRouter.js')
 const usersRouter = require('./routes/usersRouter.js')
 const productsRouter = require('./routes/productsRouter.js')
-const productRouter = require('./routes/productRouter.js')
+const productsRouterSql = require('./routes/productsRouterSql.js')
 
 // Usando los enrutadores importados linea 5
 app.use("/", homeRouter);
 app.use("/user", usersRouter);
 app.use("/products", productsRouter);
-app.use("/product", productRouter);
+app.use("/product", productsRouterSql);
 
 
 

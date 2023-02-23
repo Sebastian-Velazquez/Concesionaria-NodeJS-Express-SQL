@@ -15,23 +15,23 @@
         <label>Nombre de vehiculo</label>
 
 
-        <input type="text" id="name" name="name" value="<%= producto.name %>"  class="form-input"
-        value="<%= locals.oldData ? oldData.name : null %>">
+        <input type="text" id="name" name="name" class="form-input"
+        value="<%= locals.oldData ? oldData.name : producto.name %> %>">
                 <% if (locals.errors && errors.name){ %>
                     <p class="alertError"><%= errors.name.msg %> </p>
                 <% } %>
 
 
         <label>Precio del vehiculo</label>
-        <input type="text" id="price" name="price" value="<%= producto.price %>"  class="form-input"
-        value="<%= locals.oldData ? oldData.price : null %>">
+        <input type="text" id="price" name="price" class="form-input"
+        value="<%= locals.oldData ? oldData.price : producto.price %> %>">
                 <% if (locals.errors && errors.price){ %>
                     <p class="alertError"><%= errors.price.msg %> </p>
                 <% } %>
 
         <label>Color del vehiculo</label>
-        <input type="text" id="colors" name="colors" value="<%= producto.colors %>" class="form-input"
-                value="<%= locals.oldData ? oldData.colors : null %>">
+        <input type="text" id="colors" name="colors"  class="form-input"
+                value="<%= locals.oldData ? oldData.colors : producto.colors %> %>">
                 <% if (locals.errors && errors.colors){ %>
                     <p class="alertError"><%= errors.colors.msg %> </p>
                 <% } %>
