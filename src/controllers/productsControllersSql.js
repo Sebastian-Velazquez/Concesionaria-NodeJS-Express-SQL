@@ -84,6 +84,15 @@ const controlador ={
                         id_product: req.params.id
                 }
             })
+        res.redirect("/product/list/")
+    },
+    delete:(req, res)=>{
+        db.Productos
+            .destroy({
+                where:{
+                    id_product: req.params.id
+                }
+            })
             res.redirect("/product/list/")
     }
 }

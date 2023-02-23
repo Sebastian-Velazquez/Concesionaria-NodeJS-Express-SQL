@@ -16,4 +16,6 @@ router.post("/create", productsControllersSql.processCreate);
 router.get("/edit/:id", productsControllersSql.edit);
 //Editar producto
 router.put("/edit/:id", productsControllersSql.processEdit);
+//Eliminar Producto
+router.delete("/delete/:id", productsControllersSql.delete);
 module.exports = router;
