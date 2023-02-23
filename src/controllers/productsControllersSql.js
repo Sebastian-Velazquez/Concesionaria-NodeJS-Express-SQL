@@ -44,14 +44,47 @@ const controlador ={
         
         db.Productos
                 .create({
-                    name: req.body.name,  //del lado izquierdo es el nombrede la columnas en la base de datos
+                    name: req.body.name,  
                     price: req.body.price,
                     anio: req.body.anio,
                     description: req.body.description,
-                    id_color:  req.body.color,  //del lado derecho son los nombres de los formularios
-                    id_modelo:  req.body.models   //del lado derecho son los nombres de los formularios
+                    id_color: req.body.color, 
+                    id_modelo: req.body.models 
         })
     res.redirect("list")
+    },
+    edit:(req, res)=>{
+        let pedidoProducto = db.Productos.findByPk(req.params.id);
+        let pedidoColores = db.Colores.findAll();
+        let pedidosModelos = db.Modelos.findAll();
+        
+        Promise.all([pedidoColores, pedidosModelos, pedidoProducto])//para poder llamar dos tablas
+        .then(function([colors, models, producto]){
+            res.render("./products/sql/productsEdit",{
+                colors:colors, 
+                models:models,
+                producto:producto
+            })
+        })
+        .catch(function(error){
+            res.send(error);
+        }) 
+    },
+    processEdit:(req,res)=>{
+        db.Productos
+            .update({
+                name: req.body.name,  
+                price: req.body.price,
+                anio: req.body.anio,
+                description: req.body.description,
+                id_color: req.body.color,  
+                id_modelo: req.body.models  
+                },{
+                    where:{
+                        id_product: req.params.id
+                }
+            })
+            res.redirect("/product/list/")
     }
 }
 

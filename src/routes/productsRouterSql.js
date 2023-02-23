@@ -10,7 +10,10 @@ router.get("/list", productsControllersSql.list);
 router.get("/list/:id", productsControllersSql.detail);
 //viste de crear producto
 router.get("/create", productsControllersSql.create);
-//viste de crear producto
+//Crear Producto
 router.post("/create", productsControllersSql.processCreate);
-
+//Vista editar Producto
+router.get("/edit/:id", productsControllersSql.edit);
+//Editar producto
+router.put("/edit/:id", productsControllersSql.processEdit);
 module.exports = router;
