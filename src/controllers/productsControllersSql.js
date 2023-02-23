@@ -22,6 +22,9 @@ const controlador ={
             .catch(function(error){
                 res.send(error);
             })
+    },
+    create:(req,res)=>{
+        res.send("hola")
     }
 }
 
