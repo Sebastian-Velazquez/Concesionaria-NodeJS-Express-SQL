@@ -12,11 +12,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         name:{
             type: dataTypes.STRING
-        }/* ,
+        },
         price:{
             type: dataTypes.INTEGER
         },
-        año:{
+        anio:{
             type: dataTypes.DATE
         },
         description:{
@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         id_modelo:{
             type: dataTypes.INTEGER, 
-        } */
+        }
 
     }
 
@@ -40,5 +40,19 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const Productos = sequelize.define(alias, cols, config);
+    
+    //Definimos las relaciones o asociaciones
+    Productos.associate = models =>{
+        //Productos tienen un solo color
+        Productos.belongsTo(models.Colores,{ //belongsTo: pertence a un solo genero. es una relacion de uno a muchos
+            as: "color",
+            foreignKey: "id_color",
+        });   
+        //Productos tienen un solo modelo
+        Productos.belongsTo(models.Modelos,{ //belongsTo: pertence a un solo genero. es una relacion de uno a muchos
+            as: "modelo",
+            foreignKey: "id_modelo",
+        }); 
+    }
     return Productos
 }
