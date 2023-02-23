@@ -41,7 +41,17 @@ const controlador ={
         //res.render("./products/sql/productsCreate");
     },
     processCreate:(req,res)=>{
-        res.send("crear producto")
+        
+        db.Productos
+                .create({
+                    name: req.body.name,  //del lado izquierdo es el nombrede la columnas en la base de datos
+                    price: req.body.price,
+                    anio: req.body.anio,
+                    description: req.body.description,
+                    id_color:  req.body.color,  //del lado derecho son los nombres de los formularios
+                    id_modelo:  req.body.models   //del lado derecho son los nombres de los formularios
+        })
+    res.redirect("list")
     }
 }
 

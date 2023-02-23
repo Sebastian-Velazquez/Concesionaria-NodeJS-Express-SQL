@@ -31,7 +31,7 @@
             <label>Color del auto</label>
                 <select name="color">
                     <% for(i=0; i < colors.length; i++) {%>
-                        <option value="<%= colors[i].id %>">
+                        <option value="<%= colors[i].id_color %>">
                             <%= colors[i].nombre %>
                         </option>
                     <% } %>
@@ -41,7 +41,7 @@
             <label>Selecionar modelo</label>
                 <select name="models">
                     <% for(i=0; i < models.length; i++) {%>
-                        <option value="<%= models[i].id %>">
+                        <option value="<%= models[i].id_modelo %>">
                             <%= models[i].tipo_de_modelo %>
                         </option>
                     <% } %>
