@@ -8,7 +8,7 @@ const controlador ={
             res.render("./products/sql/productsList",{productos:productos})
         })
         .catch(function(error){
-            res.send(error);
+            res.send(error)
         }) 
     },
     detail:(req, res)=>{
@@ -20,11 +20,28 @@ const controlador ={
                 res.render("./products/sql/productsDetail",{producto:producto})
             })
             .catch(function(error){
-                res.send(error);
+                res.send(error)
             })
     },
     create:(req,res)=>{
-        res.send("hola")
+        let pedidoColores = db.Colores.findAll();
+        let pedidosModelos = db.Modelos.findAll();
+        
+        Promise.all([pedidoColores, pedidosModelos])//para poder llamar dos tablas
+        .then(function([colors, models]){
+            res.render("./products/sql/productsCreate",{
+                colors:colors, 
+                models:models
+            })
+        })
+        .catch(function(error){
+            res.send(error);
+        }) 
+
+        //res.render("./products/sql/productsCreate");
+    },
+    processCreate:(req,res)=>{
+        res.send("crear producto")
     }
 }
 

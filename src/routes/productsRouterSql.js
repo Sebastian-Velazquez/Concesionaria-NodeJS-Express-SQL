@@ -10,5 +10,7 @@ router.get("/list", productsControllersSql.list);
 router.get("/list/:id", productsControllersSql.detail);
 //viste de crear producto
 router.get("/create", productsControllersSql.create);
+//viste de crear producto
+router.post("/create", productsControllersSql.processCreate);
 
 module.exports = router;

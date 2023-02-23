@@ -7,6 +7,48 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>Formulario para crear producto</h2>
+    <form action="/product/create" method="POST">
+        <div>
+            <label>Nombre</label>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <label>Precio</label>
+            <input type="text" name="price">
+        </div>
+        <div>
+            <label>Año</label>
+            <input type="text" name="anio">
+        </div>
+        <div>
+            <p>Descripción: <textarea name="description"></textarea></p>
+        </div>
+        <div>
+            <input type="file" name="image">
+        </div>
+        <div>
+            <label>Color del auto</label>
+                <select name="color">
+                    <% for(i=0; i < colors.length; i++) {%>
+                        <option value="<%= colors[i].id %>">
+                            <%= colors[i].nombre %>
+                        </option>
+                    <% } %>
+                </select>
+        </div>
+        <div>
+            <label>Selecionar modelo</label>
+                <select name="models">
+                    <% for(i=0; i < models.length; i++) {%>
+                        <option value="<%= models[i].id %>">
+                            <%= models[i].tipo_de_modelo %>
+                        </option>
+                    <% } %>
+                </select>
+        </div>
+        <div>
+            <input type="submit">
+        </div>
 </body>
 </html>

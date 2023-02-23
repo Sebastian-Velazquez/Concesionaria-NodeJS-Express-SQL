@@ -2,14 +2,14 @@ module.exports = (sequelize, dataTypes) => {
     let alias = "Modelos";
 
     let cols = {
-        id_modelo:{
-            type: dataTypes.INTEGER, 
-            primaryKey: true,
-            autoIncrement: true
-        },
-        tipo_de_modelo:{
-            type:  dataTypes.STRING
-        }
+    id_modelo:{
+        type: dataTypes.INTEGER, 
+        primaryKey: true,
+        autoIncrement: true
+    },
+    tipo_de_modelo:{
+        type:  dataTypes.STRING
+    }
     }
     let config = {
         tableName: "modelos",
