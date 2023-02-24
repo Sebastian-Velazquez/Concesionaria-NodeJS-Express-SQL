@@ -230,5 +230,12 @@
   "email": "tomasmanco@gmail.com",
   "password": "$2a$10$a1gBt0UPpAlmwvyURUGrouCVkuptzciRtodhYBTuhX7ZLhXbsYGau",
   "image": "image-1676662301377.png"
+ },
+ {
+  "id": 30,
+  "firstName": "MauroSC",
+  "email": "maurosanchezc94@gmail.com",
+  "password": "$2a$10$Ol4mxKMJ6CkBATe7Q46MQunHZbcscLwYFNRN5vbdBFHPVh6nyDUg6",
+  "image": "image-1676860678220.jpeg"
  }
 ]

@@ -70,6 +70,10 @@ box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
     object-fit: cover;
     /* object-position: left; */
 }
+.titulo_1_main{
+    text-align: center;
+    color: rgba(137, 0, 0, 0.997)
+}
 
 @media screen and (min-width:700px){
     .content-section{
