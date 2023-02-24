@@ -48,28 +48,29 @@
             <% } %>
         </div>
         <div>
-            <label>Color del auto</label>
+            <label>Color del auto <%= producto.id_color %></label>
                 <select name="color">
                     <option></option>
                     <% for(let i=0; i < colors.length; i++) { %>
-                        <!-- si hay dado en el oldData -->
-                        <% if(locals.oldData){ %>
-                            <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
-                                <option value="<%= colors[i].id_color %>" selected>
-                                <%= colors[i].nombre %>
-                                </option>
+                            <!-- si hay dado en el oldData -->
+                            <% if(locals.oldData){ %>
+                                <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
+                                    <option value="<%= colors[i].id_color %>" selected>
+                                    <%= colors[i].nombre %>
+                                    </option>
+                                <% } %>
                             <% } %>
+                            <!-- para cando entra a la vista editar por primera vez -->
+                        <% if (colors[i].id_color == producto.id_color) { %>
+                            <option value="<%= colors[i].id_color %>" selected>
+                            <%= colors[i].nombre %>
+                            </option>
+                        <% }else{ %>
+                        <!-- muestra todos menos el selected, si es que tiene -->
+                            <option value="<%= colors[i].id_color %>">
+                            <%= colors[i].nombre %>
+                            </option>
                         <% } %>
-                        <!-- para cando entra a la vista editar por primera vez -->
-                    <% if (colors[i].id_color == producto.id_modelo) { %>
-                        <option value="<%= models[i].id %>" selected>
-                        <%= models[i].tipo_de_modelo %>
-                        </option>
-                    <% } %>
-                    <!-- muestra todos menos el selected, si es que tiene -->
-                        <option value="<%= colors[i].id_color %>">
-                        <%= colors[i].nombre %>
-                        </option>
                     <% } %>
                 </select>
                 <!-- alerta -->
@@ -91,8 +92,8 @@
                         <% } %>
                     <% }  %>
                     <!-- para cando entra a la vista editar por primera vez -->
-                    <% if (models[i].id_modelo == models.id_modelo) { %>
-                        <option value="<%= models[i].id %>" selected>
+                    <% if (models[i].id_modelo == producto.id_color) { %>
+                        <option value="<%= models[i].id_modelo %>" selected>
                         <%= models[i].tipo_de_modelo %>
                         </option>
                     <% } %>
