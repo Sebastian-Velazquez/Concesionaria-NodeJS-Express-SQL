@@ -2,6 +2,12 @@
 @import url(header.css);
 @import url(footer.css);
 
+.name_product{
+    text-align: center;
+    margin: 25px;
+    background-color:  rgba(137, 0, 0, 0.997);
+}
+
 .content{
     display: flex;
     flex-direction: column;
@@ -9,7 +15,14 @@
     align-content: space-around;
     height: auto;
     margin-top: 1rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 42%;
+    margin-right: 42%;
+    background-color:  rgba(137, 0, 0, 0.997);
+
 }
+
 /* ----------------Imagen------------------------------ */
 .conten-img{
     height: 200px;
@@ -31,7 +44,7 @@
     flex-wrap: wrap;
     align-content: center;
     align-items: center;
-    background-color: rgb(61, 81, 209);
+    background-color:  rgba(137, 0, 0, 0.997);
 }
 .listaDeDetalle-li{
     font-size: 18px;
@@ -40,6 +53,14 @@
     color: aliceblue;
 }
 
+/* ----------------boton------------------------------ */
+
+.action-button_edit{
+   padding: 0%;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   
+}
 
 
 /* ----------------boton------------------------------ */

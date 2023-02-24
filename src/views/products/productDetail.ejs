@@ -9,7 +9,7 @@
     <%- include('../parcial/header.ejs') %>
         <!-- ----------------------HEADER----------------------------- -->
     <div class="content">
-        <h1><%= producto.name %></h1>
+        <h1 class="name_product"><%= producto.name %></h1>
         <div class="content-img-list">
             <div class="conten-img">
                 <img src="/img/products/<%= producto.image %>" alt="imagenAuto" class="img">
@@ -22,11 +22,11 @@
             </ul>
         </div>
         
-        <a href="/products/productCart" class="action-button edit">COMPRAR</a>
+        <a href="/products/productCart" class="action-button_edit">COMPRAR</a>
         <% if (locals.isLogged) { %>    
-            <a href="/products/list" class="action-button edit">LISTA DE TODOS LOS PRODUCTOS</a>
-            <a href="/products/edit/<%= producto.id %>" class="action-button edit">EDITAR PRODUCTO</a>
-            <a href="/products/create" class="action-button edit">CREAR NUEVA PUBLICACION</a>
+            <a href="/products/list" class="action-button_edit">LISTA DE TODOS LOS PRODUCTOS</a>
+            <a href="/products/edit/<%= producto.id %>" class="action-button_edit">EDITAR PRODUCTO</a>
+            <a href="/products/create" class="action-button_edit">CREAR NUEVA PUBLICACION</a>
             <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST" >
                 <button type="submit" class="form-button">ELIMINAR</button>
             </form>
