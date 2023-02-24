@@ -52,15 +52,16 @@
                 <select name="color">
                     <option></option>
                     <% for(let i=0; i < colors.length; i++) { %>
-                        <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
-                            <option value="<%= colors[i].id_color %>" selected>
-                            <%= colors[i].nombre %>
-                            </option>
-                        <% } else { %>
-                            <option value="<%= colors[i].id_color %>">
-                            <%= colors[i].nombre %>
-                            </option>>
+                        <% if(locals.oldData){ %>
+                            <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
+                                <option value="<%= colors[i].id_color %>" selected>
+                                <%= colors[i].nombre %>
+                                </option>
+                            <% } %>
                         <% } %>
+                        <option value="<%= colors[i].id_color %>">
+                        <%= colors[i].nombre %>
+                        </option>
                     <% } %>
                 </select>
                 <!-- alerta -->
@@ -73,15 +74,16 @@
             <select name="model">
                 <option></option>
                 <% for(let i=0; i < models.length; i++) { %>
-                    <% if (models[i].id_modelo == locals.oldData.model) { %><!-- para seleccionar el genero que tiene -->
-                        <option value="<%= models[i].id_modelo %>" selected>
-                        <%= models[i].tipo_de_modelo %>
-                        </option>
-                    <% } else { %>
-                        <option value="<%= models[i].id_modelo %>">
-                        <%= models[i].tipo_de_modelo %>
-                        </option>>
-                    <% } %>
+                    <% if(locals.oldData){ %>
+                        <% if (models[i].id_modelo == locals.oldData.model) { %><!-- para seleccionar el genero que tiene -->
+                            <option value="<%= models[i].id_modelo %>" selected>
+                            <%= models[i].tipo_de_modelo %>
+                            </option>
+                        <% } %>
+                    <% }  %>
+                    <option value="<%= models[i].id_modelo %>">
+                    <%= models[i].tipo_de_modelo %>
+                    </option>
                 <% } %>
             </select>
             <!-- alerta -->
