@@ -11,41 +11,83 @@
     <form action="/product/create" method="POST" enctype="multipart/form-data">
         <div>
             <label>Nombre</label>
-            <input type="text" name="name">
+            <input type="text" name="name"
+            value="<%= locals.oldData ? oldData.name : null %>">
+                            <!-- Validacion -->
+                            <% if (locals.errors && errors.name){ %>
+                                <p class="alertError"><%= errors.name.msg %> </p>
+                                <% } %>
         </div>
         <div>
             <label>Precio</label>
-            <input type="text" name="price">
+            <input type="text" name="price"
+            value="<%= locals.oldData ? oldData.price : null %>">
+                            <!-- Validacion -->
+                            <% if (locals.errors && errors.price){ %>
+                                <p class="alertError"><%= errors.price.msg %> </p>
+                                <% } %>
         </div>
         <div>
             <label>Año</label>
-            <input type="date" name="anio">
+            <input type="date" name="anio"
+            value="<%= locals.oldData ? oldData.anio : null %>">
+                            <!-- Validacion -->
+                            <% if (locals.errors && errors.anio){ %>
+                                <p class="alertError"><%= errors.anio.msg %> </p>
+                                <% } %>
         </div>
         <div>
-            <p>Descripción: <textarea name="description"></textarea></p>
+            <label>Descripción: </label>
+            <input type="text" name="description"
+            value="<%= locals.oldData ? oldData.description : null %>">
         </div>
         <div>
             <input type="file" name="image">
+            <% if (locals.errors && errors.image){ %>
+                <p class="alertError"><%= errors.image.msg %> </p>
+            <% } %>
         </div>
         <div>
             <label>Color del auto</label>
                 <select name="color">
-                    <% for(i=0; i < colors.length; i++) {%>
-                        <option value="<%= colors[i].id_color %>">
+                    <option></option>
+                    <% for(let i=0; i < colors.length; i++) { %>
+                        <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
+                            <option value="<%= colors[i].id_color %>" selected>
                             <%= colors[i].nombre %>
-                        </option>
+                            </option>
+                        <% } else { %>
+                            <option value="<%= colors[i].id_color %>">
+                            <%= colors[i].nombre %>
+                            </option>>
+                        <% } %>
                     <% } %>
                 </select>
+                <!-- alerta -->
+                <% if (locals.errors && errors.color){ %>
+                    <p class="alertError"><%= errors.color.msg %> </p>
+                <% } %>
         </div>
         <div>
             <label>Selecionar modelo</label>
-                <select name="models">
-                    <% for(i=0; i < models.length; i++) {%>
-                        <option value="<%= models[i].id_modelo %>">
-                            <%= models[i].tipo_de_modelo %>
+            <select name="model">
+                <option></option>
+                <% for(let i=0; i < models.length; i++) { %>
+                    <% if (models[i].id_modelo == locals.oldData.model) { %><!-- para seleccionar el genero que tiene -->
+                        <option value="<%= models[i].id_modelo %>" selected>
+                        <%= models[i].tipo_de_modelo %>
                         </option>
+                    <% } else { %>
+                        <option value="<%= models[i].id_modelo %>">
+                        <%= models[i].tipo_de_modelo %>
+                        </option>>
                     <% } %>
-                </select>
+                <% } %>
+            </select>
+            <!-- alerta -->
+            <% if (locals.errors && errors.model){ %>
+                <p class="alertError"><%= errors.model.msg %> </p>
+            <% } %>
         </div>
         <div>
             <input type="submit">

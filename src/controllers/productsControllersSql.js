@@ -1,4 +1,5 @@
 let db = require("../database/models");
+const {validationResult} = require('express-validator');
 
 const controlador ={
     list:(req, res)=>{
@@ -41,6 +42,25 @@ const controlador ={
         //res.render("./products/sql/productsCreate");
     },
     processCreate:(req,res)=>{
+        //validacion
+        const resultValidation = validationResult(req);//validacion
+        if (resultValidation.errors.length > 0){
+
+        let pedidoColores = db.Colores.findAll();
+        let pedidosModelos = db.Modelos.findAll();
+        Promise.all([pedidoColores, pedidosModelos])//para poder llamar dos tablas
+        .then(function([colors, models]){
+                return res.render("./products/sql/productsCreate",{
+                    colors:colors,
+                    models:models, 
+                    errors: resultValidation.mapped(), 
+                    oldData: req.body})
+            })
+            .catch(function(error){
+                res.send(error);
+            })
+            //return res.render('movieCreate', {errors: resultValidation.mapped(), oldData: req.body }) //Para mostrar los datos bien ingresados
+        }else{
         db.Productos
                 .create({
                     name: req.body.name,  
@@ -49,9 +69,10 @@ const controlador ={
                     image: req.file ? req.file.filename : "default-image.png",
                     description: req.body.description,
                     id_color: req.body.color, 
-                    id_modelo: req.body.models 
+                    id_modelo: req.body.model 
         })
     res.redirect("list")
+        }
     },
     edit:(req, res)=>{
         let pedidoProducto = db.Productos.findByPk(req.params.id);
