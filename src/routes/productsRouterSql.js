@@ -17,7 +17,7 @@ router.post("/create",upload.single("image"), productsControllersSql.processCrea
 //Vista editar Producto
 router.get("/edit/:id", productsControllersSql.edit);
 //Editar producto
-router.put("/edit/:id", productsControllersSql.processEdit);
+router.put("/edit/:id",upload.single("image"), productsControllersSql.processEdit);
 //Eliminar Producto
 router.delete("/delete/:id", productsControllersSql.delete);
 module.exports = router;

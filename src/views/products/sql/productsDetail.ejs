@@ -11,11 +11,12 @@
     <h2>Precio:<%= producto.price %></h2>
     <h2>Año: <%= producto.anio %></h2>
     <h2>Descripción: <%= producto.description %></h2>
-    <h2>Imagen: <%= producto.image %></h2>
+    <h2>Imagen:</h2>
     <div class="conten-img">
         <img src="/img/products/<%= producto.image %>" alt="imagenAuto" class="img">
     </div>
     <h2>Color: <%= producto.color.nombre %></h2>
+    <h2>Modelo: <%= producto.modelo.tipo_de_modelo %></h2>
 
     <form action="/product/delete/<%= producto.id_product %>?_method=DELETE" method="POST">
         <button type="submit">DELETE</button>

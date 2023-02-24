@@ -76,6 +76,7 @@ const controlador ={
                 name: req.body.name,  
                 price: req.body.price,
                 anio: req.body.anio,
+                image: req.file ? req.file.filename : "default-image.png",
                 description: req.body.description,
                 id_color: req.body.color,  
                 id_modelo: req.body.models  
