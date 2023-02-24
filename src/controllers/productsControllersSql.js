@@ -112,7 +112,7 @@ const controlador ={
             .catch(function(error){
                 res.send(error);
             })
-        }
+        }else{
         let pedidoProducto = db.Productos.findByPk(req.params.id);
         db.Productos
             .update({
@@ -129,6 +129,7 @@ const controlador ={
                 }
             })
         res.redirect("/product/list/")
+        }
     },
     delete:(req, res)=>{
         db.Productos
