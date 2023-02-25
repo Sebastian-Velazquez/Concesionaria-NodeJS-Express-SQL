@@ -1,7 +1,7 @@
 const bcryptjs = require("bcryptjs");//requiere bcrypt para las password
 const userModels = require('../models/userModels')
 const {validationResult} = require('express-validator');
-let db = require("../database/models")
+
 
 const controlador ={ //IMPORTANTE
     
@@ -70,16 +70,6 @@ const controlador ={ //IMPORTANTE
         res.clearCookie('userEmail');//destruir la cookie
         req.session.destroy();//para destruir la session, osea salir del login del perfil
         return res.redirect('/')
-    },
-    //SQL
-    user:(req,res)=>{
-        db.Usuarios.findAll()
-        .then(function(usuarios){
-            res.render("./users/user",{usuarios:usuarios})
-        })
-        .catch(function(error){
-            res.send(error);
-        })
     }
 }
 

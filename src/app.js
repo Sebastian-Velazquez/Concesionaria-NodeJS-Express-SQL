@@ -35,12 +35,13 @@ const homeRouter = require('./routes/homeRouter.js')
 const usersRouter = require('./routes/usersRouter.js')
 const productsRouter = require('./routes/productsRouter.js')
 const productsRouterSql = require('./routes/productsRouterSql.js')
+const userRouterSql = require('./routes/userRouterSql.js')
 
 // Usando los enrutadores importados linea 5
 app.use("/", homeRouter);
 app.use("/user", usersRouter);
 app.use("/products", productsRouter);
-app.use("/product", productsRouterSql);
+app.use("/user", userRouterSql);
 
 
 

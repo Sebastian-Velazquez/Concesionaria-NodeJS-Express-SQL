@@ -21,4 +21,5 @@ router.get("/edit/:id", productsControllersSql.edit);
 router.put("/edit/:id",upload.single("image"),validations, productsControllersSql.processEdit);
 //Eliminar Producto
 router.delete("/delete/:id", productsControllersSql.delete);
+
 module.exports = router;

@@ -23,6 +23,5 @@ router.get("/userProfile",authMiddlewares, usersController.userProfile);
 //para salir del login.. crerrar ceunta
 router.get("/logout/", usersController.logout);
 
-//SQL - DB
-router.get("/user",usersController.user);
+
 module.exports = router;
