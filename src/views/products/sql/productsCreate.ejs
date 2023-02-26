@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <head>
+        <%- include('../../parcial/head.ejs') %>
+        <link href="/css/produstsCreate.css" rel="stylesheet">
+    </head>
 <body>
+    <%- include('../../parcial/header.ejs') %>
     <h2>Formulario para crear producto</h2>
     <form action="/product/create" method="POST" enctype="multipart/form-data">
         <div>
@@ -94,5 +93,6 @@
         <div>
             <input type="submit">
         </div>
+        <%- include('../../parcial/footer.ejs') %>
 </body>
 </html>

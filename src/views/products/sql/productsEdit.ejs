@@ -1,115 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Formulario para crear producto</h2>
-    <form action="/product/edit/<%= producto.id_product %>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <div>
-            <label>Nombre</label>
-            <input type="text" name="name"
-            value="<%= locals.oldData ? oldData.name : producto.name %>">
-                            <!-- Validacion -->
-                            <% if (locals.errors && errors.name){ %>
-                                <p class="alertError"><%= errors.name.msg %> </p>
-                                <% } %>
-        </div>
-        <div>
-            <label>Precio</label>
-            <input type="text" name="price"
-            value="<%= locals.oldData ? oldData.price : producto.price %>">
-                            <!-- Validacion -->
-                            <% if (locals.errors && errors.price){ %>
-                                <p class="alertError"><%= errors.price.msg %> </p>
-                                <% } %>
-        </div>
-        <div>
-            <label>Año</label>
-            <input type="date" name="anio"
-            value="<%= locals.oldData ? oldData.anio : producto.anio %>">
-                            <!-- Validacion -->
-                            <% if (locals.errors && errors.anio){ %>
-                                <p class="alertError"><%= errors.anio.msg %> </p>
-                                <% } %>
-        </div>
-        <div>
-            <label>Descripción: </label>
-            <input type="text" name="description"
-            value="<%= locals.oldData ? oldData.description : producto.description %>">
-        </div>
-        <div>
-            <input type="file" name="image">
-            <% if (locals.errors && errors.image){ %>
-                <p class="alertError"><%= errors.image.msg %> </p>
-            <% } %>
-        </div>
-        <div>
-            <label>Color del auto <%= producto.id_color %></label>
-                <select name="color">
-                    <option></option>
-                    <% for(let i=0; i < colors.length; i++) { %>
-                            <!-- si hay dado en el oldData -->
-                            <% if(locals.oldData){ %>
-                                <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
-                                    <option value="<%= colors[i].id_color %>" selected>
-                                    <%= colors[i].nombre %>
-                                    </option>
-                                <% } %>
-                            <% } %>
-                            <!-- para cando entra a la vista editar por primera vez -->
-                        <% if (colors[i].id_color == producto.id_color) { %>
-                            <option value="<%= colors[i].id_color %>" selected>
-                            <%= colors[i].nombre %>
-                            </option>
-                        <% }else{ %>
-                        <!-- muestra todos menos el selected, si es que tiene -->
-                            <option value="<%= colors[i].id_color %>">
-                            <%= colors[i].nombre %>
-                            </option>
-                        <% } %>
-                    <% } %>
-                </select>
-                <!-- alerta -->
-                <% if (locals.errors && errors.color){ %>
-                    <p class="alertError"><%= errors.color.msg %> </p>
+    <head>
+        <%- include('../../parcial/head.ejs') %>
+        <link href="/css/productsEdit.css" rel="stylesheet">
+    </head>
+    <body>
+        <%- include('../../parcial/header.ejs') %>
+        <h2>Formulario para crear producto</h2>
+        <form action="/product/edit/<%= producto.id_product %>?_method=PUT" method="POST" enctype="multipart/form-data">
+            <div>
+                <label>Nombre</label>
+                <input type="text" name="name"
+                value="<%= locals.oldData ? oldData.name : producto.name %>">
+                                <!-- Validacion -->
+                                <% if (locals.errors && errors.name){ %>
+                                    <p class="alertError"><%= errors.name.msg %> </p>
+                                    <% } %>
+            </div>
+            <div>
+                <label>Precio</label>
+                <input type="text" name="price"
+                value="<%= locals.oldData ? oldData.price : producto.price %>">
+                                <!-- Validacion -->
+                                <% if (locals.errors && errors.price){ %>
+                                    <p class="alertError"><%= errors.price.msg %> </p>
+                                    <% } %>
+            </div>
+            <div>
+                <label>Año</label>
+                <input type="date" name="anio"
+                value="<%= locals.oldData ? oldData.anio : producto.anio %>">
+                                <!-- Validacion -->
+                                <% if (locals.errors && errors.anio){ %>
+                                    <p class="alertError"><%= errors.anio.msg %> </p>
+                                    <% } %>
+            </div>
+            <div>
+                <label>Descripción: </label>
+                <input type="text" name="description"
+                value="<%= locals.oldData ? oldData.description : producto.description %>">
+            </div>
+            <div>
+                <input type="file" name="image">
+                <% if (locals.errors && errors.image){ %>
+                    <p class="alertError"><%= errors.image.msg %> </p>
                 <% } %>
-        </div>
-        <div>
-            <label>Selecionar modelo</label>
-            <select name="model">
-                <option></option>
-                <% for(let i=0; i < models.length; i++) { %>
-                    <!-- si hay dado en el oldData -->
-                    <% if(locals.oldData){ %>
-                        <% if (models[i].id_modelo == locals.oldData.model) { %><!-- para seleccionar el genero que tiene -->
+            </div>
+            <div>
+                <label>Color del auto <%= producto.id_color %></label>
+                    <select name="color">
+                        <option></option>
+                        <% for(let i=0; i < colors.length; i++) { %>
+                                <!-- si hay dado en el oldData -->
+                                <% if(locals.oldData){ %>
+                                    <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
+                                        <option value="<%= colors[i].id_color %>" selected>
+                                        <%= colors[i].nombre %>
+                                        </option>
+                                    <% } %>
+                                <% } %>
+                                <!-- para cando entra a la vista editar por primera vez -->
+                            <% if (colors[i].id_color == producto.id_color) { %>
+                                <option value="<%= colors[i].id_color %>" selected>
+                                <%= colors[i].nombre %>
+                                </option>
+                            <% }else{ %>
+                            <!-- muestra todos menos el selected, si es que tiene -->
+                                <option value="<%= colors[i].id_color %>">
+                                <%= colors[i].nombre %>
+                                </option>
+                            <% } %>
+                        <% } %>
+                    </select>
+                    <!-- alerta -->
+                    <% if (locals.errors && errors.color){ %>
+                        <p class="alertError"><%= errors.color.msg %> </p>
+                    <% } %>
+            </div>
+            <div>
+                <label>Selecionar modelo</label>
+                <select name="model">
+                    <option></option>
+                    <% for(let i=0; i < models.length; i++) { %>
+                        <!-- si hay dado en el oldData -->
+                        <% if(locals.oldData){ %>
+                            <% if (models[i].id_modelo == locals.oldData.model) { %><!-- para seleccionar el genero que tiene -->
+                                <option value="<%= models[i].id_modelo %>" selected>
+                                <%= models[i].tipo_de_modelo %>
+                                </option>
+                            <% } %>
+                        <% }  %>
+                        <!-- para cando entra a la vista editar por primera vez -->
+                        <% if (models[i].id_modelo == producto.id_color) { %>
                             <option value="<%= models[i].id_modelo %>" selected>
                             <%= models[i].tipo_de_modelo %>
                             </option>
                         <% } %>
-                    <% }  %>
-                    <!-- para cando entra a la vista editar por primera vez -->
-                    <% if (models[i].id_modelo == producto.id_color) { %>
-                        <option value="<%= models[i].id_modelo %>" selected>
+                        <!-- muestra todos menos el selected, si es que tiene -->
+                        <option value="<%= models[i].id_modelo %>">
                         <%= models[i].tipo_de_modelo %>
                         </option>
                     <% } %>
-                    <!-- muestra todos menos el selected, si es que tiene -->
-                    <option value="<%= models[i].id_modelo %>">
-                    <%= models[i].tipo_de_modelo %>
-                    </option>
+                </select>
+                <!-- alerta -->
+                <% if (locals.errors && errors.model){ %>
+                    <p class="alertError"><%= errors.model.msg %> </p>
                 <% } %>
-            </select>
-            <!-- alerta -->
-            <% if (locals.errors && errors.model){ %>
-                <p class="alertError"><%= errors.model.msg %> </p>
-            <% } %>
-        </div>
-        <div>
-            <input type="submit">
-        </div>
-</body>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        <%- include('../../parcial/footer.ejs') %>
+    </body>
 </html>

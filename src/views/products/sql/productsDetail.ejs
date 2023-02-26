@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1><%= producto.name %></h1>
-    <h2>Precio:<%= producto.price %></h2>
-    <h2>Año: <%= producto.anio %></h2>
-    <h2>Descripción: <%= producto.description %></h2>
-    <h2>Imagen:</h2>
-    <div class="conten-img">
-        <img src="/img/products/<%= producto.image %>" alt="imagenAuto" class="img">
-    </div>
-    <h2>Color: <%= producto.color.nombre %></h2>
-    <h2>Modelo: <%= producto.modelo.tipo_de_modelo %></h2>
+    <head>
+        <%- include('../../parcial/head.ejs') %>
+        <link href="/css/productsDetail.css" rel="stylesheet">
+    </head>
+    <body>
+        <%- include('../../parcial/header.ejs') %>
+        <h1><%= producto.name %></h1>
+        <h2>Precio:<%= producto.price %></h2>
+        <h2>Año: <%= producto.anio %></h2>
+        <h2>Descripción: <%= producto.description %></h2>
+        <h2>Imagen:</h2>
+        <div class="conten-img">
+            <img src="/img/products/<%= producto.image %>" alt="imagenAuto" class="img">
+        </div>
+        <h2>Color: <%= producto.color.nombre %></h2>
+        <h2>Modelo: <%= producto.modelo.tipo_de_modelo %></h2>
 
-    <form action="/product/delete/<%= producto.id_product %>?_method=DELETE" method="POST">
-        <button type="submit">DELETE</button>
-    </form>
-    <form action="/product/edit/<%= producto.id_product %>" method="GET">
-        <button type="submit">EDITAR</button>
-    </form>
-</body>
+        <form action="/product/delete/<%= producto.id_product %>?_method=DELETE" method="POST">
+            <button type="submit">DELETE</button>
+        </form>
+        <form action="/product/edit/<%= producto.id_product %>" method="GET">
+            <button type="submit">EDITAR</button>
+        </form>
+        <%- include('../../parcial/footer.ejs') %>
+    </body>
 </html>

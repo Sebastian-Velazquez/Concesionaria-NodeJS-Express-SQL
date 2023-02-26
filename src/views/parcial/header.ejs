@@ -21,21 +21,24 @@
         <i class="fa-sharp fa-solid fa-bars lista-hambuerguesa"></i>
         <div class="content-navBar">
             <!-- Seccion para administradores, terminar mas tarde  -->
-            <ul class="navBar">
-                <li class="navBar-lista"><a href="product/create">Crear de Producto<i class="fa-sharp fa-solid fa-pen-to-square icono"></i></a></li>
-                <li class="navBar-lista"><a href="product/list">Listado de Productos<i class="fa-solid fa-list icono"></i></a></li>
-            </ul>
-            
-            <ul class="navBar">
-                <% if (locals.isLogged) { %>    
-                    <li class="navBar-lista"><a href="/user/userProfile"><%= locals.userLogged.firstName %><img src="/img/avatar/<%= locals.userLogged.image %>" class="icons-profile"></a></li>
-                    <li class="navBar-lista"><a href="/user/logout">Salir</li>
-                    <li class="navBar-lista"><a href="/products/productCart">Carrito<i class="fa-solid fa-cart-plus icono"></i></a></li>
-                <% }else { %> 
-                    <li class="navBar-lista"><a href="/user/register">Registrate<i class="far fa-id-card icono"></i></a></li>
-                    <li class="navBar-lista"><a href="/user/login">Ingresá<i class="fas fa-sign-in-alt icono"></i></a></li>
-                <% } %> 
-            </ul>
+            <div>
+                <ul class="navBar">
+                    <li class="navBar-lista"><a href="product/create">Crear de Producto<i class="fa-sharp fa-solid fa-pen-to-square icono"></i></a></li>
+                    <li class="navBar-lista"><a href="product/list">Listado de Productos<i class="fa-solid fa-list icono"></i></a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navBar">
+                    <% if (locals.isLogged) { %>    
+                        <li class="navBar-lista"><a href="/user/userProfile"><%= locals.userLogged.firstName %><img src="/img/avatar/<%= locals.userLogged.image %>" class="icons-profile"></a></li>
+                        <li class="navBar-lista"><a href="/user/logout">Salir</li>
+                        <li class="navBar-lista"><a href="/products/productCart">Carrito<i class="fa-solid fa-cart-plus icono"></i></a></li>
+                    <% }else { %> 
+                        <li class="navBar-lista"><a href="/user/register">Registrate<i class="far fa-id-card icono"></i></a></li>
+                        <li class="navBar-lista"><a href="/user/login">Ingresá<i class="fas fa-sign-in-alt icono"></i></a></li>
+                    <% } %> 
+                </ul>
+            </div>
         </div>
         
     </section>  
