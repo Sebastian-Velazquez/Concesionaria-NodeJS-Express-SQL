@@ -1,3 +1,5 @@
+const Categorias = require("./Categorias");
+
 module.exports = (sequelize, dataTypes) =>{
     let alias = "Usuarios";
     let cols ={
@@ -35,6 +37,12 @@ module.exports = (sequelize, dataTypes) =>{
     }
 
     const Usuarios = sequelize.define(alias, cols, config);
-
+    //Definimos las relaciones o asociaciones
+    Usuarios.associate = Categorias =>{
+        Usuarios.belongsTo(Usuarios.Categorias,{ 
+            as: "categoria",
+            foreignKey: "id_category",
+        });   
+    }
     return Usuarios;
 }
