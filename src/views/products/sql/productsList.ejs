@@ -6,13 +6,26 @@
     </head>
 <body>
     <%- include('../../parcial/header.ejs') %>
-    <ul>
-        <% for (let i = 0; i < productos.length; i++){ %> 
-        <li >
+    <% for (let i = 0; i < productos.length; i++){ %> 
+        <ul>
+        <li class="li-content">
             <a href="/product/list/<%= productos[i].id_product %>"><%= productos[i].name %></a>
         </li>
-        <% } %>
+        <li class="li-content">
+            <img src="/img/products/<%= productos[i].image %>" alt="imagenAuto" class="img-producto">
+        </li>
+        <li class="li-content">
+            <form action="/product/delete/<%= productos[i].id_product %>?_method=DELETE" method="POST">
+                <button type="submit" class="button">DELETE</button>
+            </form>
+        </li>
+        <li class="li-content">
+            <form action="/product/edit/<%= productos[i].id_product %>" method="GET">
+                <button type="submit">EDITAR</button>
+            </form>
+        </li>
     </ul>
+        <% } %>
     <%- include('../../parcial/footer.ejs') %>
 </body>
 </html>

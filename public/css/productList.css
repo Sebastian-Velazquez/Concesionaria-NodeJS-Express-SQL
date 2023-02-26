@@ -1,3 +1,24 @@
 @import url(header.css);
 @import url(footer.css);
 @import url(normalize.css);
+.li-content {
+    height:50px;
+    width: 100%;
+    border: solid 1px red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.img-producto{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+ul{
+    display: flex;
+}
+/* .button{
+    height: 80px;
+    width: 120px;
+} */
