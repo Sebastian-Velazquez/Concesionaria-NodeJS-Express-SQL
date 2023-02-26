@@ -39,7 +39,7 @@ module.exports = (sequelize, dataTypes) =>{
     const Usuarios = sequelize.define(alias, cols, config);
     //Definimos las relaciones o asociaciones
     Usuarios.associate = Categorias =>{
-        Usuarios.belongsTo(Usuarios.Categorias,{ 
+        Usuarios.belongsTo(Categorias.Usuarios,{ 
             as: "categoria",
             foreignKey: "id_category",
         });   
