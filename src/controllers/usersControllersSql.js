@@ -2,10 +2,16 @@ let db = require("../database/models");
 
 const controlador ={
     register:(req, res)=>{
-        res.send("Estas en el registro de usario")
+        res.render("./users/sql/userRegister")
+    },
+    processRegister:(req, res)=>{
+        res.send("Estas en el proceso de usario creado")
     },
     login:(req, res)=>{
-        res.send("Estas en el login de registro")
+        res.render("./users/sql/userLogin")
+    },
+    processLogin:(req, res)=>{
+        res.send("Estas en el proceso de login")
     }
 }
 module.exports = controlador;
