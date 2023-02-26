@@ -5,6 +5,6 @@ const router = express.Router();
 const usersControllersSql = require("../controllers/usersControllersSql.js")
 
 //lista de productos
-router.get("/list", usersControllersSql.list);
+router.get("/login", usersControllersSql.login);
 
 module.exports = router;

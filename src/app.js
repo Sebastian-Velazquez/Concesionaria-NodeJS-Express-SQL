@@ -41,7 +41,8 @@ const userRouterSql = require('./routes/userRouterSql.js')
 app.use("/", homeRouter);
 app.use("/user", usersRouter);
 app.use("/products", productsRouter);
-app.use("/user", userRouterSql);
+app.use("/product", productsRouterSql);
+app.use("/users", userRouterSql);
 
 
 
