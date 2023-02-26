@@ -2,7 +2,7 @@
 @import url(footer.css);
 @import url(normalize.css);
 .li-content {
-    height:50px;
+    height:150px;
     width: 100%;
     border: solid 1px red;
     display: flex;
@@ -13,7 +13,7 @@
 .img-producto{
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 ul{
     display: flex;
@@ -22,3 +22,7 @@ ul{
     height: 80px;
     width: 120px;
 } */
+.img-li{
+    height:100%;
+    width: 100%;
+}

@@ -12,16 +12,18 @@
             <a href="/product/list/<%= productos[i].id_product %>"><%= productos[i].name %></a>
         </li>
         <li class="li-content">
-            <img src="/img/products/<%= productos[i].image %>" alt="imagenAuto" class="img-producto">
-        </li>
-        <li class="li-content">
-            <form action="/product/delete/<%= productos[i].id_product %>?_method=DELETE" method="POST">
-                <button type="submit" class="button">DELETE</button>
-            </form>
+            <a href="/product/list/<%= productos[i].id_product %>" class="img-li">
+                <img src="/img/products/<%= productos[i].image %>" alt="imagenAuto" class="img-producto">
+            </a>
         </li>
         <li class="li-content">
             <form action="/product/edit/<%= productos[i].id_product %>" method="GET">
                 <button type="submit">EDITAR</button>
+            </form>
+        </li>
+        <li class="li-content">
+            <form action="/product/delete/<%= productos[i].id_product %>?_method=DELETE" method="POST">
+                <button type="submit" class="button">ELIMINAR</button>
             </form>
         </li>
     </ul>
