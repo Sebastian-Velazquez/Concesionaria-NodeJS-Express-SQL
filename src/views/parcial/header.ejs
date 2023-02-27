@@ -8,16 +8,18 @@
                 <img src="/img/LogoRenault.png"  alt="logo">
             </a>
         </div>
+
         <section class="searchBar">
-            <form action="/search" method="POST">
+            <form action="/product/search" method="GET">
                 <div class="searchBox">
-                    <input type="text" placeholder="Busca tu torino" required="">
+                    <input type="text" placeholder="Buscar" name="search">
                 </div>
                 <div class="lupa">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </form>
         </section>    
+
         <i class="fa-sharp fa-solid fa-bars lista-hambuerguesa"></i>
         <div class="content-navBar">
             <!-- Seccion para administradores, terminar mas tarde  -->
