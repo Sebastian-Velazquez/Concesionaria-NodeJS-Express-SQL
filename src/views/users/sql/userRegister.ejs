@@ -8,6 +8,19 @@
     <%- include('../../parcial/header.ejs') %>
 <h1>Registro</h1>
 <form action="/users/register" method="post">
+    <label>Nombre:</label>
+    <input type="text" name="firtName" placeholder="Ej: Michael">
+    <label>Apellido:</label>
+    <input type="text" name="lastName" placeholder="Ej: Jackson">
+    <label>Fecha de nacimiento:</label>
+    <input type="date" name="model">
+    <label>Email:</label>
+    <input type="email" name="email" placeholder="Ej: ika-concesionaria@info.com">
+    <label>Contraseña:</label>
+    <input type="password" name="password" placeholder="Ej: Contraseña">
+    <label>Imagen:</label>
+    <input type="file" name="image">
+
     <input type="submit">
 </form>
     <%- include('../../parcial/footer.ejs') %>
