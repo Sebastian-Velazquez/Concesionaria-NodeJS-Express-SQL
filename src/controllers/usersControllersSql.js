@@ -21,6 +21,7 @@ const controlador ={
         res.render("./users/sql/userLogin")
     },
     processLogin:(req, res)=>{
+        
         res.send("Estas en el proceso de login")
     }
 }
