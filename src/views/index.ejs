@@ -8,11 +8,36 @@
 
 <body>
     <%- include('./parcial/header.ejs') %>
+    
+        <% for(let i=0; i < modelos.length; i++) { %>
+            <p><%= modelos[i].tipo_de_modelo %></p>
+                    <section class="content-section">   
+                   
+                        <% productos.forEach(producto=> { %>
 
-        <main class="main">
+
+                        <% if(modelos[i].id_modelo == producto.id_modelo){ %>
+                            <a href="/product/list/<%= producto.id_product %>">
+                                <article class="content-section-article">
+                                    <div class="div__img-producto">
+                                        <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                                    </div>
+                                    <div class="content-detalle">
+                                        <h4 class="image-decription__name"><%= producto.name %></h4>
+                                        <h4 class="image-decription__colors"><%= producto.colors %></h4>
+                                        <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
+                                    </div>
+                                </article>
+                            </a>
+                        <% } %>
+                    <% }) %>
+                    </section>
+            <% } %>
+
+        <!-- <main class="main">
             <h2 class="titulo_1_main">Autos Sedan</h2>
             <section class="content-section">
-                <% productosSedan.forEach(producto=> { %>
+                <% productos.forEach(producto=> { %>
                     <a href="/products/detail/<%= producto.id %>">
                         <article class="content-section-article">
                             <div class="div__img-producto">
@@ -30,7 +55,7 @@
 
             <h2 class="titulo_2">Autos Coupe</h2>
             <section class="content-section">
-                <% productosCoupe.forEach(producto=> { %>
+                <% productos.forEach(producto=> { %>
                     <a href="/products/detail/<%= producto.id %>">
                         <article class="content-section-article">
                             <div class="div__img-producto">
@@ -44,7 +69,7 @@
                         </article>
                     </a>
                     <% }) %>
-            </section>
+            </section> -->
         </main>
         <%- include('./parcial/footer.ejs') %>
 </body>
