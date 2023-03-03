@@ -1,4 +1,5 @@
-let db = require("../database/models");
+
+ let db = require("../database/models");
 const {validationResult} = require('express-validator');
 
 const controlador ={
