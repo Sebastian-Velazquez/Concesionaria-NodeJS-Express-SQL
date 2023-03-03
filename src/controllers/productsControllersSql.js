@@ -139,6 +139,16 @@ const controlador ={
                 }
             })
             res.redirect("/product/list/")
+    },
+    search:(req,res)=>{
+        db.Productos
+        .findAll({
+            where:{
+                name:{[db.Sequelize.Op.like] : '%' + req.query.search + '%' }
+            }
+        }).then(resultados=>{
+            res.send(resultados);
+        })
     }
 }
 
