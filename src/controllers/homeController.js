@@ -10,13 +10,33 @@ let db = require("../database/models");
 const controlador ={ //IMPORTANTE
     //-----------------IDEX DINAMICO-----------------------
     index: (req, res)=>{ 
-        let pedidoProductos = db.Productos.findAll()
-        let pedidoModelos = db.Modelos.findAll({})
-        Promise.all([pedidoProductos, pedidoModelos])//para poder llamar dos tablas
-            .then(function([productos, modelos]){
+        
+        let pedidoProductosSedan= db.Productos.findAll({
+            where: {
+                id_modelo : 1
+            },
+            order:[
+                ["price", "DESC"]
+            ],
+            limit: 4
+        })
+        let pedidoProductosCoupe = db.Productos.findAll({
+            where: {
+                id_modelo : 2
+            },
+            order:[
+                ["price", "DESC"]
+            ],
+            limit: 4
+        })
+        let pedidoModelos = db.Modelos.findAll()
+        Promise.all([pedidoProductosSedan, pedidoProductosCoupe, pedidoModelos])//para poder llamar dos tablas
+            .then(function([productosSedan, pedidoProductosCoupe, modelos]){
                 res.render("index",{
                     modelos:modelos,
-                    productos:productos})
+                    productosSedan:productosSedan,
+                    pedidoProductosCoupe:pedidoProductosCoupe
+                })
             })
             .catch(function(error){
                 res.send(error)
