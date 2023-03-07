@@ -11,7 +11,7 @@ const controlador ={ //IMPORTANTE
     //-----------------IDEX DINAMICO-----------------------
     index: (req, res)=>{ 
         let pedidoProductos = db.Productos.findAll()
-        let pedidoModelos = db.Modelos.findAll()
+        let pedidoModelos = db.Modelos.findAll({})
         Promise.all([pedidoProductos, pedidoModelos])//para poder llamar dos tablas
             .then(function([productos, modelos]){
                 res.render("index",{

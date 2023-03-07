@@ -8,28 +8,31 @@
 
 <body>
     <%- include('./parcial/header.ejs') %>
-    
-        <% for(let i=0; i < modelos.length; i++) { %>
+    <% for(let i=0; i < modelos.length; i++) { %>
             <p><%= modelos[i].tipo_de_modelo %></p>
                     <section class="content-section">   
-                
+                        
+                        <% let cont = 0 %>
+                        
                         <% productos.forEach(producto=> { %>
-
-
-                        <% if(modelos[i].id_modelo == producto.id_modelo){ %>
-                            <a href="/product/list/<%= producto.id_product %>">
-                                <article class="content-section-article">
-                                    <div class="div__img-producto">
-                                        <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
-                                    </div>
-                                    <div class="content-detalle">
-                                        <h4 class="image-decription__name"><%= producto.name %></h4>
-                                        <h4 class="image-decription__colors"><%= producto.colors %></h4>
-                                        <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
-                                    </div>
-                                </article>
-                            </a>
-                        <% } %>
+                        <% if (cont <= 4){ %>
+                            <% if(modelos[i].id_modelo == producto.id_modelo){ %>
+                                <a href="/product/list/<%= producto.id_product %>">
+                                    <article class="content-section-article">
+                                        <div class="div__img-producto">
+                                            <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                                        </div>
+                                        <div class="content-detalle">
+                                            <h4 class="image-decription__name"><%= producto.name %></h4>
+                                            <h4 class="image-decription__colors"><%= producto.colors %></h4>
+                                            <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
+                                        </div>
+                                    </article>
+                                    <% console.log(cont) %>
+                                </a>
+                                <% } %>
+                            <% } %>
+                            <% cont += 1 %>
                     <% }) %>
                     </section>
             <% } %>
