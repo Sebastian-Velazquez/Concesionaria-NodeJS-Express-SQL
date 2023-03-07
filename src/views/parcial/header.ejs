@@ -9,35 +9,32 @@
             </a>
         </div>
 
-        <section class="searchBar">
+        <div class="searchBar">
             <form action="/product/search" method="GET">
                 <div class="searchBox">
                     <input type="text" placeholder="Buscar" name="search">
                 </div>
-                <div class="lupa">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </div>
             </form>
-        </section>    
+        </div>    
 
-        <i class="fa-sharp fa-solid fa-bars lista-hambuerguesa"></i>
+        <i class="fa-sharp fa-solid fa-bars lista-hamburguesa"></i>
         <div class="content-navBar">
             <!-- Seccion para administradores, terminar mas tarde  -->
             <div>
                 <ul class="navBar">
-                    <li class="navBar-lista"><a href="/product/create">Crear de Producto<i class="fa-sharp fa-solid fa-pen-to-square icono"></i></a></li>
-                    <li class="navBar-lista"><a href="/product/list">Listado de Productos<i class="fa-solid fa-list icono"></i></a></li>
+                    <li class="navBar-lista"><a href="/product/create">Crear Producto</a></li>
+                    <li class="navBar-lista"><a href="/product/list">Listado de Productos</a></li>
                 </ul>
             </div>
             <div>
                 <ul class="navBar">
                     <% if (locals.isLogged) { %>    
-                        <li class="navBar-lista"><a href="/user/userProfile"><%= locals.userLogged.firstName %><img src="/img/avatar/<%= locals.userLogged.image %>" class="icons-profile"></a></li>
+                        <li class="navBar-lista"><a href="/user/userProfile"><%= locals.userLogged.firstName %><img src="/img/avatar/<%= locals.userLogged.image %>"></a></li>
                         <li class="navBar-lista"><a href="/user/logout">Salir</li>
-                        <li class="navBar-lista"><a href="/products/productCart">Carrito<i class="fa-solid fa-cart-plus icono"></i></a></li>
+                        <li class="navBar-lista"><a href="/products/productCart">Carrito</a></li>
                     <% }else { %> 
-                        <li class="navBar-lista"><a href="/users/register">Registrate<i class="far fa-id-card icono"></i></a></li>
-                        <li class="navBar-lista"><a href="/users/login">Ingresá<i class="fas fa-sign-in-alt icono"></i></a></li>
+                        <li class="navBar-lista"><a href="/users/register">Registrate</a></li>
+                        <li class="navBar-lista"><a href="/users/login">Ingresá</i></a></li>
                     <% } %> 
                 </ul>
             </div>

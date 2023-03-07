@@ -1,62 +1,12 @@
 @import url(normalize.css);
 
-.waves {
-    position:relative;
-    width: 100%;
-    height:15vh;
-    margin-bottom:-7px; /*Fix for safari gap*/
-    min-height:100px;
-    max-height:150px;
-  }
-  
-  .content {
-    position:relative;
-    height:20vh;
-    text-align:center;
-    background-color: white;
-  }
-  
-  /* Animation */
-  
-  .parallax > use {
-    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
-  }
-  .parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-  }
-  .parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-  }
-  .parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
-  .parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-  }
-  @keyframes move-forever {
-    0% {
-     transform: translate3d(-90px,0,0);
-    }
-    100% { 
-      transform: translate3d(85px,0,0);
-    }
-  }
-
 footer{
     display: flex;
     flex-wrap:wrap;
-    background-color: rgb(28, 13, 117);
-    /* background-color: #4584AF; */
-   /*  border: solid 2px #000; */
-    /* padding: 5px 0; */
     justify-content: space-evenly;
 }
 
-/* -------------footer-secion-Redes sociales---------------------------------- */
+/*  REDES SOCIALES  */
 .footer-section {
     display: flex;
     font-size: 20px;
@@ -67,93 +17,210 @@ footer{
     align-items: center;
     align-content: center;
 }
-/* -------------footer-secion del mapa---------------------------------- */
-.footer-section--mapa {
-    display: flex;
-    flex-direction: row;
-    font-size: 20px;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 5px;
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  height: 120px;
+  width: 100%;
+  padding-top: 40px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
 }
 
-/* -------------CajaDelMapa---------------------------------- */
-.content-mapa{
-    height: 95%;
-    width: 95%;
-    padding: 22px;
+.wrapper .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 10%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-/* -------------Mapa---------------------------------- */
-.mapa{
-    height: 100%;
-    width: 100%;
 
-} 
-/* -------------iconsRedesSociales---------------------------------- */
-.iconsfooter{
-    font-size: 30px;
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-/* -------------para poner el nombre al lado del logo-----------*/
-.footer-section__texto-facebook,
-.footer-section__texto-whatsapp,
-.footer-section__texto-instagram,
-.footer-section__texto-tel{
-    display:inline-flex;
-    padding: 25px 15px; /*horizontal y vertica*/
-    color: #4584AF;
-    /* color: rgb(255, 255, 255); */
+
+/* BOTON VOLVER ARRIBA */ 
+
+button {
+  width: 140px;
+  height: 28px;
+  overflow: hidden;
+  border: none;
+  color: black;
+  background: none;
+  position: relative;
+  padding-bottom: 2em;
 }
-/* -------------iconsRedesSocialesFacebook---------------------------------- */
-.iconsfooter-facebook{
-    color: #3b5998;
-    font-size: 30px;
+
+button > div,button > svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
-/* -------------iconsRedesSocialesWhatsapp---------------------------------- */
-.iconsfooter-whatsapp{
-    color:#25D366;
-    font-size: 30px;
+
+button:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  background: currentColor;
+  transition: transform 0.25s ease-out;
 }
-/* -------------iconsRedesSocialesInstagram---------------------------------- */
-.iconsfooter-instagram{
-    color: #E1306C;
-    font-size: 30px;
+
+button:hover:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
-.iconsfooter-tel{
-    color: #006699;
-    font-size: 30px;
+
+button .clone > *,button .text > * {
+  opacity: 1;
+  font-size: 1.3rem;
+  transition: 0.2s;
+  margin-left: 4px;
 }
-h5{
-    width: 95%;
+
+button .clone > * {
+  transform: translateY(60px);
 }
+
+button:hover .clone > * {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+button:hover .text > * {
+  opacity: 1;
+  transform: translateY(-60px);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+}
+
+button:hover .clone > :nth-child(1) {
+  transition-delay: 0.15s;
+}
+
+button:hover .clone > :nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+button:hover .clone > :nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+button:hover .clone > :nth-child(4) {
+  transition-delay: 0.3s;
+}
+/* icon style and hover */
+button svg {
+  width: 20px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-50deg);
+  transition: 0.2s ease-out;
+}
+
+button:hover svg {
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+/* DATOS FOOTER */ 
+.copy-footer{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 10px 10px 10px;
+}
+.copy-footer > span{
+  display: flex;
+  gap: 15px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+.copy-footer > span > p{
+  font-style: italic;
+}
+
 @media screen and (min-width:700px){
-    
-    .waves {
-        height:40px;
-        min-height:40px;
-      }
-    
-    .content-mapa{
-        width: 40%;
-        text-align: center;
-    }
-    .conten-contactos{
-        display: flex;
-    }
-    .mapa{
-        height: 100%;
-        width: 100%;
 
-    } 
-    
-    footer {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-around;
-    }
-    a{
-        text-align: center;
-    }
+  footer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-around;
+  }
+
+  a{
+      text-align: center;
+  }
+
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #fff;
+  }
+  
+  .wrapper .whatsapp:hover,
+  .wrapper .whatsapp:hover .tooltip,
+  .wrapper .whatsapp:hover .tooltip::before {
+    background: #3dda59;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: linear-gradient(90deg, #4c5bc6 0%, #d12f79 100%);
+    color: #fff;
+  }
 }

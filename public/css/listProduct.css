@@ -1,6 +1,8 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
+
+
 .image-decription__name{
   font-size: 25px;
   font-family: fangsong;
@@ -15,9 +17,6 @@
   color: green;
   font-family: fangsong;
 }
-
-
-
 
 .content-section{
     display: flex;
