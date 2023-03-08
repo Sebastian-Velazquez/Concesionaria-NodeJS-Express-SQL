@@ -1,5 +1,4 @@
-
- let db = require("../database/models");
+let db = require("../database/models");
 const {validationResult} = require('express-validator');
 
 const controlador ={
@@ -148,7 +147,9 @@ const controlador ={
                 name:{[db.Sequelize.Op.like] : '%' + req.query.search + '%' }
             }
         }).then(resultados=>{
-            res.send(resultados);
+            res.render("./products/sql/prodcutsSearch",{
+                resultados:resultados
+            });
         })
     }
 }

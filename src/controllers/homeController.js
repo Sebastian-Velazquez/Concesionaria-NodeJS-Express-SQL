@@ -93,20 +93,6 @@ const controlador ={ //IMPORTANTE
             .catch(function(error){
                 res.send(error)
         }) 
-        /**************** */
-
-  /*       const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        let productosSedan = products.filter( producto => { //filtro en el main
-            return producto.category == "sedan"
-        });
-
-        let productosCoupe = products.filter( producto => { //filtro en el main
-            return producto.category == "coupe"
-
-        });
-        res.render("index",{
-            productosSedan: productosSedan, //No es necesario el mismo nombre.. Para ejs se usa la izquierda
-            productosCoupe: productosCoupe}); */
     } 
 }
 
