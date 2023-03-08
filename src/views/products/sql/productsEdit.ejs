@@ -91,16 +91,15 @@
                             <% } %>
                         <% }  %>
                         <!-- para cando entra a la vista editar por primera vez -->
-                        <% if (models[i].id_modelo == producto.id_color) { %>
+                        <% if (models[i].id_modelo == producto.id_modelo) { %>
                             <option value="<%= models[i].id_modelo %>" selected>
                             <%= models[i].tipo_de_modelo %>
                             </option>
-                        <% }else{ %>
+                        <% } %>
                         <!-- muestra todos menos el selected, si es que tiene -->
                         <option value="<%= models[i].id_modelo %>">
                         <%= models[i].tipo_de_modelo %>
                         </option>
-                    <% } %>
                     <% } %>
                 </select>
                 <!-- alerta -->

@@ -10,6 +10,7 @@
     <%- include('./parcial/header.ejs') %>
     <% for(let i=0; i < modelos.length; i++) { %>
             <p><%= modelos[i].tipo_de_modelo %></p>
+                    <!-- Sedan -->
                     <section class="content-section">   
                         <% productosSedan.forEach(producto=> { %>
                             <% if(modelos[i].id_modelo == producto.id_modelo){ %>   
@@ -28,8 +29,85 @@
                                 <% } %>
                     <% }) %>
                     </section>
+                    <!-- Coupe -->
                     <section class="content-section">   
                         <% pedidoProductosCoupe.forEach(producto=> { %>
+                            <% if(modelos[i].id_modelo == producto.id_modelo){ %>   
+                                    <a href="/product/list/<%= producto.id_product %>">
+                                        <article class="content-section-article">
+                                            <div class="div__img-producto">
+                                                <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                                            </div>
+                                            <div class="content-detalle">
+                                                <h4 class="image-decription__name"><%= producto.name %></h4>
+                                                <h4 class="image-decription__colors"><%= producto.colors %></h4>
+                                                <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
+                                            </div>
+                                        </article>
+                                    </a>
+                                <% } %>
+                    <% }) %>
+                    </section>
+                    <!-- 4x4 -->
+                    <section class="content-section">   
+                        <% pedidoProductos4x4.forEach(producto=> { %>
+                            <% if(modelos[i].id_modelo == producto.id_modelo){ %>   
+                                    <a href="/product/list/<%= producto.id_product %>">
+                                        <article class="content-section-article">
+                                            <div class="div__img-producto">
+                                                <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                                            </div>
+                                            <div class="content-detalle">
+                                                <h4 class="image-decription__name"><%= producto.name %></h4>
+                                                <h4 class="image-decription__colors"><%= producto.colors %></h4>
+                                                <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
+                                            </div>
+                                        </article>
+                                    </a>
+                                <% } %>
+                    <% }) %>
+                    </section>
+                    <!-- Camioneta -->
+                    <section class="content-section">   
+                        <% pedidoProductosCamioneta.forEach(producto=> { %>
+                            <% if(modelos[i].id_modelo == producto.id_modelo){ %>   
+                                    <a href="/product/list/<%= producto.id_product %>">
+                                        <article class="content-section-article">
+                                            <div class="div__img-producto">
+                                                <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                                            </div>
+                                            <div class="content-detalle">
+                                                <h4 class="image-decription__name"><%= producto.name %></h4>
+                                                <h4 class="image-decription__colors"><%= producto.colors %></h4>
+                                                <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
+                                            </div>
+                                        </article>
+                                    </a>
+                                <% } %>
+                    <% }) %>
+                    </section>
+                    <!-- Lujo -->
+                    <section class="content-section">   
+                        <% pedidoProductosLujo.forEach(producto=> { %>
+                            <% if(modelos[i].id_modelo == producto.id_modelo){ %>   
+                                    <a href="/product/list/<%= producto.id_product %>">
+                                        <article class="content-section-article">
+                                            <div class="div__img-producto">
+                                                <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                                            </div>
+                                            <div class="content-detalle">
+                                                <h4 class="image-decription__name"><%= producto.name %></h4>
+                                                <h4 class="image-decription__colors"><%= producto.colors %></h4>
+                                                <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
+                                            </div>
+                                        </article>
+                                    </a>
+                                <% } %>
+                    <% }) %>
+                    </section>
+                    <!-- Deportivo -->
+                    <section class="content-section">   
+                        <% pedidoProductosDeportivo.forEach(producto=> { %>
                             <% if(modelos[i].id_modelo == producto.id_modelo){ %>   
                                     <a href="/product/list/<%= producto.id_product %>">
                                         <article class="content-section-article">

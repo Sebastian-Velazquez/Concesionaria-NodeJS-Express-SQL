@@ -38,19 +38,58 @@ const controlador ={ //IMPORTANTE
             ],
             limit: 4
         })
+        let pedidoProductosCamioneta = db.Productos.findAll({
+            where: {
+                id_modelo : 4
+            },
+            order:[
+                ["price", "DESC"]
+            ],
+            limit: 4
+        })
+        let pedidoProductosLujo = db.Productos.findAll({
+            where: {
+                id_modelo : 5
+            },
+            order:[
+                ["price", "DESC"]
+            ],
+            limit: 4
+        })
+        let pedidoProductosDeportivo = db.Productos.findAll({
+            where: {
+                id_modelo : 6
+            },
+            order:[
+                ["price", "DESC"]
+            ],
+            limit: 4
+        })
         let pedidoModelos = db.Modelos.findAll()
-        Promise.all([pedidoProductosSedan, pedidoProductosCoupe,pedidoProductos4x4, pedidoModelos])//para poder llamar dos tablas
-            .then(function([productosSedan,
-                            pedidoProductosCoupe,
-                            pedidoProductos4x4, 
-                            modelos]){
-                res.render("index",{
-                    modelos:modelos,
-                    productosSedan:productosSedan,
-                    pedidoProductosCoupe:pedidoProductosCoupe,
-                    pedidoProductos4x4:pedidoProductos4x4
+        Promise.all([pedidoProductosSedan, 
+            pedidoProductosCoupe,
+            pedidoProductos4x4, 
+            pedidoProductosCamioneta,
+            pedidoProductosLujo,
+            pedidoProductosDeportivo,
+            pedidoModelos])//para poder llamar dos tablas
+                .then(function([productosSedan,
+                                pedidoProductosCoupe,
+                                pedidoProductos4x4, 
+                                pedidoProductosCamioneta,
+                                pedidoProductosLujo,
+                                pedidoProductosDeportivo,
+                                modelos]){
+                    res.render("index",{
+                        modelos:modelos,
+                        productosSedan:productosSedan,
+                        pedidoProductosCoupe:pedidoProductosCoupe,
+                        pedidoProductos4x4:pedidoProductos4x4,
+                        pedidoProductosLujo,
+                        pedidoProductosDeportivo,
+                        pedidoProductosCamioneta:pedidoProductosCamioneta
+                    })
                 })
-            })
             .catch(function(error){
                 res.send(error)
         }) 
