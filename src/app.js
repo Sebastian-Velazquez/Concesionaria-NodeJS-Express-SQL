@@ -32,17 +32,17 @@ app.set('views', path.join(__dirname, '/views')); //Es necesario para que la car
 
 // Importamos routers//const path = require('path');// para accder a las paginas
 const homeRouter = require('./routes/homeRouter.js')
-const usersRouter = require('./routes/usersRouter.js')
-const productsRouter = require('./routes/productsRouter.js')
 const productsRouterSql = require('./routes/productsRouterSql.js')
 const userRouterSql = require('./routes/userRouterSql.js')
+//const usersRouter = require('./routes/usersRouter.js')
+//const productsRouter = require('./routes/productsRouter.js')
 
 // Usando los enrutadores importados linea 5
 app.use("/", homeRouter);
-app.use("/user", usersRouter);
-app.use("/products", productsRouter);
 app.use("/product", productsRouterSql);
 app.use("/users", userRouterSql);
+//app.use("/user", usersRouter);
+//app.use("/products", productsRouter);
 
 
 
@@ -54,19 +54,3 @@ app.listen(port,()=> console.log('Servidor corriendo en http://localhost:3000'))
 //es para que la carpeta del proyecto public sea publicom, van html ejs css
 app.use(express.static('public'));
 
-
-
-
-
-
-
-
-
-
-
-//Creación de rutas. 
-/* app.get('/', (req, res) => res.sendFile(path.join(__dirname, './views/index.html')));
-app.get('/login', (req, res) => res.sendFile(path.join(__dirname, './views/login.html')));
-app.get('/productCart', (req, res) => res.sendFile(path.join(__dirname, './views/productCart.html')));
-app.get('/productDetail', (req, res) => res.sendFile(path.join(__dirname, './views/productDetail.html')));
-app.get('/register', (req, res) => res.sendFile(path.join(__dirname, './views/register.html'))); */

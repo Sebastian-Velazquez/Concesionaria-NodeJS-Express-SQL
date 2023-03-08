@@ -3,7 +3,7 @@
 //se coloca o insterta en user router
 function guestMiddlewares(req, res, next) {
     if (req.session.userLogged) {//si tengo alguein es session
-        return res.redirect('/user/profile');
+        return res.redirect('/user/userProfile');
     }
     next();
 }

@@ -17,7 +17,7 @@ const controlador ={
                 image: "avatar.jpg",
                 id_category: 1
             })
-        res.render("registrado")
+        res.render('./users/sql/userLogin')
     },
     login:(req, res)=>{
         res.render("./users/sql/userLogin")
@@ -40,7 +40,7 @@ const controlador ={
                         res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
                     }
 
-                    return res.redirect('/user/userProfile')
+                    return res.redirect('/users/userProfile')
                 }else{
                 //si el password no es valido
                 return res.render('./users/sql/userLogin', {
@@ -59,6 +59,16 @@ const controlador ={
         }).catch(function(error){
             res.send(error);
         })
+    },
+    userProfile : (req, res)=>{
+        return res.render('./users/userProfile',{
+            user: req.session.userLogged
+        })
+    },
+    logout:function(req,res){//cerrar  cuenta de usuario
+        res.clearCookie('userEmail');//destruir la cookie
+        req.session.destroy();//para destruir la session, osea salir del login del perfil
+        return res.redirect('/')
     }
     }
 

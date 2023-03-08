@@ -1,5 +1,8 @@
 @import url(normalize.css);
-
+.avatar{
+    height: 17px;
+    width: 17px;
+}
 #headerTop{
     display: flex;
     flex-wrap: wrap;

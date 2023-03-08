@@ -3,7 +3,7 @@
 //se coloca o insterta en user router
 function authMiddlewares(req, res, next) {
     if (!req.session.userLogged) {//si no tengo a nadie en session
-        return res.redirect('/user/login');
+        return res.redirect('/users/login');
     }
     next();//dejar que siga y vaya al el controlador
 }

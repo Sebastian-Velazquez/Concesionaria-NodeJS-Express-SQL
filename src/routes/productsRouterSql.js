@@ -7,12 +7,16 @@ const productsControllersSql = require("../controllers/productsControllersSql.js
 const upload = require("../middlewares/multerMiddleware");//multer
 const validations = require("../middlewares/productsRouterSql/validationsMiddleware");
 
+const guestMiddlewares = require("../middlewares/userRouter/guestMiddlewares");//si tengo alguein en session
+const authMiddlewares = require("../middlewares/userRouter/authMiddlewares");//si no tengo a nadie en session
+
+
 //lista de productos
-router.get("/list", productsControllersSql.list);
+router.get("/list", authMiddlewares,productsControllersSql.list);
 //detalle de peliculas
 router.get("/list/:id", productsControllersSql.detail);
 //viste de crear producto
-router.get("/create", productsControllersSql.create);
+router.get("/create", authMiddlewares,productsControllersSql.create);
 //Crear Producto
 router.post("/create",upload.single("image"),validations, productsControllersSql.processCreate);
 //Vista editar Producto
