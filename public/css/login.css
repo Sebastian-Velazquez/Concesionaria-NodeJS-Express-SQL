@@ -1,6 +1,7 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
+
 .alertError{
     color:red;
     font-size: 20px;
@@ -11,10 +12,22 @@
     flex-direction: column;
     align-content: space-around;
     align-items: center;
-    
+    background-color: red;
+}
+.login{
+    text-align: center;
+    color:brown;
+    background-color: grey;
     
 }
-.h1-main{
+.form-user-login{
+    text-align: center;
+    background-color: gray;
+    border: solid black 2px ;
+    justify-items: center;
+    
+}
+/*.h1-main{
     display: flex;
     text-align: center;
     justify-content: center;
@@ -57,7 +70,7 @@
     font-size: 24px;
     justify-content: center;
 
-}
+} */
 @media screen and (max-width:450px){
     .form-input{
         width: 70%;
