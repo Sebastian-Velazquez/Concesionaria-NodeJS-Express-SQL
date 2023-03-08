@@ -37,7 +37,7 @@ const controlador ={
                     
                     //mantener session
                     if(req.body.remember) {
-                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 10 })
                     }
 
                     return res.redirect('/users/userProfile')

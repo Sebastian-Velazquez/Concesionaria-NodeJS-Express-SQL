@@ -12,7 +12,7 @@
     <input type="email" name="email" placeholder="Ej: ika-concesionaria@info.com">
     <label for="">Ingrese la Contraseña:</label>
     <input type="password" name="password">
-    <input type="checkbox" name="remember">
+    <div><input type="checkbox" name="remember"> recordar usuario</div>
     <!-- Validacion de Email -->
     <% if (locals.errors && errors.email){ %>
         <p class="alertError"><%= errors.email.msg %> </p>

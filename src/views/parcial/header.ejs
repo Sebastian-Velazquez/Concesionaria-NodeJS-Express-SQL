@@ -29,8 +29,8 @@
             <div>
                 <ul class="navBar">
                     <% if (locals.isLogged) { %>    
-                        <li class="navBar-lista"><a href="/user/userProfile"><img src="/img/avatar/<%= locals.userLogged.image %>" class="avatar"><%= locals.userLogged.first_name +' '+  locals.userLogged.last_name %></a></li>
-                        <li class="navBar-lista"><a href="/user/logout">Salir</li>
+                        <li class="navBar-lista"><a href="/users/userProfile"><img src="/img/avatar/<%= locals.userLogged.image %>" class="avatar"><%= locals.userLogged.first_name +' '+  locals.userLogged.last_name %></a></li>
+                        <li class="navBar-lista"><a href="/users/logout">Salir</li>
                         <li class="navBar-lista"><a href="/products/productCart">Carrito</a></li>
                     <% }else { %> 
                         <li class="navBar-lista"><a href="/users/register">Registrate</a></li>
