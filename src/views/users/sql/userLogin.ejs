@@ -11,7 +11,12 @@
     <label for="">Ingrese el Email:</label>
     <input type="emai" name="email" placeholder="Ej: ika-concesionaria@info.com">
     <label for="">Ingrese la Contraseña:</label>
-    <input type="password">
+    <input type="password" name="password">
+    <input type="checkbox" name="remember">
+    <!-- Validacion de Email -->
+    <% if (locals.errors && errors.email){ %>
+        <p class="alertError"><%= errors.email.msg %> </p>
+    <% } %>
     <input type="submit">
 </form>
     <%- include('../../parcial/footer.ejs') %>

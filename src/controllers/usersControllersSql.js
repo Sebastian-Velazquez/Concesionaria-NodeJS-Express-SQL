@@ -13,58 +13,54 @@ const controlador ={
                 last_name: req.body.lastName,
                 birt_date: req.body.date,
                 email: req.body.email,
-                password: req.body.password, 
+                password: bcryptjs.hashSync(req.body.password, 10), 
                 image: "avatar.jpg",
                 id_category: 1
             })
-        res.send("registrado")
+        res.render("registrado")
     },
     login:(req, res)=>{
         res.render("./users/sql/userLogin")
     },
     processLogin:(req, res)=>{
-        /* let userToLogin = userModels.findByField('email', req.body.email); */
-        const userToLogin  = db.Usuarios.findAll();
-        if (userToLogin){
-            if (req.body.password == userToLogin.password){
-                delete userToLogin.password; //por seguridad
-                req.session.userLogged =  userToLogin
-                return res.redirect('/')
+        db.Usuarios.findOne({ //dindOne: busca y hay un dato que sea igual al madado por el body
+            where:{
+                email: req.body.email  //
             }
-            //return res.redirect('/user/login')
-            return res.render('./users/sql/userLogin' , {
-            errors: {
-                email: {msg:'Las credenciales no son validas'}
-            }
-            } )
+        }).then(userToLogin =>{
+            if(userToLogin){
+                let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+                if(isOkThePassword){
+                    delete userToLogin.password; // Borrra el password para que no quede guardado.
+                    //Guardar el user logeado
+                    req.session.userLogged =  userToLogin
+                    
+                    //mantener session
+                    if(req.body.remember) {
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
+                    }
 
-        }
-        return res.render('./users/sql/userLogin', {
-            errors: {
-                email: {msg:'No se encontro el email en DB'}
+                    return res.redirect('/user/userProfile')
+                }else{
+                //si el password no es valido
+                return res.render('./users/sql/userLogin', {
+                    errors: {
+                        email: {msg:'Las credenciales no son validas'}
+                    }
+                    })
+                }
+            }else{
+                return res.render('./users/sql/userLogin', {
+                    errors: {
+                        email: {msg:'Las credenciales no son validas'}
+                    }
+                })
             }
+        }).catch(function(error){
+            res.send(error);
         })
-        },
-        /* res.send("Estas en el proceso de login") */
     }
-
-
-/*     outer.post('/login',async(req,res,next)=>{
-        const user = await User.findOne({ where : {email : req.body.email }});
-        if(user){
-           const password_valid = await bcrypt.compare(req.body.password,user.password);
-           if(password_valid){
-               token = jwt.sign({ "id" : user.id,"email" : user.email,"first_name":user.first_name },process.env.SECRET);
-               res.status(200).json({ token : token });
-           } else {
-             res.status(400).json({ error : "Password Incorrect" });
-           }
-         
-         }else{
-           res.status(404).json({ error : "User does not exist" });
-         }
-         
-         }); */
+    }
 
 
 module.exports = controlador;
