@@ -2,23 +2,23 @@
 <html lang="en">
     <head>
         <%- include('../../parcial/head.ejs') %>
-        <link href="/css/productList.css" rel="stylesheet">
+        <link href="/css/login.css" rel="stylesheet">
     </head>
 <body>
     <%- include('../../parcial/header.ejs') %>
-<h1>Login</h1>
-<form action="/users/login" method="post">
-    <label for="">Ingrese el Email:</label>
-    <input type="email" name="email" placeholder="Ej: ika-concesionaria@info.com">
-    <label for="">Ingrese la Contraseña:</label>
-    <input type="password" name="password">
+<h1 class="login">INGRESÁ</h1>
+<form action="/users/login" method="post" class="form-user-login"><br><br>
+    <div><label for="">Ingrese el Email:</label>
+    <input type="email" name="email" placeholder="Ej: ika-concesionaria@info.com"></div><br>
+    <div><label for="">Ingrese la Contraseña:</label>
+    <input type="password" name="password"></div><br>
     <div><input type="checkbox" name="remember"> recordar usuario</div>
     <!-- Validacion de Email -->
     <% if (locals.errors && errors.email){ %>
         <p class="alertError"><%= errors.email.msg %> </p>
     <% } %>
     <input type="submit">
-</form>
+<br><br></form>
     <%- include('../../parcial/footer.ejs') %>
 </body>
 </html>
