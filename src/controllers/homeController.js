@@ -29,13 +29,26 @@ const controlador ={ //IMPORTANTE
             ],
             limit: 4
         })
+        let pedidoProductos4x4 = db.Productos.findAll({
+            where: {
+                id_modelo : 3
+            },
+            order:[
+                ["price", "DESC"]
+            ],
+            limit: 4
+        })
         let pedidoModelos = db.Modelos.findAll()
-        Promise.all([pedidoProductosSedan, pedidoProductosCoupe, pedidoModelos])//para poder llamar dos tablas
-            .then(function([productosSedan, pedidoProductosCoupe, modelos]){
+        Promise.all([pedidoProductosSedan, pedidoProductosCoupe,pedidoProductos4x4, pedidoModelos])//para poder llamar dos tablas
+            .then(function([productosSedan,
+                            pedidoProductosCoupe,
+                            pedidoProductos4x4, 
+                            modelos]){
                 res.render("index",{
                     modelos:modelos,
                     productosSedan:productosSedan,
-                    pedidoProductosCoupe:pedidoProductosCoupe
+                    pedidoProductosCoupe:pedidoProductosCoupe,
+                    pedidoProductos4x4:pedidoProductos4x4
                 })
             })
             .catch(function(error){

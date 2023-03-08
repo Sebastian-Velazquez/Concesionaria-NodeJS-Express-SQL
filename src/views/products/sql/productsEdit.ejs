@@ -82,7 +82,7 @@
                 <select name="model">
                     <option></option>
                     <% for(let i=0; i < models.length; i++) { %>
-                        <!-- si hay dado en el oldData -->
+                        <!-- si hay  en el oldData -->
                         <% if(locals.oldData){ %>
                             <% if (models[i].id_modelo == locals.oldData.model) { %><!-- para seleccionar el genero que tiene -->
                                 <option value="<%= models[i].id_modelo %>" selected>
@@ -95,11 +95,12 @@
                             <option value="<%= models[i].id_modelo %>" selected>
                             <%= models[i].tipo_de_modelo %>
                             </option>
-                        <% } %>
+                        <% }else{ %>
                         <!-- muestra todos menos el selected, si es que tiene -->
                         <option value="<%= models[i].id_modelo %>">
                         <%= models[i].tipo_de_modelo %>
                         </option>
+                    <% } %>
                     <% } %>
                 </select>
                 <!-- alerta -->
