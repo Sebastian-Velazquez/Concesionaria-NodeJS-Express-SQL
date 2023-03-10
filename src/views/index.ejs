@@ -28,7 +28,8 @@
                                 </a>
                             <% } %>
                 <% }) %>
-                </section>
+            </section>
+            
                 <!-- Coupe -->
                 <section class="content-section">   
                     <% pedidoProductosCoupe.forEach(producto=> { %>
@@ -124,7 +125,10 @@
                             <% } %>
                 <% }) %>
                 </section>
-            <% } %>
+                <div>
+                    <p><input type="button">Ver todos los <%= modelos[i].tipo_de_modelo %></p>
+                </div>
+                <% } %>
 
 
         </main>
