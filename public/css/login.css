@@ -17,13 +17,12 @@
 .login{
     text-align: center;
     color:brown;
-    background-color: grey;
+    background: linear-gradient(90deg, white 0%, #7ec9e7 50%, white 100%);
     
 }
 .form-user-login{
     text-align: center;
-    background-color: gray;
-    border: solid black 2px ;
+    background: linear-gradient(90deg, white 0%, #7ec9e7 50%, white 100%);
     justify-items: center;
     
 }
