@@ -1,0 +1,23 @@
+@import url(normalize.css);
+@import url(header.css);
+@import url(footer.css);
+.alertError{
+    color: red;
+}
+h1{
+    text-align: center;
+    color: rgb(163, 18, 18);
+}
+.form-user-register{
+    text-align: center;
+    justify-items: center;
+}
+
+
+
+
+@media screen and (min-width:700px){
+    .form-input{
+        width: 70%;
+    }
+}
