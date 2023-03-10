@@ -9,7 +9,7 @@ let db = require("../../database/models");
 function userLoggedMiddleware(req, res, next) {
     res.locals.isLogged = false;//res.locals en es variable local.. se puede compartir en todas las vistas
 
-console.log(req.cookies.userEmail)
+//console.log(req.cookies.userEmail)
     if (req.cookies.userEmail){
         db.Usuarios.findOne({ //dindOne: busca y hay un dato que sea igual al madado por el body
             where:{
@@ -17,7 +17,7 @@ console.log(req.cookies.userEmail)
             }
         }).then(dato =>{
             if (dato){
-                console.log(dato)
+                //console.log(dato.email)
                 req.session.userLogged = dato;
                 res.locals.isLogged = true;
                 res.locals.userLogged = req.session.userLogged;

@@ -66,8 +66,9 @@ const controlador ={
         })
     },
     logout:function(req,res){//cerrar  cuenta de usuario
-        res.clearCookie('userEmail');//destruir la cookie
-        req.session.destroy();//para destruir la session, osea salir del login del perfil
+        req.session.userLogged = null;//para destruir la session, osea salir del login del perfil
+        res.clearCookie('userEmail',);//destruir la cookie
+        //req.session = null;//para destruir la session, osea salir del login del perfil
         return res.redirect('/')
     }
     }
