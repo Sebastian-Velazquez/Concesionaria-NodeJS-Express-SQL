@@ -31,13 +31,14 @@ const controlador ={
             if(userToLogin){
                 let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
                 if(isOkThePassword){
-                    delete userToLogin.password; // Borrra el password para que no quede guardado.
+                    userToLogin.password = null; // Borrra el password para que no quede guardado.
                     //Guardar el user logeado
                     req.session.userLogged =  userToLogin
-                    
+                    //res.send(req.session.userLogged)
+                    //console.log(req.session.userLogged)
                     //mantener session
                     if(req.body.remember) {
-                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 10 })
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2})
                     }
 
                     return res.redirect('/users/userProfile')
