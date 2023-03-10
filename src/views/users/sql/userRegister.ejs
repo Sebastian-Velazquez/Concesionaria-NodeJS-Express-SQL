@@ -2,26 +2,27 @@
 <html lang="en">
     <head>
         <%- include('../../parcial/head.ejs') %>
-        <link href="/css/productList.css" rel="stylesheet">
+        <link href="/css/register.css" rel="stylesheet">
     </head>
 <body>
     <%- include('../../parcial/header.ejs') %>
-<h1>Registro</h1>
-<form action="/users/register" method="post">
+    
+ <br><br><h1>REGISTRATE</h1><br><br><br>
+<form action="/users/register" method="post" class="form-user-register"><br>
     <label>Nombre:</label>
-    <input type="text" name="firstName" placeholder="Ej: Michael">
+    <input type="text" name="firstName" placeholder="Ej: Michael"><br><br>
     <label>Apellido:</label>
-    <input type="text" name="lastName" placeholder="Ej: Jackson">
+    <input type="text" name="lastName" placeholder="Ej: Jackson"><br><br>
     <label>Fecha de nacimiento:</label>
-    <input type="date" name="date">
+    <input type="date" name="date"><br><br>
     <label>Email:</label>
-    <input type="email" name="email" placeholder="Ej: ika-concesionaria@info.com">
+    <input type="email" name="email" placeholder="Ej: ika-concesionaria@info.com"><br><br>
     <label>Contraseña:</label>
-    <input type="password" name="password" placeholder="Ej: Contraseña">
+    <input type="password" name="password" placeholder="Ej: Contraseña"><br><br>
     <label>Imagen:</label>
-    <input type="file" name="image">
+    <input type="file" name="image"> <br><br>
 
-    <input type="submit">
+    <input type="submit"><br><br>
 </form>
     <%- include('../../parcial/footer.ejs') %>
 </body>

@@ -4,22 +4,42 @@
 .alertError{
     color: red;
 }
-main{
+h1{
+    text-align: center;
+    color: rgb(163, 18, 18);
+}
+.form-user-register{
+    text-align: center;
+    justify-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*-------css.html------
+ main{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-content: space-around;
     align-items: center;
-    /* border: solid 1px red; */
+    /* border: solid 1px red; *//*
 }
 /* -------------barraDeInput--------------------------------- */
-.form-input{
+/*.form-input{
     padding: 8px 0;
     margin-bottom: 8px;
     margin-top: 5px;
     border-radius: 5px;
-    width: 95%;
-   /*  border: solid 1px blue; */
+    width: 95%; /*
+   /*  border: solid 1px blue; *//*
 }
 .form-input::placeholder{
     font-size: 15px;
@@ -28,17 +48,17 @@ main{
     border: solid 2px rgb(255, 255, 255);
 }
 /* ---------------------------------------------- */
-h2{
+/*h2{
     padding: 20px;
     font-size: 20px;
 }
 /* ---------------------------------------------- */
-h1{
+/*h1{
     padding: 20px 0;
     font-size: 35px;
 }
 /* ----------------boton------------------------------ */
-.form-button{
+/*.form-button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +73,7 @@ h1{
     border-radius: 5px;
 }
 /* ----------------boton------------------------------ */
-.content-main__form {
+/*.content-main__form {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -65,7 +85,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 @media screen and (min-width:700px){
     .form-input{
         width: 70%;
