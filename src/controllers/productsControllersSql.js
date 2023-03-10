@@ -24,6 +24,9 @@ const controlador ={
                 res.send(error)
             })
     },
+    productCart:(req,res)=>{
+        return res.render('./products/productCart')
+    },
     create:(req,res)=>{
         let pedidoColores = db.Colores.findAll();
         let pedidosModelos = db.Modelos.findAll();
@@ -147,7 +150,7 @@ const controlador ={
                 name:{[db.Sequelize.Op.like] : '%' + req.query.search + '%' }
             }
         }).then(resultados=>{
-            res.render("./products/sql/prodcutsSearch",{
+            res.render("./products/sql/productsSearch",{
                 resultados:resultados
             });
         })
