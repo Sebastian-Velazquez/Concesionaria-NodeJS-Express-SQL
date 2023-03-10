@@ -93,7 +93,26 @@ const controlador ={ //IMPORTANTE
             .catch(function(error){
                 res.send(error)
         }) 
-    } 
+    },
+    search:(req,res)=>{
+        if(req.query.search){
+            db.Productos
+            .findAll({
+                where:{
+                    name:{[db.Sequelize.Op.like] : '%' + req.query.search + '%' }
+                }
+            }).then(resultados=>{
+                res.render("./products/sql/productsSearch",{
+                    resultados:resultados
+                });
+            })
+        }else{
+            res.render("./products/sql/productsSearch",{
+                resultados:""
+            })
+            //res.redirect("./")
+        }
+    }
 }
 
         //exportamos el objeto literal con sus metodos

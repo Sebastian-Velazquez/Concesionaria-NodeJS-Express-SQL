@@ -9,16 +9,18 @@ let db = require("../../database/models");
 function userLoggedMiddleware(req, res, next) {
     res.locals.isLogged = false;//res.locals en es variable local.. se puede compartir en todas las vistas
 
-
-    if (req.cookies.user){
+//console.log(req.cookies.userEmail)
+    if (req.cookies.userEmail){
         db.Usuarios.findOne({ //dindOne: busca y hay un dato que sea igual al madado por el body
             where:{
-                email: req.body.email  //
+                email: req.cookies.userEmail //
             }
         }).then(dato =>{
             if (dato){
-                console.log(dato)
-                return req.session.userLogged = userFromCookie;
+                //console.log(dato.email)
+                req.session.userLogged = dato;
+                res.locals.isLogged = true;
+                res.locals.userLogged = req.session.userLogged;
             }
         })
     }
@@ -38,7 +40,7 @@ function userLoggedMiddleware(req, res, next) {
     //pasa las variables que tiene en session a locals
     res.locals.userLogged = req.session.userLogged;//para poder usar variables locales que puedan ser usadas en distitas vistas.
     }
-    
+
 
     next(); 
 }
