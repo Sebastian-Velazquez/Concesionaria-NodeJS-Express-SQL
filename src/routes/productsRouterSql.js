@@ -27,5 +27,7 @@ router.put("/edit/:id",upload.single("image"),validations, productsControllersSq
 router.delete("/delete/:id", productsControllersSql.delete);
 //carrito
 router.get("/productCart", productsControllersSql.productCart);
+//vista modelos
+router.get("/modelos/:id", productsControllersSql.modelos);
 
 module.exports = router;
