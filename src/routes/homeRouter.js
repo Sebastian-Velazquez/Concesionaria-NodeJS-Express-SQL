@@ -12,7 +12,8 @@ const homeController = require("../controllers/homeController.js")
 
 // procesa pedido de get. Ahora usamos router en MVC. son tutas 
 router.get("/", homeController.index);
-
+//Barra de busqueda
+router.get("/search", homeController.search);
 
 /* router.get("/ofertas", homeController.oferta); */
 
