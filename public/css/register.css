@@ -37,7 +37,7 @@ main{
     margin-bottom: 8px;
     margin-top: 5px;
     border-radius: 5px;
-    width: 95%;
+    width: 95%; 
    /*  border: solid 1px blue; */
 }
 .form-input::placeholder{
@@ -84,9 +84,9 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} 
 @media screen and (min-width:700px){
     .form-input{
-        width: 70%;
+                  width: 70%;
     }
 }

@@ -10,7 +10,7 @@
         </div>
 
         <div class="searchBar">
-            <form action="/product/search" method="GET">
+            <form action="/search" method="GET">
                 <div class="searchBox">
                     <input type="text" placeholder="Buscar" name="search">
                 </div>
@@ -21,20 +21,22 @@
         <div class="content-navBar">
             <!-- Seccion para administradores, terminar mas tarde  -->
             <div>
+                <% if (locals.isLogged) { %>  
                 <ul class="navBar">
                     <li class="navBar-lista"><a href="/product/create">Crear Producto</a></li>
                     <li class="navBar-lista"><a href="/product/list">Listado de Productos</a></li>
                 </ul>
+                <% } %> 
             </div>
             <div>
                 <ul class="navBar">
                     <% if (locals.isLogged) { %>    
                         <li class="navBar-lista"><a href="/users/userProfile"><img src="/img/avatar/<%= locals.userLogged.image %>" class="avatar"><%= locals.userLogged.first_name +' '+  locals.userLogged.last_name %></a></li>
-                        <li class="navBar-lista"><a href="/users/logout">Salir</li>
-                        <li class="navBar-lista"><a href="/products/productCart">Carrito</a></li>
-                    <% }else { %> 
-                        <li class="navBar-lista"><a href="/users/register">Registrate</a></li>
-                        <li class="navBar-lista"><a href="/users/login">Ingresá</i></a></li>
+                        <li class="navBar-lista"><a href="/users/logout">Salir</a></li>
+                        <% }else { %> 
+                            <li class="navBar-lista"><a href="/users/register">Registrate</a></li>
+                            <li class="navBar-lista"><a href="/users/login">Ingresá</i></a></li>
+                            <li class="navBar-lista"><a href="/product/productCart">Carrito</a></li>
                     <% } %> 
                 </ul>
             </div>

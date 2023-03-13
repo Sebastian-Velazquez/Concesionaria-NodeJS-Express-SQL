@@ -24,6 +24,23 @@ const controlador ={
                 res.send(error)
             })
     },
+    productCart:(req,res)=>{
+        return res.render('./products/productCart')
+    },
+    modelos:(req,res)=>{
+        //console.log(req.params.id)
+        //res.send("hola " + req.params.id)
+        db.Productos.findAll({
+            where: {
+                id_modelo : req.params.id
+            },
+            order:[
+                ["name", "DESC"]
+            ],
+        }).then(productos=>{
+            res.render("./products/sql/productsModel", {productos:productos})
+        })
+    },
     create:(req,res)=>{
         let pedidoColores = db.Colores.findAll();
         let pedidosModelos = db.Modelos.findAll();
@@ -139,18 +156,6 @@ const controlador ={
                 }
             })
             res.redirect("/product/list/")
-    },
-    search:(req,res)=>{
-        db.Productos
-        .findAll({
-            where:{
-                name:{[db.Sequelize.Op.like] : '%' + req.query.search + '%' }
-            }
-        }).then(resultados=>{
-            res.render("./products/sql/prodcutsSearch",{
-                resultados:resultados
-            });
-        })
     }
 }
 

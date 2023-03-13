@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <%- include('./parcial/head.ejs') %>
@@ -9,7 +9,7 @@
 <body>
     <%- include('./parcial/header.ejs') %>
     <% for(let i=0; i < modelos.length; i++) { %>
-            <p><%= modelos[i].tipo_de_modelo %></p>
+            <p><%= modelos[i].tipo_de_modelo %> más relevantes</p>
                 <!-- Sedan -->
                 <section class="content-section">   
                     <% productosSedan.forEach(producto=> { %>
@@ -26,7 +26,7 @@
                                         </div>
                                     </article>
                                 </a>
-                            <% } %>
+                        <% } %>
                 <% }) %>
                 </section>
                 <!-- Coupe -->
@@ -124,7 +124,13 @@
                             <% } %>
                 <% }) %>
                 </section>
-            <% } %>
+                <a href="/product/modelos/<%= modelos[i].id_modelo %>""><p>Ver todos los productos de <%= modelos[i].tipo_de_modelo %></p></a>
+                <!-- <form action="/product/modelos" method="get">
+                    <div>
+                        <input type="submit" value="Ver todos los productos de %= modelos[i].tipo_de_modelo %>">
+                    </div>
+                </form> -->
+                <% } %>
 
 
         </main>
