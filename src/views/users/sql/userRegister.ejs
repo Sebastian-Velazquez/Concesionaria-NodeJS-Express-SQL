@@ -2,27 +2,109 @@
 <html lang="en">
     <head>
         <%- include('../../parcial/head.ejs') %>
-        <link href="/css/productList.css" rel="stylesheet">
+            <link href="/css/productList.css" rel="stylesheet">
     </head>
-<body>
-    <%- include('../../parcial/header.ejs') %>
-<h1>Registro</h1>
-<form action="/users/register" method="post">
-    <label>Nombre:</label>
-    <input type="text" name="firstName" placeholder="Ej: Michael">
-    <label>Apellido:</label>
-    <input type="text" name="lastName" placeholder="Ej: Jackson">
-    <label>Fecha de nacimiento:</label>
-    <input type="date" name="date">
-    <label>Email:</label>
-    <input type="email" name="email" placeholder="Ej: ika-concesionaria@info.com">
-    <label>Contraseña:</label>
-    <input type="password" name="password" placeholder="Ej: Contraseña">
-    <label>Imagen:</label>
-    <input type="file" name="image">
+        <body>
+            <!-- header -->
+            <%- include('../../parcial/header.ejs') %>
+            
+                <h1>Registro</h1>
+                <main>
+      
+                    <h1>Formulario completo</h1>
+                    <ul class="errores alert-warning">
+                    </ul>
+                    <form action="/users/register" method="POST" class="form">
+                      <div class="name">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="name" class="name-input" />
+                      </div>
+                      
+                      <div>
+                        <label for="name">Apellido</label>
+                        <input type="text" name="lastName" id="lastName" class="lastName-input" />
+                      </div>
+              
+                      <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" />
+                      </div>
+              
+                      <div>
+                        <label for="password">Contraseña</label>
+                        <input type="text" name="password" id="password" />
+                      </div>
 
-    <input type="submit">
-</form>
-    <%- include('../../parcial/footer.ejs') %>
-</body>
+                      <div>
+                        <label for="birthDate">Fecha de nacimiento:</label>
+                        <input type="date" name="date" id="mail"/>
+                        </div>
+                        <div>
+                            <label>Imagen:</label>
+                            <input type="file" name="image" id="image" />
+                        </div>
+                      <div>
+                        <select name="province" id="province">
+                            <option value="" disabled selected>Selecciona tu provincia</option>
+                            <option value="buenosAires">Buenos Aires</option>
+                            <option value="laPampa">La Pampa</option>
+                            <option value="entreRios">Entre Rios</option>
+                        </select>
+                    </div>
+              
+                      <button type="submit">Enviar formulario</button>
+                    </form>
+
+                  </main>
+<!--                 <ul class="errores alert-warning"></ul>
+                
+                <form action="/users/register" method="post" class="form">
+                    <div class="name">
+                        <label for="name">Nombre:</label>
+                        <input type="text" name="firstName" placeholder="Ej:Michael" />
+                    </div>
+                    <div>
+                        <label for="lastName">Apellid:</label>
+                        <input type="text" name="lastName" id="lastName" placeholder="Ej: Jackson" />
+                    </div>
+
+
+                    <div>
+                        <label for="birthDate">Fecha de nacimiento:</label>
+                        <input type="date" name="date" id="mail"/>
+                    </div>
+
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" placeholder="Ej: ika-concesionaria@info.com" />
+                    </div>
+
+                    <div>
+                        <label for="password">Contraseña:</label>
+                        <input type="password" name="password" id="password" placeholder="Ej: Contraseña" />
+                    </div>
+
+                    <div>
+                        <label>Imagen:</label>
+                        <input type="file" name="image" id="image" />
+                    </div>
+
+                    <div>
+                        <select name="province" id="province">
+                            <option value="" disabled selected>Selecciona tu provincia</option>
+                            <option value="buenosAires">Buenos Aires</option>
+                            <option value="laPampa">La Pampa</option>
+                            <option value="entreRios">Entre Rios</option>
+                        </select>
+                    </div>
+                    <input type="submit">
+                </form> -->
+                
+                <!-- script para el form -->
+                <script src="/js/index.js"></script>
+
+                <!-- footer -->
+                <%- include('../../parcial/footer.ejs') %>
+
+        </body>
 </html>
