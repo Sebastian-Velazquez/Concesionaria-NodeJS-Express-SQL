@@ -11,20 +11,16 @@
     <h1>Registro</h1>
     <main>
       <ul class="errores alert-warning"></ul>
-      <form action="/users/register" method="POST" class="form">
+      <form action="/users/register" method="post" class="form">
         <div class="name">
           <label for="name">Nombre</label>
-          <input type="text" name="name" id="name" class="name-input" />
+          <input type="text" name="first_name" id="name" class="name-input" />
         </div>
 
         <div>
           <label for="name">Apellido</label>
           <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            class="lastName-input"
-          />
+            type="text" name="lastName" id="last_name"class="lastName-input"/>
         </div>
 
         <div>
@@ -39,7 +35,7 @@
 
         <div>
           <label for="birthDate">Fecha de nacimiento:</label>
-          <input type="date" name="date" id="mail" />
+          <input type="date" name="birth_date" id="mail" />
         </div>
         <div>
           <label>Imagen:</label>
