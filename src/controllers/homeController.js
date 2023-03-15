@@ -10,8 +10,22 @@ let db = require("../database/models");
 const controlador ={ //IMPORTANTE
     //-----------------IDEX DINAMICO-----------------------
     index: (req, res)=>{ 
+        let pedidoProducto= db.Productos.findAll({
+            where: {
+                outstanding : 1
+            },
+            order:[
+                ["price", "DESC"]
+            ],
+            limit: 4
+        })
+        .then(productos =>{
+            console.log(productos)
+            res.render("index",{productos:productos})
         
-        let pedidoProductosSedan= db.Productos.findAll({
+        })
+        
+/*         let pedidoProductosSedan= db.Productos.findAll({
             where: {
                 id_modelo : 1
             },
@@ -92,7 +106,7 @@ const controlador ={ //IMPORTANTE
                 })
             .catch(function(error){
                 res.send(error)
-        }) 
+        })  */
     },
     search:(req,res)=>{
         if(req.query.search){

@@ -2,32 +2,52 @@
 <html lang="en">
     <head>
         <%- include('../../parcial/head.ejs') %>
-        <link href="/css/productList.css" rel="stylesheet">
+       <!--  <link href="/css/productList.css" rel="stylesheet"> -->
+        <link href="../css/main.css" rel="stylesheet">
     </head>
 <body>
     <%- include('../../parcial/header.ejs') %>
-    <% for (let i = 0; i < productos.length; i++){ %> 
+    <section class="content-section">   
+        <% productos.forEach(producto=> { %>
+            <!-- % if(modelos[i].id_modelo == producto.id_modelo){ %>  -->  
+                    <a href="/product/list/<%= producto.id_product %>">
+                        <article class="content-section-article">
+                            <div class="div__img-producto">
+                                <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                            </div>
+                            <div class="content-detalle">
+                                <h4 class="image-decription__name"><%= producto.name %></h4>
+                                <h4 class="image-decription__colors"><%= producto.colors %></h4>
+                                <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
+                            </div>
+                        </article>
+                    </a>
+            <!-- % } %> -->
+    <% }) %>
+    </section>
+
+<!--     % for (let i = 0; i < productos.length; i++){ %> 
         <ul>
         <li class="li-content">
-            <a href="/product/list/<%= productos[i].id_product %>"><%= productos[i].name %></a>
+            <a href="/product/list/%= productos[i].id_product %>">%= productos[i].name %></a>
         </li>
         <li class="li-content">
-            <a href="/product/list/<%= productos[i].id_product %>" class="img-li">
-                <img src="/img/products/<%= productos[i].image %>" alt="imagenAuto" class="img-producto">
+            <a href="/product/list/%= productos[i].id_product %>" class="img-li">
+                <img src="/img/products/%= productos[i].image %>" alt="imagenAuto" class="img-producto">
             </a>
-        </li>
-        <li class="li-content">
-            <form action="/product/edit/<%= productos[i].id_product %>" method="GET">
+        </li> -->
+<!--         <li class="li-content">
+            <form action="/product/edit/%= productos[i].id_product %>" method="GET">
                 <button type="submit">EDITAR</button>
             </form>
         </li>
         <li class="li-content">
-            <form action="/product/delete/<%= productos[i].id_product %>?_method=DELETE" method="POST">
+            <form action="/product/delete/%= productos[i].id_product %>?_method=DELETE" method="POST">
                 <button type="submit" class="button">ELIMINAR</button>
             </form>
-        </li>
+        </li> 
     </ul>
-        <% } %>
+        % } %>-->
     <%- include('../../parcial/footer.ejs') %>
 </body>
 </html>

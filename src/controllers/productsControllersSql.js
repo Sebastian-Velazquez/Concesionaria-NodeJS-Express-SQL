@@ -4,7 +4,11 @@ const {validationResult} = require('express-validator');
 const controlador ={
     list:(req, res)=>{
         db.Productos
-        .findAll()
+        .findAll({
+            order:[
+                ["name", "ASC"]
+            ]
+        })
         .then(function(productos){
             res.render("./products/sql/productsList",{productos:productos})
         })

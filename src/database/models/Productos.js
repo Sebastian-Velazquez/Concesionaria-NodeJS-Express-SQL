@@ -30,8 +30,10 @@ module.exports = (sequelize, dataTypes) => {
         },
         id_modelo:{
             type: dataTypes.INTEGER, 
+        },
+        outstanding:{
+            type: dataTypes.INTEGER, 
         }
-
     }
 
     let config = {
