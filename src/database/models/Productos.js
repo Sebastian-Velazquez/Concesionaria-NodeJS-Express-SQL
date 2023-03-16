@@ -33,6 +33,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         outstanding:{
             type: dataTypes.INTEGER, 
+        },
+        delete:{
+            type: dataTypes.INTEGER, 
         }
     }
 

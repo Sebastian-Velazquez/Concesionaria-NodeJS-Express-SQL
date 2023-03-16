@@ -12,7 +12,8 @@ const controlador ={ //IMPORTANTE
     index: (req, res)=>{ 
         let pedidoProducto= db.Productos.findAll({
             where: {
-                outstanding : 1
+                outstanding : 1,
+                delete:0
             },
             order:[
                 ["price", "DESC"]

@@ -5,6 +5,9 @@ const controlador ={
     list:(req, res)=>{
         db.Productos
         .findAll({
+            where:{
+                delete: 0,
+            }, 
             order:[
                 ["name", "ASC"]
             ]
@@ -22,7 +25,13 @@ const controlador ={
             .findByPk(req.params.id,{//paramrtro del body. id porque pusimos asi en el router
                 include:[{association: "color"},{association: "modelo"}]})//asociamos las relaciones de tablas
             .then(producto=>{
+
+                if(producto.delete === 0){//validar si esta borrado
                 res.render("./products/productsDetail",{producto:producto})
+                }else{
+                    res.redirect("/")
+                }
+                
             })
             .catch(function(error){
                 res.send(error)
@@ -89,7 +98,9 @@ const controlador ={
                     image: req.file ? req.file.filename : "default-image.png",
                     description: req.body.description,
                     id_color: req.body.color, 
-                    id_modelo: req.body.model 
+                    id_modelo: req.body.model,
+                    outstanding: req.body.outstanding ? 1 : 0,
+                    delete: 0
         })
     res.redirect("list")
         }
@@ -101,11 +112,15 @@ const controlador ={
         
         Promise.all([pedidoColores, pedidosModelos, pedidoProducto])//para poder llamar dos tablas
         .then(function([colors, models, producto]){
-            res.render("./products/productsEdit",{
-                colors:colors, 
-                models:models,
-                producto:producto
-            })
+            if(producto.delete === 0){
+                res.render("./products/productsEdit",{
+                    colors:colors, 
+                    models:models,
+                    producto:producto
+                })
+            }else{
+                res.redirect("/")
+            }
         })
         .catch(function(error){
             res.send(error);
@@ -135,6 +150,7 @@ const controlador ={
             })
         }else{
         let pedidoProducto = db.Productos.findByPk(req.params.id);
+        console.log(req.body)
         db.Productos
             .update({
                 name: req.body.name,  
@@ -143,20 +159,22 @@ const controlador ={
                 image: req.file ? req.file.filename : pedidoProducto.image,
                 description: req.body.description,
                 id_color: req.body.color,  
-                id_modelo: req.body.models  
-                },{
-                    where:{
-                        id_product: req.params.id
-                }
+                id_modelo: req.body.model,  
+                outstanding: req.body.outstanding ? 1 : 0,
+                },
+                {where:{id_product: req.params.id}
             })
         res.redirect("/product/list")
         }
     },
     delete:(req, res)=>{
         db.Productos
-            .destroy({
-                where:{
-                    id_product: req.params.id
+            .update({
+                delete: 1
+                },
+                {
+                    where:{
+                        id_product: req.params.id
                 }
             })
             res.redirect("/product/list")
