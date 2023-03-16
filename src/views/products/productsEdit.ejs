@@ -103,7 +103,7 @@
                     <% } %>
                 </select>
                 <!-- alerta -->
-                <% if (locals.errors && errors.model){ %>
+                <% if (locals.errors && errors.model && ){ %>
                     <p class="alertError"><%= errors.model.msg %> </p>
                 <% } %>
             </div>

@@ -35,7 +35,7 @@ const controlador ={
                     //Guardar el user logeado
                     req.session.userLogged =  userToLogin
                     //res.send(req.session.userLogged)
-                    //console.log(req.session.userLogged)
+                    //console.log(req.session.userLogged.id_category)
                     //mantener session
                     if(req.body.remember) {
                         res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2})
