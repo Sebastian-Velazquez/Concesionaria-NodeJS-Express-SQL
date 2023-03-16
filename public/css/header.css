@@ -13,18 +13,7 @@
     flex-direction: row;
 }
 
-/* BANNER INICIO */ 
-.img-banner{
-    object-fit: cover;
-    object-position: top;
-    height: 100%;
-    width: 100%;
-}
-.content-banner{
-    height: 250px;
-    width: 100%;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.737);
-}
+
 
 /* LOGOS */ 
 .figure-logo{

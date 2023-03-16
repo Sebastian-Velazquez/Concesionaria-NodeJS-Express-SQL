@@ -31,7 +31,7 @@ const controlador ={
     productCart:(req,res)=>{
         return res.render('./products/productCart')
     },
-    modelos:(req,res)=>{
+    modelos:(req,res)=>{//poner en le buscador
         //console.log(req.params.id)
         //res.send("hola " + req.params.id)
         db.Productos.findAll({
