@@ -21,12 +21,12 @@
         <div class="content-navBar">
             <!-- Seccion para administradores, terminar mas tarde  -->
             <div>
-                <% if (locals.isLogged) { %>  
                 <ul class="navBar">
+                    <% if (locals.isLogged) { %>  
                     <li class="navBar-lista"><a href="/product/create">Crear Producto</a></li>
+                    <% } %> 
                     <li class="navBar-lista"><a href="/product/list">Todos los Productos</a></li>
                 </ul>
-                <% } %> 
             </div>
             <div>
                 <ul class="navBar">

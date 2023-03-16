@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('../../parcial/head.ejs') %>
+        <%- include('../parcial/head.ejs') %>
        <!--  <link href="/css/productList.css" rel="stylesheet"> -->
         <link href="../css/main.css" rel="stylesheet">
     </head>
 <body>
-    <%- include('../../parcial/header.ejs') %>
+    <%- include('../parcial/header.ejs') %>
     <section class="content-section">   
         <% productos.forEach(producto=> { %>
             <!-- % if(modelos[i].id_modelo == producto.id_modelo){ %>  -->  
@@ -48,6 +48,6 @@
         </li> 
     </ul>
         % } %>-->
-    <%- include('../../parcial/footer.ejs') %>
+    <%- include('../parcial/footer.ejs') %>
 </body>
 </html>

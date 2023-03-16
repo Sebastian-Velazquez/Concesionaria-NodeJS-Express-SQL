@@ -116,12 +116,12 @@ const controlador ={ //IMPORTANTE
                     name:{[db.Sequelize.Op.like] : '%' + req.query.search + '%' }
                 }
             }).then(resultados=>{
-                res.render("./products/sql/productsSearch",{
+                res.render("./products/productsSearch",{
                     resultados:resultados
                 });
             })
         }else{
-            res.render("./products/sql/productsSearch",{
+            res.render("./products/productsSearch",{
                 resultados:""
             })
             //res.redirect("./")

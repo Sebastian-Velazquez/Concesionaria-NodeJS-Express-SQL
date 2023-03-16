@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('../../parcial/head.ejs') %>
+        <%- include('../parcial/head.ejs') %>
         <link href="/css/productsDetail.css" rel="stylesheet">
     </head>
     <body>
-        <%- include('../../parcial/header.ejs') %>
+        <%- include('../parcial/header.ejs') %>
         <h1><%= producto.name %></h1>
         <h2>Precio:<%= producto.price %></h2>
         <h2>Año: <%= producto.anio %></h2>
@@ -24,6 +24,6 @@
                 <form action="/product/delete/<%= producto.id_product %>?_method=DELETE" method="POST">
                     <button type="submit" class="button">ELIMINAR</button>
                 </form>
-        <%- include('../../parcial/footer.ejs') %>
+        <%- include('../parcial/footer.ejs') %>
     </body>
 </html>

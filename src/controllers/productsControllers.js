@@ -1,146 +1,166 @@
-const fs = require('fs');
-const path = require('path'); 
-const {validationResult} = require('express-validator'); //validationResult es una funcion que tambien nos lo da express-validator 
+let db = require("../database/models");
+const {validationResult} = require('express-validator');
 
-//models
-
-const productsModel = require('../models/productsModel')
-
-/* En la constante "products" ya tienen los productos que están 
-guardados en la carpeta Data como Json (un array de objetos literales) */
-//const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
-/* const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
-
-const controlador ={ //IMPORTANTE
-    productCart:(req, res)=>{//Carrito
-        return res.render('./products/productCart');
-    },
-
-    //*****************DETALLE DE PRODUCTO************
-    //Ruta: /products/detail
-    productDetail:(req, res)=>{
-        let id = req.params.id //esto es lo que nos llega por parametro
-
-        const products = productsModel.findAll()
-        //Retorna el producto con el id mandado del req.params.id
-        let productFiltrado = products.find(producto=>{
-            return producto.id == id;
-        }) 
-        res.render('./products/productDetail',{producto:productFiltrado});
-    },
-
-
-    //*****************LISTA DE TODOS LOS PRODUCTOS************
-    //Ruta: /products/list
+const controlador ={
     list:(req, res)=>{
-        const products = productsModel.findAll()
-        res.render('./products/listProduct',{'listaProductos':products})//es 'prodct' porque acordate que es el archivo .ejs el que.. antes coincidia.. se cambio para ser mas claros.
-    },
-    //*****************CREAR PRDUCTO************
-    create:(req, res)=>{
-        return res.render('./products/creationPrduct');
-    },
-    processCreate:(req, res)=>{
-        //validation
-        const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0){//resultValidation.errors es un objeto literal
-            return res.render('./products/creationPrduct', {
-                errors: resultValidation.mapped(), //mapped: pasa la variable resultValidation a literiario 
-                oldData: req.body //Para mostrar los datos bien ingresados
-                });
-            }
-
-        //Tomamos los datos del body
-        let productoNuevo ={
-            name: req.body.name,
-            price: req.body.price,
-            colors: req.body.colors,
-            discount: req.body.discount,
-            category: req.body.category,
-            description: req.body.description,
-            image: req.file ? req.file.filename : "default-image.png" //if ternario
-        }
-        //llamamos al create de Model pra grabar esta en una variable qe no se llama de nuevo. Su finalidad es ejecutar la funcion, nada mas
-        let cargar = productsModel.create(productoNuevo);
-        res.redirect("/products/list")//se hace un nuevo pedido al servidor y se va o nos refresca en la patalla una vez guardado el lista de producto controlloer list
-    },
-
-
-    //*****************EDITAR PRODUCTO************
-    //ruta: /products/edit
-    edit:(req, res)=>{
-        let id = req.params.id //esto es lo que nos llega por parametro
-        const products = productsModel.findAll();
-        //Retorna el producto con el id mandado del req.params.id
-        let productFiltrado = products.find(producto=>{
-            return producto.id == id;
+        db.Productos
+        .findAll({
+            order:[
+                ["name", "ASC"]
+            ]
         })
-        //Listo para mandar a .ejs//se pone el nombre del ejs entre ''.
-        res.render('./products/productEdit',{producto:productFiltrado,});
-    },   
-    processEdit:(req, res)=>{
-         //validation
-         const resultValidation = validationResult(req);
-         if (resultValidation.errors.length > 0){
-            let id = req.params.id //esto es lo que nos llega por parametro
-            const products = productsModel.findAll();
-            //Retorna el producto con el id mandado del req.params.id
-            let productFiltrado = products.find(producto=>{
-                return producto.id == id;
+        .then(function(productos){
+            res.render("./products/productsList",{productos:productos})
+        })
+        .catch(function(error){
+            res.send(error)
+        }) 
+    },
+    detail:(req, res)=>{
+        db.
+        Productos
+            .findByPk(req.params.id,{//paramrtro del body. id porque pusimos asi en el router
+                include:[{association: "color"},{association: "modelo"}]})//asociamos las relaciones de tablas
+            .then(producto=>{
+                res.render("./products/productsDetail",{producto:producto})
             })
-            //Listo para mandar a .ejs//se pone el nombre del ejs entre ''.
-            return res.render('./products/productEdit',{
-                producto:productFiltrado,
-                errors: resultValidation.mapped(),
-                oldData: req.body
-            });
-         }
-
-
-
-        //llamamos a todos lo datos
-        const products = productsModel.findAll();
-
-        let id = req.params.id; 
-        let productoIdBody = products.find(producto=>{
-            return producto.id == id;
-        })
-    
-        let productoEditado ={
-        id: productoIdBody.id,
-        name: req.body.name,
-        price: req.body.price,
-        category: req.body.category,
-        description: req.body.description,
-        image: req.file ? req.file.filename : productoIdBody.image,
-        colors: req.body.colors
-        }
-        // let edit = productsModel.edit(productoEditado)
-
-        // MOdificar el array en el Id que esta posicionado - 
-        let indice = products.findIndex(producto =>{
-            return producto.id == id;
-        })
-        //en products donde se encontro el indice se va a reemplazar por el producto editado en la pagina ejs req.body
-        products[indice] = productoEditado
-        //Grabamos en la BD
-        fs.writeFileSync(productsModel.fileName, JSON.stringify(products, null," "));//
-        // la barra es porque vamos a una direccion que es la de lista de productos -- controller list 
-        res.redirect("/products/list")
+            .catch(function(error){
+                res.send(error)
+            })
     },
-    //*****************ELIMINAR PRODUCTO************
+    productCart:(req,res)=>{
+        return res.render('./products/productCart')
+    },
+    modelos:(req,res)=>{//poner en le buscador
+        //console.log(req.params.id)
+        //res.send("hola " + req.params.id)
+        db.Productos.findAll({
+            where: {
+                id_modelo : req.params.id
+            },
+            order:[
+                ["name", "DESC"]
+            ],
+        }).then(productos=>{
+            res.render("./products/productsModel", {productos:productos})
+        })
+    },
+    create:(req,res)=>{
+        let pedidoColores = db.Colores.findAll();
+        let pedidosModelos = db.Modelos.findAll();
+        
+        Promise.all([pedidoColores, pedidosModelos])//para poder llamar dos tablas
+        .then(function([colors, models]){
+            res.render("./products/productsCreate",{
+                colors:colors, 
+                models:models
+            })
+        })
+        .catch(function(error){
+            res.send(error);
+        }) 
+
+        //res.render("./products/sql/productsCreate");
+    },
+    processCreate:(req,res)=>{
+        //validacion
+        const resultValidation = validationResult(req);//validacion
+        if (resultValidation.errors.length > 0){
+
+            let pedidoColores = db.Colores.findAll();
+            let pedidosModelos = db.Modelos.findAll();
+            Promise.all([pedidoColores, pedidosModelos])//para poder llamar dos tablas
+            .then(function([colors, models]){
+                    return res.render("./products/productsCreate",{
+                        colors:colors,
+                        models:models, 
+                        errors: resultValidation.mapped(), 
+                        oldData: req.body})
+                })
+                .catch(function(error){
+                    res.send(error);
+                })
+        }else{
+        db.Productos
+                .create({
+                    name: req.body.name,  
+                    price: req.body.price,
+                    anio: req.body.anio,
+                    image: req.file ? req.file.filename : "default-image.png",
+                    description: req.body.description,
+                    id_color: req.body.color, 
+                    id_modelo: req.body.model 
+        })
+    res.redirect("list")
+        }
+    },
+    edit:(req, res)=>{
+        let pedidoProducto = db.Productos.findByPk(req.params.id);
+        let pedidoColores = db.Colores.findAll();
+        let pedidosModelos = db.Modelos.findAll();
+        
+        Promise.all([pedidoColores, pedidosModelos, pedidoProducto])//para poder llamar dos tablas
+        .then(function([colors, models, producto]){
+            res.render("./products/productsEdit",{
+                colors:colors, 
+                models:models,
+                producto:producto
+            })
+        })
+        .catch(function(error){
+            res.send(error);
+        }) 
+    },
+    processEdit:(req,res)=>{
+        //validacion
+        const resultValidation = validationResult(req);//validacion
+        if (resultValidation.errors.length > 0){
+
+            let pedidoProducto = db.Productos.findByPk(req.params.id);
+            let pedidoColores = db.Colores.findAll();
+            let pedidosModelos = db.Modelos.findAll();
+            
+            Promise.all([pedidoColores, pedidosModelos, pedidoProducto])//para poder llamar dos tablas
+            .then(function([colors, models, producto]){
+                res.render("./products/productsEdit",{
+                    colors:colors, 
+                    models:models,
+                    producto:producto,
+                    errors: resultValidation.mapped(), 
+                    oldData: req.body
+                })
+            })
+            .catch(function(error){
+                res.send(error);
+            })
+        }else{
+        let pedidoProducto = db.Productos.findByPk(req.params.id);
+        db.Productos
+            .update({
+                name: req.body.name,  
+                price: req.body.price,
+                anio: req.body.anio,
+                image: req.file ? req.file.filename : pedidoProducto.image,
+                description: req.body.description,
+                id_color: req.body.color,  
+                id_modelo: req.body.models  
+                },{
+                    where:{
+                        id_product: req.params.id
+                }
+            })
+        res.redirect("/product/list")
+        }
+    },
     delete:(req, res)=>{
-        let id = req.params.id //esto es lo que nos llega por parametro
-        const products = productsModel.findAll();
-        //Retorna todos los id menos el que esta en la condicion
-        let productFiltrado = products.filter(producto=>{
-            return producto.id != id;
-        });
-        fs.writeFileSync(productsModel.fileName, JSON.stringify(productFiltrado, null," "));
-        res.redirect("/products/list")
+        db.Productos
+            .destroy({
+                where:{
+                    id_product: req.params.id
+                }
+            })
+            res.redirect("/product/list")
     }
 }
 
-
-        //exportamos el objeto literal con sus metodos
-        module.exports = controlador;
+module.exports = controlador;

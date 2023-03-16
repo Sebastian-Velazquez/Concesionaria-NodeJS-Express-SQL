@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('../../parcial/head.ejs') %>
+        <%- include('../parcial/head.ejs') %>
         <link href="/css/productsEdit.css" rel="stylesheet">
     </head>
     <body>
-        <%- include('../../parcial/header.ejs') %>
+        <%- include('../parcial/header.ejs') %>
         <h2>Formulario para crear producto</h2>
         <form action="/product/edit/<%= producto.id_product %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div>
@@ -110,6 +110,6 @@
             <div>
                 <input type="submit">
             </div>
-        <%- include('../../parcial/footer.ejs') %>
+        <%- include('../parcial/footer.ejs') %>
     </body>
 </html>

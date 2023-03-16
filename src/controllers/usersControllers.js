@@ -1,64 +1,64 @@
+let db = require("../database/models");
 const bcryptjs = require("bcryptjs");//requiere bcrypt para las password
-const userModels = require('../models/userModels')
 const {validationResult} = require('express-validator');
 
-
-const controlador ={ //IMPORTANTE
-    
-    //home-user
-    login:(req, res)=>{
-        return res.render('./users/login');
-    },
+const controlador ={
     register:(req, res)=>{
-        return res.render('./users/register');
+        res.render("./users/userRegister")
     },
-    processRegister:(req,res)=>{
-        //Validacion de Middlewares
-        const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0){//resultValidation.errors es un objeto literal
-        return res.render('./users/register', {
-            errors: resultValidation.mapped(), //mapped: pasa la variable resultValidation a literiario 
-            oldData: req.body //Para mostrar los datos bien ingresados
-            });
-        }
-
-
-
-        let userToCreate = {//no me qedo entendido .. creo que es oara sacar el pash y no mostrar toda la infomacion del la ruta
-            ...req.body,
-            password: bcryptjs.hashSync(req.body.password, 10),//le doy el password del body y el dias es la encriptacion
-            image: req.file.filename //enctype="multipart/form-data"
-        }
-
-        let userCreated = userModels.create(userToCreate);//ejecuta los comandos de create de User.js
-        return res.redirect('/user/login')
+    processRegister:(req, res)=>{
+        db.Usuarios
+            .create({
+                first_name: req.body.firstName,  
+                last_name: req.body.lastName,
+                birt_date: req.body.date,
+                email: req.body.email,
+                password: bcryptjs.hashSync(req.body.password, 10), 
+                image: "avatar.jpg",
+                id_category: 1
+            })
+        res.render('./users/userLogin')
     },
-    processLogin:(req,res)=>{
-        let userToLogin = userModels.findByField('email', req.body.email);
-
-        if (userToLogin){
-            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-            if(isOkThePassword){
-                delete userToLogin.password; //por seguridad
-                req.session.userLogged =  userToLogin
-
-                if(req.body.remember) {//remember: es el name que le pusimos al checkbox en login.ejs
-					res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })//res.cookie: setea una cookie
-				}
-                return res.redirect('/user/userProfile')
+    login:(req, res)=>{
+        res.render("./users/userLogin")
+    },
+    processLogin:(req, res)=>{
+        db.Usuarios.findOne({ //dindOne: busca y hay un dato que sea igual al madado por el body
+            where:{
+                email: req.body.email  //
             }
-            //return res.redirect('/user/login')
-            return res.render('./users/login' , {
-            errors: {
-                email: {msg:'Las credenciales no son validas'}
-            }
-            } )
+        }).then(userToLogin =>{
+            if(userToLogin){
+                let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+                if(isOkThePassword){
+                    userToLogin.password = null; // Borrra el password para que no quede guardado.
+                    //Guardar el user logeado
+                    req.session.userLogged =  userToLogin
+                    //res.send(req.session.userLogged)
+                    //console.log(req.session.userLogged)
+                    //mantener session
+                    if(req.body.remember) {
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2})
+                    }
 
-        }
-        return res.render('./users/login', {
-            errors: {
-                email: {msg:'No se encontro el email en DB'}
+                    return res.redirect('/users/userProfile')
+                }else{
+                //si el password no es valido
+                return res.render('./users/userLogin', {
+                    errors: {
+                        email: {msg:'Las credenciales no son validas'}
+                    }
+                    })
+                }
+            }else{
+                return res.render('./users/userLogin', {
+                    errors: {
+                        email: {msg:'Las credenciales no son validas'}
+                    }
+                })
             }
+        }).catch(function(error){
+            res.send(error);
         })
     },
     userProfile : (req, res)=>{
@@ -67,12 +67,12 @@ const controlador ={ //IMPORTANTE
         })
     },
     logout:function(req,res){//cerrar  cuenta de usuario
-        res.clearCookie('userEmail');//destruir la cookie
-        req.session.destroy();//para destruir la session, osea salir del login del perfil
+        req.session.userLogged = null;//para destruir la session, osea salir del login del perfil
+        res.clearCookie('userEmail',);//destruir la cookie
+        //req.session = null;//para destruir la session, osea salir del login del perfil
         return res.redirect('/')
     }
-}
+    }
 
 
-        //exportamos el objeto literal con sus metodos
-        module.exports = controlador;
+module.exports = controlador;

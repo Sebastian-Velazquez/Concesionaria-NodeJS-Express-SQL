@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <%- include('../../parcial/head.ejs') %>
+        <%- include('../parcial/head.ejs') %>
         <link href="/css/login.css" rel="stylesheet">
     </head>
 <body>
-    <%- include('../../parcial/header.ejs') %>
+    <%- include('../parcial/header.ejs') %>
 <h1 class="login">INGRESÁ</h1>
 <form action="/users/login" method="post" class="form-user-login"><br><br>
     <div><label for="">Ingrese el Email:</label>
@@ -19,6 +19,6 @@
     <% } %>
     <input type="submit">
 <br><br></form>
-    <%- include('../../parcial/footer.ejs') %>
+    <%- include('../parcial/footer.ejs') %>
 </body>
 </html>
