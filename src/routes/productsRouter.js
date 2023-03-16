@@ -20,11 +20,11 @@ router.get("/create", authMiddlewares,productsControllers.create);
 //Crear Producto
 router.post("/create",upload.single("image"),validations, productsControllers.processCreate);
 //Vista editar Producto
-router.get("/edit/:id", productsControllers.edit);
+router.get("/edit/:id", authMiddlewares, productsControllers.edit);
 //Editar producto
 router.put("/edit/:id",upload.single("image"),validations, productsControllers.processEdit);
 //Eliminar Producto
-router.delete("/delete/:id", productsControllers.delete);
+router.delete("/delete/:id", authMiddlewares, productsControllers.delete);
 //carrito
 router.get("/productCart", productsControllers.productCart);
 //vista modelos

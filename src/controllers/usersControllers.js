@@ -15,7 +15,7 @@ const controlador ={
                 email: req.body.email,
                 password: bcryptjs.hashSync(req.body.password, 10), 
                 image: "avatar.jpg",
-                id_category: 1
+                id_category: 0
             })
         res.render('./users/userLogin')
     },
