@@ -28,42 +28,39 @@
         <button class="btn-form" type="submit">Enviar formulario</button>
       </form>
     </main> -->
+
 <form action="/users/register" method="post" class="form">
   <div class="container">
     <div class="card">
-        <a class="login">Registrate!</a>
-        <div class="inputBox">
-            <input name="firstName" id="name" type="text" required="required">
-            <span class="user">Nombre</span>
-        </div>
+      <a class="login">Registrate!</a>
+      <div class="inputBox">
+        <input name="firstName" id="name" type="text" required="required">
+        <span class="user">Nombre</span>
+      </div>
 
-        <div>
-          <label for="name">Apellido</label>
-          <input
-            type="text" name="lastName" id="last_name"class="lastName-input"/>
-        </div>
+      <div class="inputBox">
+        <input name="lastName" id="last_name" type="text" required="required">
+        <span class="user">Apellido</span>
+      </div>
 
-        <div>
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-        </div>
+      <div class="inputBox">
+        <input name="email" id="email" type="email" required="required">
+        <span class="user">Email</span>
+      </div>
 
-        <div>
-          <label for="password">Contraseña</label>
-          <input type="password" name="password" id="password" />
-        </div>
+      <div class="inputBox">
+        <input name="password" id="password" type="password" required="required">
+        <span class="user">Contraseña</span>
+      </div>
 
-        <div>
-          <label for="birthDate">Fecha de nacimiento:</label>
-          <input type="date" name="birth_date" id="mail" />
-        </div>
-        <div>
-          <label>Imagen:</label>
-          <input type="file" name="image" id="image" />
-        </div>
+      <div class="inputBox">
+        <input name="birth_date" id="mail" type="date" required="required">
+      </div>
+      <div class="inputBox">
+        <input name="image" id="image" type="file" required="required">
+      </div>
 
-        <button class="enter">Enviar</button>
-
+      <button type="submit" class="enter">Enviar</button>
     </div>
   </div>
 </form>
