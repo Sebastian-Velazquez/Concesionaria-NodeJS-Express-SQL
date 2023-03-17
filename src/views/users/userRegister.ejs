@@ -48,9 +48,16 @@
     </main>
 
     <!-- script para el form -->
-    <script src="/js/index.js"></script>
+    <!-- <script src="/js/index.js"></script> -->
 
     <!-- footer -->
+
+
+
+
+    <% if (locals.errors && errors.emailError){ %>
+      <p class="alertError"><%= errors.emailError.msg %> </p>
+  <% } %>
     <%- include('../parcial/footer.ejs') %>
   </body>
 </html>
