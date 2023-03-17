@@ -5,13 +5,13 @@ const router = express.Router();
 const usersControllers = require("../controllers/usersControllers.js")
 //middlewares validar registro
 const validationsRegistro = require("../middlewares/userRouter/validationsRegisterMiddlewares");
-
+const upload = require("../middlewares/multerMiddleware");//multer
 const guestMiddlewares = require("../middlewares/userRouter/guestMiddlewares");//si tengo alguein en session
 const authMiddlewares = require("../middlewares/userRouter/authMiddlewares");//si no tengo a nadie en session
 
 //regitro de usuario
 router.get("/register", guestMiddlewares,usersControllers.register);
-router.post("/register",validationsRegistro, usersControllers.processRegister);
+router.post("/register", upload.single("image"),validationsRegistro, usersControllers.processRegister);
 //login de usuario
 router.get("/login",  guestMiddlewares, usersControllers.login);
 router.post("/login", usersControllers.processLogin);

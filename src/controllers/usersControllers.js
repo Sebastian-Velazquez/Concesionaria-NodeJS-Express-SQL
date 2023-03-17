@@ -22,12 +22,12 @@ const controlador ={
             }
         }).then(userInDB=>{
             if (userInDB){
-                return res.render('./users/userRegister'/* , {
+                return res.render('./users/userRegister', {
                     errors: {
-                        emailError: {msg:'Este email ya esta registrado'}
+                        email: {msg:'Este email ya esta registrado'}
                     }, //mapped: pasa la variable resultValidation a literiario 
                     oldData: req.body //Para mostrar los datos bien ingresados
-                    } */) ; 
+                    }) ; 
             }else{
                 db.Usuarios
             .create({

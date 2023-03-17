@@ -9,7 +9,7 @@ const validations =[
     body('email').notEmpty().withMessage('Tienes que escribir tu email').bail()//bail para que cote la ejecicion, en este caso si hay un campo vacio
                 .isEmail().withMessage('Debes escribir un formato de email correcto. Ejemplo, info@mail.com'),
     body('password').notEmpty().withMessage('Tienes que escribir un password'),     
-    body('date').isDate().withMessage('Tienes que escribir una fecha correcto'),
+    body('birth_date').isDate().withMessage('Tienes que escribir una fecha correcto'),
     body('image').custom((value, {req})=> {
         let file = req.file;
         /* console.log(file) */

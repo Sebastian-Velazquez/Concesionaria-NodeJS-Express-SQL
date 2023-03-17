@@ -26,38 +26,65 @@
 
 
         <button class="btn-form" type="submit">Enviar formulario</button>
-      </form>
+      </form>  required="required"
     </main> -->
 
-<form action="/users/register" method="post" class="form">
+<form action="/users/register" method="POST" class="form" enctype="multipart/form-data">
   <div class="container">
     <div class="card">
       <a class="login">Registrate!</a>
       <div class="inputBox">
-        <input name="firstName" id="name" type="text" required="required">
+        <input name="firstName" id="name" type="text" required="required"
+        value="<%= locals.oldData ? oldData.firstName : null %>">
         <span class="user">Nombre</span>
+        <!-- Validacion -->
+        <% if (locals.errors && errors.firstName){ %>
+          <p class="alertError"><%= errors.firstName.msg %> </p>
+          <% } %>
       </div>
 
       <div class="inputBox">
-        <input name="lastName" id="last_name" type="text" required="required">
+        <input name="lastName" id="last_name" type="text" required="required"
+        value="<%= locals.oldData ? oldData.lastName : null %>">
         <span class="user">Apellido</span>
+        <!-- Validacion -->
+        <% if (locals.errors && errors.lastName){ %>
+          <p class="alertError"><%= errors.lastName.msg %> </p>
+          <% } %>
       </div>
 
       <div class="inputBox">
-        <input name="email" id="email" type="email" required="required">
+        <input name="email" id="email" type="email" required="required"> 
         <span class="user">Email</span>
+        <!-- Validacion -->
+        <% if (locals.errors && errors.email){ %>
+          <p class="alertError"><%= errors.email.msg %> </p>
+          <% } %>
       </div>
 
       <div class="inputBox">
-        <input name="password" id="password" type="password" required="required">
+        <input name="password" id="password" type="password" required="required"
+        value="<%= locals.oldData ? oldData.password : null %>">
         <span class="user">Contraseña</span>
+        <!-- Validacion -->
+        <% if (locals.errors && errors.password){ %>
+          <p class="alertError"><%= errors.password.msg %> </p>
+          <% } %>
       </div>
 
       <div class="inputBox">
-        <input name="birth_date" id="mail" type="date" required="required">
+        <input name="birth_date" id="birth_date" type="date" required="required">
+        <!-- Validacion -->
+        <% if (locals.errors && errors.birth_date){ %>
+          <p class="alertError"><%= errors.birth_date.msg %> </p>
+          <% } %>
       </div>
       <div class="inputBox">
-        <input name="image" id="image" type="file" required="required">
+        <input name="image" id="image" type="file">
+        <!-- Validacion -->
+        <% if (locals.errors && errors.image){ %>
+          <p class="alertError"><%= errors.image.msg %> </p>
+          <% } %>
       </div>
 
       <button type="submit" class="enter">Enviar</button>
@@ -67,7 +94,7 @@
 
 
     <!-- script para el form -->
-    <!-- <script src="/js/index.js"></script> -->
+    <script src="/js/index.js"></script>
 
     <!-- footer -->
 
