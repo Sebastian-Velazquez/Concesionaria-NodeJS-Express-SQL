@@ -7,7 +7,7 @@
     <body>
         <%- include('../parcial/header.ejs') %>
         <h2>Formulario para editar producto</h2>
-        <form action="/product/edit/<%= producto.id_product %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="/product/edit/%= producto.id_product %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div>
                 <label>Nombre</label>
                 <input type="text" name="name"
@@ -74,7 +74,7 @@
                     </select>
                     <!-- alerta -->
                     <% if (locals.errors && errors.color){ %>
-                        <p class="alertError"><%= errors.color.msg %> </p>
+                        <p class="alertError">%= errors.color.msg %> </p>
                     <% } %>
             </div>
             <div>
@@ -97,14 +97,14 @@
                             </option>
                         <% } %>
                         <!-- muestra todos menos el selected, si es que tiene -->
-                        <option value="<%= models[i].id_modelo %>">
+                        <option value="%= models[i].id_modelo %>">
                         <%= models[i].tipo_de_modelo %>
                         </option>
                     <% } %>
                 </select>
                 <!-- alerta -->
-                <% if (locals.errors && errors.model && ){ %>
-                    <p class="alertError"><%= errors.model.msg %> </p>
+                <% if (locals.errors && errors.models ){ %>
+                    <p class="alertError"><%= errors.models.msg %> </p>
                 <% } %>
             </div>
             <label>Poner en productos destacados:

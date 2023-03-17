@@ -19,7 +19,7 @@
         <div>
             <button type="submit">COMPRAR</button>
         </div>
-            <% if (locals.isLogged) { %> 
+            <!-- <% if (locals.isLogged) { %>  -->
                 <form action="/product/edit/<%= producto.id_product %>" method="GET">
                     <button type="submit">EDITAR</button>
                 </form>
@@ -27,7 +27,7 @@
                 <form action="/product/delete/<%= producto.id_product %>?_method=DELETE" method="POST">
                     <button type="submit" class="button">ELIMINAR</button>
                 </form>
-            <% } %>
+            <!-- <% } %> -->
         <%- include('../parcial/footer.ejs') %>
     </body>
 </html>
