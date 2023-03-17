@@ -37,27 +37,29 @@
             <span class="user">Nombre</span>
         </div>
 
-        <div class="inputBox">
-          <input name="lastName" id="last_name" type="text" required="required">
-          <span class="user">Apellido</span>
+        <div>
+          <label for="name">Apellido</label>
+          <input
+            type="text" name="lastName" id="last_name"class="lastName-input"/>
         </div>
 
-        <div class="inputBox">
-          <input name="email" id="email" type="email" required="required">
-          <span class="user">Email</span>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" />
         </div>
 
-        <div class="inputBox">
-          <input name="password" id="password" type="password" required="required">
-          <span class="user">Contrasena</span>
+        <div>
+          <label for="password">Contraseña</label>
+          <input type="password" name="password" id="password" />
         </div>
 
-        <div class="inputBox">
-          <input name="birth_date" id="mail" type="date" required="required">
+        <div>
+          <label for="birthDate">Fecha de nacimiento:</label>
+          <input type="date" name="birth_date" id="mail" />
         </div>
-
-        <div class="inputBox">
-          <input name="image" id="image" type="file" required="required">
+        <div>
+          <label>Imagen:</label>
+          <input type="file" name="image" id="image" />
         </div>
 
         <button class="enter">Enviar</button>
@@ -68,9 +70,14 @@
 
 
     <!-- script para el form -->
-    <script src="/js/index.js"></script>
+    <!-- <script src="/js/index.js"></script> -->
 
     <!-- footer -->
+
+
+
+
+
     <%- include('../parcial/footer.ejs') %>
   </body>
 </html>

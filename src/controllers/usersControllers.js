@@ -7,7 +7,29 @@ const controlador ={
         res.render("./users/userRegister")
     },
     processRegister:(req, res)=>{
-        db.Usuarios
+       //Validacion de Middlewares
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0){//resultValidation.errors es un objeto literal
+        return res.render('./users/userRegister', {
+            errors: resultValidation.mapped(), //mapped: pasa la variable resultValidation a literiario 
+            oldData: req.body //Para mostrar los datos bien ingresados
+            });
+        }
+        //Validamos si ya existe el mail ingresado antes de cargar el usuario nuevo
+        db.Usuarios.findOne({ //dindOne: busca y hay un dato que sea igual al madado por el body
+            where:{
+                email: req.body.email  //
+            }
+        }).then(userInDB=>{
+            if (userInDB){
+                return res.render('./users/userRegister'/* , {
+                    errors: {
+                        emailError: {msg:'Este email ya esta registrado'}
+                    }, //mapped: pasa la variable resultValidation a literiario 
+                    oldData: req.body //Para mostrar los datos bien ingresados
+                    } */) ; 
+            }else{
+                db.Usuarios
             .create({
                 first_name: req.body.firstName,  
                 last_name: req.body.lastName,
@@ -18,6 +40,10 @@ const controlador ={
                 id_category: 0
             })
         res.render('./users/userLogin')
+            }
+
+        })
+
     },
     login:(req, res)=>{
         res.render("./users/userLogin")
