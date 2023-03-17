@@ -14,32 +14,63 @@
       <form action="/users/register" method="post" class="form">
         <div class="name">
           <label for="name">Nombre</label>
-          <input type="text" name="firstName" id="name" class="name-input" />
+          <input type="text" name="firstName" id="name" class="name-input" 
+          value="<%= locals.oldData ? oldData.firstName : null %>">
+                            <!-- Validacion -->
+                            <% if (locals.errors && errors.firstName){ %>
+                                <p class="alertError"><%= errors.firstName.msg %> </p>
+                                <% } %>
         </div>
 
         <div>
           <label for="name">Apellido</label>
           <input
-            type="text" name="lastName" id="last_name"class="lastName-input"/>
+            type="text" name="lastName" id="last_name"class="lastName-input"
+            value="<%= locals.oldData ? oldData.lastName : null %>">
+            <!-- Validacion -->
+            <% if (locals.errors && errors.lastName){ %>
+                <p class="alertError"><%= errors.lastName.msg %> </p>
+                <% } %>
         </div>
 
         <div>
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
+          <input type="email" name="email" id="email"
+          value="<%= locals.oldData ? oldData.email : null %>">
+            <!-- Validacion -->
+            <% if (locals.errors && errors.email){ %>
+                <p class="alertError"><%= errors.email.msg %> </p>
+                <% } %>
+                <% if (locals.errors && errors.emailError){ %>
+                  <p class="alertError"><%= errors.emailError.msg %> </p>
+              <% } %>
         </div>
 
         <div>
           <label for="password">Contraseña</label>
-          <input type="password" name="password" id="password" />
+          <input type="password" name="password" id="password"
+          value="<%= locals.oldData ? oldData.password : null %>">
+          <!-- Validacion -->
+          <% if (locals.errors && errors.password){ %>
+              <p class="alertError"><%= errors.password.msg %> </p>
+              <% } %>
         </div>
 
         <div>
           <label for="birthDate">Fecha de nacimiento:</label>
-          <input type="date" name="birth_date" id="mail" />
+          <input type="date" name="date" id="mail"
+          value="<%= locals.oldData ? oldData.date : null %>">
+          <!-- Validacion -->
+          <% if (locals.errors && errors.date){ %>
+              <p class="alertError"><%= errors.date.msg %> </p>
+              <% } %>
         </div>
         <div>
           <label>Imagen:</label>
-          <input type="file" name="image" id="image" />
+          <input type="file" name="image" id="image">
+          <% if (locals.errors && errors.image){ %>
+            <p class="alertError"><%= errors.image.msg %> </p>
+            <% } %>
         </div>
 
 
@@ -55,9 +86,7 @@
 
 
 
-    <% if (locals.errors && errors.emailError){ %>
-      <p class="alertError"><%= errors.emailError.msg %> </p>
-  <% } %>
+
     <%- include('../parcial/footer.ejs') %>
   </body>
 </html>
