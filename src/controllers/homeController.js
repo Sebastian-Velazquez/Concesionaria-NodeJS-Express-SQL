@@ -21,7 +21,6 @@ const controlador ={ //IMPORTANTE
             limit: 4
         })
         .then(productos =>{
-            console.log(productos)
             res.render("index",{productos:productos})
         
         })

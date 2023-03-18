@@ -45,6 +45,7 @@ const controlador ={
         //res.send("hola " + req.params.id)
         db.Productos.findAll({
             where: {
+                delete: 0,
                 id_modelo : req.params.id
             },
             order:[

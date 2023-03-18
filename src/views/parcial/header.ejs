@@ -22,7 +22,7 @@
             <!-- Seccion para administradores, terminar mas tarde  -->
             <div>
                 <ul class="navBar">
-                    <% if (locals.isLogged) { %>  
+                    <% if (locals.isLogged && locals.userLogged.id_category===1) { %>  
                     <li class="navBar-lista"><a href="/product/create">Crear Producto</a></li>
                     <% } %> 
                     <li class="navBar-lista"><a href="/product/list">Todos los Productos</a></li>

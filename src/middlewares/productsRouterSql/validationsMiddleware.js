@@ -12,7 +12,6 @@ const validations =[
     body('model').notEmpty().withMessage('Tienes que seleccionar un modelo'),//bail para que cote la ejecicion, en este caso si hay un campo vacio
     body('image').custom((value, {req})=> {
         let file = req.file;
-        /* console.log(file) */
         let aceptedExtensions = ['.jpg', '.png', '.gif', '.jpeg'];
         
         if (file){

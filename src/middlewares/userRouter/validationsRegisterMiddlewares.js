@@ -26,7 +26,8 @@ const validations =[
     body('passwordValidate').custom((value, {req})=> {
     let password = req.body.password;
     let passwordValidate =req.body.password;
-    if (password !== passwordValidate){
+    console.log(password + " " + passwordValidate)
+    if (password != passwordValidate){
         throw new Error('las contraseñas no coinciden')
     }
     return true
