@@ -63,12 +63,20 @@
       </div>
 
       <div class="inputBox">
-        <input name="password" id="password" type="password" required="required"
-        value="<%= locals.oldData ? oldData.password : null %>">
+        <input name="password" id="password" type="password" required="required">
         <span class="user">Contraseña</span>
         <!-- Validacion -->
         <% if (locals.errors && errors.password){ %>
           <p class="alertError"><%= errors.password.msg %> </p>
+          <% } %>
+      </div>
+
+      <div class="inputBox">
+        <input name="passwordValidate" id="password" type="password" required="required">
+        <span class="user">Repetir Contraseña</span>
+        <!-- Validacion -->
+        <% if (locals.errors && errors.passwordValidate){ %>
+          <p class="alertError"><%= errors.passwordValidate.msg %> </p>
           <% } %>
       </div>
 
