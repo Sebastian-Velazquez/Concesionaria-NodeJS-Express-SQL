@@ -33,7 +33,7 @@ const controlador ={
             .create({
                 first_name: req.body.firstName,  
                 last_name: req.body.lastName,
-                birt_date: req.body.date,
+                birt_date: req.body.birt_date,
                 email: req.body.email,
                 password: bcryptjs.hashSync(req.body.password, 10), 
                 image: "avatar.jpg",
