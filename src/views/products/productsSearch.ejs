@@ -6,6 +6,16 @@
     </head>
 <body>
     <%- include('../parcial/header.ejs') %>
+    
+    <% modelos.forEach(modelos=> { %>
+  
+        <form action="/product/modelos/<%= modelos.id_modelo %>" method="get">
+                <div>
+                    <input type="submit" value="Ver todos los productos de <%= modelos.tipo_de_modelo %>">
+                </div>
+            </form> 
+        <% }) %>
+
     <% if(resultados.length > 0){ %>
         <% resultados.forEach(productos => { %>
             <lu>
