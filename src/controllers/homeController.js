@@ -17,8 +17,7 @@ const controlador ={ //IMPORTANTE
             },
             order:[
                 ["price", "DESC"]
-            ],
-            limit: 4
+            ]
         })
         .then(productos =>{
             res.render("index",{productos:productos})

@@ -151,7 +151,7 @@ const controlador ={
             })
         }else{
         let pedidoProducto = db.Productos.findByPk(req.params.id);
-        //console.log(req.body)
+        console.log(req.body.outstanding)
         db.Productos
             .update({
                 name: req.body.name,  

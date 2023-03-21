@@ -36,11 +36,11 @@ const validations =[
     // Convertimos la fecha de nacimiento en un objeto Date de JavaScript
     let fecha = new Date(req.body.birth_date);
     // Calculamos la edad en milisegundos
-    let edadMilisegundos = Date.now() - fecha.getTime();
+    let milisegundos = Date.now() - fecha.getTime();
     // Convertimos la edad en milisegundos a años
-    let edadAnos = edadMilisegundos / 1000 / 60 / 60 / 24 / 365.25;
+    let anos = milisegundos / 1000 / 60 / 60 / 24 / 365.25;
         // Si la edad en años es mayor o igual a 18, la persona es mayor de edad
-        if ( edadAnos <= 0){
+        if ( anos <= 0){
             throw new Error('Fecha no valida')
         }else{
             return true
