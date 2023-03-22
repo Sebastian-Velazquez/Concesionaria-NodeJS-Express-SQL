@@ -22,7 +22,7 @@
             <!-- Seccion para administradores, terminar mas tarde  -->
             <div>
                 <ul class="navBar">
-                    <% if (locals.isLogged) { %>  
+                    <% if (locals.isLogged && locals.userLogged.id_category===1) { %>  
                     <li class="navBar-lista"><a href="/product/create">Crear Producto</a></li>
                     <% } %> 
                     <li class="navBar-lista"><a href="/product/list">Todos los Productos</a></li>
@@ -36,8 +36,8 @@
                         <% }else { %> 
                             <li class="navBar-lista"><a href="/users/register">Registrate</a></li>
                             <li class="navBar-lista"><a href="/users/login">Ingresá</i></a></li>
+                            <% } %> 
                             <li class="navBar-lista"><a href="/product/productCart">Carrito</a></li>
-                    <% } %> 
                 </ul>
             </div>
         </div>
