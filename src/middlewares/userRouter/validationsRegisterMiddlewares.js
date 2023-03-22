@@ -45,7 +45,6 @@ const validations =[
         }else{
             return true
         }
-
-  })
+    })
 ];
 module.exports = validations;
