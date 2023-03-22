@@ -34,7 +34,7 @@
     <div class="card">
       <a class="login">Registrate!</a>
       <div class="inputBox">
-        <input name="firstName" id="name" type="text" required="required"
+        <input name="firstName" id="name" type="text" 
         value="<%= locals.oldData ? oldData.firstName : null %>">
         <span class="user">Nombre</span>
         <!-- Validacion -->
@@ -44,7 +44,7 @@
       </div>
 
       <div class="inputBox">
-        <input name="lastName" id="last_name" type="text" required="required"
+        <input name="lastName" id="last_name" type="text" 
         value="<%= locals.oldData ? oldData.lastName : null %>">
         <span class="user">Apellido</span>
         <!-- Validacion -->
@@ -54,7 +54,7 @@
       </div>
 
       <div class="inputBox">
-        <input name="email" id="email" type="email" required="required"> 
+        <input name="email" id="email" type="email" > 
         <span class="user">Email</span>
         <!-- Validacion -->
         <% if (locals.errors && errors.email){ %>
@@ -63,7 +63,7 @@
       </div>
 
       <div class="inputBox">
-        <input name="password" id="password" type="password" required="required">
+        <input name="password" id="password" type="password" >
         <span class="user">Contraseña</span>
         <!-- Validacion -->
         <% if (locals.errors && errors.password){ %>
@@ -72,7 +72,7 @@
       </div>
 
       <div class="inputBox">
-        <input name="passwordValidate" id="password" type="password" required="required">
+        <input name="passwordValidate" id="password" type="password" >
         <span class="user">Repetir Contraseña</span>
         <!-- Validacion -->
         <% if (locals.errors && errors.passwordValidate){ %>
@@ -81,7 +81,7 @@
       </div>
 
       <div class="inputBox">
-        <input name="birth_date" id="birth_date" type="date" required="required">
+        <input name="birth_date" id="birth_date" type="date" >
         <!-- Validacion -->
         <% if (locals.errors && errors.birth_date){ %>
           <p class="alertError"><%= errors.birth_date.msg %> </p>
