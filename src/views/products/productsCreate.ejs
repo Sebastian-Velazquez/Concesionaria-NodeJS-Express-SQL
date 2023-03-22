@@ -7,7 +7,7 @@
 <body>
     <%- include('../parcial/header.ejs') %>
     <h2>Formulario para crear producto</h2>
-    <form action="/product/create" method="POST" enctype="multipart/form-data">
+    <form action="/product/create" method="POST" enctype="multipart/form-data" id="formulario"> 
         <div>
             <label>Nombre</label>
             <input type="text" name="name"
@@ -97,5 +97,8 @@
             <input type="submit">
         </div>
         <%- include('../parcial/footer.ejs') %>
+    <!-- script para el form -->
+    <script src="/js/productsCreate.js"></script>
+    <!-- footer -->
 </body>
 </html>
