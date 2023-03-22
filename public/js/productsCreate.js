@@ -11,16 +11,21 @@ const expresiones ={//las expresiones son formulas que busca coincidencias para 
 
 const validarFormulario = (e) =>{
     //console.log('Se ejecuto')
+
     switch (e.target.name){
         case "name":
             if(expresiones.nombre.test(e.target.value)){
+                /* if(inputs.name.length > 4 && values.name.length < 6){
+                    document.getElementById('grupo__nombre').classList.add('listo');
+                    document.getElementById('name').classList.add('listo-input');
+                } */
                 document.getElementById('grupo__nombre').classList.remove('error');
                 document.getElementById('name').classList.remove('error-input');
                 document.getElementById('grupo__nombre').classList.remove('correcto');
                 document.getElementById('name').classList.remove('correcto-input');
                 document.getElementById('cartel-error-name').classList.remove('alertError');
                 document.getElementById('cartel-error-name2').classList.remove('alertError');
-
+                
             }else{
                 document.getElementById('grupo__nombre').classList.add('error');
                 document.getElementById('name').classList.add('error-input');

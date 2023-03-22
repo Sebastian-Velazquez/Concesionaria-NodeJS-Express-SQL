@@ -19,6 +19,7 @@ p{
 /* estilo error */
 .error{
     color: #bb2929;
+   
 }
 .error-input{
     border: 2px solid #bb2929;
@@ -26,5 +27,16 @@ p{
 }
 .alertError{
     display: block;
-    color: #bb2929;
+    color: red;
+    font-size: 12px;
+}
+
+/* estilo verde */
+.listo{
+    color: #77e96c;
+   
+}
+.listo-input{
+    border: 2px solid #77e96c;
+    outline: 1px solid #77e96c;
 }
