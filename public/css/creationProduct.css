@@ -1,45 +1,30 @@
-@import url(normalize.css);
-@import url(header.css);
-@import url(footer.css);
-
-.alertError{
-    color: red;
-}
-h1{
-    text-align: center;
-    padding: 15px 0;
-}
-/* ----------------form---------asd--------------------- */
-.form-edit{
+.main-crear-producto{
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
+    flex-wrap: wrap;
+    align-content: space-around;
 }
-/* ----------------boton------------------------------ */
-.form-button{
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    margin: 30px 0;
-    padding: 20px;
-    border-radius: 5%;
-    background-color: rgb(61, 81, 209);
-    border-color: rgb(61, 81, 209);
+p{
+    display: none;
 }
-.form-button:hover{
-    border: solid 2px rgb(255, 255, 255);
-    border-radius: 5px;
+/* Estilo correcto */
+.correcto{
+    color: black
 }
-.form-input{
-    padding: 8px 0;
-    margin-bottom: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    width: 95%;
+.correcto-input{
+    border: 2px solid black;
+    outline: 1px solid black;
 }
-@media screen and (min-width:700px){
-    .form-input{
-        width: 70%;
-    }
+
+/* estilo error */
+.error{
+    color: #bb2929;
+}
+.error-input{
+    border: 2px solid #bb2929;
+    outline: 1px solid #bb2929;
+}
+.alertError{
+    display: block;
+    color: #bb2929;
 }
