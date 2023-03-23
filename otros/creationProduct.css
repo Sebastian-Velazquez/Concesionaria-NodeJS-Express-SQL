@@ -1,0 +1,45 @@
+@import url(normalize.css);
+@import url(header.css);
+@import url(footer.css);
+
+.alertError{
+    color: red;
+}
+h1{
+    text-align: center;
+    padding: 15px 0;
+}
+/* ----------------form---------asd--------------------- */
+.form-edit{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+/* ----------------boton------------------------------ */
+.form-button{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 5%;
+    background-color: rgb(61, 81, 209);
+    border-color: rgb(61, 81, 209);
+}
+.form-button:hover{
+    border: solid 2px rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.form-input{
+    padding: 8px 0;
+    margin-bottom: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 95%;
+}
+@media screen and (min-width:700px){
+    .form-input{
+        width: 70%;
+    }
+}

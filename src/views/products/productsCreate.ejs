@@ -6,17 +6,22 @@
     </head>
 <body>
     <%- include('../parcial/header.ejs') %>
+    <main class="main-crear-producto">
     <h2>Formulario para crear producto</h2>
     <form action="/product/create" method="POST" enctype="multipart/form-data" id="formulario"> 
-        <div>
+
+        <div id="grupo__nombre">
             <label>Nombre</label>
-            <input type="text" name="name"
+            <input type="text" name="name" id="name"
             value="<%= locals.oldData ? oldData.name : null %>">
                             <!-- Validacion -->
                             <% if (locals.errors && errors.name){ %>
                                 <p class="alertError"><%= errors.name.msg %> </p>
                                 <% } %>
+                                <p id="cartel-error-name">Tiene que ser de 4 a 16 dígitos</p>
+                                <p id="cartel-error-name2">Solo puede contener letras.</p>
         </div>
+
         <div>
             <label>Precio</label>
             <input type="text" name="price"
@@ -96,6 +101,7 @@
         <div>
             <input type="submit">
         </div>
+        </main>
         <%- include('../parcial/footer.ejs') %>
     <!-- script para el form -->
     <script src="/js/productsCreate.js"></script>
