@@ -3,37 +3,41 @@
 @import url(footer.css);
 
 
-.profileImage{
-    width: 400px;
-    padding: 10px;
+ .profileImage{
+    display: flex;
+    height: 250px;
+    width: 250px;
+    border: solid 10px black;
+    align-content: center;
 }
 .fotoPerfil{
-    justify-content: center;
-    background-color:rgb(170, 1, 1); 
-    width: fit-content;
+    display: flex;
+    align-content : center ;
+    padding-left: 18%;
+    
 }
 .titleUser{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
-    background-color: firebrick;
+    
     align-content: space-around;
 
 }
 .datosUsuario{
  
     display: flex;
-    flex-wrap: wrap;
+    justify-content: end;
     flex-direction: column;
     text-align: center;
-    background-color: firebrick;
+    padding-left: 10%;
     align-content: space-around; 
     
     
-}
+} 
 .imagenDePerfil{
     display: flex;
     width: 400px;
     padding: 10px;
-}
+} 
