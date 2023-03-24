@@ -3,21 +3,20 @@
 @import url(footer.css);
 
 
-.profileImage{
-    width: 400px;
-    padding: 10px;
+ .profileImage{
+    width: 30%;
+    padding: 10%
 }
 .fotoPerfil{
     justify-content: center;
-    background-color:rgb(170, 1, 1); 
-    width: fit-content;
+    
 }
 .titleUser{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
-    background-color: firebrick;
+    
     align-content: space-around;
 
 }
@@ -27,13 +26,13 @@
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
-    background-color: firebrick;
+    
     align-content: space-around; 
     
     
-}
+} 
 .imagenDePerfil{
     display: flex;
     width: 400px;
     padding: 10px;
-}
+} 

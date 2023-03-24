@@ -3,8 +3,8 @@
 <head>
     <%- include('../parcial/head.ejs') %>
     
-    <link href="./css/userProfile.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/userProfile.css" rel="stylesheet">
+    
 </head>
 <body>
     
@@ -28,7 +28,7 @@
         </section> <br> -->
             
         <section class="datosUsuario">
-            <h2> <b>Datos de Usuario</b> </h2>
+            <h2> <b>Datos de Usuario</b> </h2> <br>
             <h3> Nombre: <%= user.first_name +' '+  user.last_name %> </h3>
             <h3> Correo Electrónico: <%= user.email %>  </h3>
             <h3> Fecha De Nacimiento: 10/10/2010 </h3>
