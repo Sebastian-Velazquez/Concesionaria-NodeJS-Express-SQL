@@ -10,35 +10,38 @@
     <h2>Formulario para crear producto</h2>
     <form action="/product/create" method="POST" enctype="multipart/form-data" id="formulario"> 
 
-        <div id="grupo__nombre">
+        <div id="div-content__nombre">
             <label>Nombre</label>
-            <input type="text" name="name" id="name"
+            <input type="text" name="name" id="input__nombre"
             value="<%= locals.oldData ? oldData.name : null %>">
                             <!-- Validacion -->
                             <% if (locals.errors && errors.name){ %>
                                 <p class="alertError"><%= errors.name.msg %> </p>
                                 <% } %>
-                                <p id="cartel-error-name">Tiene que ser de 4 a 16 dígitos</p>
-                                <p id="cartel-error-name2">Solo puede contener letras.</p>
+            <p id="cartel-error__nombre">Tiene que ser mas de 3 letras</p>
+            <p id="cartel-error__nombre2">Solo puede contener letras.</p>
         </div>
 
-        <div>
+        <div id="div-content__precio">
             <label>Precio</label>
-            <input type="text" name="price"
+            <input type="text" name="price" id="input__precio"
             value="<%= locals.oldData ? oldData.price : null %>">
                             <!-- Validacion -->
                             <% if (locals.errors && errors.price){ %>
                                 <p class="alertError"><%= errors.price.msg %> </p>
                                 <% } %>
+            <p id="cartel-error__precio">Tiene que ser de 6 numeros</p>
+            <p id="cartel-error__precio2">Solo puede contener numeros.</p>
         </div>
-        <div>
+        <div id="div-content__anio">
             <label>Año</label>
-            <input type="date" name="anio"
+            <input type="date" name="anio" id="input__anio"
             value="<%= locals.oldData ? oldData.anio : null %>">
                             <!-- Validacion -->
                             <% if (locals.errors && errors.anio){ %>
                                 <p class="alertError"><%= errors.anio.msg %> </p>
                                 <% } %>
+                                <p id="cartel-error__anio">Fecha invalida</p>
         </div>
         <div>
             <label>Descripción: </label>
