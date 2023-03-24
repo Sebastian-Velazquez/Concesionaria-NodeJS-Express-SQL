@@ -4,11 +4,16 @@
 
 
  .profileImage{
-    width: 30%;
-    padding: 10%
+    display: flex;
+    height: 250px;
+    width: 250px;
+    border: solid 10px black;
+    align-content: center;
 }
 .fotoPerfil{
-    justify-content: center;
+    display: flex;
+    align-content : center ;
+    padding-left: 18%;
     
 }
 .titleUser{
@@ -23,10 +28,10 @@
 .datosUsuario{
  
     display: flex;
-    flex-wrap: wrap;
+    justify-content: end;
     flex-direction: column;
     text-align: center;
-    
+    padding-left: 10%;
     align-content: space-around; 
     
     
