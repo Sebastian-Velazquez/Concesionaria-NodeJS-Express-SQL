@@ -1,12 +1,11 @@
 window.addEventListener("load", () => {
   let form = document.querySelector(".form");
-  form.name.focus();
   let errorsHtml = document.querySelector(".errores");
 
   form.addEventListener("submit", (event) => {
     let errors = [];
 
-    /* NAME */
+    /* nombre */
     if (form.name.value == "") {
       errors.push("El nombre está vacio");
       form.name.classList.remove("is-valid");
@@ -19,7 +18,7 @@ window.addEventListener("load", () => {
       form.name.classList.remove("is-invalid");
       form.name.classList.add("is-valid");
     }
-    /* NAME */
+    /* apellido */
     if (form.lastName.value == "") {
       errors.push("El apellido está vacio");
       form.lastName.classList.remove("is-valid");
@@ -33,7 +32,7 @@ window.addEventListener("load", () => {
       form.lastName.classList.add("is-valid");
     }
 
-    /* CONTRASEÑA */
+    /* contraseña */
     if (form.password.value == "") {
       errors.push("La contraseña está vacia");
       form.password.classList.remove("is-valid");
@@ -43,6 +42,9 @@ window.addEventListener("load", () => {
       form.password.classList.add("is-valid");
     }
 
+
+    /*  email */
+    
     let regEmail = /\S+@\S+\.\S+/;
     if (!regEmail.test(form.email.value)) {
       errors.push("Debe ingresar un email válido");
@@ -54,7 +56,9 @@ window.addEventListener("load", () => {
       form.password.focus();
     }
 
-    /* console.log(errors); */
+    /*  checkeo de errores en consola */
+
+     console.log(errors); 
     if (errors.length > 0) {
       event.preventDefault();
       errorsHtml.innerHTML = "";
