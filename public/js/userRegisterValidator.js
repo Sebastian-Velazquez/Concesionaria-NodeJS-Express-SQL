@@ -1,22 +1,28 @@
 window.addEventListener("load", () => {
+
+
+
   let form = document.querySelector(".form");
-  let errorsHtml = document.querySelector(".errores");
+  let errorsHtml = document.querySelector(".errors");
+
+  
 
   form.addEventListener("submit", (event) => {
     let errors = [];
 
     /* nombre */
-    if (form.name.value == "") {
+    if (form.firstName.value == "") {
+    
       errors.push("El nombre está vacio");
-      form.name.classList.remove("is-valid");
-      form.name.classList.add("is-invalid");
-    } else if (form.name.value.length < 4) {
+      form.firstName.classList.remove("is-valid");
+      form.firstName.classList.add("is-invalid");
+    } else if (form.firstName.value.length < 4) {
       errors.push("El nombre debe tener al menos 4 caracteres");
-      form.name.classList.remove("is-valid");
-      form.name.classList.add("is-invalid");
+      form.firstName.classList.remove("is-valid");
+      form.firstName.classList.add("is-invalid");
     } else {
-      form.name.classList.remove("is-invalid");
-      form.name.classList.add("is-valid");
+      form.firstName.classList.remove("is-invalid");
+      form.firstName.classList.add("is-valid");
     }
     /* apellido */
     if (form.lastName.value == "") {
@@ -58,16 +64,19 @@ window.addEventListener("load", () => {
 
     /*  checkeo de errores en consola */
 
-     console.log(errors); 
+     
     if (errors.length > 0) {
+      console.log(errors); 
       event.preventDefault();
       errorsHtml.innerHTML = "";
       errors.forEach((error) => {
         errorsHtml.innerHTML += "<li>" + error + "</li>";
       });
     } else {
+      /* alert("La validacion fue exitosa") */
       errorsHtml.innerHTML = "";
       form.submit();
     }
+    
   });
 });

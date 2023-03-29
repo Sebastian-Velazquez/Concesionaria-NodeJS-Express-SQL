@@ -2,7 +2,7 @@
 @import url(header.css);
 @import url(footer.css);
 
-.container{
+ .container{
     display: flex;
     justify-content: center;
     align-items: center;

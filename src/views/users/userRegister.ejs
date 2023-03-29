@@ -8,33 +8,15 @@
     <!-- header -->
     <%- include('../parcial/header.ejs') %>
 
-    <!-- <main class="register-form">
-      <h1 class="register-title">Registro</h1>
-      <ul class="errores alert-warning"></ul>
-      <form action="/users/register" method="post" class="form">
-          <input class="register-input" type="text" name="firstName" id="name" placeholder="Nombre" />
-
-          <input type="text" name="lastName" id="last_name" class="register-input" placeholder="Apellido"/>
-
-          <input type="email" name="email" id="email" class="register-input" placeholder="Email"/>
-
-          <input type="password" name="password" id="password" class="register-input" placeholder="Contrasena" />
-
-          <input type="date" name="birth_date" id="mail" class="register-input" placeholder="Fecha de Nacimiento"/>
-
-          <input type="file" name="image" id="image" class="register-input" />
-
-
-        <button class="btn-form" type="submit">Enviar formulario</button>
-      </form>  required="required"
-    </main> -->
+    <ul class="errors alert-warning"></ul>
 
 <form action="/users/register" method="POST" class="form" enctype="multipart/form-data">
   <div class="container">
+    
     <div class="card">
       <a class="login">Registrate!</a>
       <div class="inputBox">
-        <input name="firstName" id="name" type="text" 
+        <input name="firstName" id="firstName" type="text" 
         value="<%= locals.oldData ? oldData.firstName : null %>">
         <span class="user">Nombre</span>
         <!-- Validacion -->
@@ -44,7 +26,7 @@
       </div>
 
       <div class="inputBox">
-        <input name="lastName" id="last_name" type="text" 
+        <input name="lastName" id="lastName" type="text" 
         value="<%= locals.oldData ? oldData.lastName : null %>">
         <span class="user">Apellido</span>
         <!-- Validacion -->
@@ -72,7 +54,7 @@
       </div>
 
       <div class="inputBox">
-        <input name="passwordValidate" id="password" type="password" >
+        <input name="passwordValidate" id="passwordValidate" type="passwordValidate" >
         <span class="user">Repetir Contraseña</span>
         <!-- Validacion -->
         <% if (locals.errors && errors.passwordValidate){ %>
@@ -100,16 +82,34 @@
   </div>
 </form>
 
-
     <!-- script para el form -->
-    <script src="/js/index.js"></script>
-
+    <script src="/js/userRegisterValidator.js"></script>
+    
     <!-- footer -->
-
-
-
-
 
     <%- include('../parcial/footer.ejs') %>
   </body>
 </html>
+
+
+
+    <!-- <main class="register-form">
+      <h1 class="register-title">Registro</h1>
+      <ul class="errores alert-warning"></ul>
+      <form action="/users/register" method="post" class="form">
+          <input class="register-input" type="text" name="firstName" id="name" placeholder="Nombre" />
+
+          <input type="text" name="lastName" id="last_name" class="register-input" placeholder="Apellido"/>
+
+          <input type="email" name="email" id="email" class="register-input" placeholder="Email"/>
+
+          <input type="password" name="password" id="password" class="register-input" placeholder="Contrasena" />
+
+          <input type="date" name="birth_date" id="mail" class="register-input" placeholder="Fecha de Nacimiento"/>
+
+          <input type="file" name="image" id="image" class="register-input" />
+
+
+        <button class="btn-form" type="submit">Enviar formulario</button>
+      </form>  required="required"
+    </main> -->
