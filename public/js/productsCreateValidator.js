@@ -7,7 +7,7 @@ const expresiones ={//las expresiones son formulas que busca coincidencias para 
 	password: /^.{4,12}$/, // 4 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	precio: /^\d{6,20}$/, // 7 a 14 numeros.
-    anio: /^([0][1-9]|[12][0-9]|3[01])(\/|-)([0][1-9]|[1][0-2])\2(\d{4})/g
+    anio: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/
 }
 
 const validarFormulario = (e) =>{

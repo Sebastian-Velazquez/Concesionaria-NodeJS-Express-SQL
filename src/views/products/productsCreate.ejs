@@ -35,7 +35,7 @@
         </div>
         <div id="div-content__anio">
             <label>Año</label>
-            <input type="date" name="anio" id="input__anio"
+            <input type="text" name="anio" id="input__anio" placeholder="10/10/2010"
             value="<%= locals.oldData ? oldData.anio : null %>">
                             <!-- Validacion -->
                             <% if (locals.errors && errors.anio){ %>
