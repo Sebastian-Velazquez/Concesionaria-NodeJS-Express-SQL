@@ -40,14 +40,14 @@ const validarCampo=(expresiones, input,campo)=>{
         document.getElementById(`cartel-error__${campo}`).classList.remove('alertError');
         document.getElementById(`cartel-error__${campo}2`).classList.remove('alertError'); 
         campos[campo] = true
-        console.log(campos)
+        //console.log(campos)
     }else{
         document.getElementById(`div-content__${campo}`).classList.add('error');
         document.getElementById(`input__${campo}`).classList.add('error-input');
         document.getElementById(`cartel-error__${campo}`).classList.add('alertError');
         document.getElementById(`cartel-error__${campo}2`).classList.add('alertError');
         campos[campo] = false
-        console.log(campos)
+       // console.log(campos)
     }
 }
 /* const validarSelect=(tipo)=>{
@@ -82,7 +82,7 @@ formulario.addEventListener('submit',(e)=>{
         let fecha = new Date(input__anio.value);
         let milisegundos = Date.now() - fecha.getTime();
         let anos = milisegundos / 1000 / 60 / 60 / 24 / 365.25;
-        console.log(anos)
+        //console.log(anos)
         if (input__anio.value == "" || anos < 0) {
             document.getElementById(`cartel-error__anio`).classList.add('alertError');
         }else{
@@ -104,7 +104,7 @@ formulario.addEventListener('submit',(e)=>{
         if (campos.nombre == false  ||  campos.precio==false || 
             input__anio.value=="" || anos < 0 || 
             color.value==0 || modelo.value==0){
-            console.log(campos.nombre + ' - '+ campos.precio + ' - '+ campos.anio + ' - '+ color.value +' - '+ modelo.value)
+            //console.log(campos.nombre + ' - '+ campos.precio + ' - '+ campos.anio + ' - '+ color.value +' - '+ modelo.value)
             e.preventDefault();//deterner la ejecucion para no mandar los datos al backend
             //console.log('ejecutando')
             }/* else{
