@@ -1,8 +1,9 @@
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('#formulario input');
 const select = document.querySelectorAll('#formulario select')
-console.log(select)
-const expresiones ={//las expresiones son formulas que busca coincidencias para luego poder validar
+//console.log(select)
+//Expresiones Regulares
+const expresiones ={//las expresiones regulares son formulas que busca coincidencias para luego poder validar
     //usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{4,12}$/, // 4 a 12 digitos.
@@ -105,11 +106,11 @@ formulario.addEventListener('submit',(e)=>{
             color.value==0 || modelo.value==0){
             console.log(campos.nombre + ' - '+ campos.precio + ' - '+ campos.anio + ' - '+ color.value +' - '+ modelo.value)
             e.preventDefault();//deterner la ejecucion para no mandar los datos al backend
-            console.log('ejecutando')
-            }else{
+            //console.log('ejecutando')
+            }/* else{
                 console.log('se fue a formulario')
                 //e.preventDefault();
-            }
+            } */
     })
 //validar todos los campos cuando se presiona el boton enviar}
 
