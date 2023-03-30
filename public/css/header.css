@@ -54,7 +54,7 @@
     padding-left: 2px;
 }
 .lista-hamburguesa{
-    font-size: 36px;
+    font-size: 1.5rem;
     margin-right: 10px;
 }
 
@@ -74,11 +74,9 @@
     width: 100%
 }
 
-/* -------------- */ 
 
-
-/* Media Tablet */
-@media screen and (min-width:1220px){
+/* M edia Tablet - Escritorio */
+@media screen and (min-width:520px){
 
     #headerTop{
         display: flex;
@@ -145,4 +143,24 @@
         height: 400px;
         width: 100%;
     }
+}
+@media screen and (max-width:520px){
+.content-navBar{
+    display:none; /* block */
+    width: 80%;
+    height: 100%;
+    margin: 0;
+
+    background-color: white;
+}
+
+
+.navBarMovil{
+    border: solid 1px #2a363a;
+}
+.navBar-lista{
+    border: solid 1px #2a363a;
+    z-index: 50;
+}
+
 }
