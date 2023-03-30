@@ -41,7 +41,8 @@
                             <% if (locals.errors && errors.anio){ %>
                                 <p class="alertError"><%= errors.anio.msg %> </p>
                                 <% } %>
-                                <p id="cartel-error__anio">Fecha invalida</p>
+            <p id="cartel-error__anio">Fecha invalida.-</p>
+            <p id="cartel-error__anio2"></p>
         </div>
         <div>
             <label>Descripción: </label>
@@ -56,8 +57,8 @@
         </div>
         <div>
             <label>Color del auto</label>
-                <select name="color">
-                    <option></option>
+                <select name="color" id="color"> 
+                    <option value="0"></option>
                     <% for(let i=0; i < colors.length; i++) { %>
                         <% if(locals.oldData){ %>
                             <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
@@ -75,11 +76,12 @@
                 <% if (locals.errors && errors.color){ %>
                     <p class="alertError"><%= errors.color.msg %> </p>
                 <% } %>
+                <p id="cartel-error__color">Debe seleccionar una color.-</p>
         </div>
         <div>
             <label>Selecionar modelo</label>
-            <select name="model">
-                <option></option>
+            <select name="model" id="modelo">
+                <option value="0"></option>
                 <% for(let i=0; i < models.length; i++) { %>
                     <% if(locals.oldData){ %>
                         <% if (models[i].id_modelo == locals.oldData.model) { %><!-- para seleccionar el genero que tiene -->
@@ -97,6 +99,7 @@
             <% if (locals.errors && errors.model){ %>
                 <p class="alertError"><%= errors.model.msg %> </p>
             <% } %>
+            <p id="cartel-error__modelo">Debe seleccionar un modelo.-</p>
         </div>
         <label>Poner en productos destacados:
             <input type="checkbox" value="Poner en destacados" name="outstanding">

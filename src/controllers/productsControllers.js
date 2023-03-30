@@ -74,6 +74,7 @@ const controlador ={
     },
     processCreate:(req,res)=>{
         //validacion
+        console.log(req.body.anio)
         const resultValidation = validationResult(req);//validacion
         if (resultValidation.errors.length > 0){
 
