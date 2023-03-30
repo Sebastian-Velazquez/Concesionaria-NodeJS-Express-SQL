@@ -21,6 +21,22 @@ const validations =[
             }
         }
         return true
+    }),
+    body('anio').isDate().withMessage('Tienes que escribir una fecha correcto').bail()
+    .custom((value,{req})=>{
+        //VALIDAR FECHA
+    // Convertimos la fecha de nacimiento en un objeto Date de JavaScript
+    let fecha = new Date(req.body.anio);
+    // Calculamos la edad en milisegundos
+    let milisegundos = Date.now() - fecha.getTime();
+    // Convertimos la edad en milisegundos a años
+    let anos = milisegundos / 1000 / 60 / 60 / 24 / 365.25;
+        // Si la edad en años es mayor o igual a 18, la persona es mayor de edad
+        if ( anos <= 0){
+            throw new Error('Fecha no valida')
+        }else{
+            return true
+        }
     })
 ];
 module.exports = validations;

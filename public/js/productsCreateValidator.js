@@ -13,7 +13,6 @@ const expresiones ={//las expresiones son formulas que busca coincidencias para 
 let campos = {
     nombre: false,
     precio: false,
-    anio: false
 }
 const validarFormulario = (e) =>{
     //console.log('Se ejecuto')
@@ -25,14 +24,9 @@ const validarFormulario = (e) =>{
         case "price":
             validarCampo(expresiones.precio, e.target, 'precio');
         break;
-        case "anio":
+        /* case "anio":
             validarCampo(expresiones.anio, e.target, 'anio');
-        break;
-        case "color":
-        break;
-        case "model":
-        
-        break; 
+        break; */
     }
 }
 
@@ -84,7 +78,11 @@ formulario.addEventListener('submit',(e)=>{
         document.getElementById(`cartel-error__precio`).classList.remove('alertError')
         } 
         /* fecha */
-        if (input__anio.value == "") {
+        let fecha = new Date(input__anio.value);
+        let milisegundos = Date.now() - fecha.getTime();
+        let anos = milisegundos / 1000 / 60 / 60 / 24 / 365.25;
+        console.log(anos)
+        if (input__anio.value == "" || anos < 0) {
             document.getElementById(`cartel-error__anio`).classList.add('alertError');
         }else{
         document.getElementById(`cartel-error__anio`).classList.remove('alertError')
@@ -103,7 +101,8 @@ formulario.addEventListener('submit',(e)=>{
         }  
 
         if (campos.nombre == false  ||  campos.precio==false || 
-            campos.anio==false || color.value==0 || modelo.value==0){
+            input__anio.value=="" || anos < 0 || 
+            color.value==0 || modelo.value==0){
             console.log(campos.nombre + ' - '+ campos.precio + ' - '+ campos.anio + ' - '+ color.value +' - '+ modelo.value)
             e.preventDefault();//deterner la ejecucion para no mandar los datos al backend
             console.log('ejecutando')
