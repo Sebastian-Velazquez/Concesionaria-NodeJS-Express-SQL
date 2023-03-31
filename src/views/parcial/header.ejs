@@ -26,10 +26,7 @@
                     <li class="navBar-lista"><a href="/product/create">Crear Producto</a></li>
                     <% } %> 
                     <li class="navBar-lista"><a href="/product/list">Todos los Productos</a></li>
-                </ul>
-            </div>
-            <div>
-                <ul class="navBar">
+ 
                     <% if (locals.isLogged) { %>    
                         <li class="navBar-lista"><a href="/users/userProfile"><img src="/img/avatar/<%= locals.userLogged.image %>" class="avatar"><%= locals.userLogged.first_name +' '+  locals.userLogged.last_name %></a></li>
                         <li class="navBar-lista"><a href="/users/logout">Salir</a></li>
