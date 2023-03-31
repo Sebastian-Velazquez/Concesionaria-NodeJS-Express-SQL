@@ -1,3 +1,46 @@
-@import url(normalize.css);
+/* @import url(normalize.css);
 @import url(header.css);
-@import url(footer.css);
+@import url(footer.css); */
+
+.main-crear-producto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+p{
+    display: none;
+}
+/* Estilo correcto */
+.correcto{
+    color: black
+}
+.correcto-input{
+    border: 2px solid black;
+    outline: 1px solid black;
+}
+
+/* estilo error */
+.error{
+    color: #bb2929;
+   
+}
+.error-input{
+    border: 2px solid #bb2929;
+    outline: 1px solid #bb2929;
+}
+.alertError{
+    display: block;
+    color: red;
+    font-size: 12px;
+}
+
+/* estilo verde */
+.listo{
+    color: #77e96c;
+   
+}
+.listo-input{
+    border: 2px solid #77e96c;
+    outline: 1px solid #77e96c;
+}
