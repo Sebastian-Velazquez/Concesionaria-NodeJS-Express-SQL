@@ -107,11 +107,11 @@ formulario.addEventListener('submit',(e)=>{
             //console.log(campos.nombre + ' - '+ campos.precio + ' - '+ campos.anio + ' - '+ color.value +' - '+ modelo.value)
             e.preventDefault();//deterner la ejecucion para no mandar los datos al backend
             //console.log('ejecutando')
-            }else{
+            }/* else{
                 console.log('se fue a formulario')
                 e.preventDefault();
             }
-            e.preventDefault();
+            e.preventDefault(); */
     })
 //validar todos los campos cuando se presiona el boton enviar}
 
