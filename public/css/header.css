@@ -133,7 +133,12 @@
     }
     .searchBox{
         width: 80%;
-}
+    }
+    .content-navBar-ver{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
     .content-navBar{
         display: flex;
         flex-direction: row;
