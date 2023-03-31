@@ -147,10 +147,10 @@
         align-items: center;
         gap: 10px;
     }
-    ul{
+    /* ul{
         display: flex;
         gap: 10px;
-    }
+    } */
     .navBar-lista{
         position: relative;
         display: inline-block;

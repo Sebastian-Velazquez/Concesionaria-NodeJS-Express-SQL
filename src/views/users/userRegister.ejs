@@ -8,13 +8,13 @@
     <!-- header -->
     <%- include('../parcial/header.ejs') %>
 
-    <ul class="errors alert-warning"></ul>
-
-<form action="/users/register" method="POST" class="form" enctype="multipart/form-data">
-  <div class="container">
     
-    <div class="card">
-      <a class="login">Registrate!</a>
+    <form action="/users/register" method="POST" class="form" enctype="multipart/form-data">
+      <div class="container">
+        
+        <div class="card">
+          <a class="login">Registrate!</a>
+          <ul class="errors alert-warning"></ul>
       <div class="inputBox">
         <input name="firstName" id="firstName" type="text" 
         value="<%= locals.oldData ? oldData.firstName : null %>">
