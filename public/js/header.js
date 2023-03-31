@@ -7,11 +7,12 @@ const listaDesplegada = document.getElementById('content-navBar'); */
 console.log(listaDesplegada) */
 
 botonMenu.addEventListener("click", function() {
-
-    if (listaDesplegada.style.display == "none") {
+    console.log(botonMenu)
+    console.log(menu)
+    if (menu.style.display == "none") {
         console.log('entro al if')
-        listaDesplegada.style.display = "block";
+        menu.style.display = "block";
     } else {
-        listaDesplegada.style.display = "none";
+        menu.style.display = "none";
     }
-     });
+    });
