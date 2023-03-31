@@ -109,7 +109,9 @@
 
 /* M edia Tablet - Escritorio */
 @media screen and (min-width:520px){
-
+    #lista-hamburguesa{
+        display: none;
+    }
     #headerTop{
         display: flex;
         flex-wrap: wrap;
