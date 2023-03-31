@@ -1,4 +1,10 @@
 @import url(normalize.css);
+/* Condiciones para Javascript */
+
+/* Condiciones para Javascript */
+
+
+
 
 .avatar{
     height: 17px;
@@ -74,6 +80,32 @@
     width: 100%
 }
 
+@media screen and (max-width:519px){
+    .content-navBar{
+        display:none; /* block */
+        width: 80%;
+        height: 100%;
+        margin: 0;
+    
+        background-color: white;
+    }
+    .content-navBar-ver{
+        display: block;
+        width: 80%;
+        height: 100%;
+        margin: 0;
+        background-color: white;
+    }
+    
+    .navBarMovil{
+        border: solid 1px #2a363a;
+    }
+    .navBar-lista{
+        border: solid 1px #2a363a;
+        z-index: 50;
+    }
+    
+    }
 
 /* M edia Tablet - Escritorio */
 @media screen and (min-width:520px){
@@ -143,24 +175,4 @@
         height: 400px;
         width: 100%;
     }
-}
-@media screen and (max-width:520px){
-.content-navBar{
-    display:none; /* block */
-    width: 80%;
-    height: 100%;
-    margin: 0;
-
-    background-color: white;
-}
-
-
-.navBarMovil{
-    border: solid 1px #2a363a;
-}
-.navBar-lista{
-    border: solid 1px #2a363a;
-    z-index: 50;
-}
-
 }
