@@ -1,7 +1,9 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
-
+.alertColor{
+    color: red;
+}
  .container{
     display: flex;
     justify-content: center;

@@ -54,12 +54,13 @@
       </div>
 
       <div class="inputBox">
-        <input name="passwordValidate" id="passwordValidate" type="passwordValidate" >
+        <input name="passwordValidate" id="passwordValidate" type="password" >
         <span class="user">Repetir Contraseña</span>
         <!-- Validacion -->
         <% if (locals.errors && errors.passwordValidate){ %>
           <p class="alertError"><%= errors.passwordValidate.msg %> </p>
           <% } %>
+        
       </div>
 
       <div class="inputBox">
