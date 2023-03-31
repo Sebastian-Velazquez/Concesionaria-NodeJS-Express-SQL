@@ -49,7 +49,7 @@ window.addEventListener("load", () => {
     }
     /* Repetir contraseña  */
     if (form.passwordValidate.value == "") {
-      errors.push("Reerir la contraseña vacia");
+      errors.push("Repetir la contraseña vacia");
       form.password.classList.remove("is-valid");
       form.password.classList.add("is-invalid");
     } else {
