@@ -61,8 +61,11 @@
 }
 #lista-hamburguesa{
     font-size: 1.5rem;
-    margin-right: 10px;
-    border: 0;
+    margin-right: 5px;
+    color: rgb(255, 52, 1);
+    border: solid 5px rgb(204, 228, 250) ;
+    border-radius: 20%;
+    background-color: rgb(204, 228, 250);
 }
 
 /* BUSCADOR */ 
