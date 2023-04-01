@@ -17,8 +17,7 @@
     </div>
     <!-- Sedan -->
     <section class="content-section">   
-        <% productos.forEach(producto=> { %>
-            <!-- % if(modelos[i].id_modelo == producto.id_modelo){ %>  -->  
+        <% productos.forEach(producto=> { %> 
                     <a href="/product/list/<%= producto.id_product %>">
                         <article class="content-section-article">
                             <div class="div__img-producto">
@@ -31,7 +30,6 @@
                             </div>
                         </article>
                     </a>
-            <!-- % } %> -->
     <% }) %>
     </section>
     </main>
