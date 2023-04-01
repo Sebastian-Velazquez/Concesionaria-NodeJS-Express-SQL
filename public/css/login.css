@@ -2,6 +2,24 @@
 @import url(header.css);
 @import url(footer.css);
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+/* estilo error */
+.error{
+  color: #bb2929;
+ 
+}
+.error-input{
+  border: 2px solid #bb2929;
+  outline: 1px solid #bb2929;
+}
+.alertError{
+  display: block;
+  color: red;
+  font-size: 12px;
+}
+p{
+  display: none;
+}
+
 
 .container{
   display: flex;
