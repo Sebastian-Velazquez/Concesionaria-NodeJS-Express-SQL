@@ -67,7 +67,7 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit',(e)=>{
     //validarSelect(color);
             /* nombre */
-        if (input__nombre.value == ""  || formulario.name.value.length <= 3) {
+        if (input__nombre.value == ""  || formulario.name.value.length < 3) {
             document.getElementById(`cartel-error__nombre`).classList.add('alertError');
         }else{
         document.getElementById(`cartel-error__nombre`).classList.remove('alertError')
