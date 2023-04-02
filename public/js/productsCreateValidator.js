@@ -67,13 +67,13 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit',(e)=>{
     //validarSelect(color);
             /* nombre */
-        if (input__nombre.value == "") {
+        if (input__nombre.value == "" || formulario.name.value.length <= 3) {
             document.getElementById(`cartel-error__nombre`).classList.add('alertError');
         }else{
         document.getElementById(`cartel-error__nombre`).classList.remove('alertError')
         }  
             /* precio */
-        if (input__precio.value == "") {
+        if (input__precio.value == "" || formulario.price.value.length < 6) {
             document.getElementById(`cartel-error__precio`).classList.add('alertError');
         }else{
         document.getElementById(`cartel-error__precio`).classList.remove('alertError')
