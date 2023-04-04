@@ -16,20 +16,23 @@
         <div class="bar bottom"></div>
     </div>
     <!-- Sedan -->
-    <section class="content-section">   
+    <h1 class="main-title">
+        Unidades Disponibles
+    </h1>
+    <section class="content-section">
         <% productos.forEach(producto=> { %> 
-                    <a href="/product/list/<%= producto.id_product %>">
-                        <article class="content-section-article">
-                            <div class="div__img-producto">
-                                <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
-                            </div>
-                            <div class="content-detalle">
-                                <h4 class="image-decription__name"><%= producto.name %></h4>
-                                <h4 class="image-decription__colors"><%= producto.colors %></h4>
-                                <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
-                            </div>
-                        </article>
-                    </a>
+            <a href="/product/list/<%= producto.id_product %>">
+                <article class="content-section-article">
+                    <div class="div__img-producto">
+                        <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                    </div>
+                    <div class="content-detalle">
+                        <h4 class="image-decription__name"><%= producto.name %></h4>
+                        <h4 class="image-decription__colors"><%= producto.colors %></h4>
+                        <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
+                    </div>
+                </article>
+            </a>
     <% }) %>
     </section>
     </main>
