@@ -20,26 +20,25 @@
         <button id="lista-hamburguesa">
             <i class="fa-sharp fa-solid fa-bars lista-hamburguesa"> </i>
         </button >
-        
-        <div  id="content-navBar">
-            <div>
-                <ul class="navBar">
-                    <% if (locals.isLogged && locals.userLogged.id_category===1) { %>  
-                    <li class="navBar-lista"><a href="/product/create">Crear Producto</a></li>
-                    <% } %> 
-                    <li class="navBar-lista"><a href="/product/list">Todos los Productos</a></li>
- 
-                    <% if (locals.isLogged) { %>    
-                        <li class="navBar-lista"><a href="/users/userProfile"><img src="/img/avatar/<%= locals.userLogged.image %>" class="avatar"><%= locals.userLogged.first_name +' '+  locals.userLogged.last_name %></a></li>
-                        <li class="navBar-lista"><a href="/users/logout">Salir</a></li>
-                        <% }else { %> 
-                            <li class="navBar-lista"><a href="/users/register">Registrate</a></li>
-                            <li class="navBar-lista"><a href="/users/login">Ingresá</i></a></li>
-                            <% } %> 
-                            <li class="navBar-lista"><a href="/product/productCart">Carrito</a></li>
-                </ul>
-            </div>
+
+        <div id="content-navBar">
+            <ul class="navBar">
+                <% if (locals.isLogged && locals.userLogged.id_category===1) { %>  
+                <li class="navBar-lista"><a href="/product/create">Crear Producto</a></li>
+                <% } %> 
+                <li class="navBar-lista"><a href="/product/list">Todos los Productos</a></li>
+
+                <% if (locals.isLogged) { %>    
+                    <li class="navBar-lista"><a href="/users/userProfile"><img src="/img/avatar/<%= locals.userLogged.image %>" class="avatar"><%= locals.userLogged.first_name +' '+  locals.userLogged.last_name %></a></li>
+                    <li class="navBar-lista"><a href="/users/logout">Salir</a></li>
+                    <% }else { %> 
+                        <li class="navBar-lista"><a href="/users/register">Registrate</a></li>
+                        <li class="navBar-lista"><a href="/users/login">Ingresá</i></a></li>
+                        <% } %> 
+                        <li class="navBar-lista"><a href="/product/productCart">Carrito</a></li>
+            </ul>
         </div>
+
 
     </section>  
     <script src="/js/header.js"></script>
