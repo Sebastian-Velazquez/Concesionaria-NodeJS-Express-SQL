@@ -18,15 +18,36 @@
             <p>Modelo: <%= producto.modelo.tipo_de_modelo %></p>
         </div>
         <div>
-            <button type="submit">COMPRAR</button>
+            <button type="submit">
+                <a class="fancy" href="#">
+                    <span class="top-key"></span>
+                    <span class="text">Comprar</span>
+                    <span class="bottom-key-1"></span>
+                    <span class="bottom-key-2"></span>
+                </a>
+            </button>
         </div>
             <% if (locals.isLogged && locals.userLogged.id_category===1) { %> 
                 <form action="/product/edit/<%= producto.id_product %>" method="GET">
-                    <button type="submit">EDITAR</button>
+                    <button type="submit">
+                        <a class="fancy">
+                            <span class="top-key"></span>
+                            <span class="text">Editar</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+                    </button>
                 </form>
 
                 <form action="/product/delete/<%= producto.id_product %>?_method=DELETE" method="POST">
-                    <button type="submit" class="button">ELIMINAR</button>
+                    <button type="submit" class="button">
+                        <a class="fancy">
+                            <span class="top-key"></span>
+                            <span class="text">Eliminar</span>
+                            <span class="bottom-key-1"></span>
+                            <span class="bottom-key-2"></span>
+                        </a>
+                    </button>
                 </form>
             <% } %>
         <%- include('../parcial/footer.ejs') %>
