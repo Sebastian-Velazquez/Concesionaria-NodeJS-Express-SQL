@@ -6,16 +6,17 @@
     </head>
     <body>
         <%- include('../parcial/header.ejs') %>
-        <h1><%= producto.name %></h1>
-        <h2>Precio:<%= producto.price %></h2>
-        <h2>Año: <%= producto.anio %></h2>
-        <h2>Descripción: <%= producto.description %></h2>
-        <h2>Imagen:</h2>
-        <div class="conten-img">
+        <div class="content-img">
             <img src="/img/products/<%= producto.image %>" alt="imagenAuto" class="img">
         </div>
-        <h2>Color: <%= producto.color.nombre %></h2>
-        <h2>Modelo: <%= producto.modelo.tipo_de_modelo %></h2>
+        <h1 class="title-product-detail"><%= producto.name %></h1>
+        <div class="product-detail">
+            <p>$<%= producto.price %></p>
+            <p><%= producto.anio %></p>
+            <p>Descripción:<%= producto.description %></p>
+            <p>Color: <%= producto.color.nombre %></p>
+            <p>Modelo: <%= producto.modelo.tipo_de_modelo %></p>
+        </div>
         <div>
             <button type="submit">COMPRAR</button>
         </div>
