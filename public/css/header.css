@@ -36,9 +36,10 @@
     display: flex;
     line-height: 28px;
     align-items: center;
+    justify-content: center;
     position: relative;
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
 }
 .input {
     width: 100%;
@@ -147,6 +148,9 @@
         display: flex;
         align-items: center;
         gap: 10px;
+    }
+    .search-header{
+        width: 50%;
     }
     /* ul{
         display: flex;

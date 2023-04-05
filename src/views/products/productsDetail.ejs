@@ -6,50 +6,52 @@
     </head>
     <body>
         <%- include('../parcial/header.ejs') %>
-        <div class="content-img">
-            <img src="/img/products/<%= producto.image %>" alt="imagenAuto" class="img">
+        <div class="container-prod-detail">
+            <div>
+                <h1 class="title-prod-detail"><%= producto.name %></h1>
+                <img src="/img/products/<%= producto.image %>" alt="imagenAuto" class="img">
+            </div>
+            <div class="prod-detail">
+                <p class="prod-price-detail">U$$<%= producto.price %></p>
+                <p><%= producto.anio %></p>
+                <p>Descripción:<%= producto.description %></p>
+                <p>Color: <%= producto.color.nombre %></p>
+                <p>Modelo: <%= producto.modelo.tipo_de_modelo %></p>
+            </div>
+            <div class="div-btns">
+                <button type="submit" class="btn-prod">
+                    <a class="fancy">
+                        <span class="top-key"></span>
+                        <span class="text">Comprar</span>
+                        <span class="bottom-key-1"></span>
+                        <span class="bottom-key-2"></span>
+                    </a>
+                </button>
+                <% if (locals.isLogged && locals.userLogged.id_category===1) { %> 
+                    <form action="/product/edit/<%= producto.id_product %>" method="GET">
+                        <button type="submit" class="btn-prod">
+                            <a class="fancy">
+                                <span class="top-key"></span>
+                                <span class="text">Editar</span>
+                                <span class="bottom-key-1"></span>
+                                <span class="bottom-key-2"></span>
+                            </a>
+                        </button>
+                    </form>
+    
+                    <form action="/product/delete/<%= producto.id_product %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn-prod">
+                            <a class="fancy">
+                                <span class="top-key"></span>
+                                <span class="text">Eliminar</span>
+                                <span class="bottom-key-1"></span>
+                                <span class="bottom-key-2"></span>
+                            </a>
+                        </button>
+                    </form>
+                <% } %>
+            </div>
         </div>
-        <h1 class="title-product-detail"><%= producto.name %></h1>
-        <div class="product-detail">
-            <p>$<%= producto.price %></p>
-            <p><%= producto.anio %></p>
-            <p>Descripción:<%= producto.description %></p>
-            <p>Color: <%= producto.color.nombre %></p>
-            <p>Modelo: <%= producto.modelo.tipo_de_modelo %></p>
-        </div>
-        <div>
-            <button type="submit">
-                <a class="fancy" href="#">
-                    <span class="top-key"></span>
-                    <span class="text">Comprar</span>
-                    <span class="bottom-key-1"></span>
-                    <span class="bottom-key-2"></span>
-                </a>
-            </button>
-        </div>
-            <% if (locals.isLogged && locals.userLogged.id_category===1) { %> 
-                <form action="/product/edit/<%= producto.id_product %>" method="GET">
-                    <button type="submit">
-                        <a class="fancy">
-                            <span class="top-key"></span>
-                            <span class="text">Editar</span>
-                            <span class="bottom-key-1"></span>
-                            <span class="bottom-key-2"></span>
-                        </a>
-                    </button>
-                </form>
-
-                <form action="/product/delete/<%= producto.id_product %>?_method=DELETE" method="POST">
-                    <button type="submit" class="button">
-                        <a class="fancy">
-                            <span class="top-key"></span>
-                            <span class="text">Eliminar</span>
-                            <span class="bottom-key-1"></span>
-                            <span class="bottom-key-2"></span>
-                        </a>
-                    </button>
-                </form>
-            <% } %>
         <%- include('../parcial/footer.ejs') %>
     </body>
 </html>
