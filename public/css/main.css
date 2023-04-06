@@ -9,13 +9,13 @@
     height: 100%;
     width: 100%;
 }
-.content-banner{
+/* .content-banner{
     position: relative;
     height: 350px;
     width: 100%;
 
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.737);
-}
+} */
 .img-banner{
     object-fit:cover;
     object-position:center;
@@ -126,9 +126,9 @@
 }
 
 @media screen and (min-width:520px){
-    .content-banner{
+/*     .content-banner{
         height: 400px;
-    }
+    } */
     .content-section{
         display: flex;
         flex-wrap: wrap;

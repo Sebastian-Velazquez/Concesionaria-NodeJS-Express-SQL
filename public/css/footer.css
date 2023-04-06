@@ -5,7 +5,7 @@ footer{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    border-top:  #B40C15 solid 2px;
+
 }
 
 iframe{
@@ -61,8 +61,9 @@ iframe{
   padding-left: 16px;
   padding-top: 16px;
   border-top: solid 1px #FFFFFF;
-  flex-direction: column;
-  align-content: space-around;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .wrapper .tooltip {
