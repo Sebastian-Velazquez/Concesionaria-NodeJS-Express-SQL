@@ -5,7 +5,9 @@
 
 
 
-
+.navBar-lista a{
+    color: #FFFFFF
+}
 .avatar{
     height: 17px;
     width: 17px;
@@ -17,6 +19,7 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    background-color: #18314F;
 }
 
 
@@ -28,7 +31,7 @@
     align-items: left;
     flex-wrap: wrap;
     justify-content: left;
-    width: 40%;
+    width: 28%;
     margin: 10px;
 }
 .logo{
@@ -61,18 +64,20 @@
 }
 #lista-hamburguesa{
     font-size: 1.5rem;
-    margin-right: 5px;
-    color: rgb(255, 52, 1);
-    border: solid 5px rgb(204, 228, 250) ;
-    border-radius: 20%;
-    background-color: rgb(204, 228, 250);
+    width: 15%;
+    /* margin-right: 5px; */
+    color: #FFFFFF;
+    border: 0;
+    /* border-radius: 20%; */
+    background-color: #18314F;
+    padding-right: revert;
 }
 
 /* BUSCADOR */ 
 .searchBar{
     display: flex;
     border-radius: 5px;
-    width: 35%;
+    width: 50%;
 }
 
 .searchBar form{

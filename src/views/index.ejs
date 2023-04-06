@@ -8,14 +8,24 @@
 
 <body>
     <%- include('./parcial/header.ejs') %>
-    <div class="content-banner">
-        <img src="/img/index/banner.webp" class="img-banner">
-        <div class="bar left"></div>
-        <div class="bar top"></div>
-        <div class="bar right"></div>
-        <div class="bar bottom"></div>
-    </div>
     <!-- Sedan -->
+    <div class="content-servicios">
+        <div class="content-servicios__div">
+            <i class="fa fa-users ico"></i>
+            <h2>Sobre Auto Zero</h2>
+            <hr>
+            <p>Dinámica, profesionalismo y tecnología a su servicio. Orientados en la atención al cliente y en su satisfacción total.</p>
+            <a href="#""><i></i> Conozcanos</a>
+        </div>
+        <div class="content-servicios__div">
+            <i class="fa fa-car ico"></i>
+            <h2>Fiat Plan</h2>
+            <hr>
+            <p>Fiat Plan te permite acceder a tu Fiat 0KM totalmente en cuotas sin interés.</p>
+            <a href="#"><i class="fa fa-angle-right"></i> Ver modelos</a>
+        </div>
+
+    </div>
     <section class="content-section">   
         <% productos.forEach(producto=> { %> 
                     <a href="/product/list/<%= producto.id_product %>">
