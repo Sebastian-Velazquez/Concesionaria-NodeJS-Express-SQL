@@ -2,109 +2,176 @@
 @import url(header.css);
 @import url(footer.css);
 
-.name_product{
-    text-align: center;
-    margin: 25px;
-    background-color:  rgba(137, 0, 0, 0.997);
+/* DETALLES */ 
+
+.title-prod-detail{
+    margin: 10px 0 0 20px;
 }
 
-.content{
+.prod-detail{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-around;
-    height: auto;
-    margin-top: 1rem;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: 42%;
-    margin-right: 42%;
-    background-color:  rgba(137, 0, 0, 0.997);
-
+    align-items: start;
+    justify-content: center;
+    margin-left: 20px;
 }
 
-/* ----------------Imagen------------------------------ */
-.conten-img{
-    height: 200px;
-    width: 250px;
-    border: solid 1px black;
+.prod-detail p{
+    margin: 5px;
 }
+
+.prod-price-detail{
+    font-size: 24px;
+    font-weight: 800;
+}
+/* IMG */ 
 .img{
-    object-fit:cover;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 300px;
+    max-height: 500px;
+    max-width: 500px;
+    margin: 20px 0 10px 20px;
 }
-/* ----------------Lista de detalle------------------------------ */
-.listaDeDetalle{
-    height: 170px;
-    width: 250px;
-    font-size: 12px;
+
+/* BOTONES */ 
+.div-btns{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
     flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    background-color:  rgba(137, 0, 0, 0.997);
+    margin: 20px;
 }
-.listaDeDetalle-li{
-    font-size: 18px;
-    padding: 5px 0;
-    text-align: end;
-    color: aliceblue;
+.btn-prod{
+    background: transparent;
+    border: none;
+    margin: 10px;
+}
+.fancy {
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 1.25em 2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
 }
 
-/* ----------------boton------------------------------ */
-
-.action-button_edit{
-   padding: 0%;
-   margin-top: 10px;
-   margin-bottom: 10px;
-   
+.fancy::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: black;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
 }
 
+.fancy .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
 
-/* ----------------boton------------------------------ */
-.form-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 0;
-    padding: 20px;
-    border-radius: 5%;
-    background-color: rgb(61, 81, 209);
-    border-color: rgb(61, 81, 209);
+.fancy .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
 }
-.form-button:hover{
-    border: solid 2px rgb(255, 255, 255);
-    border-radius: 5px;
-}
-/* ----------------boton------------------------------ */
-.form-button-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-@media screen and (min-width:380px){
 
-    /* ----------------Imagen------------------------------ */
-    .conten-img{
-    height: 300px;
-    width: 350px;
+.fancy .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+@media screen and (min-width:910px){
+    .container-prod-detail{
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
-    .listaDeDetalle{
-        height: 170px;
-        width: 350px;
+    .prod-detail{
+        margin-left: 0;
     }
-}
-@media screen and (min-width:700px){
-.content-img-list{
-    display: flex;
-}
-.listaDeDetalle{
-    height: 300px;
-        width: 350px;
-}
-.listaDeDetalle{
-justify-content: space-around;
-}
+    .prod-price-detail{
+        font-size: 36px;
+    }
+    .div-btns{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    .img{
+        width: 500px;
+    }
+    .fancy:hover {
+        color: white;
+        background: black;
+    }
+    
+    .fancy:hover::before {
+        width: 0.9375rem;
+        background: white;
+    }
+    
+    .fancy:hover .text {
+        color: white;
+        padding-left: 1.5em;
+    }
+    
+    .fancy:hover .top-key {
+        left: -2px;
+        width: 0px;
+    }
+    
+    .fancy:hover .bottom-key-1,
+        .fancy:hover .bottom-key-2 {
+        right: 0;
+        width: 0;
+    }
 }

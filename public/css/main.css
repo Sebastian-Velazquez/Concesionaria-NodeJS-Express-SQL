@@ -10,19 +10,49 @@
     width: 100%;
 }
 .content-banner{
-    height: 250px;
+    position: relative;
+    height: 350px;
     width: 100%;
+    margin: 50px 0;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.737);
 }
+.img-banner{
+    object-fit:cover;
+    object-position:center;
+    height: 100%;
+    width: 100%;
+    filter: brightness(60%);
+}
+.text-banner{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    text-shadow: 2px 2px 2px #212121;
+}
 
-main h1{
-    font-size: 10000px;
+/* PAG INICIO */ 
+
+.main-title{
+    font-size: 32px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .content-section{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+    margin: 30px;
 }
 .content-servicios__div{
     height: 200px;
@@ -45,23 +75,30 @@ main h1{
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.737);    
 }
+
+/* FOTO CARD */ 
+.div__img-producto{ 
+    height: 200px;
+    width: 250px;
+}
+.img-producto{
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /*object-position: left; */
+}
+
+/* INFO CARD */ 
 .image-decription__name{
     font-size: 25px;
-    font-family: fangsong;
-
 }
 .image-decription__colors{
     font-size: 18px;
-    font-family: fangsong;
 }
 .image-decription__precio{
     font-size: 18px;
     margin-top: 5px;
-    font-family: fangsong;
-}
-.div__img-producto{ 
-    height: 150px;
-    width: 250px;
 }
     /* border: solid 1px red; */
 /*     display:block;
@@ -72,13 +109,6 @@ main h1{
     height: 80%;
     overflow:hidden; */
 /* } */
-.img-producto{
-    display: block;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    /* object-position: left; */
-}
 .titulo_1_main{
     text-align: center;
     color: rgba(137, 0, 0, 0.997)
@@ -88,17 +118,20 @@ main h1{
     color: rgba(137, 0, 0, 0.997)
 }
 
-@media screen and (min-width:769px){
+@media screen and (min-width:520px){
+    .content-banner{
+        height: 400px;
+    }
     .content-section{
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
     }
     .content-section-article{
         width: 280px;
         height: 350px;
-       /*  border: solid 1px red; */
+       /*border: solid 1px red; */
     }
     .content {
         height:30vh;
@@ -108,10 +141,10 @@ main h1{
         font-size:240px;
     }
     .content-section-article:hover{
-    -webkit-box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
-    -moz-box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
-    box-shadow: 0px 0px 14px 5px rgba(0,21,250,1);
-    transition: 1s;
+    -webkit-box-shadow: 0px 0px 14px 5px #212121;
+    -moz-box-shadow: 0px 0px 14px 5px #212121;
+    box-shadow: 0px 0px 14px 5px #212121;
+    transition: 500ms;
     }
 }
 

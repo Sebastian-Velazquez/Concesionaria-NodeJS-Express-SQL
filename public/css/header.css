@@ -15,20 +15,18 @@
 #headerTop{
     display: flex;
     flex-wrap: wrap;
-    padding: 5px 0;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     background-color: #18314F;
 }
 
-
-
 /* LOGOS */ 
 .figure-logo{
     display: flex;
     flex-direction: row;
-    align-items: left;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     justify-content: left;
     width: 28%;
@@ -44,23 +42,66 @@
     width: 40%;
     height: 40%;
 }
-.logoRenault{
+
+/* BUSCADOR */ 
+.search-header{
+    width: 35%;
+}
+.search-bar {
     display: flex;
-    justify-content: flex-end;
-    width: 40%;
-    height: 40%;
+    line-height: 28px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+.input {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+}
+.input::placeholder {
+    color: #9e9ea7;
+}
+.input:focus, input:hover {
+    outline: none;
+    border-color: rgba(196, 2, 2, 0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(233, 44, 44, 0.1);
+}
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
 }
 
+
 /* MENU */ 
+#lista-hamburguesa{
+    font-size: 2rem;
+    margin: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
 .content-navBar{
     display: none;
 }
 .navBar{
     font-size: 14px;
 }
-.icono{
-    font-size: 8px;
-    padding-left: 2px;
+.navBar li{
+    margin: 2px;
 }
 #lista-hamburguesa{
     font-size: 1.5rem;
@@ -94,22 +135,18 @@
         display:none; /* block */
         width: 100%;
         height: 100%;
-        margin: 0;
-        background-color: rgb(108, 166, 204);
     }
     .content-navBar-ver{
-        display: flex;
         width: 100%;
         height: 100%;
         margin: 0;
-        background-color: rgba(0, 0, 0, 0.1);
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-evenly;
-        border-radius: 5%;
+        justify-content: center;
+        align-items: end;
     }
-
-    }
+}
 
 /* M edia Tablet - Escritorio */
 @media screen and (min-width:520px){
@@ -124,21 +161,11 @@
         justify-content: space-evenly;
     }
     .figure-logo {
-        display: flex;
-        justify-content: space-around;
-        width: 300px;
-    }
-    .lista-hamburguesa{
-        display: none;
+        width: 250px;
+        align-items: center;
     }
     .navBar-lista{
         padding: 0 7px;
-    }
-    .searchBar{
-        width: 35%;
-    }
-    .searchBox{
-        width: 80%;
     }
     .content-navBar-ver{
         display: flex;
@@ -154,6 +181,9 @@
         display: flex;
         align-items: center;
         gap: 10px;
+    }
+    .search-header{
+        width: 50%;
     }
     /* ul{
         display: flex;
