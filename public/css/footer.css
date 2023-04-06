@@ -51,6 +51,19 @@ iframe{
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
+.content-servicios__div-footer{
+  display: flex;
+  height: 300px;
+  width: 100%;
+  background-color: #B40C15;
+  flex-wrap: wrap;
+  color: #FFFFFF;
+  padding-left: 16px;
+  padding-top: 16px;
+  border-top: solid 1px #FFFFFF;
+  flex-direction: column;
+  align-content: space-around;
+}
 
 .wrapper .tooltip {
   position: absolute;
