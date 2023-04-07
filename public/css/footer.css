@@ -56,12 +56,11 @@ iframe{
   height: 400px;
   width: 100%;
   background-color: #B40C15;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   color: #FFFFFF;
   padding-left: 16px;
   padding-top: 16px;
   border-top: solid 1px #FFFFFF;
-  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
