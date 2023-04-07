@@ -6,7 +6,8 @@
 
 
 .navBar-lista a{
-    color: #FFFFFF
+    color: #FFFFFF;
+    font-size: 1.2rem;
 }
 .avatar{
     height: 17px;
@@ -130,26 +131,10 @@
     width: 100%
 }
 
-@media screen and (max-width:519px){
-    .content-navBar{
-        display:none; /* block */
-        width: 100%;
-        height: 100%;
-    }
-    .content-navBar-ver{
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: end;
-    }
-}
+/* s */
 
 /* M edia Tablet - Escritorio */
-@media screen and (min-width:520px){
+@media screen and (min-width:560px){
     #lista-hamburguesa{
         display: none;
     }

@@ -53,7 +53,7 @@ iframe{
 }
 .content-servicios__div-footer{
   display: flex;
-  height: 300px;
+  height: 400px;
   width: 100%;
   background-color: #B40C15;
   flex-wrap: wrap;
@@ -64,6 +64,7 @@ iframe{
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
 }
 
 .wrapper .tooltip {
