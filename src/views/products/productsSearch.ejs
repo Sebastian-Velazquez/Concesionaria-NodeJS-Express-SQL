@@ -8,8 +8,8 @@
 <body>
     <%- include('../parcial/header.ejs') %>
     
+    <section class="content-section"> 
     <% if(resultados.length > 0 || resultados.name == " "){ %>
-        <section class="content-section"> 
         <% resultados.forEach(producto => { %>
             <a href="/product/list/<%= producto.id_product %>">
                 <article class="content-section-article">
@@ -24,7 +24,7 @@
                 </article>
             </a>
             <% }) %>
-            <section class="content-section"></section>
+            
     <% }else{ %>
         <h1>No hay resultados</h1>
     <% } %>
@@ -36,5 +36,7 @@
             </form> 
         <% }) %>
     </div>
+</section>
+    <%- include('../parcial/footer.ejs') %>
 </body>
 </html>
