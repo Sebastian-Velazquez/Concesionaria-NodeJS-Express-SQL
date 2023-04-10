@@ -3,29 +3,38 @@
     <head>
         <%- include('../parcial/head.ejs') %>
             <link href="css/productsSearch.css" rel="stylesheet">
+            <link href="css/main.css" rel="stylesheet">
     </head>
 <body>
     <%- include('../parcial/header.ejs') %>
     
-    <% modelos.forEach(modelos=> { %>
-  
-        <form action="/product/modelos/<%= modelos.id_modelo %>" method="get">
-                <div>
-                    <input type="submit" value="Ver todos los productos de <%= modelos.tipo_de_modelo %>">
-                </div>
-            </form> 
-        <% }) %>
-
-    <% if(resultados.length > 0){ %>
-        <% resultados.forEach(productos => { %>
-            <lu>
-                <li>
-                    <a href="/product/list/<%= productos.id_product %>"><%= productos.name %></a>
-                </li>
-            </lu>
+    <% if(resultados.length > 0 || resultados.name == " "){ %>
+        <section class="content-section"> 
+        <% resultados.forEach(producto => { %>
+            <a href="/product/list/<%= producto.id_product %>">
+                <article class="content-section-article">
+                    <div class="div__img-producto">
+                        <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
+                    </div>
+                    <div class="content-detalle">
+                        <h4 class="image-decription__name"><%= producto.name %></h4>
+                        <h4 class="image-decription__colors"><%= producto.colors %></h4>
+                        <h4 class="image-decription__precio"><b>$<%= producto.price  %></b></h4>
+                    </div>
+                </article>
+            </a>
             <% }) %>
+            <section class="content-section"></section>
     <% }else{ %>
         <h1>No hay resultados</h1>
     <% } %>
+
+    <div class="content-ver-categoria">
+        <% modelos.forEach(modelos=> { %>
+            <form action="/product/modelos/<%= modelos.id_modelo %>" method="get">
+                <input type="submit" value="Ver todos los productos de <%= modelos.tipo_de_modelo %>" class="ver-categoria">
+            </form> 
+        <% }) %>
+    </div>
 </body>
 </html>

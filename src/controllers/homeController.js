@@ -26,10 +26,11 @@ const controlador ={ //IMPORTANTE
     },
     search:(req,res)=>{
         if(req.query.search){
-            let resultado =db.Productos
+            let resultado = db.Productos
                 .findAll({
                     where:{
-                        name:{[db.Sequelize.Op.like] : '%' + req.query.search + '%' }
+                        name:{[db.Sequelize.Op.like] : '%' + req.query.search + '%' },
+                        delete:0
                     }
                 });
             let modelos= db.Modelos.findAll();
