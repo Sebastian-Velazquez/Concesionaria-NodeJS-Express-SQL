@@ -2,30 +2,23 @@ let db = require("../database/models");
 const {validationResult} = require('express-validator');
 
 const controlador ={
-    index:(req, res)=>{
+    /* index:(req, res)=>{
         res.send("hola")
-    },
-    list: (req, res) => {
-        db.Cancion.findAll(
-            {
-                include: {
-                    all: true,
-                    nested: true
-                } 
+    }, */
+    listUsers: (req, res) => {
+        db.Usuarios
+            .findAll()
+            .then(usarios=>{
+                return res.json(usarios)
             })
-            /* .then(canciones => {
-                let respuesta = {
-                    meta: {
-                        status: 200,
-                        total: canciones.length,
-                        url: 'api/canciones'
-                    },
-                    data: canciones
-                }
-                res.json(respuesta);
-            }) */
+    },
+    listproducts: (req, res) => {
+        db.Productos
+            .findAll()
+            .then(usarios=>{
+                return res.json(usarios)
+            })
     }
-
 }
 
 module.exports = controlador;
