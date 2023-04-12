@@ -9,22 +9,32 @@ const controlador ={
         db.Usuarios
             .findAll()
             .then(usarios=>{
-                return res.status(200).json({
-                    total: usarios.length,
-                    data: usarios,
-                    status: 200
-                })
+                if (usarios.length > 0){
+                    return res.status(200).json({
+                        total: usarios.length,
+                        data: usarios,
+                        status: 200
+                    })
+
+                }else{
+                    return res.status(200).json("No hay usuarios para mostrar")
+                }
             })
     },
     listproducts: (req, res) => {
         db.Productos
             .findAll()
             .then(productos=>{
-                return res.status(200).json({
-                    total: productos.length,
-                    data: productos,
-                    status: 200
-                })
+                if (productos.length > 0){
+                    return res.status(200).json({
+                        total: productos.length,
+                        data: productos,
+                        status: 200
+                    })
+                }else{
+                    return res.status(200).json("No hay productos para mostrar")
+                }
+                
             })
     }
 }
