@@ -34,6 +34,7 @@ app.set('views', path.join(__dirname, '/views')); //Es necesario para que la car
 const homeRouter = require('./routes/homeRouter.js')
 const productsRouter = require('./routes/productsRouter.js')
 const userRouter = require('./routes/userRouter.js')
+const apiReact = require('./routes/apiReact.js')
 //const usersRouter = require('./routes/usersRouter.js')
 //const productsRouter = require('./routes/productsRouter.js')
 
@@ -41,6 +42,7 @@ const userRouter = require('./routes/userRouter.js')
 app.use("/", homeRouter);
 app.use("/product", productsRouter);
 app.use("/users", userRouter);
+app.use("/api", apiReact);
 //app.use("/user", usersRouter);
 //app.use("/products", productsRouter);
 
