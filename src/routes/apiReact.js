@@ -9,7 +9,7 @@ const apiReactController = require("../controllers/apiReactController.js");
 
 //router.get("/", apiReactController.index);
 router.get("/users", corsValidation, apiReactController.listUsers);
-router.get("/products", apiReactController.listproducts);
+router.get("/products", corsValidation,apiReactController.listproducts);
 
 
 module.exports = router;

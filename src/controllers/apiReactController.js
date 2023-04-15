@@ -26,7 +26,6 @@ const controlador ={
         db.Productos
             .findAll()
             .then(productos=>{
-                productos.map( dato => dato.password = null)//Por seguridad
                 if (productos.length > 0){
                     return res.status(200).json({
                         total: productos.length,

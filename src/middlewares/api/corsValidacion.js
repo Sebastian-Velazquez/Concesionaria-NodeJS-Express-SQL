@@ -9,6 +9,7 @@ const cors = require('cors')
 let whitelist = ['http://localhost:3000']
 let corsOptions = {
     origin: function (origin, callback) {
+        //console.log(origin + "ESTRE")
         if (whitelist.indexOf(origin) !== -1) {
             callback(null, true)
         } else {
