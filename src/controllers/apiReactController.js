@@ -8,11 +8,12 @@ const controlador ={
     listUsers: (req, res) => {
         db.Usuarios
             .findAll()
-            .then(usarios=>{
-                if (usarios.length > 0){
+            .then(usuarios=>{
+                usuarios.map( dato => dato.password = null)//Por seguridad
+                if (usuarios.length > 0){
                     return res.status(200).json({
-                        total: usarios.length,
-                        data: usarios,
+                        total: usuarios.length,
+                        data: usuarios,
                         status: 200
                     })
 
@@ -25,6 +26,7 @@ const controlador ={
         db.Productos
             .findAll()
             .then(productos=>{
+                productos.map( dato => dato.password = null)//Por seguridad
                 if (productos.length > 0){
                     return res.status(200).json({
                         total: productos.length,
