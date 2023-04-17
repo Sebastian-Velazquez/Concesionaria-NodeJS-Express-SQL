@@ -5,7 +5,32 @@ const controlador ={
     /* index:(req, res)=>{
         res.send("hola")
     }, */
-    listUsers: (req, res) => {
+    listUsers: async (req, res)=>{
+        try{
+            const users = await  db.Usuarios.findAll()
+            //delete users.password
+            users.map( dato => delete dato.dataValues.password)//Por seguridad
+            users.map( dato => dato.dataValues.image ="http://localhost:3001/img/avatar/" + dato.dataValues.image)//Por seguridad
+            console.log(users)
+            res.json({
+                count: users.length,
+                users: users,
+                status: 200
+            })
+        } catch (error){
+            console.log(error);
+            res.status(500).send('Error al obtener los usuarios');
+        }
+
+
+    },
+
+
+
+
+
+
+    AlistUsers: (req, res) => {
         db.Usuarios
             .findAll()
             .then(usuarios=>{

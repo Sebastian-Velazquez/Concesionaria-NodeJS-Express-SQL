@@ -39,7 +39,7 @@ const controlador ={
                 birth_date: req.body.birth_date,
                 email: req.body.email,
                 password: bcryptjs.hashSync(req.body.password, 10), 
-                image: "avatar.jpg",
+                image: req.file ? req.file.filename : "avatar.jpg",
                 id_category: 0
             })
         res.render('./users/userLogin')

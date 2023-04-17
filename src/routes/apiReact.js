@@ -8,8 +8,8 @@ const corsValidation = require("../middlewares/api/corsValidacion");//para que l
 const apiReactController = require("../controllers/apiReactController.js");
 
 //router.get("/", apiReactController.index);
-router.get("/users", corsValidation, apiReactController.listUsers);//corsValidation si lo sacas se vuelve api publica
-router.get("/products", corsValidation,apiReactController.listproducts);
+router.get("/users", /* corsValidation, */ apiReactController.listUsers);//corsValidation si lo sacas se vuelve api publica
+router.get("/products", /* corsValidation, */apiReactController.listproducts);
 
 
 module.exports = router;
