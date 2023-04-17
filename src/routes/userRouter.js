@@ -5,7 +5,7 @@ const router = express.Router();
 const usersControllers = require("../controllers/usersControllers.js")
 //middlewares validar registro
 const validationsRegistro = require("../middlewares/userRouter/validationsRegisterMiddlewares");
-const upload = require("../middlewares/userRouter/multerMiddlewaresUser.js");//multer
+const upload = require("../middlewares/userRouter/multerMiddlewaresUser");//multer
 const guestMiddlewares = require("../middlewares/userRouter/guestMiddlewares");//si tengo alguein en session
 const authMiddlewares = require("../middlewares/userRouter/authMiddlewares");//si no tengo a nadie en session
 
