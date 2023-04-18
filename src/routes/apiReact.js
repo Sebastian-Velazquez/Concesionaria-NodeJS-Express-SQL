@@ -11,6 +11,7 @@ const apiReactController = require("../controllers/apiReactController.js");
 router.get("/users", /* corsValidation, */ apiReactController.listUsers);//corsValidation si lo sacas se vuelve api publica
 router.get("/users/:id", apiReactController.detailUsers);
 router.get("/products", /* corsValidation, */apiReactController.listproducts);
+router.get("/products/:id", /* corsValidation, */apiReactController.detailproducts);
 
 
 module.exports = router;

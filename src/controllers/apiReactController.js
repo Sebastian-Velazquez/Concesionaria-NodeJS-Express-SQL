@@ -2,9 +2,6 @@ let db = require("../database/models");
 const {validationResult} = require('express-validator');
 
 const controlador ={
-    /* index:(req, res)=>{
-        res.send("hola")
-    }, */
     listUsers: async (req, res)=>{
         try{
             const users = await  db.Usuarios.findAll();
@@ -29,93 +26,70 @@ const controlador ={
         }
     },
     detailUsers: async(req,res)=>{
-        const users = await  db.Usuarios.findAll( {
-                where:{
-                id_user: req.params.id,
+        try{
+            const user = await  db.Usuarios.findByPk(req.params.id);/* findAll( {
+                    where:{
+                    id_user: req.params.id,
+                    }
+                }) */
+                
+            let apiUser = [];
+                let nuevoUser = {
+                    id: user.id_user,
+                    name:user.first_name ,
+                    last: user.last_name,
+                    birthDate:user.last_date,
+                    email:user.email,   
+                    image:"http://localhost:3001/img/avatar/" +  user.image
                 }
+                    apiUser.push(nuevoUser)
+            res.json({
+                users: apiUser,
+                status: 200
             })
-            console.log(users)
-        let apiUser = [];
-            let nuevoUser = {
-                id: users[0].id_user,
-                name:users[0].first_name + " " + users[0].last_name,
-                email:users[0].email,                
-            }
-                apiUser.push(nuevoUser)
-        res.json({
-            count: apiUser.length,
-            users: apiUser,
-            status: 200
-        })
+        }catch (error){
+            console.log(error);
+            res.status(500).send('Error al obtener el usuario');
+        }
     },
     listproducts: async (req, res) => {
         try{
-        const products = await  db.Productos.findAll();
-        const productsSedan = await  db.Productos.findAll({
-                where:{
-                    id_modelo: 1
+        const products = await  db.Productos.findAll({
+            where:{
+                delete: 0,
+            },
+            include:[{association: "modelo"}]
+            
+        });
+        let apiProducts = []
+                for(let i=0; i < products.length; i++) {
+                    let nuevoproducts = {
+                        id: products[i].id_product,
+                        name:products[i].name,
+                        description:products[i].description,
+                        modelo: products[i].modelo.tipo_de_modelo,//relacion uno a muchos
+                        detail: "http://localhost:3001/api/products/" + products[i].id_product
+                    }
+                    apiProducts.push(nuevoproducts)
                 }
-            });
-        //products.map( dato => dato.dataValues.image ="http://localhost:3001/img/products/" + dato.dataValues.image);
         res.json({
-            count: products.length,
-            countByCategory: "Sedan" + productsSedan.length,
-            users: products,
+            count: apiProducts.length,
+            users: apiProducts,
             status: 200
         })
-    } catch (error){
-        console.log(error);
-        res.status(500).send('Error al obtener los productos');
-    }
+        } catch (error){
+            console.log(error);
+            res.status(500).send('Error al obtener los productos');
+        }
     },
+    detailproducts: async (req,res)=>{
+        try{
 
-
-
-
-/*     listproducts: (req, res) => {
-        db.Productos
-            .findAll()
-            .then(productos=>{
-                if (productos.length > 0){
-                    return res.status(200).json({
-                        total: productos.length,
-                        data: productos,
-                        status: 200
-                    })
-                }else{
-                    return res.status(200).json("No hay productos para mostrar")
-                }
-                
-            })
-    } */
+        }catch(e){
+            console(e);
+            res.send(500).send("Error al tener el detalle del producto")
+        }
+    }
 }
 
 module.exports = controlador;
-
-
-
-
-
-
-
-
-
-
-/* 
-    AlistUsers: (req, res) => {
-        db.Usuarios
-            .findAll()
-            .then(usuarios=>{
-                usuarios.map( dato => dato.password = null)//Por seguridad
-                if (usuarios.length > 0){
-                    return res.status(200).json({
-                        total: usuarios.length,
-                        data: usuarios,
-                        status: 200
-                    })
-
-                }else{
-                    return res.status(200).json("No hay usuarios para mostrar")
-                }
-            })
-    }, */
