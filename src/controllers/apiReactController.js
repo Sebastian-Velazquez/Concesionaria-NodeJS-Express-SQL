@@ -8,21 +8,45 @@ const controlador ={
     listUsers: async (req, res)=>{
         try{
             const users = await  db.Usuarios.findAll();
-            users.map( dato => delete dato.dataValues.password && 
-                            delete dato.dataValues.id_category  &&
-                            delete dato.dataValues.image  
-                        );
-            //users.map( dato => dato.dataValues.image ="http://localhost:3001/img/avatar/" + dato.dataValues.image);
-            //console.log(users)
+            let apiUsers =[]
+            for(let i=0; i < users.length; i++) {
+                let nuevoUsers = {
+                    id: users[i].id_user,
+                    name:users[i].first_name + " " + users[i].last_name,
+                    email:users[i].email,
+                    detail: "http://localhost:3001/api/users/"+users[i].id_user
+                }
+                apiUsers.push(nuevoUsers)
+            }
             res.json({
-                count: users.length,
-                users: users,
+                count: apiUsers.length,
+                users: apiUsers,
                 status: 200
             })
         } catch (error){
             console.log(error);
             res.status(500).send('Error al obtener los usuarios');
         }
+    },
+    detailUsers: async(req,res)=>{
+        const users = await  db.Usuarios.findAll( {
+                where:{
+                id_user: req.params.id,
+                }
+            })
+            console.log(users)
+        let apiUser = [];
+            let nuevoUser = {
+                id: users[0].id_user,
+                name:users[0].first_name + " " + users[0].last_name,
+                email:users[0].email,                
+            }
+                apiUser.push(nuevoUser)
+        res.json({
+            count: apiUser.length,
+            users: apiUser,
+            status: 200
+        })
     },
     listproducts: async (req, res) => {
         try{
