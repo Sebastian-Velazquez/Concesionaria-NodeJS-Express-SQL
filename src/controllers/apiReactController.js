@@ -27,12 +27,7 @@ const controlador ={
     },
     detailUsers: async(req,res)=>{
         try{
-            const user = await  db.Usuarios.findByPk(req.params.id);/* findAll( {
-                    where:{
-                    id_user: req.params.id,
-                    }
-                }) */
-                
+            const user = await  db.Usuarios.findByPk(req.params.id);
             let apiUser = [];
                 let nuevoUser = {
                     id: user.id_user,
@@ -63,18 +58,18 @@ const controlador ={
         });
         let apiProducts = []
                 for(let i=0; i < products.length; i++) {
-                    let nuevoproducts = {
+                    let nuevoProducts = {
                         id: products[i].id_product,
                         name:products[i].name,
                         description:products[i].description,
                         modelo: products[i].modelo.tipo_de_modelo,//relacion uno a muchos
                         detail: "http://localhost:3001/api/products/" + products[i].id_product
                     }
-                    apiProducts.push(nuevoproducts)
+                    apiProducts.push(nuevoProducts)
                 }
         res.json({
             count: apiProducts.length,
-            users: apiProducts,
+            product: apiProducts,
             status: 200
         })
         } catch (error){
@@ -84,9 +79,25 @@ const controlador ={
     },
     detailproducts: async (req,res)=>{
         try{
-
+            const product = await  db.Productos.findByPk(req.params.id,{ include:[{association: "modelo"}]});
+            let apiProduct =[];
+            let nuevoProduct = {
+                id: product.id_product,
+                name: product.name,
+                price: product.price,
+                anio: product.price,
+                description: product.description,
+                relation: [product.modelo,product.color],
+                image:"http://localhost:3001/img/products/" + product.image
+            }
+            apiProduct.push(nuevoProduct)
+            res.json({
+                count: apiProduct.length,
+                product: apiProduct,
+                status: 200
+            });
         }catch(e){
-            console(e);
+            console.log(e);
             res.send(500).send("Error al tener el detalle del producto")
         }
     }
