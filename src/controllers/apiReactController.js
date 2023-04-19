@@ -1,11 +1,11 @@
-let db = require("../database/models");
-const {validationResult} = require('express-validator');
+let db = require("../database/models");//llamar db sql
+//const {validationResult} = require('express-validator');
 
 const controlador ={
     listUsers: async (req, res)=>{
         try{
-            const users = await  db.Usuarios.findAll();
-            let apiUsers =[]
+            const users = await  db.Usuarios.findAll();//llame db los usuarios
+            let apiUsers =[]//para guardar lo que se muestra en api.
             for(let i=0; i < users.length; i++) {
                 let nuevoUsers = {
                     id: users[i].id_user,
@@ -13,7 +13,7 @@ const controlador ={
                     email:users[i].email,
                     detail: "http://localhost:3001/api/users/"+users[i].id_user
                 }
-                apiUsers.push(nuevoUsers)
+                apiUsers.push(nuevoUsers);
             }
             res.json({
                 count: apiUsers.length,
@@ -25,7 +25,7 @@ const controlador ={
             res.status(500).send('Error al obtener los usuarios');
         }
     },
-    detailUsers: async(req,res)=>{
+    detailUsers: async (req,res)=>{
         try{
             const user = await  db.Usuarios.findByPk(req.params.id);
             let apiUser = [];
@@ -79,7 +79,10 @@ const controlador ={
     },
     detailproducts: async (req,res)=>{
         try{
-            const product = await  db.Productos.findByPk(req.params.id,{ include:[{association: "modelo"}]});
+            const product = await  db.Productos.findByPk(req.params.id,
+                { 
+                    include:[{association: "modelo"},{association: "color"}]
+                });
             let apiProduct =[];
             let nuevoProduct = {
                 id: product.id_product,
@@ -94,7 +97,7 @@ const controlador ={
             res.json({
                 count: apiProduct.length,
                 product: apiProduct,
-                status: 200
+                status: 200,
             });
         }catch(e){
             console.log(e);
