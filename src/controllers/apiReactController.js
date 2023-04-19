@@ -6,15 +6,16 @@ const controlador ={
         try{
             const users = await  db.Usuarios.findAll();//llame db los usuarios
             let apiUsers =[]//para guardar lo que se muestra en api.
-            for(let i=0; i < users.length; i++) {
+            //for(let i=0; i < users.length; i++) {
+            users.forEach(element => {
                 let nuevoUsers = {
-                    id: users[i].id_user,
-                    name:users[i].first_name + " " + users[i].last_name,
-                    email:users[i].email,
-                    detail: "http://localhost:3001/api/users/"+users[i].id_user
+                    id: element.id_user,
+                    name:element.first_name + " " + element.last_name,
+                    email:element.email,
+                    detail: "http://localhost:3001/api/users/"+element.id_user
                 }
                 apiUsers.push(nuevoUsers);
-            }
+            });
             res.json({
                 count: apiUsers.length,
                 users: apiUsers,
@@ -57,16 +58,16 @@ const controlador ={
             
         });
         let apiProducts = []
-                for(let i=0; i < products.length; i++) {
+                products.forEach(element => {
                     let nuevoProducts = {
-                        id: products[i].id_product,
-                        name:products[i].name,
-                        description:products[i].description,
-                        modelo: products[i].modelo.tipo_de_modelo,//relacion uno a muchos
-                        detail: "http://localhost:3001/api/products/" + products[i].id_product
+                        id: element.id_product,
+                        name:element.name,
+                        description:element.description,
+                        modelo: element.modelo.tipo_de_modelo,//relacion uno a muchos
+                        detail: "http://localhost:3001/api/products/" + element.id_product
                     }
                     apiProducts.push(nuevoProducts)
-                }
+                });
         res.json({
             count: apiProducts.length,
             product: apiProducts,
