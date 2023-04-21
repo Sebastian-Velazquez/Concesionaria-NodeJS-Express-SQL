@@ -47,14 +47,6 @@
     align-items: center;
     justify-content: center;
 }
-.content-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 30px;
-}
 .content-servicios__div{
     display: flex;
     height: 200px;
@@ -65,7 +57,16 @@
     color: #FFFFFF;
     padding-left: 16px;
     padding-top: 16px;
-    border-top: solid 1px #FFFFFF;
+    margin: 10px;
+    border-radius: 10px;
+}
+.content-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px;
 }
 .content-section-article{
     width: 250px;
@@ -98,7 +99,7 @@
 }
 .direccion{
     font-size: 1rem;
-  }
+}
 /* INFO CARD */ 
 .image-decription__name{
     font-size: 1.5rem;
@@ -135,7 +136,7 @@ h2{
     font-size: 2rem;
 }
 .parrafo{
- font-size: 1rem;
+    font-size: 1rem;
 }
 @media screen and (min-width:520px){
 /*     .content-banner{

@@ -26,10 +26,10 @@
             </div> -->
             
         <section class="datosUsuario">
-            <h2> <b>Datos de Usuario</b> </h2> <br>
+            <h2> <b>Datos Personales</b> </h2> <br>
             <h3> Nombre:</h3> <%= user.first_name +' '+  user.last_name %> 
             <h3> Correo Electrónico:</h3> <%= user.email %>  
-            <h3> Fecha De Nacimiento:</h3> 10/10/2010 
+            <h3> Fecha De Nacimiento:</h3> <%= user.birth_date %> 
         </section>
     </main>
     <%- include('../parcial/footer.ejs') %>

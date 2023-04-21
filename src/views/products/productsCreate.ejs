@@ -6,112 +6,223 @@
     </head>
 <body>
     <%- include('../parcial/header.ejs') %>
-    <main class="main-crear-producto">
-    <h2>Formulario para crear producto</h2>
-    <form action="/product/create" method="POST" enctype="multipart/form-data" id="formulario"> 
 
-        <div id="div-content__nombre">
-            <label>Nombre</label>
-            <input type="text" name="name" id="input__nombre"
-            value="<%= locals.oldData ? oldData.name : null %>">
-                            <!-- Validacion -->
-                            <% if (locals.errors && errors.name){ %>
-                                <p class="alertError"><%= errors.name.msg %> </p>
-                                <% } %>
-            <p id="cartel-error__nombre">Tiene que ser mas de 3 letras</p>
-            <p id="cartel-error__nombre2">Solo puede contener letras.</p>
-        </div>
+    
+    <main class="container">
+        <h2>Crear Producto</h2>
+        <form class="form-create-prod" action="/product/create" method="POST" enctype="multipart/form-data" id="formulario">
+                <div class="inputBox">
+                    <input type="text" name="name" id="input__nombre" 
+                    value="<%= locals.oldData ? oldData.name : null %>">
+                    <span class="user">Nombre</span>
+                    <!-- Validacion -->
+                    <% if (locals.errors && errors.name){ %>
+                    <p class="alertError"><%= errors.name.msg %> </p>
+                    <% } %>
+                    <p id="cartel-error__nombre">Tiene que ser mas de 3 letras</p>
+                    <p id="cartel-error__nombre2">Solo puede contener letras.</p>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="price" id="input__precio"
+                    value="<%= locals.oldData ? oldData.price : null %>">
+                    <span class="user">Precio</span>
+                    <!-- Validacion -->
+                    <% if (locals.errors && errors.price){ %>
+                    <p class="alertError"><%= errors.price.msg %> </p>
+                    <% } %>
+                    <p id="cartel-error__precio">Tiene que ser de 6 numeros</p>
+                    <p id="cartel-error__precio2">Solo puede contener numeros.</p>
+                </div>
+                <div class="inputBox">
+                    <input type="date" name="anio" id="input__anio" placeholder="10/10/2010"
+                    value="<%= locals.oldData ? oldData.anio : null %>">
+                    <span class="user">Año</span>
+                    <!-- Validacion -->
+                    <% if (locals.errors && errors.anio){ %>
+                        <p class="alertError"><%= errors.anio.msg %> </p>
+                    <% } %>
+                    <p id="cartel-error__anio">Fecha invalida.-</p>
+                    <p id="cartel-error__anio2"></p>
+                </div>
+                <div class="inputBox">
+                    <input type="text" name="description"
+                    value="<%= locals.oldData ? oldData.description : null %>">
+                    <span class="user">Descripción</span>
+                </div>
+                <div class="inputBox">
+                    <input type="file" name="image">
+                    <% if (locals.errors && errors.image){ %>
+                        <p class="alertError"><%= errors.image.msg %> </p>
+                    <% } %>
+                </div>
 
-        <div id="div-content__precio">
-            <label>Precio</label>
-            <input type="text" name="price" id="input__precio"
-            value="<%= locals.oldData ? oldData.price : null %>">
-                            <!-- Validacion -->
-                            <% if (locals.errors && errors.price){ %>
-                                <p class="alertError"><%= errors.price.msg %> </p>
+                <div class="inputBox">
+                    <label>Color del auto</label>
+                    <select name="color" id="color"> 
+                        <option value="0"></option>
+                        <% for(let i=0; i < colors.length; i++) { %>
+                            <% if(locals.oldData){ %>
+                                <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
+                                    <option value="<%= colors[i].id_color %>" selected>
+                                        <%= colors[i].nombre %>
+                                    </option>
                                 <% } %>
-            <p id="cartel-error__precio">Tiene que ser de 6 numeros o mas.</p>
-            <p id="cartel-error__precio2">Solo puede contener numeros.</p>
-        </div>
-        <div id="div-content__anio">
-            <label>Año</label>
-            <input type="date" name="anio" id="input__anio" placeholder="10/10/2010"
-            value="<%= locals.oldData ? oldData.anio : null %>">
-                            <!-- Validacion -->
-                            <% if (locals.errors && errors.anio){ %>
-                                <p class="alertError"><%= errors.anio.msg %> </p>
-                                <% } %>
-            <p id="cartel-error__anio">Fecha invalida.-</p>
-            <p id="cartel-error__anio2"></p>
-        </div>
-        <div>
-            <label>Descripción: </label>
-            <input type="text" name="description"
-            value="<%= locals.oldData ? oldData.description : null %>">
-        </div>
-        <div>
-            <input type="file" name="image">
-            <% if (locals.errors && errors.image){ %>
-                <p class="alertError"><%= errors.image.msg %> </p>
-            <% } %>
-        </div>
-        <div>
-            <label>Color del auto</label>
-                <select name="color" id="color"> 
-                    <option value="0"></option>
-                    <% for(let i=0; i < colors.length; i++) { %>
-                        <% if(locals.oldData){ %>
-                            <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
-                                <option value="<%= colors[i].id_color %>" selected>
+                            <% } %>
+                                <option value="<%= colors[i].id_color %>">
                                 <%= colors[i].nombre %>
                                 </option>
-                            <% } %>
                         <% } %>
-                        <option value="<%= colors[i].id_color %>">
-                        <%= colors[i].nombre %>
-                        </option>
+                    </select>
+                    <!-- alerta -->
+                    <% if (locals.errors && errors.color){ %>
+                        <p class="alertError"><%= errors.color.msg %> </p>
                     <% } %>
-                </select>
-                <!-- alerta -->
-                <% if (locals.errors && errors.color){ %>
-                    <p class="alertError"><%= errors.color.msg %> </p>
-                <% } %>
-                <p id="cartel-error__color">Debe seleccionar una color.-</p>
-        </div>
-        <div>
-            <label>Selecionar modelo</label>
-            <select name="model" id="modelo">
-                <option value="0"></option>
-                <% for(let i=0; i < models.length; i++) { %>
-                    <% if(locals.oldData){ %>
-                        <% if (models[i].id_modelo == locals.oldData.model) { %><!-- para seleccionar el genero que tiene -->
-                            <option value="<%= models[i].id_modelo %>" selected>
-                            <%= models[i].tipo_de_modelo %>
+                    <p id="cartel-error__color">Debe seleccionar un color.-</p>
+                </div>
+                <div class="inputBox">
+                    <label class="user">Selecionar modelo</label>
+                    <select name="model" id="modelo">
+                        <option value="0"></option>
+                        <% for(let i=0; i < models.length; i++) { %>
+                            <% if(locals.oldData){ %>
+                                <% if (models[i].id_modelo == locals.oldData.model) { %><!-- para seleccionar el genero que tiene -->
+                                    <option value="<%= models[i].id_modelo %>" selected>
+                                        <%= models[i].tipo_de_modelo %>
+                                    </option>
+                                <% } %>
+                            <% }  %>
+                            <option value="<%= models[i].id_modelo %>">
+                                <%= models[i].tipo_de_modelo %>
                             </option>
                         <% } %>
-                    <% }  %>
-                    <option value="<%= models[i].id_modelo %>">
-                    <%= models[i].tipo_de_modelo %>
-                    </option>
-                <% } %>
-            </select>
-            <!-- alerta -->
-            <% if (locals.errors && errors.model){ %>
-                <p class="alertError"><%= errors.model.msg %> </p>
-            <% } %>
-            <p id="cartel-error__modelo">Debe seleccionar un modelo.-</p>
-        </div>
-        <label>Poner en productos destacados:
-            <input type="checkbox" value="Poner en destacados" name="outstanding">
-        </label>
-        <div>
-            <input type="submit">
-        </div>
-    </form>
-        </main>
+                    </select>
+                    <!-- alerta -->
+                    <% if (locals.errors && errors.model){ %>
+                        <p class="alertError"><%= errors.model.msg %> </p>
+                    <% } %>
+                    <p id="cartel-error__modelo">Debe seleccionar un modelo.-</p>
+                </div>
+
+                <div class="product-checkbox">
+                    <p class="destacar-prod">Destacar Producto</p>
+                    <input type="checkbox" name="remember" id="cbx" style="display:none;" value="Poner en destacados" name="outstanding">
+                    <label for="cbx" class="check">
+                        <svg width="18px" height="18px" viewBox="0 0 18 18">
+                            <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z"></path>
+                            <polyline points="1 9 7 14 15 4"></polyline>
+                        </svg>
+                    </label>
+                </div>
+                <div>
+                    <input class="enter" type="submit">
+                </div>
+        </form>
+    </main>
         <%- include('../parcial/footer.ejs') %>
     <!-- script para el form -->
     <script src="/js/productsCreateValidator.js"></script>
     <!-- footer -->
 </body>
 </html>
+        <main class="main-crear-producto">
+            <h2>Formulario para crear producto</h2>
+            <form action="/product/create" method="POST" enctype="multipart/form-data" id="formulario"> 
+    
+                <div id="div-content__nombre">
+                    <label>Nombre</label>
+                    <input type="text" name="name" id="input__nombre"
+                    value="<%= locals.oldData ? oldData.name : null %>">
+                                    <!-- Validacion -->
+                                    <% if (locals.errors && errors.name){ %>
+                                        <p class="alertError"><%= errors.name.msg %> </p>
+                                        <% } %>
+                    <p id="cartel-error__nombre">Tiene que ser mas de 3 letras</p>
+                    <p id="cartel-error__nombre2">Solo puede contener letras.</p>
+                </div>
+                <div id="div-content__precio">
+                    <label>Precio</label>
+                    <input type="text" name="price" id="input__precio"
+                    value="<%= locals.oldData ? oldData.price : null %>">
+                    <!-- Validacion -->
+                    <% if (locals.errors && errors.price){ %>
+                    <p class="alertError"><%= errors.price.msg %> </p>
+                    <% } %>
+                    <p id="cartel-error__precio">Tiene que ser de 6 numeros</p>
+                    <p id="cartel-error__precio2">Solo puede contener numeros.</p>
+                </div>
+                <div id="div-content__anio">
+                    <label>Año</label>
+                    <input type="date" name="anio" id="input__anio" placeholder="10/10/2010"
+                    value="<%= locals.oldData ? oldData.anio : null %>">
+                                    <!-- Validacion -->
+                                    <% if (locals.errors && errors.anio){ %>
+                                        <p class="alertError"><%= errors.anio.msg %> </p>
+                                        <% } %>
+                    <p id="cartel-error__anio">Fecha invalida.-</p>
+                    <p id="cartel-error__anio2"></p>
+                </div>
+                <div>
+                    <label>Descripción: </label>
+                    <input type="text" name="description"
+                    value="<%= locals.oldData ? oldData.description : null %>">
+                </div>
+                <div>
+                    <input type="file" name="image">
+                    <% if (locals.errors && errors.image){ %>
+                        <p class="alertError"><%= errors.image.msg %> </p>
+                    <% } %>
+                </div>
+                <div>
+                    <label>Color del auto</label>
+                        <select name="color" id="color"> 
+                            <option value="0"></option>
+                            <% for(let i=0; i < colors.length; i++) { %>
+                                <% if(locals.oldData){ %>
+                                    <% if (colors[i].id_color == locals.oldData.color) { %><!-- para seleccionar el genero que tiene -->
+                                        <option value="<%= colors[i].id_color %>" selected>
+                                        <%= colors[i].nombre %>
+                                        </option>
+                                    <% } %>
+                                <% } %>
+                                <option value="<%= colors[i].id_color %>">
+                                <%= colors[i].nombre %>
+                                </option>
+                            <% } %>
+                        </select>
+                        <!-- alerta -->
+                        <% if (locals.errors && errors.color){ %>
+                            <p class="alertError"><%= errors.color.msg %> </p>
+                        <% } %>
+                        <p id="cartel-error__color">Debe seleccionar una color.-</p>
+                </div>
+                <div>
+                    <label>Selecionar modelo</label>
+                    <select name="model" id="modelo">
+                        <option value="0"></option>
+                        <% for(let i=0; i < models.length; i++) { %>
+                            <% if(locals.oldData){ %>
+                                <% if (models[i].id_modelo == locals.oldData.model) { %><!-- para seleccionar el genero que tiene -->
+                                    <option value="<%= models[i].id_modelo %>" selected>
+                                    <%= models[i].tipo_de_modelo %>
+                                    </option>
+                                <% } %>
+                            <% }  %>
+                            <option value="<%= models[i].id_modelo %>">
+                            <%= models[i].tipo_de_modelo %>
+                            </option>
+                        <% } %>
+                    </select>
+                    <!-- alerta -->
+                    <% if (locals.errors && errors.model){ %>
+                        <p class="alertError"><%= errors.model.msg %> </p>
+                    <% } %>
+                    <p id="cartel-error__modelo">Debe seleccionar un modelo.-</p>
+                </div>
+                <label>Poner en productos destacados:
+                    <input type="checkbox" value="Poner en destacados" name="outstanding">
+                </label>
+                <div>
+                    <input type="submit">
+                </div>
+            </form>
+        </main> 
