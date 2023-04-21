@@ -5,10 +5,12 @@ const select = document.querySelectorAll('#formulario select')
 //Expresiones Regulares
 const expresiones ={//las expresiones regulares son formulas que busca coincidencias para luego poder validar
     //usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/, // Letras y espacios, pueden llevar acentos.
+	nombre: /^[a-zA-ZÀ-ÿ\s]/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{4,12}$/, // 4 a 12 digitos.
+    cantidadCaracteres: /^.{3,10}$/,
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	precio: /^\d{6,20}$/, // 7 a 14 numeros.
+	precio: /^[0-9]+$/, // 7 a 14 numeros.
+    cantidadCaracteresPrecio: /^.{6,25}$/,
     anio: /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})$/
 }
 let campos = {
@@ -21,9 +23,11 @@ const validarFormulario = (e) =>{
     switch (e.target.name){
         case "name":
             validarCampo(expresiones.nombre, e.target, 'nombre');
+            validarCampo2(expresiones.cantidadCaracteres, e.target, 'nombre');
         break;
         case "price":
             validarCampo(expresiones.precio, e.target, 'precio');
+            validarCampo2(expresiones.cantidadCaracteresPrecio, e.target, 'precio');
         break;
         /* case "anio":
             validarCampo(expresiones.anio, e.target, 'anio');
@@ -37,15 +41,34 @@ const validarCampo=(expresiones, input,campo)=>{
         document.getElementById(`input__${campo}`).classList.remove('error-input');
         document.getElementById(`div-content__${campo}`).classList.add('correcto');
         document.getElementById(`input__${campo}`).classList.add('correcto-input');
-        document.getElementById(`cartel-error__${campo}`).classList.remove('alertError');
+        //document.getElementById(`cartel-error__${campo}`).classList.remove('alertError');
         document.getElementById(`cartel-error__${campo}2`).classList.remove('alertError'); 
         campos[campo] = true
         //console.log(campos)
     }else{
         document.getElementById(`div-content__${campo}`).classList.add('error');
         document.getElementById(`input__${campo}`).classList.add('error-input');
-        document.getElementById(`cartel-error__${campo}`).classList.add('alertError');
+        //document.getElementById(`cartel-error__${campo}`).classList.add('alertError');
         document.getElementById(`cartel-error__${campo}2`).classList.add('alertError');
+        campos[campo] = false
+       // console.log(campos)
+    }
+}
+const validarCampo2=(expresiones, input,campo)=>{
+    if(expresiones.test(input.value)){
+        document.getElementById(`div-content__${campo}`).classList.remove('error');
+        document.getElementById(`input__${campo}`).classList.remove('error-input');
+        document.getElementById(`div-content__${campo}`).classList.add('correcto');
+        document.getElementById(`input__${campo}`).classList.add('correcto-input');
+        document.getElementById(`cartel-error__${campo}`).classList.remove('alertError');
+        //document.getElementById(`cartel-error__${campo}2`).classList.remove('alertError'); 
+        campos[campo] = true
+        //console.log(campos)
+    }else{
+        document.getElementById(`div-content__${campo}`).classList.add('error');
+        document.getElementById(`input__${campo}`).classList.add('error-input');
+        document.getElementById(`cartel-error__${campo}`).classList.add('alertError');
+        //document.getElementById(`cartel-error__${campo}2`).classList.add('alertError');
         campos[campo] = false
        // console.log(campos)
     }
