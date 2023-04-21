@@ -8,12 +8,13 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-bottom: 80px;
+    margin: 50px;
 }
 .profileImage{
     height: 250px;
     width: 250px;
-    border: solid 10px black;
+    border: solid 7px black;
+    border-radius: 10px;
     margin: 10px;
 }
 .datosUsuario{

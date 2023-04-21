@@ -12,9 +12,9 @@
             </div>
             <div class="prod-detail">
                 <h1 class="title-prod-detail"><%= producto.name %></h1>
-                <p class="prod-price-detail">U$$<%= producto.price %></p>
+                <p class="prod-price-detail">$<%= producto.price %></p>
                 <p><%= producto.anio %></p>
-                <p>Descripción:<%= producto.description %></p>
+                <p>Descripción: <%= producto.description %></p>
                 <p>Color: <%= producto.color.nombre %></p>
                 <p>Modelo: <%= producto.modelo.tipo_de_modelo %></p>
             </div>
@@ -22,7 +22,7 @@
                 <button type="submit" class="btn-prod">
                     <a class="fancy" href="https://wa.me/15551234567?text=Hola!%20Me%20interesa%20este%20auto%20" target="_blank">
                         <span class="top-key"></span>
-                        <span class="text">Comprar</span>
+                        <span class="text">+ Info</span>
                         <span class="bottom-key-1"></span>
                         <span class="bottom-key-2"></span>
                     </a>

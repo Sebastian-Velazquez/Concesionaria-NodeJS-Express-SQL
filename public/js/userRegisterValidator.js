@@ -80,7 +80,6 @@ window.addEventListener("load", () => {
 
     /*  checkeo de errores en consola */
 
-     
     if (errors.length > 0) {
       console.log(errors); 
       event.preventDefault();
