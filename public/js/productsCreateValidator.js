@@ -7,7 +7,7 @@ const expresiones ={//las expresiones regulares son formulas que busca coinciden
     //usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	nombre: /^[a-zA-ZÀ-ÿ\s]/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{4,12}$/, // 4 a 12 digitos.
-    cantidadCaracteres: /^.{3,10}$/,
+    cantidadCaracteres: /^.{3,50}$/,
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	precio: /^[0-9]+$/, // 7 a 14 numeros.
     cantidadCaracteresPrecio: /^.{6,25}$/,
