@@ -57,6 +57,7 @@ const controlador ={
             include:[{association: "modelo"}]
             
         });
+        const modelo = await db.Modelos.findAll()
         let apiProducts = []
                 products.forEach(element => {
                     let nuevoProducts = {
@@ -64,12 +65,14 @@ const controlador ={
                         name:element.name,
                         description:element.description,
                         modelo: element.modelo.tipo_de_modelo,//relacion uno a muchos
-                        detail: "http://localhost:3001/api/products/" + element.id_product
+                        detail: "http://localhost:3001/api/products/" + element.id_product,
+                        count_modelo: element.modelo.length
                     }
                     apiProducts.push(nuevoProducts)
                 });
         res.json({
             count: apiProducts.length,
+            count_modelo: modelo.length,
             product: apiProducts,
             status: 200
         })
