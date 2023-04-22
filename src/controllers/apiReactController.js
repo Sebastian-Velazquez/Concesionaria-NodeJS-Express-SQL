@@ -66,6 +66,7 @@ const controlador ={
                         description:element.description,
                         modelo: element.modelo.tipo_de_modelo,//relacion uno a muchos
                         detail: "http://localhost:3001/api/products/" + element.id_product,
+                        image:"http://localhost:3001/img/products/" + element.image,
                         count_modelo: element.modelo.length
                     }
                     apiProducts.push(nuevoProducts)
