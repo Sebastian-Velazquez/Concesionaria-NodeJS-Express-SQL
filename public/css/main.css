@@ -1,7 +1,10 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
-
+.error404{
+    height: 100%;
+    width: 100%;
+}
 /* BANNER INICIO */ 
 .img-banner{
     object-fit: cover;

@@ -53,8 +53,8 @@ app.use((req, res, next) => {
     // Crea un objeto de error personalizado
     const err = new Error('Página no encontrada');
     err.status = 404;
-    res.status(404).send('La página que buscas no se encontró');
-    // res.status(404).render('error404', { mensaje: 'La página que buscas no se encontró' });
+    //res.status(404).send('La página que buscas no se encontró');
+    res.status(404).render('error404', { mensaje: 'La página que buscas no se encontró' });
   });
   
   // Middleware de manejo de errores
