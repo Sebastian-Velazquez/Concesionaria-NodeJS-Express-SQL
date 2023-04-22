@@ -7,40 +7,28 @@
 
 <body>
     <%- include('../parcial/header.ejs') %>
-    <!-- <h1 class="login">INGRESÁ</h1>
-    <form action="/users/login" method="post" class="form-user-login"><br><br>
-        <div>
-            <label for="">Ingrese el Email:</label>
-            <input type="email" name="email" placeholder="Ej: ika-concesionaria@info.com"></div><br>
-        <div>   
-            <label for="">Ingrese la Contraseña:</label>
-            <input type="password" name="password"></div><br>
-        <div>   
-            <input type="checkbox" name="remember"> recordar usuario</div> -->
-        <!-- Validacion de Email -->
-        <!-- <% if (locals.errors && errors.email){ %>
-            <p class="alertError"><%= errors.email.msg %> </p>
-        <% } %>
-        <input type="submit">
-    <br><br>
-    </form> -->
 
 <div class="container">
-    <form action="/users/login" method="post" class="form-user-login"><br><br>
-        <div class="card">
+    <form action="/users/login" method="post" class="form-user-login" id="formulario"><br><br>
+        
+        <div class="card" id="div-content__email">
             <a class="login">Ingresá!</a>
             <div class="inputBox">
-                <input name="email" id="email" type="email" required="required">
+                <input name="email" id="input__email" type="email" >
                 <span class="user">Email</span>
+                <p id="cartel-error__email">Email inválido</p>
+                <p id="cartel-error__email2"></p>
             </div>
         
-            <div class="inputBox">
-                <input name="password" id="password" type="password" required="required">
+            <div class="inputBox" id="div-content__password">
+                <input name="password"  type="password" id="input__password">
                 <span class="user">Contrasena</span>
+                <p id="cartel-error__password">Tiene que tener mas de 3 caracteres</p>
+                <p id="cartel-error__password2"></p>
             </div>
 
             <div class="login-checkbox">
-                <p>Recordar usuario</p>
+                <p class="recordar-usuario">Recordar usuario</p>
                 <input type="checkbox" name="remember" id="cbx" style="display: none;">
                 <label for="cbx" class="check">
                     <svg width="18px" height="18px" viewBox="0 0 18 18">
@@ -54,7 +42,7 @@
             <% if (locals.errors && errors.email){ %>
                 <p class="alertError"><%= errors.email.msg %> </p>
             <% } %>
-
+                
             <button type="submit" class="enter">Enviar</button>
         </div>
     </form>
@@ -62,5 +50,6 @@
 
 
     <%- include('../parcial/footer.ejs') %>
+    <script src="/js/userLogin.js"></script>
 </body>
 </html>

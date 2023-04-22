@@ -6,28 +6,52 @@
     </head>
     <body>
         <%- include('../parcial/header.ejs') %>
-        <h1><%= producto.name %></h1>
-        <h2>Precio:<%= producto.price %></h2>
-        <h2>Año: <%= producto.anio %></h2>
-        <h2>Descripción: <%= producto.description %></h2>
-        <h2>Imagen:</h2>
-        <div class="conten-img">
-            <img src="/img/products/<%= producto.image %>" alt="imagenAuto" class="img">
+        <div class="container-prod-detail">
+            <div>
+                <img src="/img/products/<%= producto.image %>" alt="imagenAuto" class="img-detail-prod">
+            </div>
+            <div class="prod-detail">
+                <h1 class="title-prod-detail"><%= producto.name %></h1>
+                <p class="prod-price-detail">$<%= producto.price %></p>
+                <p><%= producto.anio %></p>
+                <p>Descripción: <%= producto.description %></p>
+                <p>Color: <%= producto.color.nombre %></p>
+                <p>Modelo: <%= producto.modelo.tipo_de_modelo %></p>
+            </div>
+            <div class="div-btns">
+                <button type="submit" class="btn-prod">
+                    <a class="fancy" href="https://wa.me/15551234567?text=Hola!%20Me%20interesa%20este%20auto%20" target="_blank">
+                        <span class="top-key"></span>
+                        <span class="text">+ Info</span>
+                        <span class="bottom-key-1"></span>
+                        <span class="bottom-key-2"></span>
+                    </a>
+                </button>
+                <% if (locals.isLogged && locals.userLogged.id_category===1) { %> 
+                    <form action="/product/edit/<%= producto.id_product %>" method="GET">
+                        <button type="submit" class="btn-prod">
+                            <a class="fancy">
+                                <span class="top-key"></span>
+                                <span class="text">Editar</span>
+                                <span class="bottom-key-1"></span>
+                                <span class="bottom-key-2"></span>
+                            </a>
+                        </button>
+                    </form>
+    
+                    <form action="/product/delete/<%= producto.id_product %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn-prod">
+                            <a class="fancy">
+                                <span class="top-key"></span>
+                                <span class="text">Eliminar</span>
+                                <span class="bottom-key-1"></span>
+                                <span class="bottom-key-2"></span>
+                            </a>
+                        </button>
+                    </form>
+                <% } %>
+            </div>
         </div>
-        <h2>Color: <%= producto.color.nombre %></h2>
-        <h2>Modelo: <%= producto.modelo.tipo_de_modelo %></h2>
-        <div>
-            <button type="submit">COMPRAR</button>
-        </div>
-            <% if (locals.isLogged && locals.userLogged.id_category===1) { %> 
-                <form action="/product/edit/<%= producto.id_product %>" method="GET">
-                    <button type="submit">EDITAR</button>
-                </form>
-
-                <form action="/product/delete/<%= producto.id_product %>?_method=DELETE" method="POST">
-                    <button type="submit" class="button">ELIMINAR</button>
-                </form>
-            <% } %>
         <%- include('../parcial/footer.ejs') %>
     </body>
 </html>

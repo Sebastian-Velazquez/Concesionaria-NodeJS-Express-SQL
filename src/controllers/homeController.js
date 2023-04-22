@@ -3,7 +3,7 @@ const path = require('path');
 
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+//const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 /* const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8')); */
 let db = require("../database/models");
 
@@ -26,10 +26,11 @@ const controlador ={ //IMPORTANTE
     },
     search:(req,res)=>{
         if(req.query.search){
-            let resultado =db.Productos
+            let resultado = db.Productos
                 .findAll({
                     where:{
-                        name:{[db.Sequelize.Op.like] : '%' + req.query.search + '%' }
+                        name:{[db.Sequelize.Op.like] : '%' + req.query.search + '%' },
+                        delete:0
                     }
                 });
             let modelos= db.Modelos.findAll();

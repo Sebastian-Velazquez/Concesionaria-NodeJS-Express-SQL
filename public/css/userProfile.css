@@ -2,42 +2,29 @@
 @import url(header.css);
 @import url(footer.css);
 
-
- .profileImage{
+.userProfile{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+.profileImage{
     height: 250px;
     width: 250px;
-    border: solid 10px black;
-    align-content: center;
-}
-.fotoPerfil{
-    display: flex;
-    align-content : center ;
-    padding-left: 18%;
-    
-}
-.titleUser{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    text-align: center;
-    
-    align-content: space-around;
-
+    border: solid 7px black;
+    border-radius: 10px;
+    margin: 10px;
 }
 .datosUsuario{
- 
-    display: flex;
-    justify-content: end;
-    flex-direction: column;
     text-align: center;
-    padding-left: 10%;
-    align-content: space-around; 
-    
-    
-} 
-.imagenDePerfil{
-    display: flex;
-    width: 400px;
-    padding: 10px;
-} 
+}
+.datosUsuario h2{
+    font-size: 36px;
+    text-decoration: underline;
+}
+.datosUsuario h3{
+    margin: 10px;
+    text-decoration: underline;
+}

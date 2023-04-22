@@ -7,6 +7,7 @@ const controlador ={
         res.render("./users/userRegister")
     },
     processRegister:(req, res)=>{
+        console.log(req.body.birt_date)
        //Validacion de Middlewares
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0){//resultValidation.errors es un objeto literal
@@ -16,6 +17,7 @@ const controlador ={
             });
         }
         //Validamos si ya existe el mail ingresado antes de cargar el usuario nuevo
+        
         db.Usuarios.findOne({ //dindOne: busca y hay un dato que sea igual al madado por el body
             where:{
                 email: req.body.email  //
@@ -29,14 +31,15 @@ const controlador ={
                     oldData: req.body //Para mostrar los datos bien ingresados
                     }) ; 
             }else{
+                //console.log(req.body.birt_date)
                 db.Usuarios
             .create({
                 first_name: req.body.firstName,  
                 last_name: req.body.lastName,
-                birt_date: req.body.birt_date,
+                birth_date: req.body.birth_date,
                 email: req.body.email,
                 password: bcryptjs.hashSync(req.body.password, 10), 
-                image: "avatar.jpg",
+                image: req.file ? req.file.filename : "avatar.jpg",
                 id_category: 0
             })
         res.render('./users/userLogin')

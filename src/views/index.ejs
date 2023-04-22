@@ -8,19 +8,27 @@
 
 <body>
     <%- include('./parcial/header.ejs') %>
-    <div class="content-banner">
-        <img src="/img/index/banner.webp" class="img-banner">
-        <div class="bar left"></div>
-        <div class="bar top"></div>
-        <div class="bar right"></div>
-        <div class="bar bottom"></div>
-    </div>
     <!-- Sedan -->
+    <div class="content-servicios">
+        <div class="content-servicios__div">           
+            <i class="fa fa-users ico"></i>
+            <h2>Sobre IKA</h2>
+            <p class="parrafo">Dinámica, profesionalismo y tecnología a su servicio. Orientados en la atención al cliente y en su satisfacción total.</p>
+            <a href="/"><i class="fa fa-angle-right"></i> Conozcanos</a>
+        </div>
+        <div class="content-servicios__div">
+            <i class="fa fa-car ico"></i>
+            <h2>IKA Auto</h2>
+            <p class="parrafo">Ika Plan te permite acceder a tu Auto 0KM totalmente en cuotas sin interés.</p>
+            <a href="/product/list"><i class="fa fa-angle-right"></i> Ver modelos</a>
+        </div>
+    </div>
+
+    <h2 class="h2">Autos Destacados</h2>
     <section class="content-section">   
-        <% productos.forEach(producto=> { %>
-            <!-- % if(modelos[i].id_modelo == producto.id_modelo){ %>  -->  
-                    <a href="/product/list/<%= producto.id_product %>">
-                        <article class="content-section-article">
+        <% productos.forEach(producto=> { %> 
+            <a href="/product/list/<%= producto.id_product %>">
+                <article class="content-section-article">
                             <div class="div__img-producto">
                                 <img src="/img/products/<%= producto.image %>" alt="Imagen" class="img-producto">
                             </div>
@@ -31,7 +39,6 @@
                             </div>
                         </article>
                     </a>
-            <!-- % } %> -->
     <% }) %>
     </section>
     </main>

@@ -5,8 +5,17 @@ footer{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
 
+}
+.div-footer-derechos{
+  height: 400px;
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
 iframe{
   width: 70%;
   max-width: 400px;
@@ -50,6 +59,20 @@ iframe{
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
+.content-servicios__div-footer{
+  display: flex;
+  height: 400px;
+  width: 100%;
+  background-color: #B40C15;
+  flex-wrap: nowrap;
+  color: #FFFFFF;
+  padding-left: 16px;
+  padding-top: 16px;
+  border-top: solid 1px #FFFFFF;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
 
 .wrapper .tooltip {
   position: absolute;
@@ -83,6 +106,7 @@ iframe{
   width: 100%;
   height: 100%;
   display: flex;
+  color: #18314F
 }
 
 .button-footer .clone > *,.button-footer .text > * {
@@ -111,6 +135,8 @@ iframe{
   display: flex;
   flex-direction: column;
   margin: 20px 10px 10px 10px;
+  color: #18314F;
+  font-size: 1.2rem;
 }
 .copy-footer > span{
   display: flex;
@@ -124,14 +150,36 @@ iframe{
 }
 
 @media screen and (min-width:700px){
-
+  .content-servicios__div-footer {
+    display: flex;
+    height: 400px;
+    width: 50%;
+    background-color: #B40C15;
+    flex-wrap: nowrap;
+    color: #FFFFFF;
+    padding-left: 16px;
+    padding-top: 16px;
+    border-top: solid 1px #FFFFFF;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
   footer {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    border-top: solid 5px #B40C15;
   }
-
+  .div-footer-derechos{
+    height: 400px;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
   a {
       text-align: center;
   }

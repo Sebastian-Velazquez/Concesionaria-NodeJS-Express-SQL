@@ -37,7 +37,7 @@ window.addEventListener("load", () => {
       form.lastName.classList.remove("is-invalid");
       form.lastName.classList.add("is-valid");
     }
-
+    
     /* contraseña */
     if (form.password.value == "") {
       errors.push("La contraseña está vacia");
@@ -47,8 +47,24 @@ window.addEventListener("load", () => {
       form.password.classList.remove("is-invalid");
       form.password.classList.add("is-valid");
     }
-
-
+    /* Repetir contraseña  */
+    if (form.passwordValidate.value == "") {
+      errors.push("Repetir la contraseña vacia");
+      form.password.classList.remove("is-valid");
+      form.password.classList.add("is-invalid");
+    } else {
+      form.password.classList.remove("is-invalid");
+      form.password.classList.add("is-valid");
+    }
+    /* validar contraseña */
+    if (form.password.value != form.passwordValidate.value){
+      errors.push("Las contrseñas no cinciden");
+      form.password.classList.remove("is-valid");
+      form.password.classList.add("is-invalid");
+    }else{
+      form.password.classList.remove("is-invalid");
+      form.password.classList.add("is-valid");
+    }
     /*  email */
     
     let regEmail = /\S+@\S+\.\S+/;
@@ -64,13 +80,12 @@ window.addEventListener("load", () => {
 
     /*  checkeo de errores en consola */
 
-     
     if (errors.length > 0) {
       console.log(errors); 
       event.preventDefault();
       errorsHtml.innerHTML = "";
       errors.forEach((error) => {
-        errorsHtml.innerHTML += "<li>" + error + "</li>";
+        errorsHtml.innerHTML += "<li class='alertColor'>" + error + "</li>";
       });
     } else {
       /* alert("La validacion fue exitosa") */
