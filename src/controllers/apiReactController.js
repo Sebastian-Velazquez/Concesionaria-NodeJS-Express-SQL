@@ -12,6 +12,7 @@ const controlador ={
                     id: element.id_user,
                     name:element.first_name + " " + element.last_name,
                     email:element.email,
+                    image:"http://localhost:3001/img/avatar/" +  element.image,
                     detail: "http://localhost:3001/api/users/"+element.id_user
                 }
                 apiUsers.push(nuevoUsers);
@@ -67,7 +68,8 @@ const controlador ={
                         modelo: element.modelo.tipo_de_modelo,//relacion uno a muchos.
                         detail: "http://localhost:3001/api/products/" + element.id_product,
                         image:"http://localhost:3001/img/products/" + element.image,
-                        count_modelo: element.modelo.length
+                        count_modelo: element.modelo.length,
+                        
                     }
                     apiProducts.push(nuevoProducts)
                 });
@@ -75,6 +77,7 @@ const controlador ={
             count: apiProducts.length,
             count_modelo: modelo.length,
             product: apiProducts,
+            category_modelo: modelo,
             status: 200
         })
         } catch (error){
