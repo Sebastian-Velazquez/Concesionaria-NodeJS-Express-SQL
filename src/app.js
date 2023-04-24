@@ -48,7 +48,22 @@ app.use("/api", apiReact);
 //app.use("/user", usersRouter);
 //app.use("/products", productsRouter);
 
-
+// Middleware para manejar errores 404
+app.use((req, res, next) => {
+    // Crea un objeto de error personalizado
+    const err = new Error('Página no encontrada');
+    err.status = 404;
+    //res.status(404).send('La página que buscas no se encontró');
+    res.status(404).render('error404', { mensaje: 'La página que buscas no se encontró' });
+  });
+  
+  // Middleware de manejo de errores
+app.use((err, req, res, next) => {
+    // Maneja otros errores que puedan ocurrir en la aplicación
+    // Puedes personalizar la forma en que manejas los errores
+    // en función de tus necesidades
+    res.status(err.status || 500).send('Ha ocurrido un error en el servidor');
+  });
 
 const port = process.env.PORT || 3001;
 app.listen(port,()=> console.log('Servidor corriendo en http://localhost:3001'));
