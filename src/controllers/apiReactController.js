@@ -5,7 +5,7 @@ const controlador ={
     listUsers: async (req, res)=>{
         try{
             const users = await  db.Usuarios.findAll();//llame db los usuarios
-            let apiUsers =[]//para guardar lo que se muestra en api.
+            let apiUsers =[]//para guardar lo que se muestra en api.fsdfsd
             //for(let i=0; i < users.length; i++) {
             users.forEach(element => {
                 let nuevoUsers = {
