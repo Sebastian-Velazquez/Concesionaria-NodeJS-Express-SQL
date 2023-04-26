@@ -82,7 +82,7 @@
     margin: 20px;
     padding: 10px;
     /* width: 60%; */
-    background-color: #18314F;
+    background-color: #18314f;
     color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.737);    
@@ -164,9 +164,9 @@ h2{
         font-size:50px;
     }
     .content-section-article:hover{
-    -webkit-box-shadow: 0px 0px 14px 5px #212121;
-    -moz-box-shadow: 0px 0px 14px 5px #212121;
-    box-shadow: 0px 0px 14px 5px #212121;
+    -webkit-box-shadow: 0px 0px 14px 5px #444444;
+    -moz-box-shadow: 0px 0px 14px 5px #444444;
+    box-shadow: 0px 0px 14px 5px #444444;
     transition: 500ms;
     }
     .content-servicios{
@@ -188,6 +188,5 @@ h2{
         padding-top: 16px;
         border-top: solid 1px #FFFFFF;
     }
-   
 }
 

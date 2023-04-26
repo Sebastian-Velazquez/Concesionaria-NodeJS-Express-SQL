@@ -1,10 +1,12 @@
 @import url(normalize.css);
 @import url(header.css);
 @import url(footer.css);
+
+
 .alertColor{
     color: red;
 }
- .container{
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,11 +43,11 @@
     padding: 10px;
     outline: none;
     border: none;
-    color: #000;
+    color: #18314f;
     font-size: 1em;
     background: transparent;
-    border-left: 2px solid #000;
-    border-bottom: 2px solid #000;
+    border-left: 2px solid #18314f;
+    border-bottom: 2px solid #18314f;
     transition: 0.1s;
     border-bottom-left-radius: 8px;
 }
@@ -71,7 +73,7 @@
     transform: translateX(113px) translateY(-15px);
     font-size: 0.8em;
     padding: 5px 10px;
-    background: #000;
+    background: #18314f;
     letter-spacing: 0.2em;
     color: #fff;
     border: 2px;
@@ -79,7 +81,7 @@
 
 .inputBox input:valid,
 .inputBox input:focus {
-    border: 2px solid #000;
+    border: 2px solid #18314f;
     border-radius: 8px;
 }
 
@@ -87,7 +89,7 @@
     height: 45px;
     width: 100px;
     border-radius: 5px;
-    border: 2px solid #000;
+    border: 2px solid #18314f;
     cursor: pointer;
     background-color: transparent;
     transition: 0.5s;
@@ -97,6 +99,6 @@
     margin-bottom: 1em;
 }
 .enter:hover {
-    background-color: rgb(0, 0, 0);
+    background-color: #18314f;
     color: white;
 }
