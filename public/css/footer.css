@@ -137,7 +137,7 @@ iframe{
   flex-direction: column;
   margin: 20px 10px 10px 10px;
   color: #18314F;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .copy-footer > span{
   display: flex;
