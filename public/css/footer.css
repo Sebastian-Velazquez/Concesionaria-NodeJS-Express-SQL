@@ -5,7 +5,7 @@ footer{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-
+    
 }
 .div-footer-derechos{
   height: 400px;
@@ -15,6 +15,7 @@ footer{
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+ 
 }
 iframe{
   width: 70%;
@@ -177,6 +178,7 @@ iframe{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    border-top: solid #B40C15;
   }
 
   a {
